@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jkind-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.eclipse.core.runtime-3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jkind-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jkind.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/jkind-api.jar!/" />
+    </SOURCES>
+  </library>
+</component>
