@@ -1,0 +1,2 @@
+[p1= a and b;]
+[p2 = a => c and e;]
