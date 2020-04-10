@@ -18,8 +18,9 @@ import java.util.List;
 public class OriginalPropTest {
 
     public static String equivPropName = "matchEquiv";
-    public static String loosePropName = "looseEquiv";
-    public static String tightPropName = "tightEquiv";
+    public static String loosePropName = "loose";
+    public static String tightPropName = "tight";
+    public static String tautologyPropName = "tautology";
 
     public static void main(String[] args) {
 
@@ -33,6 +34,7 @@ public class OriginalPropTest {
         int looseCount = 0;
         int tightCount = 0;
         int incomparableCount = 0;
+        int tautologyCount = 0;
 
         File folder = new File("props");
         File[] listOfFiles = folder.listFiles();
@@ -50,14 +52,16 @@ public class OriginalPropTest {
                     Program newPgm = replaceMain(pgm, newMain);
                     writeToFile(currentFileName, newPgm.toString());
                     JKindResult res = callJkind(currentFileName);
+                    if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID)
+                        ++tautologyCount;
                     if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID)
                         ++equivCount;
-                    if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID)
+                    else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID)
                         ++looseCount;
-                    if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID)
+                    else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID)
                         ++tightCount;
 
-                    if (!((res.getPropertyResult(equivPropName).getStatus() == Status.VALID) || (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) || (res.getPropertyResult(tightPropName).getStatus() == Status.VALID)))
+                    else
                         ++incomparableCount;
                 }
                 System.out.println("PropName,      equiv#,      loose#,      tight#,      incomparable#");
@@ -83,20 +87,24 @@ public class OriginalPropTest {
         localVars.add(new VarDecl(equivPropName, NamedType.BOOL));
         localVars.add(new VarDecl(loosePropName, NamedType.BOOL));
         localVars.add(new VarDecl(tightPropName, NamedType.BOOL));
+        localVars.add(new VarDecl(tautologyPropName, NamedType.BOOL));
 
         Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr("p0"), BinaryOp.EQUAL, new IdExpr("p" + equationIndex)));
         Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p0")));
         Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p0"), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
+        Equation propTaut = new Equation(new IdExpr(tautologyPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.EQUAL, new BoolExpr(true)));
 
         List<Equation> newEquations = mainNode.equations;
         newEquations.add(propEquiv);
         newEquations.add(propLoose);
         newEquations.add(propTight);
+        newEquations.add(propTaut);
 
         List<String> newProperties = new ArrayList<>();
         newProperties.add(equivPropName);
         newProperties.add(loosePropName);
         newProperties.add(tightPropName);
+        newProperties.add(tautologyPropName);
 
 
         return new Node(mainNode.id, mainNode.inputs, mainNode.outputs, localVars, newEquations, newProperties, mainNode.assertions, mainNode.realizabilityInputs, mainNode.contract, mainNode.ivc);

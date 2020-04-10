@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-$filename = 'props/prop5.txt';
+$filename = $ARGV[0];
 
 open(FILE, $filename) or die "Could not read from $filename, program halting.";
 
