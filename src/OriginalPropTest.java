@@ -34,6 +34,9 @@ public class OriginalPropTest {
         int tightCount = 0;
         int incomparableCount = 0;
         int tautologyCount = 0;
+        List<String> equivProps = new ArrayList<>();
+        List<String> tightProps = new ArrayList<>();
+        List<String> inComparableProps = new ArrayList<>();
 
         File folder = new File("props");
         File[] listOfFiles = folder.listFiles();
@@ -54,14 +57,24 @@ public class OriginalPropTest {
                     writeToFile(jkindQueryFileName, newPgm.toString());
                     JKindResult res = callJkind(jkindQueryFileName);
                     if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++tautologyCount;
-                    else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) ++equivCount;
-                    else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++looseCount;
-                    else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) ++tightCount;
-
-                    else ++incomparableCount;
+                    else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
+                        ++equivCount;
+                        equivProps.add("p" + j);
+                    } else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++looseCount;
+                    else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
+                        ++tightCount;
+                        tightProps.add("p" + j);
+                    } else {
+                        ++incomparableCount;
+                        inComparableProps.add("p" + j);
+                    }
                 }
                 System.out.println("PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
                 System.out.println(currentFileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
+
+                System.out.println("tightProps are:" + tightProps);
+                System.out.println("equivProps are:" + equivProps);
+                System.out.println("inComparable Props are:" + inComparableProps);
             }
         }
     }
