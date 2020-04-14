@@ -4,7 +4,7 @@ $filename = $ARGV[0];
 
 open(FILE, $filename) or die "Could not read from $filename, program halting.";
 
-my $counter = 0;
+my $counter = 1;
 while(my $line = <FILE>)
 {
   $line =~ s/\s+$//;
@@ -14,7 +14,7 @@ while(my $line = <FILE>)
   ++$counter;
 }
 
-for ( my $i = 0; $i < $counter; $i++ ) {
-    print"p$counter : bool;\n";
+for ( my $i = 1; $i < $counter; $i++ ) {
+    print"p$i : bool;\n";
   }
 close FILE;
