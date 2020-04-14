@@ -34,15 +34,18 @@ public class OriginalPropTest {
         int tightCount = 0;
         int incomparableCount = 0;
         int tautologyCount = 0;
-        List<String> equivProps = new ArrayList<>();
-        List<String> tightProps = new ArrayList<>();
-        List<String> inComparableProps = new ArrayList<>();
+        List<String> equivProps;
+        List<String> tightProps;
+        List<String> inComparableProps;
 
         File folder = new File("props");
         File[] listOfFiles = folder.listFiles();
 
         String jkindQueryFileName = "jkindQuery";
         for (int i = 0; i < listOfFiles.length; i++) {
+            equivProps = new ArrayList<>();
+            tightProps = new ArrayList<>();
+            inComparableProps = new ArrayList<>();
             if (listOfFiles[i].isFile()) {
                 String currentFileName = listOfFiles[i].getName();
                 Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(folder + "/" + currentFileName)), "UTF-8"));
