@@ -23,11 +23,11 @@ public class OriginalPropTest {
     public static String tautologyPropName = "tautology";
 
     public static void main(String[] args) throws IOException {
-        execute();
+        execute(args[0], Integer.valueOf(args[1]));
     }
 
 
-    public static void execute() throws IOException {
+    public static void execute(String fName, Integer existingPropsEndIndex) throws IOException {
 
         int equivCount = 0;
         int looseCount = 0;
@@ -38,47 +38,45 @@ public class OriginalPropTest {
         List<String> tightProps;
         List<String> inComparableProps;
 
-        File folder = new File("props");
-        File[] listOfFiles = folder.listFiles();
+        File fileName = new File("props/" + fName);
 
         String jkindQueryFileName = "jkindQuery";
-        for (int i = 0; i < listOfFiles.length; i++) {
-            equivProps = new ArrayList<>();
-            tightProps = new ArrayList<>();
-            inComparableProps = new ArrayList<>();
-            if (listOfFiles[i].isFile()) {
-                String currentFileName = listOfFiles[i].getName();
-                Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(folder + "/" + currentFileName)), "UTF-8"));
-                List<Equation> equations = pgm.getMainNode().equations;
 
-                Equation originalProp = equations.get(0);
-                assert (originalProp.lhs.equals("p0")); // we are assuming that all properties must obey the naming of pn where n starts from 0 until the number of the properties.
-                for (int j = 1; j < equations.size(); j++) {
-                    System.out.println("checking property p" + j);
-                    Node newMain = updateProp(pgm.getMainNode(), j);
-                    Program newPgm = replaceMain(pgm, newMain);
-                    writeToFile(jkindQueryFileName, newPgm.toString());
-                    JKindResult res = callJkind(jkindQueryFileName);
-                    if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++tautologyCount;
-                    else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
-                        ++equivCount;
-                        equivProps.add("p" + j);
-                    } else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++looseCount;
-                    else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
-                        ++tightCount;
-                        tightProps.add("p" + j);
-                    } else {
-                        ++incomparableCount;
-                        inComparableProps.add("p" + j);
-                    }
+        equivProps = new ArrayList<>();
+        tightProps = new ArrayList<>();
+        inComparableProps = new ArrayList<>();
+        Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(fileName.toString())), "UTF-8"));
+        List<Equation> equations = pgm.getMainNode().equations;
+
+        for (int existingIndex = 0; existingIndex <= existingPropsEndIndex; existingIndex++) {
+            Equation originalProp = equations.get(existingIndex);
+            System.out.println("------> comparing to p" + existingIndex);
+            /*assert (originalProp.lhs.equals("p0")); // we are assuming that all properties must obey the naming of pn where n starts from 0 until the number of the properties.*/
+            for (int j = existingPropsEndIndex + 1; j < equations.size(); j++) {
+                System.out.println("checking property p" + j);
+                Node newMain = updateProp(pgm.getMainNode(), existingIndex, j);
+                Program newPgm = replaceMain(pgm, newMain);
+                writeToFile(jkindQueryFileName, newPgm.toString());
+                JKindResult res = callJkind(jkindQueryFileName);
+                if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++tautologyCount;
+                else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
+                    ++equivCount;
+                    equivProps.add("p" + j);
+                } else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++looseCount;
+                else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
+                    ++tightCount;
+                    tightProps.add("p" + j);
+                } else {
+                    ++incomparableCount;
+                    inComparableProps.add("p" + j);
                 }
-                System.out.println("PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
-                System.out.println(currentFileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
-
-                System.out.println("tightProps are:" + tightProps);
-                System.out.println("equivProps are:" + equivProps);
-                System.out.println("inComparable Props are:" + inComparableProps);
             }
+            System.out.println("PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
+            System.out.println(fileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
+
+            System.out.println("tightProps are:" + tightProps);
+            System.out.println("equivProps are:" + equivProps);
+            System.out.println("inComparable Props are:" + inComparableProps);
         }
     }
 
@@ -93,7 +91,7 @@ public class OriginalPropTest {
         return new Program(pgm.location, pgm.types, pgm.constants, pgm.functions, newNodes, pgm.main);
     }
 
-    private static Node updateProp(Node mainNode, int equationIndex) {
+    private static Node updateProp(Node mainNode, int existingIndex, int equationIndex) {
         List<VarDecl> localVars = new ArrayList();
         localVars.addAll(mainNode.locals);
         localVars.add(new VarDecl(equivPropName, NamedType.BOOL));
@@ -101,9 +99,9 @@ public class OriginalPropTest {
         localVars.add(new VarDecl(tightPropName, NamedType.BOOL));
         localVars.add(new VarDecl(tautologyPropName, NamedType.BOOL));
 
-        Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr("p0"), BinaryOp.EQUAL, new IdExpr("p" + equationIndex)));
-        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p0")));
-        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p0"), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
+        Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.EQUAL, new IdExpr("p" + equationIndex)));
+        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p" + existingIndex)));
+        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
         Equation propTaut = new Equation(new IdExpr(tautologyPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.EQUAL, new BoolExpr(true)));
 
         List<Equation> newEquations = new ArrayList<>();
