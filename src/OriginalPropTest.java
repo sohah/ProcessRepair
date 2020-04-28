@@ -28,32 +28,31 @@ public class OriginalPropTest {
 
 
     public static void execute(String fName, Integer existingPropsEndIndex) throws IOException {
+//existingPropsEndIndex, is inclusive
 
         int equivCount = 0;
         int looseCount = 0;
         int tightCount = 0;
         int incomparableCount = 0;
         int tautologyCount = 0;
-        List<String> equivProps;
-        List<String> tightProps;
-        List<String> inComparableProps;
+        List<String> equivProps = new ArrayList<>();
+        List<String> tightProps = new ArrayList<>();
+        List<String> inComparableProps = new ArrayList<>();
 
         File fileName = new File("props/" + fName);
 
-        String jkindQueryFileName = "jkindQuery";
+        String jkindQueryFileName = fName + "_jkindQuery";
 
-        equivProps = new ArrayList<>();
-        tightProps = new ArrayList<>();
-        inComparableProps = new ArrayList<>();
         Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(fileName.toString())), "UTF-8"));
         List<Equation> equations = pgm.getMainNode().equations;
 
         for (int existingIndex = 0; existingIndex <= existingPropsEndIndex; existingIndex++) {
+
             Equation originalProp = equations.get(existingIndex);
             System.out.println("------> comparing to p" + existingIndex);
             /*assert (originalProp.lhs.equals("p0")); // we are assuming that all properties must obey the naming of pn where n starts from 0 until the number of the properties.*/
             for (int j = existingPropsEndIndex + 1; j < equations.size(); j++) {
-                System.out.println("checking property p" + j);
+                //System.out.println("checking property p" + j);
                 Node newMain = updateProp(pgm.getMainNode(), existingIndex, j);
                 Program newPgm = replaceMain(pgm, newMain);
                 writeToFile(jkindQueryFileName, newPgm.toString());
@@ -71,12 +70,26 @@ public class OriginalPropTest {
                     inComparableProps.add("p" + j);
                 }
             }
+
+//            String result = "\nPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable\n#" + fileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount;
+//            result += "\ntightProps are:" + tightProps + "\nequivProps are:" + equivProps + "\ninComparable Props are:" + inComparableProps;
+//            writeToFile(jkindQueryFileName + "result", result);
+
             System.out.println("PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
             System.out.println(fileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
 
             System.out.println("tightProps are:" + tightProps);
             System.out.println("equivProps are:" + equivProps);
             System.out.println("inComparable Props are:" + inComparableProps);
+            equivCount = 0;
+            looseCount = 0;
+            tightCount = 0;
+            incomparableCount = 0;
+            tautologyCount = 0;
+            equivProps = new ArrayList<>();
+            tightProps = new ArrayList<>();
+            inComparableProps = new ArrayList<>();
+
         }
     }
 
@@ -100,8 +113,8 @@ public class OriginalPropTest {
         localVars.add(new VarDecl(tautologyPropName, NamedType.BOOL));
 
         Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.EQUAL, new IdExpr("p" + equationIndex)));
-        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p" + existingIndex)));
-        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
+        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
+        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p" + existingIndex)));
         Equation propTaut = new Equation(new IdExpr(tautologyPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.EQUAL, new BoolExpr(true)));
 
         List<Equation> newEquations = new ArrayList<>();
@@ -158,7 +171,7 @@ public class OriginalPropTest {
         JKindApi api = new JKindApi();
         JKindResult result = new JKindResult("");
 
-        api.setJKindJar("../../jkind/jkind.jar");
+        api.setJKindJar("../../jkindNoRand/jkind.jar");
 
         api.execute(file1, result, new NullProgressMonitor());
 

@@ -22,7 +22,6 @@ open(my $fh, '<', $_);
 # get the data that is needed, then:
 my $last_non_blank_line;
 while (my $line = readline $fh) {
-    # choose one of the following two lines, depending what you meant
     if ( $line =~ /\S/ ) { $last_non_blank_line = $line }
     # if ( line !~ /^$/ ) { $last_non_blank_line = $line }
 }

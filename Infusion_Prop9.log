@@ -1,0 +1,79 @@
+objc[49328]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/bin/java (0x10f9994c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1111c04e0). One of the two will be used. Which one is undefined.
+------> comparing to p0
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      43,      1,      99
+tightProps are:[p34]
+equivProps are:[]
+inComparable Props are:[p22, p23, p24, p25, p27, p29, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p1
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      41,      4,      98
+tightProps are:[p27, p29, p133, p135]
+equivProps are:[]
+inComparable Props are:[p13, p16, p22, p23, p24, p25, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p126, p127, p128, p129, p130, p131, p132, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p2
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p3
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p4
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      1,      0,      142
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p5
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p6
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      2,      0,      141
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p7
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      25,      34,      9,      75
+tightProps are:[p44, p45, p47, p165, p170, p173, p174, p177, p180]
+equivProps are:[p22, p24, p25, p42, p43, p60, p71, p72, p111, p112, p126, p127, p137, p159, p160, p161, p162, p163, p164, p167, p168, p169, p171, p172, p176]
+inComparable Props are:[p13, p14, p15, p16, p18, p19, p21, p23, p27, p29, p34, p35, p36, p37, p51, p53, p55, p56, p59, p61, p64, p65, p66, p75, p76, p77, p78, p81, p82, p83, p85, p86, p87, p90, p91, p92, p95, p96, p98, p101, p102, p104, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p128, p129, p130, p131, p132, p133, p135, p136, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p153, p154, p179, p182]
+------> comparing to p8
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p9
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p10
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p11
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      0,      0,      0,      143
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p27, p29, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p47, p49, p51, p52, p53, p54, p55, p56, p57, p59, p60, p61, p64, p65, p66, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p78, p79, p80, p81, p82, p83, p84, p85, p86, p87, p88, p89, p90, p91, p92, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p120, p121, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p133, p135, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p149, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p165, p167, p168, p169, p170, p171, p172, p173, p174, p176, p177, p179, p180, p182]
+------> comparing to p12
+PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+props/Body/Infusion_Prop9_body,      27,      3,      0,      20,      120
+tightProps are:[p27, p29, p34, p45, p47, p53, p66, p78, p81, p82, p85, p92, p120, p121, p133, p135, p149, p165, p174, p180]
+equivProps are:[p14, p55, p83]
+inComparable Props are:[p13, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p49, p51, p52, p54, p56, p57, p59, p60, p61, p64, p65, p68, p69, p70, p71, p72, p73, p74, p75, p76, p77, p79, p80, p84, p86, p87, p88, p89, p90, p91, p95, p96, p98, p101, p102, p104, p105, p106, p107, p108, p109, p110, p111, p112, p113, p114, p115, p116, p117, p118, p119, p122, p123, p124, p125, p126, p127, p128, p129, p130, p131, p132, p136, p137, p138, p139, p140, p141, p142, p143, p147, p148, p150, p151, p152, p153, p154, p155, p156, p157, p158, p159, p160, p161, p162, p163, p164, p167, p168, p169, p170, p171, p172, p173, p176, p177, p179, p182]
