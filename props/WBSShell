@@ -1,0 +1,4 @@
+
+node main(pedal_r: int; autoBreak_r: bool; skid_r: bool; NormalPressure_r:int; AltPressure_r:int; Sys_Mode: int) returns ();
+
+var

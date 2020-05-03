@@ -1,0 +1,3 @@
+    p1 = ((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) =>  (result_alt_sep_test_s  <> 2);
+    p2 = ((Up_Separation_s < alim_res_s) and (Down_Separation_s >= alim_res_s)) =>  (result_alt_sep_test_s  <> 1);
+    p3 = ((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) =>  (result_alt_sep_test_s  <> 2);
