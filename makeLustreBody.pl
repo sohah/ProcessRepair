@@ -6,6 +6,11 @@ use strict; use warnings;
 This scripts takes as an input (1) filenamae of the set of tighter properties we have found. (2) name of the benchmark "infusion, tcas, wbs, or gpca".
 Also, it assumes the existance of shellFiles, and OrigProps files for each benchmark to operate.
 The outut is a spec defined in lustre.
+
+sample of used commands
+perl makeLustreBody.pl props/tightProp/TCAS_Prop1  tcas > props/Body/tcas_prop1.lus
+ ~/jkindNoRand/jkind props/Body/tcas_prop1.lus
+
 =cut
 
 
@@ -23,14 +28,14 @@ if($spec eq "infusion"){
     $shellFileName="props/InfusionShell";
 } elsif($spec eq "tcas"){
     $invalidProp[3] = 1;
-    $tightPropCounter = 12;
+    $tightPropCounter = 5;
     $origPropFileName="props/TCASOrigProps";
     $shellFileName="props/TCASShell";
 } elsif($spec eq "wbs"){
     $invalidProp[2] = 1;
     $invalidProp[4] = 1;
     $invalidProp[5] = 1;
-    $tightPropCounter = 12;
+    $tightPropCounter = 6;
     $origPropFileName="props/WBSOrigProps";
     $shellFileName="props/WBSShell";
 } else { #must be the gpca
@@ -60,7 +65,7 @@ close FILE;
 
 
 for ( my $i = 1; $i < $tightPropCounter; $i++ ) {
-    if($i<=14){
+    if(($spec eq "infusion" or $spec eq "tcas" or $spec eq "wbs") && $i<=14){
         if($invalidProp[$i] != 1){
             push(@declarations,"p$i : bool;\n");}}
     else{
