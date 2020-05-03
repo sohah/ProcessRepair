@@ -22,75 +22,129 @@ public class OriginalPropTest {
     public static String tightPropName = "tight";
     public static String tautologyPropName = "tautology";
 
+    /**
+     * Takes three arguments, the file that we will analyze the properties in it, the benchmark name, and property name we were repairing, for example
+     * Body/Infusion_Prop1_body infusion p1
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
-        execute(args[0], Integer.valueOf(args[1]));
+        execute(args[0], args[1],args[2]);
     }
 
 
-    public static void execute(String fName, Integer existingPropsEndIndex) throws IOException {
+    public static void execute(String fName, String benchmark, String origPropName) throws IOException {
 //existingPropsEndIndex, is inclusive
 
-        int equivCount = 0;
-        int looseCount = 0;
-        int tightCount = 0;
-        int incomparableCount = 0;
-        int tautologyCount = 0;
-        List<String> equivProps = new ArrayList<>();
-        List<String> tightProps = new ArrayList<>();
-        List<String> inComparableProps = new ArrayList<>();
+        Integer lastIndexOfOrigProps = -1;
+
+        if (benchmark.equals("infustion")) //estimated last index of only valid-original properties.
+            lastIndexOfOrigProps = 11;
+        else if (benchmark.equals("gpa"))
+            lastIndexOfOrigProps = 9;
+        else if (benchmark.equals("tcas"))
+            lastIndexOfOrigProps = 2;
+        else if (benchmark.equals("wbs"))
+            lastIndexOfOrigProps = 1;
+        else assert false;
+
 
         File fileName = new File("props/" + fName);
 
         String jkindQueryFileName = fName + "_jkindQuery";
 
         Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(fileName.toString())), "UTF-8"));
+
+        OrigPropRelationResult relationToOrig = computeRelationToOriginalProp(benchmark, origPropName, lastIndexOfOrigProps + 1, jkindQueryFileName, pgm);
+        PropRelationStatManager.addOrigRelation(relationToOrig);
+
+
         List<Equation> equations = pgm.getMainNode().equations;
 
-        for (int existingIndex = 0; existingIndex <= existingPropsEndIndex; existingIndex++) {
+        for (int i = 0; i <= lastIndexOfOrigProps; i++) {
+            String otherOrigPropName = equations.get(i).lhs.get(0).id;
 
-            Equation originalProp = equations.get(existingIndex);
-            System.out.println("------> comparing to p" + existingIndex);
-            /*assert (originalProp.lhs.equals("p0")); // we are assuming that all properties must obey the naming of pn where n starts from 0 until the number of the properties.*/
-            for (int j = existingPropsEndIndex + 1; j < equations.size(); j++) {
-                //System.out.println("checking property p" + j);
-                Node newMain = updateProp(pgm.getMainNode(), existingIndex, j);
-                Program newPgm = replaceMain(pgm, newMain);
-                writeToFile(jkindQueryFileName, newPgm.toString());
-                JKindResult res = callJkind(jkindQueryFileName);
-                if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++tautologyCount;
-                else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
-                    ++equivCount;
-                    equivProps.add("p" + j);
-                } else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++looseCount;
-                else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
-                    ++tightCount;
-                    tightProps.add("p" + j);
-                } else {
-                    ++incomparableCount;
-                    inComparableProps.add("p" + j);
-                }
+            if (!otherOrigPropName.equals(origPropName)) {
+                OtherPropRelationResult relationToOtherOrig = computeRelationToOtherProp(benchmark, origPropName, otherOrigPropName, lastIndexOfOrigProps + 1, jkindQueryFileName, pgm);
+                PropRelationStatManager.addOtherOrigRelation(benchmark, origPropName, relationToOtherOrig);
+            } else {
+                PropRelationStatManager.addOtherOrigRelation(benchmark, origPropName, relationToOrig.makeOtherPropRelationResult());
             }
-
-//            String result = "\nPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable\n#" + fileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount;
-//            result += "\ntightProps are:" + tightProps + "\nequivProps are:" + equivProps + "\ninComparable Props are:" + inComparableProps;
-//            writeToFile(jkindQueryFileName + "result", result);
-
-            System.out.println("PropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
-            System.out.println(fileName + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
-
-            System.out.println("tightProps are:" + tightProps);
-            System.out.println("equivProps are:" + equivProps);
-            System.out.println("inComparable Props are:" + inComparableProps);
-            equivCount = 0;
-            looseCount = 0;
-            tightCount = 0;
-            incomparableCount = 0;
-            tautologyCount = 0;
-            equivProps = new ArrayList<>();
-            tightProps = new ArrayList<>();
-            inComparableProps = new ArrayList<>();
-
         }
+
+        PropRelationStatManager.writeOrigRelationToFile();
+        PropRelationStatManager.writeOtherOrigRelationToFile();
+
+    }
+
+
+    public static OrigPropRelationResult computeRelationToOriginalProp(String benchmark, String originalPropName, int repairsStartIndex, String jkindQueryFileName, Program pgm) throws IOException {
+        OrigPropRelationResult relationResult = new OrigPropRelationResult(benchmark, originalPropName);
+
+        List<Equation> equations = pgm.getMainNode().equations;
+
+        for (int j = repairsStartIndex; j < equations.size(); j++) {
+            IdExpr repairedPropName = equations.get(j).lhs.get(0);
+            Node newMain = updateProp(pgm.getMainNode(), originalPropName, repairedPropName);
+            Program newPgm = replaceMain(pgm, newMain);
+            writeToFile(jkindQueryFileName, newPgm.toString());
+            JKindResult res = callJkind(jkindQueryFileName);
+            if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++relationResult.tautologyCount;
+            else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
+                ++relationResult.equivCount;
+                relationResult.equivProps.add("p" + j);
+            } else if (res.getPropertyResult(loosePropName).getStatus() == Status.VALID) ++relationResult.looseCount;
+            else if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
+                ++relationResult.tightCount;
+                relationResult.tightProps.add("p" + j);
+            } else {
+                ++relationResult.incomparableCount;
+                relationResult.inComparableProps.add("p" + j);
+            }
+        }
+
+
+        /*System.out.println("OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
+        System.out.println(originalPropName + ",      " + relationResult.tautologyCount + ",      " + relationResult.equivCount + ",      " + relationResult.looseCount + ",      " + relationResult.tightCount + ",      " + relationResult.incomparableCount);
+
+        System.out.println("tightProps are:" + relationResult.tightProps);
+        System.out.println("equivProps are:" + relationResult.equivProps);
+        System.out.println("inComparable Props are:" + relationResult.inComparableProps);*/
+        return relationResult;
+    }
+
+
+    /**
+     * takes the origPropName that we were trying to repair, otherOrigPropName which are the already existing props we knew about the benchmark and we want to compare to
+     * repairStartIndex, the start index of the repaired props
+     *
+     * @param otherOrigPropName
+     * @param repairsStartIndex
+     * @return
+     * @throws IOException
+     */
+    public static OtherPropRelationResult computeRelationToOtherProp(String benchmark, String origProp, String otherOrigPropName, int repairsStartIndex, String jkindQueryFileName, Program pgm) throws IOException {
+        OtherPropRelationResult relationResult = new OtherPropRelationResult(benchmark, origProp, otherOrigPropName);
+
+        List<Equation> equations = pgm.getMainNode().equations;
+
+        for (int j = repairsStartIndex; j < equations.size(); j++) {
+            IdExpr repairedPropName = equations.get(j).lhs.get(0);
+            Node newMain = updateProp(pgm.getMainNode(), otherOrigPropName, repairedPropName);
+            Program newPgm = replaceMain(pgm, newMain);
+            writeToFile(jkindQueryFileName, newPgm.toString());
+            JKindResult res = callJkind(jkindQueryFileName);
+            if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
+                ++relationResult.tightCount;
+                relationResult.tightProps.add("p" + j);
+            }
+        }
+
+        System.out.println("tight# to" + otherOrigPropName + "=" + relationResult.tightCount);
+
+        System.out.println("tightProps are:" + relationResult.tightProps);
+        return relationResult;
     }
 
     private static Program replaceMain(Program pgm, Node newMain) {
@@ -104,7 +158,7 @@ public class OriginalPropTest {
         return new Program(pgm.location, pgm.types, pgm.constants, pgm.functions, newNodes, pgm.main);
     }
 
-    private static Node updateProp(Node mainNode, int existingIndex, int equationIndex) {
+    private static Node updateProp(Node mainNode, String originalPropName, IdExpr repairedProp) {
         List<VarDecl> localVars = new ArrayList();
         localVars.addAll(mainNode.locals);
         localVars.add(new VarDecl(equivPropName, NamedType.BOOL));
@@ -112,10 +166,10 @@ public class OriginalPropTest {
         localVars.add(new VarDecl(tightPropName, NamedType.BOOL));
         localVars.add(new VarDecl(tautologyPropName, NamedType.BOOL));
 
-        Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.EQUAL, new IdExpr("p" + equationIndex)));
-        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr("p" + existingIndex), BinaryOp.IMPLIES, new IdExpr("p" + equationIndex)));
-        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.IMPLIES, new IdExpr("p" + existingIndex)));
-        Equation propTaut = new Equation(new IdExpr(tautologyPropName), new BinaryExpr(new IdExpr("p" + equationIndex), BinaryOp.EQUAL, new BoolExpr(true)));
+        Equation propEquiv = new Equation(new IdExpr(equivPropName), new BinaryExpr(new IdExpr(originalPropName), BinaryOp.EQUAL, repairedProp));
+        Equation propLoose = new Equation(new IdExpr(loosePropName), new BinaryExpr(new IdExpr(originalPropName), BinaryOp.IMPLIES, repairedProp));
+        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(repairedProp, BinaryOp.IMPLIES, new IdExpr(originalPropName)));
+        Equation propTaut = new Equation(new IdExpr(tautologyPropName), new BinaryExpr(repairedProp, BinaryOp.EQUAL, new BoolExpr(true)));
 
         List<Equation> newEquations = new ArrayList<>();
         newEquations.addAll(mainNode.equations);
@@ -135,6 +189,23 @@ public class OriginalPropTest {
         return new Node(mainNode.id, mainNode.inputs, mainNode.outputs, localVars, newEquations, newProperties, mainNode.assertions, mainNode.realizabilityInputs, mainNode.contract, mainNode.ivc);
     }
 
+    private static Node updatePropForOther(Node mainNode, String OtherOrigPropName, IdExpr repairedProp) {
+        List<VarDecl> localVars = new ArrayList();
+        localVars.addAll(mainNode.locals);
+        localVars.add(new VarDecl(tightPropName, NamedType.BOOL));
+
+        Equation propTight = new Equation(new IdExpr(tightPropName), new BinaryExpr(repairedProp, BinaryOp.IMPLIES, new IdExpr(OtherOrigPropName)));
+
+        List<Equation> newEquations = new ArrayList<>();
+        newEquations.addAll(mainNode.equations);
+
+        newEquations.add(propTight);
+
+        List<String> newProperties = new ArrayList<>();
+        newProperties.add(tightPropName);
+
+        return new Node(mainNode.id, mainNode.inputs, mainNode.outputs, localVars, newEquations, newProperties, mainNode.assertions, mainNode.realizabilityInputs, mainNode.contract, mainNode.ivc);
+    }
 
     public static boolean writeToFile(String fileName, String content) {
         String directory;
@@ -148,7 +219,6 @@ public class OriginalPropTest {
             if (!Files.exists(Paths.get(directory))) Files.createDirectories(Paths.get(directory));
             if (Files.exists(Paths.get(fileName))) {
                 Files.delete(Paths.get(fileName));
-                //  Files.createDirectories(Paths.get(fileName));
             }
 
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName), "utf-8"));
