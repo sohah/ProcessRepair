@@ -10,7 +10,7 @@ The outut is a spec defined in lustre.
 
 
 my $tightPropCounter;
-my @invalidProp = (0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+my @invalidProp = (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 my $origPropFileName;
 my $shellFileName;
 my $spec = $ARGV[1];
@@ -59,9 +59,14 @@ close FILE;
 
 
 
-for ( my $i = 0; $i < $tightPropCounter; $i++ ) {
-    if($i<=13 && $invalidProp[$i] != 1){
-        push(@declarations,"p$i : bool;\n");}
+for ( my $i = 1; $i < $tightPropCounter; $i++ ) {
+    if($i<=14){
+        if($invalidProp[$i] != 1){
+            push(@declarations,"p$i : bool;\n");}}
+    else{
+      push(@declarations,"p$i : bool;\n");
+    }
+
   }
 
 
