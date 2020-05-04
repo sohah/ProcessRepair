@@ -20,8 +20,8 @@ public class PropRelationStatManager {
     private static Path otherOrigFile = Paths.get("OtherOrigPropRelation_all_stats" + ".txt");
 
     public static void create() throws IOException {
-        Files.write(origFile, new ArrayList<>(), StandardCharsets.UTF_8, StandardOpenOption.CREATE);
-        Files.write(otherOrigFile, new ArrayList<>(), StandardCharsets.UTF_8, StandardOpenOption.CREATE);
+        Files.write(origFile, new ArrayList<>(), StandardCharsets.UTF_8);
+        Files.write(otherOrigFile, new ArrayList<>(), StandardCharsets.UTF_8);
     }
 
     public static void addOrigRelation(OrigPropRelationResult origPropRelationResult) {
@@ -43,7 +43,9 @@ public class PropRelationStatManager {
     public static void writeOrigRelationToFile() {
 
 
-        List lines = new ArrayList<>();
+        List lines = new ArrayList<String>();
+
+        lines.add("bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#\n");
 
         for (OrigPropRelationResult origPropRelationResult : origPropRelation) {
             lines.add(origPropRelationResult.toString());
@@ -61,13 +63,13 @@ public class PropRelationStatManager {
     public static void writeOtherOrigRelationToFile() {
 
 
-        List lines = new ArrayList<>();
-
         Set<Pair<String, String>> keys = otherPropRelation.keySet();
 
-        String header = "         ,";
+
         for (Pair key : keys) {
+            List lines = new ArrayList<>();
             ArrayList<OtherPropRelationResult> aRow = otherPropRelation.get(key);
+            String header = "         ,";
             for (int i = 0; i < aRow.size(); i++) {  //making header
                 header += aRow.get(i).otherOrigProp + ",         ";
             }

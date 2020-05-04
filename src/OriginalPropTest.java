@@ -22,7 +22,7 @@ public class OriginalPropTest {
     public static String tightPropName = "tight";
     public static String tautologyPropName = "tautology";
 
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     /**
      * Takes three arguments, the file that we will analyze the properties in it, the benchmark name, and property name we were repairing, for example
@@ -32,22 +32,40 @@ public class OriginalPropTest {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-//        execute("Body/infusion_prop1.lus", "infusion", "p1");
+
         execute("Body/gpca_prop1.lus", "gpca", "p1");
+        /*execute("Body/gpca_prop2.lus", "gpca", "p2");
+        execute("Body/gpca_prop3.lus", "gpca", "p3");
+        execute("Body/gpca_prop4.lus", "gpca", "p4");
+        execute("Body/gpca_prop5.lus", "gpca", "p5");
+        execute("Body/gpca_prop6.lus", "gpca", "p6");
+        execute("Body/gpca_prop7.lus", "gpca", "p7");
+        execute("Body/gpca_prop8.lus", "gpca", "p8");
+        execute("Body/gpca_prop19.lus", "gpca", "p9");*/
 
 
-        /*execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");
-        execute("Body/Infusion_Prop3_body", "infusion", "p3");*/
+        execute("Body/infusion_prop1.lus", "infusion", "p1");
+        /*execute("Body/infusion_prop2.lus", "infusion", "p2");
+        execute("Body/infusion_prop3.lus", "infusion", "p3");
+        execute("Body/infusion_prop5.lus", "infusion", "p5");
+        execute("Body/infusion_prop6.lus", "infusion", "p6");
+        execute("Body/infusion_prop7.lus", "infusion", "p7");
+        execute("Body/infusion_prop8.lus", "infusion", "p8");
+        execute("Body/infusion_prop9.lus", "infusion", "p9");
+        execute("Body/infusion_prop10.lus", "infusion", "p10");
+        execute("Body/infusion_prop11.lus", "infusion", "p11");
+        execute("Body/infusion_prop12.lus", "infusion", "p12");
+        execute("Body/infusion_prop13.lus", "infusion", "p13");
 
+        execute("Body/tcas_Prop1_body", "tcas", "p1");
+        execute("Body/tcas_Prop2_body", "tcas", "p2");
+        execute("Body/tcas_Prop4_body", "tcas", "p4");
+
+        execute("Body/wbs_Prop1_body", "wbs", "p1");
+        execute("Body/wbs_Prop3_body", "wbs", "p3");*/
+
+        PropRelationStatManager.writeOrigRelationToFile();
+        PropRelationStatManager.writeOtherOrigRelationToFile();
 
     }
 
@@ -57,7 +75,7 @@ public class OriginalPropTest {
 
         Integer lastIndexOfOrigProps = -1;
 
-        if (benchmark.equals("infustion")) //estimated last index of only valid-original properties.
+        if (benchmark.equals("infusion")) //estimated last index of only valid-original properties.
             lastIndexOfOrigProps = 11;
         else if (benchmark.equals("gpca"))
             lastIndexOfOrigProps = 9;
@@ -91,9 +109,6 @@ public class OriginalPropTest {
                 PropRelationStatManager.addOtherOrigRelation(benchmark, origPropName, relationToOrig.makeOtherPropRelationResult());
             }
         }
-
-        PropRelationStatManager.writeOrigRelationToFile();
-        PropRelationStatManager.writeOtherOrigRelationToFile();
 
     }
 
