@@ -41,7 +41,7 @@ public class OriginalPropTest {
         execute("Body/gpca_prop6.lus", "gpca", "p6");
         execute("Body/gpca_prop7.lus", "gpca", "p7");
         execute("Body/gpca_prop8.lus", "gpca", "p8");
-        execute("Body/gpca_prop19.lus", "gpca", "p9");*/
+        execute("Body/gpca_prop9.lus", "gpca", "p9");*/
 
 
         execute("Body/infusion_prop1.lus", "infusion", "p1");

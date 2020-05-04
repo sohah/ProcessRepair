@@ -1,3 +1,0 @@
-[p1 = (((not System_On) or (Highest_Level_Alarm = 4)) => ((Commanded_Flow_Rate = 0) xor false));]
-[p2 = (false => (Commanded_Flow_Rate <= Flow_Rate_KVO));] -- tautology
-[p3 = ((System_On and false) => (Commanded_Flow_Rate <= Flow_Rate_KVO));] -- tautology
