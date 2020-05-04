@@ -22,6 +22,8 @@ public class OriginalPropTest {
     public static String tightPropName = "tight";
     public static String tautologyPropName = "tautology";
 
+    public static boolean debug = false;
+
     /**
      * Takes three arguments, the file that we will analyze the properties in it, the benchmark name, and property name we were repairing, for example
      * Body/Infusion_Prop1_body infusion p1
@@ -30,7 +32,23 @@ public class OriginalPropTest {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        execute(args[0], args[1],args[2]);
+//        execute("Body/infusion_prop1.lus", "infusion", "p1");
+        execute("Body/gpca_prop1.lus", "gpca", "p1");
+
+
+        /*execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");
+        execute("Body/Infusion_Prop3_body", "infusion", "p3");*/
+
+
     }
 
 
@@ -41,7 +59,7 @@ public class OriginalPropTest {
 
         if (benchmark.equals("infustion")) //estimated last index of only valid-original properties.
             lastIndexOfOrigProps = 11;
-        else if (benchmark.equals("gpa"))
+        else if (benchmark.equals("gpca"))
             lastIndexOfOrigProps = 9;
         else if (benchmark.equals("tcas"))
             lastIndexOfOrigProps = 2;
@@ -50,6 +68,7 @@ public class OriginalPropTest {
         else assert false;
 
 
+        PropRelationStatManager.create();
         File fileName = new File("props/" + fName);
 
         String jkindQueryFileName = fName + "_jkindQuery";
@@ -88,8 +107,14 @@ public class OriginalPropTest {
             IdExpr repairedPropName = equations.get(j).lhs.get(0);
             Node newMain = updateProp(pgm.getMainNode(), originalPropName, repairedPropName);
             Program newPgm = replaceMain(pgm, newMain);
-            writeToFile(jkindQueryFileName, newPgm.toString());
-            JKindResult res = callJkind(jkindQueryFileName);
+            JKindResult res;
+            if (debug) {
+                writeToFile(jkindQueryFileName + j, newPgm.toString());
+                res = callJkind(jkindQueryFileName + j);
+            } else {
+                writeToFile(jkindQueryFileName, newPgm.toString());
+                res = callJkind(jkindQueryFileName);
+            }
             if (res.getPropertyResult(tautologyPropName).getStatus() == Status.VALID) ++relationResult.tautologyCount;
             else if (res.getPropertyResult(equivPropName).getStatus() == Status.VALID) {
                 ++relationResult.equivCount;
@@ -131,17 +156,23 @@ public class OriginalPropTest {
 
         for (int j = repairsStartIndex; j < equations.size(); j++) {
             IdExpr repairedPropName = equations.get(j).lhs.get(0);
-            Node newMain = updateProp(pgm.getMainNode(), otherOrigPropName, repairedPropName);
+            Node newMain = updatePropForOther(pgm.getMainNode(), otherOrigPropName, repairedPropName);
             Program newPgm = replaceMain(pgm, newMain);
-            writeToFile(jkindQueryFileName, newPgm.toString());
-            JKindResult res = callJkind(jkindQueryFileName);
+            JKindResult res;
+            if (debug) {
+                writeToFile(jkindQueryFileName + "_" + otherOrigPropName + j, newPgm.toString());
+                res = callJkind(jkindQueryFileName + "_" + otherOrigPropName + j);
+            } else {
+                writeToFile(jkindQueryFileName, newPgm.toString());
+                res = callJkind(jkindQueryFileName);
+            }
             if (res.getPropertyResult(tightPropName).getStatus() == Status.VALID) {
                 ++relationResult.tightCount;
                 relationResult.tightProps.add("p" + j);
             }
         }
 
-        System.out.println("tight# to" + otherOrigPropName + "=" + relationResult.tightCount);
+        System.out.println("tight# to " + otherOrigPropName + "=" + relationResult.tightCount);
 
         System.out.println("tightProps are:" + relationResult.tightProps);
         return relationResult;

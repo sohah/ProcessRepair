@@ -21,14 +21,18 @@ public class OrigPropRelationResult {
     }
 
     public String toString() {
-        return ("bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#\n")
-                + (benchmark + ",      " + origProp + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount)
-                + ("\ntightProps are:" + tightProps)
-                + ("\nequivProps are:" + equivProps)
-                + ("\ninComparable Props are:" + inComparableProps);
+        if (OriginalPropTest.debug)
+            return ("bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#\n")
+                    + (benchmark + ",      " + origProp + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount)
+                    + ("\ntightProps are:" + tightProps)
+                    + ("\nequivProps are:" + equivProps)
+                    + ("\ninComparable Props are:" + inComparableProps);
+        else
+            return ("bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#\n")
+                    + (benchmark + ",      " + origProp + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount);
     }
 
-    public OtherPropRelationResult makeOtherPropRelationResult(){
-        return new OtherPropRelationResult(benchmark, origProp, origProp, tightCount, tightProps);
+    public OtherPropRelationResult makeOtherPropRelationResult() {
+        return new OtherPropRelationResult(benchmark, origProp, origProp, tightCount + equivCount, tightProps);
     }
 }
