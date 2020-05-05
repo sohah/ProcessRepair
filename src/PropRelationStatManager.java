@@ -16,8 +16,8 @@ public class PropRelationStatManager {
     private static List<OrigPropRelationResult> origPropRelation = new ArrayList<>();
 
     private static LinkedHashMap<Pair<String, String>, ArrayList<OtherPropRelationResult>> otherPropRelation = new LinkedHashMap<>();
-    private static Path origFile = Paths.get("OrigPropRelation_all_stats" + ".txt");
-    private static Path otherOrigFile = Paths.get("OtherOrigPropRelation_all_stats" + ".txt");
+    private static Path origFile = Paths.get(OriginalPropTest.directory + "OrigPropRelation_all_stats" + ".txt");
+    private static Path otherOrigFile = Paths.get(OriginalPropTest.directory + "OtherOrigPropRelation_all_stats" + ".txt");
 
     public static void create() throws IOException {
         Files.write(origFile, new ArrayList<>(), StandardCharsets.UTF_8);

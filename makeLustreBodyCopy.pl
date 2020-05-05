@@ -48,7 +48,18 @@ my @tightPropsStr;
 my @declarations;
 my $tightPropFileName = $ARGV[0];
 
+if (-s "/Users/sohahussein/git/ProcessRepair/$tightPropFileName") {
+    print "This is an empty file";
+}else{
+    local $/;
+    open(FILE, $shellFileName) or die "Can't read file 'shellFileName' [$!]\n";
+    my $onlyShellFile = <FILE>;
+    close (FILE);
+    print $onlyShellFile;
+}
+
 open(FILE, $tightPropFileName) or die "Could not read from $tightPropFileName, program halting.";
+
 
 while(my $line = <FILE>)
 {

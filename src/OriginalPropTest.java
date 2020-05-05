@@ -23,7 +23,9 @@ public class OriginalPropTest {
     public static String tightPropName = "tight";
     public static String tautologyPropName = "tautology";
 
-    public static boolean debug = true;
+    public static boolean debug = false;
+
+    public static String directory;
 
     /**
      * Takes three arguments, the file that we will analyze the properties in it, the benchmark name, and property name we were repairing, for example
@@ -34,18 +36,20 @@ public class OriginalPropTest {
      */
     public static void main(String[] args) throws IOException {
 
-        execute("Body/gpca_prop1.lus", "gpca", "p1");
-        execute("Body/gpca_prop2.lus", "gpca", "p2");
-        execute("Body/gpca_prop3.lus", "gpca", "p3");
-       /* execute("Body/gpca_prop4.lus", "gpca", "p4");
+        directory = args[0]; //for example props/Exp1_5M_30min_100Rand/
+
+        execute(directory + "Body/gpca_prop1.lus", "gpca", "p1");
+        execute(directory + "Body/gpca_prop2.lus", "gpca", "p2");
+        execute(directory + "Body/gpca_prop3.lus", "gpca", "p3");
+        execute("Body/gpca_prop4.lus", "gpca", "p4");
         execute("Body/gpca_prop5.lus", "gpca", "p5");
         execute("Body/gpca_prop6.lus", "gpca", "p6");
         execute("Body/gpca_prop7.lus", "gpca", "p7");
         execute("Body/gpca_prop8.lus", "gpca", "p8");
         execute("Body/gpca_prop9.lus", "gpca", "p9");
-*/
 
-        /*execute("Body/infusion_prop1.lus", "infusion", "p1");
+
+        execute("Body/infusion_prop1.lus", "infusion", "p1");
         execute("Body/infusion_prop2.lus", "infusion", "p2");
         execute("Body/infusion_prop3.lus", "infusion", "p3");
         execute("Body/infusion_prop5.lus", "infusion", "p5");
@@ -63,7 +67,7 @@ public class OriginalPropTest {
         execute("Body/tcas_Prop4_body", "tcas", "p4");
 
         execute("Body/wbs_Prop1_body", "wbs", "p1");
-        execute("Body/wbs_Prop3_body", "wbs", "p3");*/
+        execute("Body/wbs_Prop3_body", "wbs", "p3");
 
         PropRelationStatManager.writeOrigRelationToFile();
         PropRelationStatManager.writeOtherOrigRelationToFile();
@@ -88,7 +92,7 @@ public class OriginalPropTest {
 
 
         PropRelationStatManager.create();
-        File fileName = new File("props/" + fName);
+        File fileName = new File(fName);
 
         String jkindQueryFileName = fName + "_jkindQuery";
 
@@ -268,13 +272,13 @@ public class OriginalPropTest {
     public static boolean writeToFile(String fileName, String content) {
         String directory;
 
-        directory = "props/";
+//        directory = OriginalPropTest.directory;
 
-        fileName = directory + fileName;
+//        fileName = directory + fileName;
 
         try {
 
-            if (!Files.exists(Paths.get(directory))) Files.createDirectories(Paths.get(directory));
+//            if (!Files.exists(Paths.get(directory))) Files.createDirectories(Paths.get(directory));
             if (Files.exists(Paths.get(fileName))) {
                 Files.delete(Paths.get(fileName));
             }
@@ -295,7 +299,7 @@ public class OriginalPropTest {
     public static JKindResult callJkind(String fileName) {
         File file1;
 
-        file1 = new File("/Users/sohahussein/git/ProcessRepair/props/" + fileName);
+        file1 = new File("/Users/sohahussein/git/ProcessRepair/" + fileName);
         JKindApi api = new JKindApi();
         JKindResult result = new JKindResult("");
 

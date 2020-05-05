@@ -1,7 +1,6 @@
 
 
-perl makeLustreBody.pl $1/tightProp/gpca_prop2.txt  gpca > $1/Body/gpca_prop2.lus
-
+perl makeLustreBody.pl $1/tightProp/gpca_prop1.txt  gpca > $1/Body/gpca_prop1.lus
 perl makeLustreBody.pl $1/tightProp/gpca_prop2.txt  gpca > $1/Body/gpca_prop2.lus
 perl makeLustreBody.pl $1/tightProp/gpca_prop3.txt  gpca > $1/Body/gpca_prop3.lus
 perl makeLustreBody.pl $1/tightProp/gpca_prop4.txt  gpca > $1/Body/gpca_prop4.lus
