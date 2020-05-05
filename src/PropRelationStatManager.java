@@ -91,4 +91,11 @@ public class PropRelationStatManager {
 
     }
 
+    public static void addEmptyOrig(String benchmark, String origPropName) {
+        origPropRelation.add(new OrigPropRelationResult(benchmark, origPropName));
+    }
+
+    public static void addEmptyOtherOrig(String benchmark, String origPropName) {
+        otherPropRelation.put(new Pair<>(benchmark, origPropName), new ArrayList<>());
+    }
 }

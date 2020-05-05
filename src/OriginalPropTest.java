@@ -7,6 +7,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,18 +35,18 @@ public class OriginalPropTest {
     public static void main(String[] args) throws IOException {
 
         execute("Body/gpca_prop1.lus", "gpca", "p1");
-        /*execute("Body/gpca_prop2.lus", "gpca", "p2");
+        execute("Body/gpca_prop2.lus", "gpca", "p2");
         execute("Body/gpca_prop3.lus", "gpca", "p3");
-        execute("Body/gpca_prop4.lus", "gpca", "p4");
+       /* execute("Body/gpca_prop4.lus", "gpca", "p4");
         execute("Body/gpca_prop5.lus", "gpca", "p5");
         execute("Body/gpca_prop6.lus", "gpca", "p6");
         execute("Body/gpca_prop7.lus", "gpca", "p7");
         execute("Body/gpca_prop8.lus", "gpca", "p8");
-        execute("Body/gpca_prop9.lus", "gpca", "p9");*/
+        execute("Body/gpca_prop9.lus", "gpca", "p9");
+*/
 
-
-        execute("Body/infusion_prop1.lus", "infusion", "p1");
-        /*execute("Body/infusion_prop2.lus", "infusion", "p2");
+        /*execute("Body/infusion_prop1.lus", "infusion", "p1");
+        execute("Body/infusion_prop2.lus", "infusion", "p2");
         execute("Body/infusion_prop3.lus", "infusion", "p3");
         execute("Body/infusion_prop5.lus", "infusion", "p5");
         execute("Body/infusion_prop6.lus", "infusion", "p6");
@@ -91,7 +92,18 @@ public class OriginalPropTest {
 
         String jkindQueryFileName = fName + "_jkindQuery";
 
+        Path path = Paths.get(fileName.toString());
+        if (!Files.exists(path)) { // prop was not executed in the run.
+            System.out.println("prop file not found, unexpected. aborting");
+            assert false;
+        }
         Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(fileName.toString())), "UTF-8"));
+
+        if (pgm.getMainNode().equations.size() == lastIndexOfOrigProps + 1) { //no repair was found
+            PropRelationStatManager.addEmptyOrig(benchmark, origPropName);
+            PropRelationStatManager.addEmptyOtherOrig(benchmark, origPropName);
+            return;
+        }
 
         OrigPropRelationResult relationToOrig = computeRelationToOriginalProp(benchmark, origPropName, lastIndexOfOrigProps + 1, jkindQueryFileName, pgm);
         PropRelationStatManager.addOrigRelation(relationToOrig);

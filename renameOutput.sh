@@ -21,7 +21,8 @@ cp ./DiscoveryExamples/GPCA_Infusion/Prop8/infusion_all_tightProps.txt ./infusio
 cp ./DiscoveryExamples/GPCA_Infusion/Prop9/infusion_all_tightProps.txt ./infusion_prop9.txt
 cp ./DiscoveryExamples/GPCA_Infusion/Prop10/infusion_all_tightProps.txt ./infusion_prop10.txt
 cp ./DiscoveryExamples/GPCA_Infusion/Prop11/infusion_all_tightProps.txt ./infusion_prop11.txt
-
+cp ./DiscoveryExamples/GPCA_Infusion/Prop12/infusion_all_tightProps.txt ./infusion_prop12.txt
+cp ./DiscoveryExamples/GPCA_Infusion/Prop13/infusion_all_tightProps.txt ./infusion_prop13.txt
 
 cp ./DiscoveryExamples/TCAS/Prop1/tcas_all_tightProps.txt ./tcas_prop1.txt
 cp ./DiscoveryExamples/TCAS/Prop2/tcas_all_tightProps.txt ./tcas_prop2.txt
@@ -55,7 +56,8 @@ cp ./DiscoveryExamples/GPCA_Infusion/Prop8/infusion_all_stats.txt ./infusion_pro
 cp ./DiscoveryExamples/GPCA_Infusion/Prop9/infusion_all_stats.txt ./infusion_prop9_stats.txt
 cp ./DiscoveryExamples/GPCA_Infusion/Prop10/infusion_all_stats.txt ./infusion_prop10_stats.txt
 cp ./DiscoveryExamples/GPCA_Infusion/Prop11/infusion_all_stats.txt ./infusion_prop11_stats.txt
-
+cp ./DiscoveryExamples/GPCA_Infusion/Prop12/infusion_all_stats.txt ./infusion_prop12_stats.txt
+cp ./DiscoveryExamples/GPCA_Infusion/Prop13/infusion_all_stats.txt ./infusion_prop13_stats.txt
 
 cp ./DiscoveryExamples/TCAS/Prop1/tcas_all_stats.txt ./tcas_prop1_stats.txt
 cp ./DiscoveryExamples/TCAS/Prop2/tcas_all_stats.txt ./tcas_prop2_stats.txt
