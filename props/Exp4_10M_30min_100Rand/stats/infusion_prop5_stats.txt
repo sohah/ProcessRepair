@@ -1,0 +1,4 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop5-ORO-2-1,     false,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     141.771,     61.838,     60.429,     1.409,     35,     34,     1.726,     0.041,     p1 = ((System_On and false) => (Configured = 0));,     

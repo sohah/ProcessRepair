@@ -1,2 +1,1 @@
-
 p1 = (((System_On and In_Therapy) and Air_In_Line) => (out_Highest_Level_Alarm < 5));

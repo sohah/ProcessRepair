@@ -1,2 +1,1 @@
-
 p1 = ((((not In_Therapy) => (not Reservoir_Empty)) and (Reservoir_Empty and (not Reservoir_Empty))) => (out_Highest_Level_Alarm > 4));

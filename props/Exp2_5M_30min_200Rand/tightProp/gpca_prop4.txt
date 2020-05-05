@@ -1,2 +1,1 @@
-
 p1 = (((not System_On) and (out_Highest_Level_Alarm = 0)) xor ((out_Highest_Level_Alarm <= 0) xor (out_Highest_Level_Alarm <= 4)));

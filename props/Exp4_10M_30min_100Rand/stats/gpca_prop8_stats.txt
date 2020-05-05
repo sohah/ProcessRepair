@@ -1,0 +1,6 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop8-ORO-3-1,     false,    0,    ALREADY_MATCHING,     1,     1.167,     0.873,     0.873,     0.0,     1,     0,     0.873,     0.0,     ,     
+Faulty_GPCA_Prop8-LOR-4-5,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     1.829,     1.609,     1.006,     0.603,     1,     1,     1.006,     0.603,     ,     
+Faulty_GPCA_Prop8-ORO-2-5,     false,    1,    MINIMAL_UNKNOWN,     1,     8.782,     4.914,     4.302,     0.612,     6,     4,     0.717,     0.153,     p1 = (((In_Therapy and (not In_Therapy)) and (Reservoir_Volume < Low_Reservoir)) => (Reservoir_Volume >= 2));,     

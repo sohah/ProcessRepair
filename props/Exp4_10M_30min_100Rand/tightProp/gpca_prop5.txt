@@ -1,0 +1,1 @@
+p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm <= 4));

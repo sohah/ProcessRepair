@@ -1,3 +1,2 @@
-
 p1 = (((out_Highest_Level_Alarm <= 4) and (out_Highest_Level_Alarm <= 4)) and ((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm <= 4)));
 p1 = (false => (out_Highest_Level_Alarm >= 2));

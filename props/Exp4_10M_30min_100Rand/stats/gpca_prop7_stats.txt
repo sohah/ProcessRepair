@@ -1,0 +1,6 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop7-ROR-2-1,     false,    0,    MINIMAL_UNKNOWN,     1,     6.473,     4.588,     3.961,     0.627,     4,     2,     0.99,     0.313,     p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled = Disable_Audio)));,     
+Faulty_GPCA_Prop7-ORO-5-1,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.067,     1.727,     1.024,     0.703,     1,     1,     1.024,     0.703,     ,     
+Faulty_GPCA_Prop7-ROR-4-7,     false,    0,    ALREADY_MATCHING,     1,     0.956,     0.705,     0.705,     0.0,     1,     0,     0.705,     0.0,     ,     

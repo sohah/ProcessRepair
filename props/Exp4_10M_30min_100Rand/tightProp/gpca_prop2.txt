@@ -1,0 +1,2 @@
+p1 = (((out_Highest_Level_Alarm > 0) or (not System_On)) and ((out_Highest_Level_Alarm < 5) and (out_Highest_Level_Alarm >= 0)));
+p1 = (((Air_In_Line xor System_On) xor (Air_In_Line xor System_On)) => (out_Highest_Level_Alarm >= 3));

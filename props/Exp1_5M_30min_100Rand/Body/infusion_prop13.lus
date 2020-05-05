@@ -58,6 +58,4 @@ p2 = (not(System_On) => Current_System_Mode = 0);
     p11 = (System_On and (Current_System_Mode = 3 ))  => (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus);
     p12 = (System_On and (Current_System_Mode = 4 ))  => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus);
     p13 = (System_On and (Current_System_Mode = 1)) => (Commanded_Flow_Rate = 0);
-
-p15
 tel;
