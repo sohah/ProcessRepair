@@ -1,0 +1,1 @@
+p1 = ((System_On and false) => (Commanded_Flow_Rate <> 0));

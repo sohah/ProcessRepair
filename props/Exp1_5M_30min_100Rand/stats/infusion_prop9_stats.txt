@@ -1,0 +1,8 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop9-ORO-0-4,     false,    3,    MINIMAL_UNKNOWN,     10,     2266.783,     1939.119,     1936.654,     2.465,     83,     81,     23.333,     0.03,     p1 = ((((Current_System_Mode < 0) xor (Current_System_Mode = 7)) xor ((Highest_Level_Alarm = 3) => (Current_System_Mode <= 1))) and (((not System_On) xor (Current_System_Mode >= 1)) and ((Current_System_Mode <= 8) xor (Current_System_Mode = 5))));,     
+Faulty_Prop9-ROR-3-13,     false,    2,    MINIMAL_UNKNOWN,     4,     57.695,     8.817,     7.969,     0.848,     10,     8,     0.796,     0.106,     p1 = ((System_On and (Highest_Level_Alarm = 4)) => (((Current_System_Mode = 1) xor (Current_System_Mode > 8)) xor ((Current_System_Mode = 6) xor (Current_System_Mode > 8))));,     
+Faulty_Prop9-ROR-4-16,     false,    1,    ALREADY_MATCHING,     1,     1.352,     1.103,     1.103,     0.0,     1,     0,     1.103,     0.0,     ,     
+Faulty_Prop9-ORO-3-16,     false,    2,    MINIMAL_UNKNOWN,     5,     65.292,     10.274,     9.621,     0.653,     12,     10,     0.801,     0.065,     p1 = ((System_On and (Highest_Level_Alarm = 4)) => ((not (Current_System_Mode = 6)) => (false xor (Current_System_Mode = 1))));,     
+Faulty_Prop9-ROR-6-7,     false,    0,    ALREADY_MATCHING,     1,     1.337,     1.102,     1.102,     0.0,     1,     0,     1.102,     0.0,     ,     

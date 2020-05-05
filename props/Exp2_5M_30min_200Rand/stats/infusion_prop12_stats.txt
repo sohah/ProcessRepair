@@ -1,0 +1,7 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop12-ROR-3-8,     false,    0,    MINIMAL_UNKNOWN,     1,     42.912,     35.855,     21.92,     13.935,     7,     5,     3.131,     2.787,     p1 = ((System_On and (Current_System_Mode = 4)) => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus));,     
+Faulty_Prop12-ROR-0-4,     false,    2,    MINIMAL_UNKNOWN,     6,     526.372,     366.599,     352.413,     14.186,     55,     53,     6.407,     0.267,     p1 = (((Current_System_Mode >= 0) xor (Current_System_Mode > 8)) and ((Current_System_Mode >= 2) or (Commanded_Flow_Rate = 0)));,     
+Faulty_Prop12-LOR-1-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.806,     4.37,     2.653,     1.717,     1,     1,     2.653,     1.717,     ,     
+Faulty_Prop12-LOR-0-0,     false,    2,    MINIMAL_UNKNOWN,     6,     216.21,     116.776,     114.486,     2.29,     41,     39,     2.792,     0.058,     p1 = (((Current_System_Mode = 0) xor System_On) and ((Current_System_Mode <= 0) => (Commanded_Flow_Rate = Current_System_Mode)));,     

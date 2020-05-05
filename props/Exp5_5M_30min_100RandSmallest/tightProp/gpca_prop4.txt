@@ -1,0 +1,1 @@
+p1 = ((System_On and Occlusion) => (out_Highest_Level_Alarm <= 4));

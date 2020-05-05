@@ -1,0 +1,5 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop7-ROR-1-4,     false,    0,    MINIMAL_UNKNOWN,     2,     42.958,     21.036,     19.082,     1.954,     9,     7,     2.12,     0.279,     p1 = ((Current_System_Mode > 8) => (Commanded_Flow_Rate < 0));,     
+Faulty_Prop7-ROR-2--1,     false,    0,    ALREADY_MATCHING,     1,     3.282,     2.449,     2.449,     0.0,     1,     0,     2.449,     0.0,     ,     

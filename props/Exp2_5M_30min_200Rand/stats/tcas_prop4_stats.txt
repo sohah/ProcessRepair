@@ -1,0 +1,9 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Prop4-LOR-4-1,     false,    0,    MINIMAL_UNKNOWN,     1,     18.25,     14.327,     10.247,     4.08,     6,     4,     1.707,     1.02,     p1 = (((Up_Separation_s >= alim_res_s) xor (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <= 2));,     
+Prop4-ORO-1-18,     false,    1,    ALREADY_MATCHING,     1,     1.789,     1.746,     1.746,     0.0,     1,     0,     1.746,     0.0,     ,     
+Prop4-LOR-0-4,     false,    2,    MINIMAL_UNKNOWN,     36,     1389.501,     1140.989,     1138.214,     2.775,     117,     115,     9.728,     0.024,     p1 = (((result_alt_sep_test_s <= 2) and (alim_res_s >= 400)) and ((alim_res_s <= 640) xor (alim_res_s = 740)));,     
+Prop4-LOR-3-2,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.331,     4.302,     1.959,     2.343,     1,     1,     1.959,     2.343,     ,     
+Prop4-ROR-1--1,     false,    1,    ALREADY_MATCHING,     1,     1.703,     1.651,     1.651,     0.0,     1,     0,     1.651,     0.0,     ,     
+Prop4-LOR-4-2,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.209,     4.198,     1.957,     2.241,     1,     1,     1.957,     2.241,     ,     

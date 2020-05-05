@@ -1,0 +1,1 @@
+p1 = ((System_On and false) => ((not (Current_System_Mode = 3)) xor (not (Current_System_Mode = 4))));

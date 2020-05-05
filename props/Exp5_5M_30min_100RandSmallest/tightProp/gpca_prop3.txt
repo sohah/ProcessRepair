@@ -1,0 +1,4 @@
+
+p1 = ((((System_On and In_Therapy) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm = 4));
+p1 = ((((In_Therapy xor In_Therapy) xor (System_On and In_Therapy)) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm >= 3));
+p1 = (false => (out_Highest_Level_Alarm >= 3));

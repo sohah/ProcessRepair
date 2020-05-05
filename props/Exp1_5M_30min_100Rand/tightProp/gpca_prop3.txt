@@ -1,0 +1,2 @@
+p1 = (((Reservoir_Empty and (out_Highest_Level_Alarm < 14)) or ((out_Highest_Level_Alarm <= 5) and (out_Highest_Level_Alarm < 11))) and (((out_Highest_Level_Alarm <= 6) and (out_Highest_Level_Alarm < 5)) and ((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm < 12))));
+p1 = ((((System_On and In_Therapy) and Reservoir_Empty) and false) => (out_Highest_Level_Alarm = 3));

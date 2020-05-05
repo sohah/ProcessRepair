@@ -1,0 +1,2 @@
+p1 = (((NormalPressure_r = 5) and (not skid_r)) xor ((NormalPressure_r <= -1) xor (NormalPressure_r <= 3)));
+p1 = (((NormalPressure_r < 0) => (NormalPressure_r = 3)) xor ((pedal_r >= 12) xor (pedal_r >= 12)));

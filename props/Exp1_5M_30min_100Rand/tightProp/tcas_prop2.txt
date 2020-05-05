@@ -1,0 +1,1 @@
+p1 = (((result_alt_sep_test_s >= 0) and (result_alt_sep_test_s <= 2)) and ((alim_res_s >= 400) and (alim_res_s <= 740)));

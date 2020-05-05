@@ -1,0 +1,6 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop8-ORO-2-14,     false,    1,    ALREADY_MATCHING,     1,     1.287,     0.969,     0.969,     0.0,     1,     0,     0.969,     0.0,     ,     
+Faulty_GPCA_Prop8-LOR-2-6,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     5.038,     4.28,     2.951,     1.329,     2,     2,     1.475,     0.664,     ,     
+Faulty_GPCA_Prop8-LOR-1-3,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     83.411,     40.466,     39.125,     1.341,     36,     35,     1.086,     0.038,     p1 = (false => (out_Highest_Level_Alarm >= 2));,     

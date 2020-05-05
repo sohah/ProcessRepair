@@ -1,0 +1,2 @@
+
+p1 = (((alim_res_s <= Up_Separation_s) and (Up_Separation_s <= Down_Separation_s)) or (result_alt_sep_test_s <> 2));

@@ -1,0 +1,5 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop10-ROR-2-1,     false,    0,    MINIMAL_UNKNOWN,     2,     27.305,     17.438,     13.541,     3.897,     7,     5,     1.934,     0.779,     p1 = ((System_On and (Current_System_Mode > 8)) => (Commanded_Flow_Rate = Flow_Rate_Basal));,     
+Faulty_Prop10-LOR-1-1,     false,    1,    MINIMAL_UNKNOWN,     3,     40.78,     22.761,     19.074,     3.687,     10,     8,     1.907,     0.46,     p1 = (((Current_System_Mode >= 0) => (Current_System_Mode = 2)) => (Commanded_Flow_Rate = Flow_Rate_Basal));,     

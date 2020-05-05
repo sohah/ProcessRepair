@@ -1,0 +1,2 @@
+p1 = (((Current_System_Mode <= 0) xor (not System_On)) => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus));
+p1 = ((System_On and (Current_System_Mode = 4)) => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus));

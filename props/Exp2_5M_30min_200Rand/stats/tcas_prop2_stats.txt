@@ -1,0 +1,9 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Prop2-ORO-0--1,     false,    2,    ALREADY_MATCHING,     1,     1.723,     1.52,     1.52,     0.0,     1,     0,     1.52,     0.0,     ,     
+Prop2-ROR-4-11,     false,    0,    MINIMAL_UNKNOWN,     1,     6.383,     6.329,     4.276,     2.053,     3,     1,     1.425,     2.053,     p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s >= alim_res_s)) => (result_alt_sep_test_s = 0));,     
+Prop2-LOR-0-4,     false,    2,    MINIMAL_UNKNOWN,     5,     620.988,     528.883,     526.438,     2.445,     47,     45,     11.2,     0.054,     p1 = (((result_alt_sep_test_s > 2) xor (result_alt_sep_test_s >= 0)) and ((alim_res_s < 400) xor (alim_res_s <= 740)));,     
+Prop2-ROR-3-5,     false,    0,    MINIMAL_UNKNOWN,     2,     18.24,     12.489,     10.342,     2.147,     6,     4,     1.723,     0.536,     p1 = (((Up_Separation_s < alim_res_s) and (alim_res_s < 400)) => (result_alt_sep_test_s <> 1));,     
+Prop2-ROR-2-11,     false,    0,    MINIMAL_UNKNOWN,     3,     31.512,     23.176,     16.275,     6.901,     9,     7,     1.808,     0.985,     p1 = (((alim_res_s < 400) and (Down_Separation_s >= alim_res_s)) => (result_alt_sep_test_s > 1));,     
+Prop2-ROR-0-10,     false,    2,    ALREADY_MATCHING,     1,     1.929,     1.852,     1.852,     0.0,     1,     0,     1.852,     0.0,     ,     

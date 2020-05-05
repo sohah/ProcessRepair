@@ -1,0 +1,1 @@
+p1 = ((Commanded_Flow_Rate >= 0) or ((Configured >= 0) => (Commanded_Flow_Rate < 0)));

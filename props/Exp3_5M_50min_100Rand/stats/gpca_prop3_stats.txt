@@ -1,0 +1,7 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop3-ORO-2-17,     false,    0,    ALREADY_MATCHING,     1,     4.595,     3.646,     3.646,     0.0,     1,     0,     3.646,     0.0,     ,     
+Faulty_GPCA_Prop3-LOR-1--1,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     489.104,     247.956,     241.362,     6.594,     56,     55,     4.31,     0.119,     p1 = (false => (out_Highest_Level_Alarm >= 3));,     
+Faulty_GPCA_Prop3-ROR-5-7,     false,    0,    MINIMAL_UNKNOWN,     2,     19.252,     14.312,     11.742,     2.57,     4,     2,     2.935,     1.285,     p1 = ((((System_On and In_Therapy) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm = 4));,     
+Faulty_GPCA_Prop3-ROR-3-4,     false,    1,    MINIMAL_UNKNOWN,     1,     39.185,     31.713,     22.627,     9.086,     6,     4,     3.771,     2.271,     p1 = ((((System_On and (not System_On)) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm < 3));,     

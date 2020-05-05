@@ -1,0 +1,2 @@
+
+p1 = (System_On => ((out_Highest_Level_Alarm >= 1) and (out_Highest_Level_Alarm <= 4)));

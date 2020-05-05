@@ -1,0 +1,5 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop5-LOR-0--1,     false,    2,    MINIMAL_UNKNOWN,     6,     175.898,     81.219,     75.321,     5.898,     25,     23,     3.012,     0.256,     p1 = (((out_Highest_Level_Alarm = 0) => System_On) xor ((out_Highest_Level_Alarm >= 5) xor (out_Highest_Level_Alarm <= 0)));,     
+Faulty_GPCA_Prop5-LOR-1--1,     false,    1,    MINIMAL_UNKNOWN,     1,     325.79,     14.315,     11.94,     2.375,     5,     4,     2.388,     0.593,     p1 = (((not Door_Open) xor (not Door_Open)) => (out_Highest_Level_Alarm >= 3));,     

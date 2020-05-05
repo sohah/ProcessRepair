@@ -1,0 +1,2 @@
+p1 = ((System_On and (Current_System_Mode > 8)) => (Commanded_Flow_Rate = Flow_Rate_Basal));
+p1 = (((Current_System_Mode >= 0) => (Current_System_Mode = 2)) => (Commanded_Flow_Rate = Flow_Rate_Basal));

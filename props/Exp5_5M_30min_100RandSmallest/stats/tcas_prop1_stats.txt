@@ -1,0 +1,6 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Prop1-LOR-0-3,     false,    2,    MINIMAL_UNKNOWN,     402,     1768.73,     1127.702,     1119.168,     8.534,     459,     457,     2.438,     0.018,     p1 = (((result_alt_sep_test_s <= 2) xor (result_alt_sep_test_s < 0)) and ((alim_res_s < 400) xor (alim_res_s <= 740)));,     
+Prop1-ROR-2--1,     false,    0,    ALREADY_MATCHING,     1,     1.656,     1.638,     1.638,     0.0,     1,     0,     1.638,     0.0,     ,     
+Prop1-LOR-0-2,     false,    2,    MINIMAL_UNKNOWN,     76,     667.259,     485.156,     475.591,     9.565,     127,     125,     3.744,     0.076,     p1 = (((alim_res_s = 740) xor (alim_res_s <= 640)) and ((alim_res_s >= 400) and (result_alt_sep_test_s <= 2)));,     

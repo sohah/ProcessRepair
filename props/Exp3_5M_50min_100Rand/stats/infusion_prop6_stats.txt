@@ -1,0 +1,16 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_Prop6-ROR-0-7,     false,    3,    ALREADY_MATCHING,     1,     3.565,     2.837,     2.837,     0.0,     1,     0,     2.837,     0.0,     ,     
+Faulty_Prop6-ROR-3-18,     false,    3,    ALREADY_MATCHING,     1,     3.031,     2.531,     2.531,     0.0,     1,     0,     2.531,     0.0,     ,     
+Faulty_Prop6-ROR-2-12,     false,    0,    ALREADY_MATCHING,     1,     2.592,     2.234,     2.234,     0.0,     1,     0,     2.234,     0.0,     ,     
+Faulty_Prop6-ROR-6-28,     false,    1,    MINIMAL_UNKNOWN,     1,     9.796,     8.751,     6.287,     2.464,     3,     1,     2.095,     2.464,     p1 = ((System_On and (Highest_Level_Alarm = 2)) => (((true or (Current_System_Mode = 6)) or (Current_System_Mode = 7)) or (Current_System_Mode <> 8)));,     
+Faulty_Prop6-LOR-7-5,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.313,     3.648,     2.208,     1.44,     1,     1,     2.208,     1.44,     ,     
+Faulty_Prop6-ORO-2-40,     false,    0,    MINIMAL_UNKNOWN,     2,     22.208,     12.898,     11.143,     1.755,     6,     4,     1.857,     0.438,     p1 = ((System_On and (Highest_Level_Alarm > 2)) => (((((Current_System_Mode = 1) or (Current_System_Mode = 8)) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)) or (Current_System_Mode = 8)));,     
+Faulty_Prop6-ROR-8-16,     false,    0,    ALREADY_MATCHING,     1,     2.411,     1.735,     1.735,     0.0,     1,     0,     1.735,     0.0,     ,     
+Faulty_Prop6-ROR-1-15,     false,    1,    ALREADY_MATCHING,     1,     2.898,     2.192,     2.192,     0.0,     1,     0,     2.192,     0.0,     ,     
+Faulty_Prop6-ROR-10-26,     false,    0,    MINIMAL_UNKNOWN,     2,     17.965,     13.353,     10.364,     2.989,     4,     2,     2.591,     1.494,     p1 = ((System_On and (Highest_Level_Alarm = 2)) => (((((Current_System_Mode = 1) or (Current_System_Mode = 2)) or (Current_System_Mode = 6)) or (Current_System_Mode = 8)) or (Current_System_Mode > 8)));,     
+Faulty_Prop6-ROR-2-19,     false,    0,    ALREADY_MATCHING,     1,     3.642,     3.091,     3.091,     0.0,     1,     0,     3.091,     0.0,     ,     
+Faulty_Prop6-LOR-5-14,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.499,     6.1,     3.72,     2.38,     1,     1,     3.72,     2.38,     ,     
+Faulty_Prop6-ORO-0-12,     false,    3,    MINIMAL_UNKNOWN,     11,     2107.733,     1847.485,     1834.507,     12.978,     63,     61,     29.119,     0.212,     p1 = ((((Current_System_Mode <= 2) xor (Current_System_Mode = 8)) or ((Current_System_Mode >= 6) xor (Highest_Level_Alarm <= 1))) and (((Current_System_Mode = 5) xor (Current_System_Mode >= 0)) and ((Current_System_Mode > 0) xor (not System_On))));,     
+Faulty_Prop6-ROR-3-18,     false,    3,    ALREADY_MATCHING,     1,     1.758,     1.507,     1.507,     0.0,     1,     0,     1.507,     0.0,     ,     

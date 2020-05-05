@@ -1,0 +1,7 @@
+randZ3Seed:false
+
+currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
+Faulty_GPCA_Prop1-ORO-2-8,     false,    0,    MINIMAL_UNKNOWN,     2,     9.447,     6.503,     5.17,     1.333,     6,     4,     0.861,     0.333,     p1 = (((System_On and Reservoir_Empty) and Reservoir_Empty) => (out_Highest_Level_Alarm < 5));,     
+Faulty_GPCA_Prop1-LOR-3-7,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.285,     6.251,     4.142,     2.109,     3,     3,     1.38,     0.703,     ,     
+Faulty_GPCA_Prop1-LOR-0-2,     false,    2,    MINIMAL_UNKNOWN,     4,     117.73,     53.172,     52.519,     0.653,     25,     23,     2.1,     0.028,     p1 = ((System_On => (out_Highest_Level_Alarm >= 1)) and ((out_Highest_Level_Alarm >= 5) xor (out_Highest_Level_Alarm >= 0)));,     
+Faulty_GPCA_Prop1-LOR-0-0,     false,    2,    MINIMAL_UNKNOWN,     4,     163.376,     74.35,     72.141,     2.209,     25,     23,     2.885,     0.096,     p1 = ((System_On => (out_Highest_Level_Alarm >= 1)) and ((out_Highest_Level_Alarm >= 5) xor (out_Highest_Level_Alarm >= 0)));,     

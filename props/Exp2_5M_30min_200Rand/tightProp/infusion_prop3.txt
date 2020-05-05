@@ -1,0 +1,2 @@
+p1 = ((System_On or (Commanded_Flow_Rate = 0)) or ((Highest_Level_Alarm <= 3) and System_On));
+p1 = ((false xor System_On) or ((Commanded_Flow_Rate = 0) xor false));

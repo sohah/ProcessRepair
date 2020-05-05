@@ -1,0 +1,1 @@
+p1 = ((Current_System_Mode < 0) xor (Current_System_Mode <= 8));

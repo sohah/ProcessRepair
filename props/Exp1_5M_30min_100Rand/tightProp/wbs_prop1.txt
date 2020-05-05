@@ -1,0 +1,3 @@
+p1 = ((((NormalPressure_r > -1) and (NormalPressure_r <= 5)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))));
+p1 = (((skid_r or (pedal_r <= 0)) xor ((not skid_r) => (pedal_r < 5))) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+p1 = ((((pedal_r >= 12) and (pedal_r = 0)) and (skid_r => skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
