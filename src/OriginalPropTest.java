@@ -47,6 +47,7 @@ public class OriginalPropTest {
         execute(directory + "Body/gpca_prop7.lus", "gpca", "p7");
         execute(directory + "Body/gpca_prop8.lus", "gpca", "p8");
         execute(directory + "Body/gpca_prop9.lus", "gpca", "p9");
+        execute(directory + "Body/gpca_prop10.lus", "gpca", "p10");
 
 
         execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
