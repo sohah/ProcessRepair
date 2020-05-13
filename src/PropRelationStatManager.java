@@ -16,10 +16,12 @@ public class PropRelationStatManager {
     private static List<OrigPropRelationResult> origPropRelation = new ArrayList<>();
 
     private static LinkedHashMap<Pair<String, String>, ArrayList<OtherPropRelationResult>> otherPropRelation = new LinkedHashMap<>();
-    private static Path origFile = Paths.get(OriginalPropTest.directory + "OrigPropRelation_all_stats" + ".txt");
-    private static Path otherOrigFile = Paths.get(OriginalPropTest.directory + "OtherOrigPropRelation_all_stats" + ".txt");
+    private static Path origFile;
+    private static Path otherOrigFile;
 
     public static void create() throws IOException {
+        origFile = Paths.get(OriginalPropTest.directory + OriginalPropTest.benchmark + "OrigPropRelation_all_stats" + ".txt");
+        otherOrigFile = Paths.get(OriginalPropTest.directory + OriginalPropTest.benchmark + "OtherOrigPropRelation_all_stats" + ".txt");
         Files.write(origFile, new ArrayList<>(), StandardCharsets.UTF_8);
         Files.write(otherOrigFile, new ArrayList<>(), StandardCharsets.UTF_8);
     }
@@ -40,7 +42,7 @@ public class PropRelationStatManager {
         }
     }
 
-    public static void writeOrigRelationToFile() {
+    public static void writeOrigRelationToFile(String benchmark) {
 
 
         List lines = new ArrayList<String>();
@@ -60,7 +62,7 @@ public class PropRelationStatManager {
     }
 
 
-    public static void writeOtherOrigRelationToFile() {
+    public static void writeOtherOrigRelationToFile(String benchmark) {
 
 
         Set<Pair<String, String>> keys = otherPropRelation.keySet();

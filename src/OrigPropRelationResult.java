@@ -12,6 +12,8 @@ public class OrigPropRelationResult {
     List<String> equivProps = new ArrayList<>();
     List<String> tightProps = new ArrayList<>();
     List<String> inComparableProps = new ArrayList<>();
+    List<String> tautProps = new ArrayList<>();
+    List<String> looseProps = new ArrayList<>();
 
 
     String benchmark;
