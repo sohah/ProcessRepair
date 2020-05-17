@@ -51,18 +51,18 @@ public class OriginalPropTest {
             execute(directory + "Body/gpca_prop9.lus", "gpca", "p9");
             execute(directory + "Body/gpca_prop10.lus", "gpca", "p10");
         } else if (benchmark.equals("infusion")) {
-            execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
+           /* execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
             execute(directory + "Body/infusion_prop2.lus", "infusion", "p2");
-            execute(directory + "Body/infusion_prop3.lus", "infusion", "p3");
+            execute(directory + "Body/infusion_prop3.lus", "infusion", "p3");*/
             execute(directory + "Body/infusion_prop5.lus", "infusion", "p5");
-            execute(directory + "Body/infusion_prop6.lus", "infusion", "p6");
+            /*execute(directory + "Body/infusion_prop6.lus", "infusion", "p6");
             execute(directory + "Body/infusion_prop7.lus", "infusion", "p7");
             execute(directory + "Body/infusion_prop8.lus", "infusion", "p8");
             execute(directory + "Body/infusion_prop9.lus", "infusion", "p9");
             execute(directory + "Body/infusion_prop10.lus", "infusion", "p10");
             execute(directory + "Body/infusion_prop11.lus", "infusion", "p11");
             execute(directory + "Body/infusion_prop12.lus", "infusion", "p12");
-            execute(directory + "Body/infusion_prop13.lus", "infusion", "p13");
+            execute(directory + "Body/infusion_prop13.lus", "infusion", "p13");*/
         } else if (benchmark.equals("tcas")) {
             execute(directory + "Body/tcas_prop1.lus", "tcas", "p1");
             execute(directory + "Body/tcas_prop2.lus", "tcas", "p2");
@@ -71,8 +71,9 @@ public class OriginalPropTest {
             execute(directory + "Body/wbs_prop1.lus", "wbs", "p1");
             execute(directory + "Body/wbs_prop3.lus", "wbs", "p3");
         } else assert false;
-        PropRelationStatManager.writeOrigRelationToFile(benchmark);
-        PropRelationStatManager.writeOtherOrigRelationToFile(benchmark);
+        PropRelationStatManager.writeOrigRelationToFile();
+        PropRelationStatManager.writeOtherOrigRelationToFile();
+        PropRelationStatManager.writeTautologyDetails();
     }
 
 
@@ -113,7 +114,6 @@ public class OriginalPropTest {
         OrigPropRelationResult relationToOrig = computeRelationToOriginalProp(benchmark, origPropName, lastIndexOfOrigProps + 1, jkindQueryFileName, pgm);
         PropRelationStatManager.addOrigRelation(relationToOrig);
 
-
         List<Equation> equations = pgm.getMainNode().equations;
 
         for (int i = 0; i <= lastIndexOfOrigProps; i++) {
@@ -126,7 +126,6 @@ public class OriginalPropTest {
                 PropRelationStatManager.addOtherOrigRelation(benchmark, origPropName, relationToOrig.makeOtherPropRelationResult());
             }
         }
-
     }
 
 
@@ -166,9 +165,12 @@ public class OriginalPropTest {
                 relationResult.inComparableProps.add(repairedPropName.toString());
             }
         }
+        if (debug) {
+            System.out.println("tautology props are:" + relationResult.tautProps);
+            System.out.println("loose props are:" + relationResult.looseProps);
+        }
 
-        System.out.println("tautology props are are:" + relationResult.tautProps);
-        System.out.println("loose props are:" + relationResult.looseProps);
+
 
         /*System.out.println("OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#");
         System.out.println(originalPropName + ",      " + relationResult.tautologyCount + ",      " + relationResult.equivCount + ",      " + relationResult.looseCount + ",      " + relationResult.tightCount + ",      " + relationResult.incomparableCount);

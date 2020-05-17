@@ -1,8 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_Prop9-LOR-4-7,     false,    1,    ALREADY_MATCHING,     1,     23.776,     22.634,     22.634,     0.0,     1,     0,     22.634,     0.0,     ,     
-Faulty_Prop9-ORO-2-1,     false,    0,    MINIMAL_UNKNOWN,     2,     51.363,     17.185,     15.291,     1.894,     7,     5,     2.184,     0.378,     p1 = ((System_On and (Highest_Level_Alarm = 3)) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));,     
-Faulty_Prop9-LOR-0-3,     false,    3,    MINIMAL_MAX_LOOP_REACHED,     5,     1585.044,     1281.238,     1272.655,     8.583,     83,     82,     15.333,     0.104,     p1 = ((((not System_On) xor (Current_System_Mode <= 8)) xor ((Current_System_Mode = 0) xor false)) and (((Current_System_Mode <= 8) xor false) and ((Current_System_Mode = 5) xor (Current_System_Mode >= 0))));,     
-Faulty_Prop9-ROR-2-0,     false,    0,    MINIMAL_UNKNOWN,     2,     44.547,     18.068,     14.306,     3.762,     8,     6,     1.788,     0.627,     p1 = ((System_On and (Highest_Level_Alarm = 3)) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));,     
-Faulty_Prop9-ROR-6-10,     false,    0,    ALREADY_MATCHING,     1,     28.439,     28.09,     28.09,     0.0,     1,     0,     28.09,     0.0,     ,     

@@ -1,3 +1,0 @@
-p1 = ((System_On and (Highest_Level_Alarm = 4)) => ((not (Current_System_Mode = 6)) => (false xor (Current_System_Mode = 1))));
-p1 = ((((Current_System_Mode < 0) xor (Current_System_Mode = 7)) xor ((Highest_Level_Alarm = 3) => (Current_System_Mode <= 1))) and (((not System_On) xor (Current_System_Mode >= 1)) and ((Current_System_Mode <= 8) xor (Current_System_Mode = 5))));
-p1 = ((System_On and (Highest_Level_Alarm = 4)) => (((Current_System_Mode = 1) xor (Current_System_Mode > 8)) xor ((Current_System_Mode = 6) xor (Current_System_Mode > 8))));

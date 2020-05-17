@@ -1,1 +1,0 @@
-p1 = ((System_On and (Configured < 1)) => (Commanded_Flow_Rate = 0));

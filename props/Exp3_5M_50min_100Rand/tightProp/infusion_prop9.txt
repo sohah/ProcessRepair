@@ -1,4 +1,0 @@
-p1 = ((System_On and false) => (((Current_System_Mode = 1) and (Current_System_Mode = 6)) or (Current_System_Mode = 7)));
-p1 = ((System_On and (Highest_Level_Alarm = 4)) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));
-p1 = ((System_On and (Highest_Level_Alarm >= 4)) => (((Current_System_Mode = 1) xor (Current_System_Mode = 6)) xor ((Current_System_Mode = 8) xor false)));
-p1 = (((Highest_Level_Alarm = 4) and System_On) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));

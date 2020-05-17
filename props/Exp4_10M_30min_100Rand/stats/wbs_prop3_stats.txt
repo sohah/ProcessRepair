@@ -1,7 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Prop3-ROR-3-13,     false,    0,    ALREADY_MATCHING,     1,     1.751,     1.654,     1.654,     0.0,     1,     0,     1.654,     0.0,     ,     
-Prop3-ORO-3--1,     false,    0,    ALREADY_MATCHING,     1,     1.152,     1.136,     1.136,     0.0,     1,     0,     1.136,     0.0,     ,     
-Prop3-ROR-1-2,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     121.377,     73.414,     69.582,     3.832,     36,     35,     1.932,     0.109,     p1 = ((((pedal_r > 1) and (pedal_r >= 12)) and (skid_r and (not skid_r))) => (NormalPressure_r > 0));,     
-Prop3-ROR-4-11,     false,    0,    ALREADY_MATCHING,     1,     1.355,     1.339,     1.339,     0.0,     1,     0,     1.339,     0.0,     ,     

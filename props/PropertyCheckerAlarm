@@ -51,14 +51,13 @@ node main(Commanded_Flow_Rate : int;
 var
 
    p1: bool;
-   p2:bool;
+
 
 let
 
-  p1 = (true -> (((In_Therapy and System_On) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4)));
-  p2 = (true -> (((System_On and In_Therapy) => Reservoir_Empty) => (out_Highest_Level_Alarm <= 4)));
+  p1=(((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
 
-    prop1 = p2 =>p1;
+    prop1 = p1;
 
   --%PROPERTY p1;
 

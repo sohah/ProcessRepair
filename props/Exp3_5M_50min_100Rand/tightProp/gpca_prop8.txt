@@ -1,2 +1,0 @@
-p1 = (((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm <= 4)) and ((out_Highest_Level_Alarm <= 4) xor false));
-p1 = (((out_Highest_Level_Alarm = 0) => System_On) xor ((out_Highest_Level_Alarm > 4) xor (out_Highest_Level_Alarm <= 0)));

@@ -26,7 +26,7 @@ public class OrigPropRelationResult {
 
     public String toString() {
         if (OriginalPropTest.debug)
-            return  (benchmark + ",      " + origProp + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount)
+            return (benchmark + ",      " + origProp + ",      " + tautologyCount + ",      " + equivCount + ",      " + looseCount + ",      " + tightCount + ",      " + incomparableCount)
                     + ("\ntightProps are:" + tightProps)
                     + ("\nequivProps are:" + equivProps)
                     + ("\ninComparable Props are:" + inComparableProps);
@@ -36,5 +36,9 @@ public class OrigPropRelationResult {
 
     public OtherPropRelationResult makeOtherPropRelationResult() {
         return new OtherPropRelationResult(benchmark, origProp, origProp, tightCount + equivCount, tightProps);
+    }
+
+    public String tautologyToString() {
+        return "tautology props for " + benchmark + ": " + origProp + " are: " + tautProps + "\nloose props are:" + looseProps;
     }
 }

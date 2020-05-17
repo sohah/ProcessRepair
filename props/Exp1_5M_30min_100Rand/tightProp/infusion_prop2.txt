@@ -1,1 +1,0 @@
-p1 = ((Current_System_Mode >= 0) and (Current_System_Mode <= 8));

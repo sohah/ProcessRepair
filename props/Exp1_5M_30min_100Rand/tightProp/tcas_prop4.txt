@@ -1,1 +1,0 @@
-p1 = (((Up_Separation_s >= alim_res_s) and (alim_res_s >= 400)) or (result_alt_sep_test_s <> 2));

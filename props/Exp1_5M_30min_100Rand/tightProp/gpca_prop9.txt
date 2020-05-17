@@ -1,1 +1,0 @@
-p1 = (((out_Highest_Level_Alarm = 0) and System_On) xor ((out_Highest_Level_Alarm >= 0) xor (out_Highest_Level_Alarm >= 5)));

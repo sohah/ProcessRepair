@@ -1,4 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop10-ROR-0--1,     false,    1,    MINIMAL_MAX_LOOP_REACHED,     1,     83.424,     38.499,     37.744,     0.755,     35,     34,     1.078,     0.022,     p1 = true;,     

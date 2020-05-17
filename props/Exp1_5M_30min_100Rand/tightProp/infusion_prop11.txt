@@ -1,1 +1,0 @@
-p1 = (((Current_System_Mode >= 0) => (Current_System_Mode = 3)) => (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus));

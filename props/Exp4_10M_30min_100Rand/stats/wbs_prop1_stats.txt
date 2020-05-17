@@ -1,9 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Prop1-ORO-8-8,     false,    0,    ALREADY_MATCHING,     1,     1.555,     1.484,     1.484,     0.0,     1,     0,     1.484,     0.0,     ,     
-Prop1-ROR-2-3,     false,    1,    MINIMAL_MAX_LOOP_REACHED,     1,     122.994,     76.791,     70.229,     6.562,     38,     37,     1.848,     0.177,     p1 = ((((pedal_r = -2) and (pedal_r = -3)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));,     
-Prop1-ROR-4-4,     false,    0,    ALREADY_MATCHING,     1,     1.827,     1.822,     1.822,     0.0,     1,     0,     1.822,     0.0,     ,     
-Prop1-ROR-2-5,     false,    1,    MINIMAL_UNKNOWN,     2,     29.36,     20.599,     16.798,     3.801,     10,     8,     1.679,     0.475,     p1 = ((((pedal_r >= 1) xor (pedal_r >= 5)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));,     
-Prop1-LOR-6-2,     false,    1,    MINIMAL_UNKNOWN,     3,     28.889,     17.177,     14.934,     2.243,     10,     8,     1.493,     0.28,     p1 = ((((pedal_r > 0) and (pedal_r <= 4)) or (not skid_r)) => ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));,     
-Prop1-ROR-5-14,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     5.99,     5.982,     3.185,     2.797,     2,     2,     1.592,     1.398,     ,     

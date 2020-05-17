@@ -1,4 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop10-ROR-1-3,     true,    0,    MINIMAL_UNKNOWN,     1,     21.328,     12.175,     10.78,     1.395,     6,     4,     1.796,     0.348,     p1 = (System_On => (Disable_Audio = out_Is_Audio_Disabled));,     

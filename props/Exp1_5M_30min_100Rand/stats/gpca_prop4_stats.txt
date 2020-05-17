@@ -1,4 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop4-ORO-2-1,     false,    0,    OUTERLOOP_UNKNOWN,     0,     308.102,     0.0,     0.0,     0.0,     0,     0,     0.0,     0.0,     ,     

@@ -1,4 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_Prop3-LOR-3-0,     false,    0,    ALREADY_MATCHING,     1,     25.405,     24.419,     24.419,     0.0,     1,     0,     24.419,     0.0,     ,     

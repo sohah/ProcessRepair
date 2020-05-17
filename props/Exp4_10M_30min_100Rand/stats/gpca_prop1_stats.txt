@@ -1,5 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop1-ROR-0-2,     false,    2,    ALREADY_MATCHING,     1,     1.161,     0.877,     0.877,     0.0,     1,     0,     0.877,     0.0,     ,     
-Faulty_GPCA_Prop1-LOR-1-1,     false,    2,    MINIMAL_UNKNOWN,     2,     17.685,     10.346,     8.214,     2.132,     10,     8,     0.821,     0.266,     p1 = (((In_Therapy and Reservoir_Empty) and ((not System_On) xor Reservoir_Empty)) => (out_Highest_Level_Alarm = 4));,     

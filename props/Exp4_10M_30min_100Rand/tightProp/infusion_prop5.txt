@@ -1,1 +1,0 @@
-p1 = ((System_On and false) => (Configured = 0));

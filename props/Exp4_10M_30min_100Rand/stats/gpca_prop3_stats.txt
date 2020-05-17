@@ -1,7 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop3-ROR-5-4,     false,    0,    MINIMAL_UNKNOWN,     2,     5.263,     3.747,     3.123,     0.624,     4,     2,     0.78,     0.312,     p1 = ((((System_On and In_Therapy) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm = 4));,     
-Faulty_GPCA_Prop3-ROR-5-6,     false,    0,    ALREADY_MATCHING,     1,     1.08,     0.703,     0.703,     0.0,     1,     0,     0.703,     0.0,     ,     
-Faulty_GPCA_Prop3-ROR-5-6,     false,    0,    ALREADY_MATCHING,     1,     0.917,     0.703,     0.703,     0.0,     1,     0,     0.703,     0.0,     ,     
-Faulty_GPCA_Prop3-LOR-3-7,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.059,     3.35,     1.943,     1.407,     2,     2,     0.971,     0.703,     ,     

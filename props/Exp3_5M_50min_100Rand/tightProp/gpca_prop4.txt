@@ -1,1 +1,0 @@
-p1 = (((not System_On) and System_On) => (out_Highest_Level_Alarm = 3));

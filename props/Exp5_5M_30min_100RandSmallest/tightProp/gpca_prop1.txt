@@ -1,2 +1,0 @@
-p1 = (((In_Therapy and Reservoir_Empty) and ((not System_On) xor Reservoir_Empty)) => (out_Highest_Level_Alarm = 4));
-p1 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));

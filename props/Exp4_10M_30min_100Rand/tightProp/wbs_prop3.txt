@@ -1,1 +1,0 @@
-p1 = ((((pedal_r > 1) and (pedal_r >= 12)) and (skid_r and (not skid_r))) => (NormalPressure_r > 0));

@@ -1,6 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop8-ROR-3-3,     false,    0,    MINIMAL_UNKNOWN,     1,     315.991,     9.167,     7.424,     1.743,     4,     3,     1.856,     0.581,     p1 = (((System_On and In_Therapy) and false) => (out_Highest_Level_Alarm >= 2));,     
-Faulty_GPCA_Prop8-LOR-2-1,     false,    1,    MINIMAL_UNKNOWN,     1,     316.952,     12.097,     9.383,     2.714,     5,     4,     1.876,     0.678,     p1 = ((((not System_On) xor (not System_On)) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm >= 2));,     
-Faulty_GPCA_Prop8-ORO-2-0,     false,    1,    MINIMAL_UNKNOWN,     1,     318.463,     15.466,     10.284,     5.182,     5,     4,     2.056,     1.295,     p1 = ((((not In_Therapy) and In_Therapy) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm >= 2));,     

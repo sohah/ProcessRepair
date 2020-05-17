@@ -1,2 +1,0 @@
-p1 = ((((pedal_r > 9) and (pedal_r < 8)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
-p1 = ((((pedal_r > 0) and (pedal_r <= 4)) or (not skid_r)) => ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));

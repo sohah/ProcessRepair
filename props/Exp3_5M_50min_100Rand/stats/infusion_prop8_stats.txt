@@ -1,6 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_Prop8-ROR-7-11,     false,    0,    MINIMAL_UNKNOWN,     2,     30.588,     22.587,     16.227,     6.36,     6,     4,     2.704,     1.59,     p1 = ((System_On and (Highest_Level_Alarm = 2)) => ((not (Current_System_Mode = 3)) and (not (Current_System_Mode = 4))));,     
-Faulty_Prop8-ROR-5-9,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.532,     5.463,     3.105,     2.358,     1,     1,     3.105,     2.358,     ,     
-Faulty_Prop8-ROR-1-4,     false,    1,    MINIMAL_UNKNOWN,     1,     72.542,     32.418,     30.247,     2.171,     14,     12,     2.16,     0.18,     p1 = (((Highest_Level_Alarm > 2) and (Highest_Level_Alarm < 2)) => ((not (Current_System_Mode < 3)) and (not (Current_System_Mode = 4))));,     

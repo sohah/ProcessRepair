@@ -1,2 +1,0 @@
-p1 = (((not Door_Open) xor (not Door_Open)) => (out_Highest_Level_Alarm >= 3));
-p1 = (((out_Highest_Level_Alarm = 0) => System_On) xor ((out_Highest_Level_Alarm >= 5) xor (out_Highest_Level_Alarm <= 0)));

@@ -1,2 +1,0 @@
-p1 = (false => (out_Highest_Level_Alarm >= 3));
-p1 = (((((not In_Therapy) xor (not In_Therapy)) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm <= 3));

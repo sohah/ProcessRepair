@@ -1,5 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop2-LOR-3-0,     false,    0,    OUTERLOOP_UNKNOWN,     0,     317.09,     0.0,     0.0,     0.0,     0,     0,     0.0,     0.0,     ,     
-Faulty_GPCA_Prop2-LOR-0--1,     false,    2,    MINIMAL_UNKNOWN,     4,     157.837,     65.757,     63.244,     2.513,     23,     21,     2.749,     0.119,     p1 = (((out_Highest_Level_Alarm >= 5) xor (out_Highest_Level_Alarm > 0)) xor ((out_Highest_Level_Alarm = 0) and (not System_On)));,     

@@ -1,6 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_GPCA_Prop7-ROR-3-9,     false,    1,    MINIMAL_UNKNOWN,     3,     21.657,     9.747,     9.132,     0.615,     12,     10,     0.761,     0.061,     p1 = ((System_On and (Disable_Audio > 0)) => ((Disable_Audio = out_Is_Audio_Disabled) and (out_Audio_Notification_Command = 0)));,     
-Faulty_GPCA_Prop7-LOR-1--1,     false,    1,    MINIMAL_UNKNOWN,     2,     16.434,     7.493,     6.983,     0.51,     10,     8,     0.698,     0.063,     p1 = (((Disable_Audio < 0) and System_On) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled = Disable_Audio)));,     
-Faulty_GPCA_Prop7-ROR-2-6,     false,    0,    MINIMAL_UNKNOWN,     1,     11.526,     6.258,     5.549,     0.709,     7,     5,     0.792,     0.141,     p1 = ((System_On and false) => ((out_Audio_Notification_Command > 0) and (out_Is_Audio_Disabled = Disable_Audio)));,     

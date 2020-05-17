@@ -1,2 +1,0 @@
-p1 = true;
-p1 = (false => ((out_Audio_Notification_Command < Audio_Level) and (out_Is_Audio_Disabled = 0)));

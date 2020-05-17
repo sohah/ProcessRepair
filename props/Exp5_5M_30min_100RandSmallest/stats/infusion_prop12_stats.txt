@@ -1,5 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_Prop12-LOR-1--1,     false,    1,    MINIMAL_UNKNOWN,     3,     44.304,     24.114,     20.813,     3.301,     13,     11,     1.601,     0.3,     p1 = (((Current_System_Mode < 0) xor (Current_System_Mode = 4)) => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus));,     
-Faulty_Prop12-LOR-0-3,     false,    2,    MINIMAL_UNKNOWN,     5,     130.224,     71.957,     70.708,     1.249,     32,     30,     2.209,     0.041,     p1 = (((Commanded_Flow_Rate = Current_System_Mode) => (Commanded_Flow_Rate >= 2)) xor (System_On => (Current_System_Mode > 8)));,     

@@ -1,3 +1,0 @@
-p1 = (((In_Therapy and (not In_Therapy)) and (Reservoir_Volume < Low_Reservoir)) => (Reservoir_Volume >= 2));
-p1 = (((System_On and In_Therapy) and (out_Highest_Level_Alarm < Low_Reservoir)) => (out_Highest_Level_Alarm < 5));
-p1 = ((System_On => (out_Highest_Level_Alarm >= 1)) and ((out_Highest_Level_Alarm < 5) and (out_Highest_Level_Alarm >= 0)));

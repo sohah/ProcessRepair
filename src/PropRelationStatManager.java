@@ -18,12 +18,15 @@ public class PropRelationStatManager {
     private static LinkedHashMap<Pair<String, String>, ArrayList<OtherPropRelationResult>> otherPropRelation = new LinkedHashMap<>();
     private static Path origFile;
     private static Path otherOrigFile;
+    private static Path tautologyDetailsFile;
 
     public static void create() throws IOException {
         origFile = Paths.get(OriginalPropTest.directory + OriginalPropTest.benchmark + "OrigPropRelation_all_stats" + ".txt");
         otherOrigFile = Paths.get(OriginalPropTest.directory + OriginalPropTest.benchmark + "OtherOrigPropRelation_all_stats" + ".txt");
+        tautologyDetailsFile = Paths.get(OriginalPropTest.directory + OriginalPropTest.benchmark + "TautologyDetails_all_stats" + ".txt");
         Files.write(origFile, new ArrayList<>(), StandardCharsets.UTF_8);
         Files.write(otherOrigFile, new ArrayList<>(), StandardCharsets.UTF_8);
+        Files.write(tautologyDetailsFile, new ArrayList<>(), StandardCharsets.UTF_8);
     }
 
     public static void addOrigRelation(OrigPropRelationResult origPropRelationResult) {
@@ -42,7 +45,7 @@ public class PropRelationStatManager {
         }
     }
 
-    public static void writeOrigRelationToFile(String benchmark) {
+    public static void writeOrigRelationToFile() {
 
 
         List lines = new ArrayList<String>();
@@ -62,7 +65,7 @@ public class PropRelationStatManager {
     }
 
 
-    public static void writeOtherOrigRelationToFile(String benchmark) {
+    public static void writeOtherOrigRelationToFile() {
 
 
         Set<Pair<String, String>> keys = otherPropRelation.keySet();
@@ -99,5 +102,22 @@ public class PropRelationStatManager {
 
     public static void addEmptyOtherOrig(String benchmark, String origPropName) {
         otherPropRelation.put(new Pair<>(benchmark, origPropName), new ArrayList<>());
+    }
+
+    public static void writeTautologyDetails() {
+
+        List lines = new ArrayList();
+
+
+        for (OrigPropRelationResult origPropRelationResult : origPropRelation) {
+            lines.add(origPropRelationResult.tautologyToString());
+        }
+
+        try {
+            Files.write(tautologyDetailsFile, lines, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            System.out.println("problem writing to tautology details file");
+            assert false;
+        }
     }
 }

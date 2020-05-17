@@ -1,1 +1,0 @@
-p1 = ((System_On and (Current_System_Mode >= 1)) xor ((Current_System_Mode = 0) and (Commanded_Flow_Rate = Current_System_Mode)));

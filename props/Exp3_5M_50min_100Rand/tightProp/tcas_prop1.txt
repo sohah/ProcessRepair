@@ -1,1 +1,0 @@
-p1 = (((alim_res_s >= 500) xor (alim_res_s = 400)) and ((result_alt_sep_test_s > 2) xor (result_alt_sep_test_s >= 0)));

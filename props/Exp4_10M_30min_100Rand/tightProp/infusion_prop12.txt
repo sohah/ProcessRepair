@@ -1,1 +1,0 @@
-p1 = (((Commanded_Flow_Rate = Current_System_Mode) => (Commanded_Flow_Rate >= 2)) xor (System_On => (Current_System_Mode > 8)));

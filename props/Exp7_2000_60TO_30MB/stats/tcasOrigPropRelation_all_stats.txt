@@ -1,0 +1,17 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+tcas,      p1,      0,      0,      0,      5,      10
+tcas,      p2,      0,      0,      0,      11,      13
+tcas,      p4,      0,      3,      0,      4,      25
+
+
+
+Computing benchmark:tcas prop: p1
+tautology props are are:[]
+loose props are:[]
+Computing benchmark:tcas prop: p2
+tautology props are are:[]
+loose props are:[]
+Computing benchmark:tcas prop: p4
+tautology props are are:[]
+loose props are:[]

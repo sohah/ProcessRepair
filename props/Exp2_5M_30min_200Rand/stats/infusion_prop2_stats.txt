@@ -1,5 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Faulty_Prop2-ROR-2-3,     true,    0,    MINIMAL_UNKNOWN,     2,     9.099,     6.452,     5.598,     0.854,     4,     2,     1.399,     0.427,     p1 = ((not System_On) => (Current_System_Mode = 0));,     
-Faulty_Prop2-ROR-2--1,     false,    0,    MINIMAL_UNKNOWN,     2,     12.838,     8.642,     7.213,     1.429,     4,     2,     1.803,     0.714,     p1 = ((not System_On) => (Current_System_Mode = 0));,     

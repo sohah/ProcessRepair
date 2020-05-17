@@ -1,9 +1,0 @@
-randZ3Seed:false
-
-currFaultySpec,     perfect,     repairNodeDepth,     terminationResult,     repairsFoundNum,     executionTime,     totalQueriesTime,     totalExistsTime,     totalForallTime,     totalExistsNum,     totalForallNum,     avgExistsTime,     avgForallTime,     tightestProp,     
-Prop1-LOR-1-4,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     113.949,     67.007,     66.153,     0.854,     35,     34,     1.89,     0.025,     p1 = ((((pedal_r >= 12) and (pedal_r = 0)) and (skid_r => skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));,     
-Prop1-ORO-0-7,     false,    3,    ALREADY_MATCHING,     1,     1.237,     1.137,     1.137,     0.0,     1,     0,     1.137,     0.0,     ,     
-Prop1-ORO-0-10,     false,    3,    ALREADY_MATCHING,     1,     1.355,     1.344,     1.344,     0.0,     1,     0,     1.344,     0.0,     ,     
-Prop1-ROR-0-14,     false,    3,    MINIMAL_MAX_LOOP_REACHED,     4,     396.713,     309.011,     302.997,     6.014,     49,     48,     6.183,     0.125,     p1 = ((((NormalPressure_r > -1) and (NormalPressure_r <= 5)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))));,     
-Prop1-ROR-1-11,     false,    2,    ALREADY_MATCHING,     1,     0.931,     0.927,     0.927,     0.0,     1,     0,     0.927,     0.0,     ,     
-Prop1-LOR-1-3,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     4,     221.289,     138.943,     136.76,     2.183,     62,     61,     2.205,     0.035,     p1 = (((skid_r or (pedal_r <= 0)) xor ((not skid_r) => (pedal_r < 5))) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));,     
