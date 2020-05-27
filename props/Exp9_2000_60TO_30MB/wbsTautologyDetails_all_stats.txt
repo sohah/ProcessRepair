@@ -1,0 +1,4 @@
+tautology props for wbs: p1 are: [p6, p7, p8, p11, p12, p16, p17, p18, p21, p26, p27, p28, p30, p31, p35, p36]
+loose props are:[]
+tautology props for wbs: p3 are: [p9, p10, p17, p19, p21, p23, p25, p28, p33, p36, p37, p38, p39, p40]
+loose props are:[]

@@ -21,8 +21,8 @@ my $shellFileName;
 my $spec = $ARGV[1];
 
 if($spec eq "infusion"){
-    $invalidProp[4] = 1;
-    $invalidProp[14] = 1;
+    #$invalidProp[4] = 1;
+    #$invalidProp[14] = 1;
     $tightPropCounter = 15;
     $origPropFileName="props/InfusionOrigProps";
     $shellFileName="props/InfusionShell";

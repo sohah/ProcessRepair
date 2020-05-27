@@ -1,3 +1,0 @@
-bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
-
-infusion,      p5,      26,      3,      0,      10,      4

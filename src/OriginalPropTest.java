@@ -51,18 +51,20 @@ public class OriginalPropTest {
             execute(directory + "Body/gpca_prop9.lus", "gpca", "p9");
             execute(directory + "Body/gpca_prop10.lus", "gpca", "p10");
         } else if (benchmark.equals("infusion")) {
-           /* execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
+            execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
             execute(directory + "Body/infusion_prop2.lus", "infusion", "p2");
-            execute(directory + "Body/infusion_prop3.lus", "infusion", "p3");*/
+            execute(directory + "Body/infusion_prop3.lus", "infusion", "p3");
+            execute(directory + "Body/infusion_prop4.lus", "infusion", "p4");
             execute(directory + "Body/infusion_prop5.lus", "infusion", "p5");
-            /*execute(directory + "Body/infusion_prop6.lus", "infusion", "p6");
+            execute(directory + "Body/infusion_prop6.lus", "infusion", "p6");
             execute(directory + "Body/infusion_prop7.lus", "infusion", "p7");
             execute(directory + "Body/infusion_prop8.lus", "infusion", "p8");
             execute(directory + "Body/infusion_prop9.lus", "infusion", "p9");
             execute(directory + "Body/infusion_prop10.lus", "infusion", "p10");
             execute(directory + "Body/infusion_prop11.lus", "infusion", "p11");
             execute(directory + "Body/infusion_prop12.lus", "infusion", "p12");
-            execute(directory + "Body/infusion_prop13.lus", "infusion", "p13");*/
+            execute(directory + "Body/infusion_prop13.lus", "infusion", "p13");
+            execute(directory + "Body/infusion_prop14.lus", "infusion", "p14");
         } else if (benchmark.equals("tcas")) {
             execute(directory + "Body/tcas_prop1.lus", "tcas", "p1");
             execute(directory + "Body/tcas_prop2.lus", "tcas", "p2");
@@ -83,7 +85,7 @@ public class OriginalPropTest {
         Integer lastIndexOfOrigProps = -1;
 
         if (benchmark.equals("infusion")) //estimated last index of only valid-original properties.
-            lastIndexOfOrigProps = 11;
+            lastIndexOfOrigProps = 13;
         else if (benchmark.equals("gpca"))
             lastIndexOfOrigProps = 9;
         else if (benchmark.equals("tcas"))
