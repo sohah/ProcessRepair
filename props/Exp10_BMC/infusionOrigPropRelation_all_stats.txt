@@ -1,0 +1,16 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+infusion,      p1,      11,      18,      7,      0,      0
+infusion,      p2,      0,      16,      0,      2,      35
+infusion,      p3,      8,      6,      0,      13,      23
+infusion,      p4,      11,      7,      0,      13,      18
+infusion,      p5,      13,      7,      0,      9,      21
+infusion,      p6,      4,      4,      7,      6,      4
+infusion,      p7,      0,      5,      0,      8,      30
+infusion,      p8,      13,      1,      0,      2,      32
+infusion,      p9,      3,      7,      1,      6,      17
+infusion,      p10,      1,      8,      0,      3,      39
+infusion,      p11,      0,      3,      0,      0,      43
+infusion,      p12,      0,      1,      0,      0,      51
+infusion,      p13,      0,      2,      0,      18,      21
+infusion,      p14,      0,      1,      0,      13,      14

@@ -1,0 +1,12 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+gpca,      p1,      11,      10,      0,      0,      15
+gpca,      p2,      8,      0,      0,      0,      34
+gpca,      p3,      15,      5,      0,      3,      12
+gpca,      p4,      25,      0,      0,      0,      33
+gpca,      p5,      22,      0,      0,      0,      23
+gpca,      p6,      17,      4,      3,      1,      12
+gpca,      p7,      0,      9,      1,      0,      27
+gpca,      p8,      34,      0,      0,      0,      23
+gpca,      p9,      0,      6,      0,      20,      2
+gpca,      p10,      13,      24,      0,      0,      1

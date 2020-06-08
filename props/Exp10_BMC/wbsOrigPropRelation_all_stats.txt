@@ -1,0 +1,4 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+wbs,      p1,      4,      15,      1,      1,      11
+wbs,      p3,      5,      16,      2,      0,      16
