@@ -1,4 +1,6 @@
-import javafx.util.Pair;
+
+
+import InputOutput.Pair;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

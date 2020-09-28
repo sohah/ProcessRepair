@@ -1,0 +1,27 @@
+package InputOutput;
+
+/**
+ * Base class that this used to pair any two types.
+ * @param <T>
+ * @param <V>
+ */
+public class Pair<T,V> {
+    private T first;
+    private V second;
+
+    public Pair(T first, V second){
+        this.first = first;
+        this.second = second;
+    }
+    public T getFirst(){
+        return first;
+    }
+
+    public V getSecond(){
+        return second;
+    }
+
+    public void putFirst(T first) {this.first = first;}
+
+    public void putSecond(V second) {this.second = second;}
+}
