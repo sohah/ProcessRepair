@@ -1,0 +1,8 @@
+wbs.WBS_Output.AltPressure_r == wbs.WBS_Output.Sys_Mode
+wbs.WBS_Output.NormalPressure_r >= 0
+wbs.WBS_Output.AltPressure_r == 0
+wbs.WBS_Output.NormalPressure_r >= wbs.WBS_Output.AltPressure_r
+pedal_r >= -1
+wbs.WBS_Output.AltPressure_r == \old(wbs.WBS_Output.AltPressure_r)
+wbs.WBS_Output.AltPressure_r == \old(wbs.WBS_Output.Sys_Mode)
+wbs.WBS_Output.AltPressure_r <= \old(wbs.WBS_Output.NormalPressure_r)

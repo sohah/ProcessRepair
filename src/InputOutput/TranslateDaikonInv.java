@@ -13,11 +13,516 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * This class takes Daikon's invariants and translates it to a lustre form string.
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+ * <p>
+ * TCAS constants:
+ * public static int OLEV = 600;
+ * public static int MAXALTDIFF = 300;
+ * public static int MINSEP = 600;
+ * public static int NOZCROSS = 100;
+ * public static boolean High_Confidence;
+ * public static boolean Two_of_Three_Reports_Valid;
+ * public static int Positive_RA_Alt_Thresh_0;
+ * public static int Positive_RA_Alt_Thresh_1;
+ * public static int Positive_RA_Alt_Thresh_2;
+ * public static int Positive_RA_Alt_Thresh_3;
+ * public static int NO_INTENT = 0;
+ * public static int DO_NOT_CLIMB = 1;
+ * public static int DO_NOT_DESCEND = 2;
+ * public static int TCAS_TA = 1;
+ * public static int OTHER = 2;
+ * public static int UNRESOLVED = 0;
+ * public static int UPWARD_RA = 1;
+ * public static int DOWNWARD_RA = 2;
+ * <p>
+ * Infusion constants:
+ * final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ * final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ * final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ * final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ * final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ * final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ * final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ * final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ * final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON = 2;
+ * final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ * final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ * final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ * final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ * final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ * final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
  */
 
+/**
+ * TCAS constants:
+ *  public static int OLEV = 600;
+ public static int MAXALTDIFF = 300;
+ public static int MINSEP = 600;
+ public static int NOZCROSS = 100;
+ public static boolean High_Confidence;
+ public static boolean Two_of_Three_Reports_Valid;
+ public static int Positive_RA_Alt_Thresh_0;
+ public static int Positive_RA_Alt_Thresh_1;
+ public static int Positive_RA_Alt_Thresh_2;
+ public static int Positive_RA_Alt_Thresh_3;
+ public static int NO_INTENT = 0;
+ public static int DO_NOT_CLIMB = 1;
+ public static int DO_NOT_DESCEND = 2;
+ public static int TCAS_TA = 1;
+ public static int OTHER = 2;
+ public static int UNRESOLVED = 0;
+ public static int UPWARD_RA = 1;
+ public static int DOWNWARD_RA = 2;
+ */
+
+/**
+ * Infusion constants:
+ *      final static int INFUSION_MGR_Functional_IN_ACTIVE = 1;
+ final static int INFUSION_MGR_Functional_IN_Basal = 1;
+ final static int INFUSION_MGR_Functional_IN_IDLE = 1;
+ final static int INFUSION_MGR_Functional_IN_Infusion_Manager = 1;
+ final static int INFUSION_MGR_Functional_IN_Intermittent_Bolus = 2;
+ final static int INFUSION_MGR_Functional_IN_LOCKOUT = 1;
+ final static int INFUSION_MGR_Functional_IN_Manual_Paused_KVO = 1;
+ final static int INFUSION_MGR_Functional_IN_NOT_ON = 2;
+ final static int INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD = 0;
+ final static int INFUSION_MGR_Functional_IN_OFF = 1;
+ final static int INFUSION_MGR_Functional_IN_OFF_b = 2;
+ final static int INFUSION_MGR_Functional_IN_ON = 2;
+ final static int INFUSION_MGR_Functional_IN_ON_b = 3;
+ final static int INFUSION_MGR_Functional_IN_PAUSED = 2;
+ final static int INFUSION_MGR_Functional_IN_Patient_Bolus = 3;
+ final static int INFUSION_MGR_Functional_IN_Paused_KVO = 2;
+ final static int INFUSION_MGR_Functional_IN_Paused_NoKVO = 3;
+ final static int INFUSION_MGR_Functional_IN_THERAPY = 2;
+
+ */
+
+/**
+ * Alarm constants:
+ *     public static final int ALARM_Functional_IN_AlarmDisplay = 1;
+ public static final int ALARM_Functional_IN_Alarms = 1;
+ public static final int ALARM_Functional_IN_Check = 1;
+ public static final int ALARM_Functional_IN_Disabled = 1;
+ public static final int ALARM_Functional_IN_Monitor = 2;
+ public static final int ALARM_Functional_IN_NOT_ON = 2;
+ public static final int ALARM_Functional_IN_NO_ACTIVE_CHILD = 0;
+ public static final int ALARM_Functional_IN_No = 1;
+ public static final int ALARM_Functional_IN_OFF = 2;
+ public static final int ALARM_Functional_IN_OFF_i = 1;
+ public static final int ALARM_Functional_IN_ON = 3;
+ public static final int ALARM_Functional_IN_ON_a = 2;
+ public static final int ALARM_Functional_IN_Silenced = 4;
+ public static final int ALARM_Functional_IN_Yes = 2;
+ public static final int ALARM_Functional_IN_Yes_o = 3;
+ public static final int ALARM_Functional_IN_counting = 3;
+ */
 
 public class TranslateDaikonInv {
 
@@ -26,15 +531,27 @@ public class TranslateDaikonInv {
     public static FileWriter fw;
     public static BufferedWriter bw;
     public static PrintWriter out;
+    public static String className;
+    public static ArrayList<String> classNames = new ArrayList<>();
+
+    public static HashMap<String, Integer> constantsMap = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
 
         assert (args.length == 2) : "a file that contains Daikon's invariants must be passed as well as the benchmark name";
         Path path = Paths.get(args[0]);
         benchmark = args[1];
-        fw = new FileWriter("LustreFromDaikonProp_" + benchmark, false);
+        fw = new FileWriter("../resources/LustreFromDaikonProp_" + benchmark, false);
         bw = new BufferedWriter(fw);
         out = new PrintWriter(bw);
+        if (benchmark.equals("wbs"))
+            fillWBSConstants();
+        if (benchmark.equals("tcas"))
+            fillTcasConstants();
+        else if (benchmark.equals("alarm"))
+            fillAlarmConstants();
+        else if (benchmark.equals("infusion"))
+            fillInfusionConstants();
 
 
         if (!Files.exists(path)) { // prop was not executed in the run.
@@ -50,11 +567,32 @@ public class TranslateDaikonInv {
 
         ArrayList<String> lustreInv = new ArrayList<>();
         for (String inv : invariants) {
-            inv = inv.replaceAll("this.", "");
-            if (!inv.contains("old("))
-                lustreInv.add(inv);
-            else
-                lustreInv.add(toLustre(inv, specInOutMgr));
+            if (!inv.contains("null")) {
+                if (benchmark.equals("wbs")) {
+                    inv = inv.replace(className, "");
+                    inv = replaceVarsToSpecNameWBS(inv);
+                } else if (benchmark.equals("tcas")) {
+                    inv = inv.replace(className, "");
+                    inv = replaceVarsToSpecNameTCAS(inv);
+                } else if (benchmark.equals("infusion") || benchmark.equals("alarm"))
+                    inv = replaceAllClassNames(inv);
+                else
+                    assert false : "unexpected benchmark. Failing.";
+
+
+                inv = inv.replaceAll("this.", "");
+                inv = inv.replaceAll("==.", "=");
+                inv = inv.replaceAll("!=.", "<>");
+                inv = inv.replaceAll("\\|\\|", "or");
+
+                if (!inv.contains("old("))
+                    lustreInv.add(inv);
+                else {
+                    inv = toLustre(inv, specInOutMgr);
+                    if (inv != null)
+                        lustreInv.add(inv);
+                }
+            }
         }
 
         for (String inv : lustreInv) {
@@ -62,6 +600,106 @@ public class TranslateDaikonInv {
         }
 
         out.close();
+    }
+
+    private static String replaceAllClassNames(String inv) {
+        for (int i = 0; i < classNames.size(); i++) {
+            inv = inv.replaceAll(classNames.get(i), "");
+        }
+        return inv;
+    }
+
+    private static String replaceVarsToSpecNameWBS(String inv) {
+       /* inv = inv.replaceAll("pedal", "pedal_r");
+        inv = inv.replaceAll("auto", "autoBreak_r");
+        inv = inv.replaceAll("skid", "skid_r");
+        inv = inv.replaceAll("Nor_Pressure", "NormalPressure_r");
+        inv = inv.replaceAll("Alt_Pressure", "AltPressure_r");*/
+        return inv;
+    }
+
+
+    private static String replaceVarsToSpecNameTCAS(String inv) {
+        /*assert false : "undefined";
+        inv = inv.replaceAll("pedal", "pedal_r");
+        inv = inv.replaceAll("autoBreak", "autoBreak_r");
+        inv = inv.replaceAll("skid", "skid_r");
+        inv = inv.replaceAll("Nor_Pressure", "NormalPressure_r");
+        inv = inv.replaceAll("Alt_Pressure", "AltPressure_r");*/
+        return inv;
+    }
+
+    private static void fillWBSConstants() {
+        className = "wbs.WBS_Output.";
+    }
+
+
+    private static void fillInfusionConstants() {
+        constantsMap.put("INFUSION_MGR_Functional_IN_Basal", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_IDLE", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Infusion_Manager", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Intermittent_Bolus", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_LOCKOUT", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Manual_Paused_KVO", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_NOT_ON", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_NO_ACTIVE_CHILD", 0);
+        constantsMap.put("INFUSION_MGR_Functional_IN_OFF", 1);
+        constantsMap.put("INFUSION_MGR_Functional_IN_OFF_b", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_ON", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_ON_b", 3);
+        constantsMap.put("INFUSION_MGR_Functional_IN_PAUSED", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Patient_Bolus", 3);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Paused_KVO", 2);
+        constantsMap.put("INFUSION_MGR_Functional_IN_Paused_NoKVO", 3);
+        constantsMap.put("INFUSION_MGR_Functional_IN_THERAPY", 2);
+        classNames.add("infusionDaikon.Infusion_Result.");
+        classNames.add("rtu_TLM_MODE_IN.");
+        classNames.add("rtu_CONFIG_IN.");
+        classNames.add("rtu_OP_CMD_IN.");
+        classNames.add("rtu_PATIENT_IN.");
+        classNames.add("rtu_ALARM_IN.");
+        classNames.add("rtu_SYS_STAT_IN.");
+        classNames.add("rty_IM_OUT.");
+    }
+
+    private static void fillAlarmConstants() {
+        constantsMap.put("ALARM_Functional_IN_AlarmDisplay", 1);
+        constantsMap.put("ALARM_Functional_IN_Alarms", 1);
+        constantsMap.put("ALARM_Functional_IN_Check", 1);
+        constantsMap.put("ALARM_Functional_IN_Disabled", 1);
+        constantsMap.put("ALARM_Functional_IN_Monitor", 2);
+        constantsMap.put("ALARM_Functional_IN_NOT_ON", 2);
+        constantsMap.put("ALARM_Functional_IN_NO_ACTIVE_CHILD", 0);
+        constantsMap.put("ALARM_Functional_IN_No", 1);
+        constantsMap.put("ALARM_Functional_IN_OFF", 2);
+        constantsMap.put("ALARM_Functional_IN_OFF_i", 1);
+        constantsMap.put("ALARM_Functional_IN_ON", 3);
+        constantsMap.put("ALARM_Functional_IN_ON_a", 2);
+        constantsMap.put("ALARM_Functional_IN_Silenced", 4);
+        constantsMap.put("ALARM_Functional_IN_Yes", 2);
+        constantsMap.put("ALARM_Functional_IN_Yes_o", 3);
+        constantsMap.put("ALARM_Functional_IN_counting", 3);
+        classNames.add("alarm.Alarm_Result.");
+    }
+
+    private static void fillTcasConstants() {
+        constantsMap.put("OLEV", 600);
+        constantsMap.put("MAXALTDIFF", 300);
+        constantsMap.put("MINSEP", 600);
+        constantsMap.put("NOZCROSS", 100);
+        constantsMap.put("Positive_RA_Alt_Thresh_0", 400);
+        constantsMap.put("Positive_RA_Alt_Thresh_1", 500);
+        constantsMap.put("Positive_RA_Alt_Thresh_2", 640);
+        constantsMap.put("Positive_RA_Alt_Thresh_3", 740);
+        constantsMap.put("NO_INTENT", 0);
+        constantsMap.put("DO_NOT_CLIMB", 1);
+        constantsMap.put("DO_NOT_DESCEND", 2);
+        constantsMap.put("TCAS_TA", 1);
+        constantsMap.put("OTHER", 2);
+        constantsMap.put("UNRESOLVED", 0);
+        constantsMap.put("UPWARD_RA", 1);
+        constantsMap.put("DOWNWARD_RA", 2);
+        className = "tcas.TCAS_Output.";
     }
 
     /**
@@ -73,15 +711,22 @@ public class TranslateDaikonInv {
      */
     private static String toLustre(String id, SpecInOutManager specInOutMgr) {
         String idInOld = id.substring(id.indexOf("old") + 4, id.length() - 1);
+        String beforeOldInv = id.substring(0, id.indexOf("\\"));
         NamedType type = specInOutMgr.getTypeForName(idInOld);
 
         if (type != null)
             if (type == NamedType.INT)
-                return "(0 -> pre " + idInOld + ")";
+                return beforeOldInv + "(0 -> pre " + idInOld + ")";
             else if (type == NamedType.BOOL)
-                return "(false -> pre " + idInOld + ")";
-            else assert false : "unexpected type";
-        return id.replaceAll("\\\\old","");
+                return beforeOldInv + "(false -> pre " + idInOld + ")";
+            else {
+                assert false;
+            }
+        else {
+            System.out.println("couldn't find variable:" + idInOld + ", ignoring invariant: " + id);
+            return null;
+        }
+        return id.replaceAll("\\\\old", "");
     }
 
 

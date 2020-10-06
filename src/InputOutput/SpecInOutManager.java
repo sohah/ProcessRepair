@@ -177,7 +177,7 @@ public class SpecInOutManager {
         freeInput.add("Max_Number_of_Patient_Bolus", NamedType.INT);
         freeInput.add("Flow_Rate_KVO", NamedType.INT);
         freeInput.add("Entered_Reservoir_Volume", NamedType.INT);
-        freeInput.add("TranslateDaikonInvured", NamedType.INT);
+        freeInput.add("Configured", NamedType.INT);
         freeInput.add("Highest_Level_Alarm", NamedType.INT);
         freeInput.add("Reservoir_Empty", NamedType.BOOL);
         freeInput.add("Volume_Infused", NamedType.INT);
@@ -196,24 +196,24 @@ public class SpecInOutManager {
 //=========================== TCAS ===========================
 
     private void discoverFreeInputTcas() {
-        freeInput.add("Cur_Vertical_Sep", NamedType.INT);
-        freeInput.add("High_Confidence_flag", NamedType.INT);
-        freeInput.add("Two_of_Three_Reports_Valid_flag", NamedType.INT);
-        freeInput.add("Own_Tracked_Alt", NamedType.INT);
-        freeInput.add("Own_Tracked_Alt_Rate", NamedType.INT);
-        freeInput.add("Other_Tracked_Alt", NamedType.INT);
-        freeInput.add("Alt_Layer_Value", NamedType.INT);
-        freeInput.add("Up_Separation", NamedType.INT);
-        freeInput.add("Down_Separation", NamedType.INT);
-        freeInput.add("Other_RAC", NamedType.INT);
-        freeInput.add("Other_Capability", NamedType.INT);
-        freeInput.add("Climb_Inhibit", NamedType.INT);
+        freeInput.add("Cur_Vertical_Sep_s", NamedType.INT);
+        freeInput.add("High_Confidence_flag_s", NamedType.INT);
+        freeInput.add("Two_of_Three_Reports_Valid_flag_s", NamedType.INT);
+        freeInput.add("Own_Tracked_Alt_s", NamedType.INT);
+        freeInput.add("Own_Tracked_Alt_Rate_s", NamedType.INT);
+        freeInput.add("Other_Tracked_Alt_s", NamedType.INT);
+        freeInput.add("Alt_Layer_Value_s", NamedType.INT);
+        freeInput.add("Up_Separation_s", NamedType.INT);
+        freeInput.add("Down_Separation_s", NamedType.INT);
+        freeInput.add("Other_RAC_s", NamedType.INT);
+        freeInput.add("Other_Capability_s", NamedType.INT);
+        freeInput.add("Climb_Inhibit_s", NamedType.INT);
     }
 
 
     private void discoverOutputVarTcas() {
-        inOutputVars.add("result_alt_sep_test", NamedType.INT);
-        inOutputVars.add("alim_res", NamedType.INT);
+        inOutputVars.add("result_alt_sep_test_s", NamedType.INT);
+        inOutputVars.add("alim_res_s", NamedType.INT);
     }
 
 
