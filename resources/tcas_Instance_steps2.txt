@@ -24,7 +24,6 @@ Two_of_Three_Reports_Valid_flag_s > Other_RAC_s
 Own_Tracked_Alt_Rate_s >= Other_RAC_s
 Other_RAC_s < Other_Capability_s
 Other_RAC_s <= Climb_Inhibit_s
-\result != null
 \result.result_alt_sep_test_s == 0 || \result.result_alt_sep_test_s == 1 || \result.result_alt_sep_test_s == 2
 \result.result_alt_sep_test_s < \result.alim_res_s
 \result.result_alt_sep_test_s <= \old(Cur_Vertical_Sep_s)

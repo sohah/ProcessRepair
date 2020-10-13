@@ -744,14 +744,14 @@ public class TranslateDaikonInv {
         fw = new FileWriter("resources/LustreFromDaikonProp_" + benchmark, false);
         bw = new BufferedWriter(fw);
         out = new PrintWriter(bw);
-        if (benchmark.equals("wbs"))
-            fillWBSConstants();
-        if (benchmark.equals("tcas"))
-            fillTcasConstants();
-        else if (benchmark.equals("alarm"))
-            fillAlarmConstants();
-        else if (benchmark.equals("infusion"))
-            fillInfusionConstants();
+//        if (benchmark.equals("wbs"))
+//            fillWBSConstants();
+//        if (benchmark.equals("tcas"))
+//            fillTcasConstants();
+//        else if (benchmark.equals("alarm"))
+//            fillAlarmConstants();
+//        else if (benchmark.equals("infusion"))
+//            fillInfusionConstants();
 
 
         if (!Files.exists(path)) { // prop was not executed in the run.
@@ -768,16 +768,16 @@ public class TranslateDaikonInv {
         ArrayList<String> lustreInv = new ArrayList<>();
         for (String inv : invariants) {
             if (!inv.contains("null")) {
-                if (benchmark.equals("wbs")) {
-                    inv = inv.replace(className, "");
-                    inv = replaceVarsToSpecNameWBS(inv);
-                } else if (benchmark.equals("tcas")) {
-                    inv = inv.replace(className, "");
-                    inv = replaceVarsToSpecNameTCAS(inv);
-                } else if (benchmark.equals("infusion") || benchmark.equals("alarm"))
-                    inv = replaceAllClassNames(inv);
-                else
-                    assert false : "unexpected benchmark. Failing.";
+//                if (benchmark.equals("wbs")) {
+//                    inv = inv.replace(className, "");
+//                    inv = replaceVarsToSpecNameWBS(inv);
+//                } else if (benchmark.equals("tcas")) {
+//                    inv = inv.replace(className, "");
+//                    inv = replaceVarsToSpecNameTCAS(inv);
+//                } else if (benchmark.equals("infusion") || benchmark.equals("alarm"))
+//                    inv = replaceAllClassNames(inv);
+//                else
+//                    assert false : "unexpected benchmark. Failing.";
 
 
                 inv = inv.replaceAll("this.", "");
@@ -785,6 +785,7 @@ public class TranslateDaikonInv {
                 inv = inv.replaceAll("!=.", "<>");
                 inv = inv.replaceAll("!", "not");
                 inv = inv.replaceAll("\\|\\|", "or");
+                inv = inv.replaceAll("\\\\result.", "");
 
                 if (!inv.contains("old("))
                     lustreInv.add(inv);

@@ -131,7 +131,7 @@ public class SpecInOutManager {
         freeInput.add("Pump_Overheated", NamedType.BOOL);
         freeInput.add("Audio_Enable_Duration", NamedType.INT);
         freeInput.add("Audio_Level", NamedType.INT);
-        freeInput.add("TranslateDaikonInv_Warning_Duration", NamedType.INT);
+        freeInput.add("Config_Warning_Duration", NamedType.INT);
         freeInput.add("Low_Reservoir", NamedType.INT);
         freeInput.add("Max_Duration_Over_Infusion", NamedType.INT);
         freeInput.add("Max_Duration_Under_Infusion", NamedType.INT);
@@ -143,7 +143,7 @@ public class SpecInOutManager {
         freeInput.add("Reservoir_Volume", NamedType.INT);
         freeInput.add("Volume_Infused", NamedType.INT);
         freeInput.add("In_Therapy", NamedType.BOOL);
-        freeInput.add("TranslateDaikonInv_Timer", NamedType.INT);
+        freeInput.add("Config_Timer", NamedType.INT);
 
     }
 
