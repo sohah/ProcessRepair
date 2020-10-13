@@ -1,0 +1,77 @@
+Infusion_Initiate == Patient_Bolus_Request
+Infusion_Inhibit == Reservoir_Empty
+Infusion_Total_Duration == VTBI_Total
+Infusion_Total_Duration == Flow_Rate_Basal
+Infusion_Total_Duration == Flow_Rate_Intermittent_Bolus
+Infusion_Total_Duration == Duration_Intermittent_Bolus
+Infusion_Total_Duration == Interval_Intermittent_Bolus
+Infusion_Total_Duration == Flow_Rate_Patient_Bolus
+Infusion_Total_Duration == Duration_Patient_Bolus
+Infusion_Total_Duration == Lockout_Period_Patient_Bolus
+Infusion_Total_Duration == Max_Number_of_Patient_Bolus
+Infusion_Total_Duration == Flow_Rate_KVO
+Infusion_Total_Duration == Entered_Reservoir_Volume
+Infusion_Total_Duration == Volume_Infused
+Infusion_Initiate == true
+Infusion_Total_Duration == 0
+Configured == 0 || Configured == 1
+Highest_Level_Alarm == 0 || Highest_Level_Alarm == 4
+Infusion_Total_Duration <= Configured
+Infusion_Total_Duration <= Highest_Level_Alarm
+Configured <= Highest_Level_Alarm
+\result.Commanded_Flow_Rate == \result.Actual_Infusion_Duration
+\result.Commanded_Flow_Rate == \old(Infusion_Total_Duration)
+\result.Commanded_Flow_Rate == \old(VTBI_Total)
+\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)
+\result.Commanded_Flow_Rate == \old(Flow_Rate_Intermittent_Bolus)
+\result.Commanded_Flow_Rate == \old(Duration_Intermittent_Bolus)
+\result.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)
+\result.Commanded_Flow_Rate == \old(Flow_Rate_Patient_Bolus)
+\result.Commanded_Flow_Rate == \old(Duration_Patient_Bolus)
+\result.Commanded_Flow_Rate == \old(Lockout_Period_Patient_Bolus)
+\result.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)
+\result.Commanded_Flow_Rate == \old(Flow_Rate_KVO)
+\result.Commanded_Flow_Rate == \old(Entered_Reservoir_Volume)
+\result.Commanded_Flow_Rate == \old(Volume_Infused)
+(\old(System_On) == false) == (\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \result.Current_System_Mode) == (\result.Current_System_Mode == 0)
+(\old(Configured) == 0) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Cancel) == true) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Inhibit) == true) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Initiate) == \old(Infusion_Cancel)) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Initiate) == \old(Infusion_Inhibit)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \old(Configured)) || !(\result.Current_System_Mode == 0)
+(\result.New_Infusion == false) || !(\result.Current_System_Mode == 0)
+(\result.New_Infusion == \old(System_On)) || !(\result.Current_System_Mode == 0)
+(\result.Current_System_Mode == \result.Log_Message_ID) == (\result.Current_System_Mode == 1)
+(\old(Configured) == 0) || !(\result.Current_System_Mode == 1)
+(\old(Infusion_Inhibit) == true) || !(\result.Current_System_Mode == 1)
+(\old(System_On) == \old(Infusion_Inhibit)) || !(\result.Current_System_Mode == 1)
+(\old(System_On) == \old(Infusion_Initiate)) || !(\result.Current_System_Mode == 1)
+(\old(System_On) == true) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate < \result.Current_System_Mode) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.Log_Message_ID > \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.New_Infusion == false) || !(\result.Current_System_Mode == 1)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
+(\old(Infusion_Inhibit) == \old(Infusion_Cancel)) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
+(\result.New_Infusion == \old(System_On)) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
+(\old(System_On) == true) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\result.Commanded_Flow_Rate < \result.Current_System_Mode) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\result.Current_System_Mode > \old(Configured)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\result.Current_System_Mode >= \result.Log_Message_ID) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\old(System_On) == \old(Infusion_Initiate)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+\result != null
+\result.Commanded_Flow_Rate == 0
+\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 6
+\result.Log_Message_ID == 1
+\result.Commanded_Flow_Rate <= \result.Current_System_Mode
+\result.Commanded_Flow_Rate <= \old(Configured)
+\result.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)
+\result.Current_System_Mode >= \old(Configured)
+\result.Log_Message_ID >= \old(Configured)
+\result.Log_Message_ID != \old(Highest_Level_Alarm)

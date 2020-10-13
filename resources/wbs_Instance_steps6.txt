@@ -1,0 +1,19 @@
+pedal_r >= -1
+\result.AltPressure_r == \result.Sys_Mode
+(\old(pedal_r) >= -1) || !(\old(pedal_r) <= 4)
+(\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1 || \result.NormalPressure_r == 2 || \result.NormalPressure_r == 3 || \result.NormalPressure_r == 5) || !(\old(pedal_r) <= 4)
+(\result.AltPressure_r < \old(pedal_r)) || !(\old(pedal_r) == 5)
+(\result.NormalPressure_r < \old(pedal_r)) || !(\old(pedal_r) == 5)
+(\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1) || !(\old(pedal_r) == 5)
+(\result.AltPressure_r >= \old(pedal_r)) == (\old(pedal_r) == -1 || \old(pedal_r) == 0)
+(\result.NormalPressure_r >= \old(pedal_r)) || !(\old(pedal_r) == -1 || \old(pedal_r) == 0)
+(\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1) || !(\old(pedal_r) == -1 || \old(pedal_r) == 0)
+(\result.AltPressure_r < \old(pedal_r)) == (\old(pedal_r) == 1 || \old(pedal_r) == 2 || \old(pedal_r) == 3 || \old(pedal_r) == 4 || \old(pedal_r) == 5)
+(\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1 || \result.NormalPressure_r == 2 || \result.NormalPressure_r == 3 || \result.NormalPressure_r == 5) || !(\old(pedal_r) == 1 || \old(pedal_r) == 2 || \old(pedal_r) == 3 || \old(pedal_r) == 4 || \old(pedal_r) == 5)
+(\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1 || \result.NormalPressure_r == 2 || \result.NormalPressure_r == 3 || \result.NormalPressure_r == 5) || !(\old(skid_r) == false)
+(\result.NormalPressure_r == 0) || !(\old(skid_r) == true)
+(\result.NormalPressure_r == \result.AltPressure_r) || !(\old(skid_r) == true)
+\result != null
+\result.NormalPressure_r == 0 || \result.NormalPressure_r == 1 || \result.NormalPressure_r == 2 || \result.NormalPressure_r == 3 || \result.NormalPressure_r == 5
+\result.AltPressure_r == 0
+\result.NormalPressure_r >= \result.AltPressure_r
