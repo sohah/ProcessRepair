@@ -1,0 +1,10 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+wbs,      p1,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p6]
+wbs,      p3,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p6]

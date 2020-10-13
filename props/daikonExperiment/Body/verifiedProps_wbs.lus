@@ -1,0 +1,40 @@
+
+node main(pedal_r: int; autoBreak_r: bool; skid_r: bool; NormalPressure_r:int; AltPressure_r:int; Sys_Mode: int) returns ();
+
+var
+
+p1 : bool;
+ p3 : bool;
+ p6 : bool;
+ p7 : bool;
+ p8 : bool;
+ p9 : bool;
+ p10 : bool;
+ p11 : bool;
+ p12 : bool;
+ p13 : bool;
+ p14 : bool;
+ p15 : bool;
+ p16 : bool;
+ p17 : bool;
+ p18 : bool;
+ p19 : bool;
+let
+    p1 = ((pedal_r > 0 and pedal_r <= 4 and not skid_r) => (AltPressure_r > 0 or NormalPressure_r >0));
+    p3 =  ((pedal_r > 0 and pedal_r <= 4 and not skid_r) => (NormalPressure_r > 0));
+
+p6= AltPressure_r =Sys_Mode;
+p7= NormalPressure_r =0 or NormalPressure_r =1 or NormalPressure_r =2 or NormalPressure_r =3 or NormalPressure_r =5;
+p8= AltPressure_r =0;
+p9= NormalPressure_r >= AltPressure_r;
+p10= AltPressure_r =(0 -> pre AltPressure_r);
+p11= AltPressure_r =(0 -> pre Sys_Mode);
+p12= (NormalPressure_r =0 or NormalPressure_r =1 or NormalPressure_r =2 or NormalPressure_r =3 or NormalPressure_r =5) or not((0 -> pre pedal_r) <= 4);
+p13= ((0 -> pre NormalPressure_r) <= (0 -> pre pedal_r)) or not((0 -> pre pedal_r) =5);
+p14= (AltPressure_r < (0 -> pre pedal_r)) or not((0 -> pre pedal_r) =5);
+p15= ((0 -> pre NormalPressure_r) >= (0 -> pre pedal_r)) or not((0 -> pre pedal_r) =-1 or (0 -> pre pedal_r) =0);
+p16= (NormalPressure_r >= (0 -> pre pedal_r)) or not((0 -> pre pedal_r) =-1 or (0 -> pre pedal_r) =0);
+p17= (NormalPressure_r =0 or NormalPressure_r =1 or NormalPressure_r =2 or NormalPressure_r =3 or NormalPressure_r =5) or not((0 -> pre pedal_r) =1 or (0 -> pre pedal_r) =2 or (0 -> pre pedal_r) =3 or (0 -> pre pedal_r) =4 or (0 -> pre pedal_r) =5);
+p18= (NormalPressure_r =0 or NormalPressure_r =1 or NormalPressure_r =2 or NormalPressure_r =3 or NormalPressure_r =5) or not((false -> pre skid_r) =false);
+p19= AltPressure_r <= (0 -> pre NormalPressure_r);
+tel;

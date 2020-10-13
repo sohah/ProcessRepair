@@ -1,0 +1,14 @@
+p1 = result_alt_sep_test_s =0 or result_alt_sep_test_s =1 or result_alt_sep_test_s =2;
+p1 = result_alt_sep_test_s <= alim_res_s;
+p1 = ((0 -> pre alim_res_s) >= (0 -> pre Up_Separation_s)) or not((0 -> pre Up_Separation_s) =-100 or (0 -> pre Up_Separation_s) =0 or (0 -> pre Up_Separation_s) =1);
+p1 = (alim_res_s > (0 -> pre Up_Separation_s)) or not((0 -> pre Up_Separation_s) =-100 or (0 -> pre Up_Separation_s) =0 or (0 -> pre Up_Separation_s) =1);
+p1 = ((0 -> pre result_alt_sep_test_s) < (0 -> pre Down_Separation_s)) or not(alim_res_s <= (0 -> pre Down_Separation_s));
+p1 = ((0 -> pre result_alt_sep_test_s) < (0 -> pre alim_res_s)) or not(alim_res_s <= (0 -> pre Down_Separation_s));
+p1 = (result_alt_sep_test_s < (0 -> pre Down_Separation_s)) or not(alim_res_s <= (0 -> pre Down_Separation_s));
+p1 = (result_alt_sep_test_s < (0 -> pre alim_res_s)) or not(alim_res_s <= (0 -> pre Down_Separation_s));
+p1 = ((0 -> pre result_alt_sep_test_s) < (0 -> pre Up_Separation_s)) or not(alim_res_s <= (0 -> pre Up_Separation_s));
+p1 = ((0 -> pre result_alt_sep_test_s) < (0 -> pre alim_res_s)) or not(alim_res_s <= (0 -> pre Up_Separation_s));
+p1 = (result_alt_sep_test_s < (0 -> pre Up_Separation_s)) or not(alim_res_s <= (0 -> pre Up_Separation_s));
+p1 = (result_alt_sep_test_s < (0 -> pre alim_res_s)) or not(alim_res_s <= (0 -> pre Up_Separation_s));
+p1 = result_alt_sep_test_s < alim_res_s;
+p1 = alim_res_s > (0 -> pre result_alt_sep_test_s);

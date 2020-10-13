@@ -1,0 +1,16 @@
+This document describes how to run the expirment of daikon invariants and to check them against the original properties.
+
+1. First you need to have your verified properties in the formate of
+p1 = invairant;
+
+the spaces and the semicolons are important, as the scripts are going to cut using index on the string.
+
+2. add the invariants under props/daikonExperiment/daikonverified
+
+3. run makeLustreBody.pl script to generate the body that includes the newly found daikon invariants, for example:
+
+perl makeLustreBody.pl props/daikonExperiment/daikonverified/verifiedProps_wbs wbs > props/daikonExperiment/Body/verifiedProp_wbs.lus
+
+runs the perl script on the verified properties of wbs and populates the output inside the Body folder. Note that the Body folder needs to exists under daikonExperiment
+
+4.make sure you turned on/off mac flag in originalproptest.java

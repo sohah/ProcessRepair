@@ -40,7 +40,7 @@ public class SpecInOutManager {
         } else if (TranslateDaikonInv.benchmark.equals("vote2")) {
             discoverFreeInputVote2();
             discoverOutputVarVote2();
-        } else if (TranslateDaikonInv.benchmark.equals("gpca")) {
+        } else if (TranslateDaikonInv.benchmark.equals("alarm")) {
             discoverFreeInputGpca();
             discoverOutputVarGpca();
         } else if (TranslateDaikonInv.benchmark.equals("infusion")) {

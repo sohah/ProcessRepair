@@ -3,7 +3,7 @@ use strict; use warnings;
 
 
 =pod
-This scripts takes as an input (1) filenamae of the set of tighter properties we have found. (2) name of the benchmark "infusion, tcas, wbs, or gpca".
+This scripts takes as an input (1) filename of the set of tighter properties we have found. (2) name of the benchmark "infusion, tcas, wbs, or gpca".
 Also, it assumes the existance of shellFiles, and OrigProps files for each benchmark to operate.
 The outut is a spec defined in lustre.
 

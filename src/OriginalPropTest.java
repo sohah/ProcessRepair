@@ -23,7 +23,8 @@ public class OriginalPropTest {
     public static String tightPropName = "tight";
     public static String tautologyPropName = "tautology";
 
-    public static boolean debug = false;
+    public static boolean debug = true;
+    public static boolean mac = false;
 
     public static String directory;
     public static String benchmark;
@@ -39,39 +40,103 @@ public class OriginalPropTest {
 
         directory = args[0]; //for example props/Exp1_5M_30min_100Rand/
         benchmark = args[1];
+        boolean verification = Boolean.parseBoolean(args[2]);
         if (benchmark.equals("gpca")) {
-            execute(directory + "Body/gpca_prop1.lus", "gpca", "p1");
-            execute(directory + "Body/gpca_prop2.lus", "gpca", "p2");
-            execute(directory + "Body/gpca_prop3.lus", "gpca", "p3");
-            execute(directory + "Body/gpca_prop4.lus", "gpca", "p4");
-            execute(directory + "Body/gpca_prop5.lus", "gpca", "p5");
-            execute(directory + "Body/gpca_prop6.lus", "gpca", "p6");
-            execute(directory + "Body/gpca_prop7.lus", "gpca", "p7");
-            execute(directory + "Body/gpca_prop8.lus", "gpca", "p8");
-            execute(directory + "Body/gpca_prop9.lus", "gpca", "p9");
-            execute(directory + "Body/gpca_prop10.lus", "gpca", "p10");
+            if (verification) {
+                assert false:"has not been setup yet";
+                execute(directory + "daikonverified/verifiedProp_wbs.lus", benchmark, "p1");
+            } else {
+                execute(directory + "Body/gpca_prop1.lus", benchmark, "p1");
+                execute(directory + "Body/gpca_prop2.lus", benchmark, "p2");
+                execute(directory + "Body/gpca_prop3.lus", benchmark, "p3");
+                execute(directory + "Body/gpca_prop4.lus", benchmark, "p4");
+                execute(directory + "Body/gpca_prop5.lus", benchmark, "p5");
+                execute(directory + "Body/gpca_prop6.lus", benchmark, "p6");
+                execute(directory + "Body/gpca_prop7.lus", benchmark, "p7");
+                execute(directory + "Body/gpca_prop8.lus", benchmark, "p8");
+                execute(directory + "Body/gpca_prop9.lus", benchmark, "p9");
+                execute(directory + "Body/gpca_prop10.lus", benchmark, "p10");
+            }
         } else if (benchmark.equals("infusion")) {
-            execute(directory + "Body/infusion_prop1.lus", "infusion", "p1");
-            execute(directory + "Body/infusion_prop2.lus", "infusion", "p2");
-            execute(directory + "Body/infusion_prop3.lus", "infusion", "p3");
-            execute(directory + "Body/infusion_prop4.lus", "infusion", "p4");
-            execute(directory + "Body/infusion_prop5.lus", "infusion", "p5");
-            execute(directory + "Body/infusion_prop6.lus", "infusion", "p6");
-            execute(directory + "Body/infusion_prop7.lus", "infusion", "p7");
-            execute(directory + "Body/infusion_prop8.lus", "infusion", "p8");
-            execute(directory + "Body/infusion_prop9.lus", "infusion", "p9");
-            execute(directory + "Body/infusion_prop10.lus", "infusion", "p10");
-            execute(directory + "Body/infusion_prop11.lus", "infusion", "p11");
-            execute(directory + "Body/infusion_prop12.lus", "infusion", "p12");
-            execute(directory + "Body/infusion_prop13.lus", "infusion", "p13");
-            execute(directory + "Body/infusion_prop14.lus", "infusion", "p14");
+            if (verification) {
+
+                //regurlar one-by-one invariants checking happening here
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p1");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p2");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p3");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p4");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p5");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p6");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p7");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p8");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p9");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p10");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p11");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p12");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p13");
+//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p14");
+
+                //passing the combined invariants from daikon that has passed the verification.
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p1");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p2");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p3");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p4");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p5");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p6");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p7");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p8");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p9");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p10");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p11");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p12");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p13");
+                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p14");
+            } else {
+                execute(directory + "Body/infusion_prop1.lus", benchmark, "p1");
+                execute(directory + "Body/infusion_prop2.lus", benchmark, "p2");
+                execute(directory + "Body/infusion_prop3.lus", benchmark, "p3");
+                execute(directory + "Body/infusion_prop4.lus", benchmark, "p4");
+                execute(directory + "Body/infusion_prop5.lus", benchmark, "p5");
+                execute(directory + "Body/infusion_prop6.lus", benchmark, "p6");
+                execute(directory + "Body/infusion_prop7.lus", benchmark, "p7");
+                execute(directory + "Body/infusion_prop8.lus", benchmark, "p8");
+                execute(directory + "Body/infusion_prop9.lus", benchmark, "p9");
+                execute(directory + "Body/infusion_prop10.lus", benchmark, "p10");
+                execute(directory + "Body/infusion_prop11.lus", benchmark, "p11");
+                execute(directory + "Body/infusion_prop12.lus", benchmark, "p12");
+                execute(directory + "Body/infusion_prop13.lus", benchmark, "p13");
+                execute(directory + "Body/infusion_prop14.lus", benchmark, "p14");
+            }
         } else if (benchmark.equals("tcas")) {
-            execute(directory + "Body/tcas_prop1.lus", "tcas", "p1");
-            execute(directory + "Body/tcas_prop2.lus", "tcas", "p2");
-            execute(directory + "Body/tcas_prop4.lus", "tcas", "p4");
+            if (verification) {
+                //regurlar one-by-one invariants checking happening here
+                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p1");
+                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p2");
+                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p4");
+
+//passing the combined invariants from daikon that has passed the verification.
+//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p1");
+//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p2");
+//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p4");
+
+            } else {
+                execute(directory + "Body/tcas_prop1.lus", benchmark, "p1");
+                execute(directory + "Body/tcas_prop2.lus", benchmark, "p2");
+                execute(directory + "Body/tcas_prop4.lus", benchmark, "p4");
+            }
         } else if (benchmark.equals("wbs")) {
-            execute(directory + "Body/wbs_prop1.lus", "wbs", "p1");
-            execute(directory + "Body/wbs_prop3.lus", "wbs", "p3");
+            if (verification) {
+                //regurlar one-by-one invariants checking happening here
+//                execute(directory + "Body/verifiedProps_wbs.lus", benchmark, "p1");
+//                execute(directory + "Body/verifiedProps_wbs.lus", benchmark, "p3");
+
+//passing the combined invariants from daikon that has passed the verification.
+                execute(directory + "Body/verifiedProp_wbs_combined.lus", benchmark, "p1");
+                execute(directory + "Body/verifiedProp_wbs_combined.lus", benchmark, "p3");
+            } else {
+                execute(directory + "Body/wbs_prop1.lus", benchmark, "p1");
+                execute(directory + "Body/wbs_prop3.lus", benchmark, "p3");
+            }
         } else assert false;
         PropRelationStatManager.writeOrigRelationToFile();
         PropRelationStatManager.writeOtherOrigRelationToFile();
@@ -312,7 +377,10 @@ public class OriginalPropTest {
     public static JKindResult callJkind(String fileName) {
         File file1;
 
-        file1 = new File("/Users/sohahussein/git/ProcessRepair/" + fileName);
+        if (mac)
+            file1 = new File("/Users/sohahussein/git/ProcessRepair/" + fileName);
+        else// assuming linux
+            file1 = new File("/home/soha/git/ProcessRepair/" + fileName);
         JKindApi api = new JKindApi();
         JKindResult result = new JKindResult("");
 
