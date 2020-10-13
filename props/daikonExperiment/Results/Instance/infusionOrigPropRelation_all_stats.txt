@@ -1,0 +1,114 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+infusion,      p1,      0,      0,      1,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p16]
+infusion,      p2,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p3,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p4,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p5,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p6,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p7,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p8,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p9,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p10,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p11,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p12,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p13,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p14,      0,      0,      0,      0,      2
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16]
+infusion,      p1,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p2,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p3,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p4,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p5,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p6,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p7,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p8,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p9,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p10,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p11,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p12,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p13,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]
+infusion,      p14,      0,      0,      0,      0,      1
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15]

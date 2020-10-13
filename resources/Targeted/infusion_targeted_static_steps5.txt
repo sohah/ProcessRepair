@@ -1,0 +1,127 @@
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == infusionTargetedDaikon.Infusion_Result_static.Actual_Infusion_Duration
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == 0
+infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == 0 || infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == 1
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Infusion_Total_Duration
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == VTBI_Total
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Flow_Rate_Basal
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Flow_Rate_Intermittent_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Duration_Intermittent_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Interval_Intermittent_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Flow_Rate_Patient_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Duration_Patient_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Lockout_Period_Patient_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Max_Number_of_Patient_Bolus
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Flow_Rate_KVO
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Entered_Reservoir_Volume
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == Volume_Infused
+Infusion_Initiate == Patient_Bolus_Request
+Infusion_Inhibit == Reservoir_Empty
+Infusion_Initiate == true
+Configured == 0 || Configured == 1
+Highest_Level_Alarm == 0 || Highest_Level_Alarm == 4
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= Configured
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= Highest_Level_Alarm
+infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode >= Configured
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID >= Configured
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID != Highest_Level_Alarm
+Configured <= Highest_Level_Alarm
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(infusionTargetedDaikon.Infusion_Result_static.Actual_Infusion_Duration)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Infusion_Total_Duration)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(VTBI_Total)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Flow_Rate_Basal)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Flow_Rate_Intermittent_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Duration_Intermittent_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Flow_Rate_Patient_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Duration_Patient_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Lockout_Period_Patient_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Flow_Rate_KVO)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Entered_Reservoir_Volume)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Volume_Infused)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(System_On) == false) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Configured)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == \old(System_On)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == \old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(Configured) == 0) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(Infusion_Cancel) == true) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(Infusion_Inhibit) == true) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(Infusion_Initiate) == \old(Infusion_Cancel)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(Infusion_Initiate) == \old(Infusion_Inhibit)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(\old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion) == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate < infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Configured)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode != \old(Highest_Level_Alarm)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode > \old(Configured)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode >= \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID > \old(Configured)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Configured) == 0) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Infusion_Inhibit) == true) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(System_On) == \old(Infusion_Inhibit)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(System_On) == \old(Infusion_Initiate)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(System_On) == true) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 6) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == \old(Configured)) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == true) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Configured) == 1) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Infusion_Inhibit) == false) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == \old(Infusion_Initiate)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == \old(System_On)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Highest_Level_Alarm) == 4) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Infusion_Cancel) == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(System_On) == true) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion) == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion) == \old(Infusion_Cancel)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion) == \old(Infusion_Inhibit)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate == \old(Configured)) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode <= infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID > \old(Configured)) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == false) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Configured) == 0) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Infusion_Inhibit) == true) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 4) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(Infusion_Initiate) == \old(Infusion_Inhibit)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 6) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1)
+(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.New_Infusion == \old(System_On)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Infusion_Inhibit) == \old(Infusion_Cancel)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.New_Infusion) == false) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 0 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate < infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode > \old(Configured)) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode >= infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode >= \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(System_On) == true) == (infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode != \old(Highest_Level_Alarm)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(System_On) == \old(Infusion_Initiate)) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 1 || \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode) == 6) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+(\old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 0 || \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID) == 1) || !(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 1 || infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode == 6)
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID == 1
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= \old(infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= \old(Configured)
+infusionTargetedDaikon.Infusion_Result_static.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)
+infusionTargetedDaikon.Infusion_Result_static.Current_System_Mode >= \old(Configured)
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID >= \old(infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID)
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID >= \old(Configured)
+infusionTargetedDaikon.Infusion_Result_static.Log_Message_ID != \old(Highest_Level_Alarm)

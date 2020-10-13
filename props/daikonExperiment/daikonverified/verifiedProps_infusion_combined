@@ -1,1 +1,0 @@
-p1 = (Current_System_Mode >= 0) and (Log_Message_ID =0 or Log_Message_ID =1) and (Interval_Intermittent_Bolus >= 0) and (Highest_Level_Alarm >= 0) and (Interval_Intermittent_Bolus >= 0) and (Highest_Level_Alarm >= 0);

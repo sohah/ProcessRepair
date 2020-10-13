@@ -7,6 +7,7 @@ This scripts takes as an input (1) filename of the set of tighter properties we 
 Also, it assumes the existance of shellFiles, and OrigProps files for each benchmark to operate.
 The outut is a spec defined in lustre.
 
+MAKE SURE THAT PASSED FILENAME 1, HAS NO EMPTY LINES AT THE END
 sample of used commands
 perl makeLustreBody.pl props/tightProp/TCAS_Prop1  tcas > props/Body/tcas_prop1.lus
  ~/jkindNoRand/jkind props/Body/tcas_prop1.lus

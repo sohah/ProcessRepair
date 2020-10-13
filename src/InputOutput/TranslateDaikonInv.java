@@ -741,7 +741,7 @@ public class TranslateDaikonInv {
         assert (args.length == 2) : "a file that contains Daikon's invariants must be passed as well as the benchmark name";
         Path path = Paths.get(args[0]);
         benchmark = args[1];
-        fw = new FileWriter("resources/LustreFromDaikonProp_" + benchmark, false);
+        fw = new FileWriter("resources/LustreFromDaikon_" + benchmark, false);
         bw = new BufferedWriter(fw);
         out = new PrintWriter(bw);
 //        if (benchmark.equals("wbs"))
@@ -753,6 +753,10 @@ public class TranslateDaikonInv {
 //        else if (benchmark.equals("infusion"))
 //            fillInfusionConstants();
 
+        if (benchmark.equals("infusion"))
+            fillInfusionConstants();
+        else if(benchmark.equals("alarm"))
+            fillAlarmConstants();
 
         if (!Files.exists(path)) { // prop was not executed in the run.
             System.out.println("prop file not found, unexpected. aborting");
@@ -779,6 +783,8 @@ public class TranslateDaikonInv {
 //                else
 //                    assert false : "unexpected benchmark. Failing.";
 
+                if (benchmark.equals("infusion") || benchmark.equals("alarm"))
+                    inv = replaceAllClassNames(inv);
 
                 inv = inv.replaceAll("this.", "");
                 inv = inv.replaceAll("==.", "=");
@@ -867,7 +873,7 @@ public class TranslateDaikonInv {
         constantsMap.put("INFUSION_MGR_Functional_IN_Paused_KVO", 2);
         constantsMap.put("INFUSION_MGR_Functional_IN_Paused_NoKVO", 3);
         constantsMap.put("INFUSION_MGR_Functional_IN_THERAPY", 2);
-        classNames.add("infusionDaikon.Infusion_Result.");
+        classNames.add("infusionTargetedDaikon.Infusion_Result_static.");
 
     }
 
@@ -888,7 +894,7 @@ public class TranslateDaikonInv {
         constantsMap.put("ALARM_Functional_IN_Yes", 2);
         constantsMap.put("ALARM_Functional_IN_Yes_o", 3);
         constantsMap.put("ALARM_Functional_IN_counting", 3);
-        classNames.add("alarmDaikon.Alarm_Result.");
+        classNames.add("alarmDaikon.Alarm_Result_Static.");
 
 
     }
@@ -927,6 +933,9 @@ public class TranslateDaikonInv {
         StringBuffer invStrBuff = new StringBuffer(inv);
 
         NamedType type = specInOutMgr.getTypeForName(idInOld);
+
+        if(specInOutMgr.isFreeInVar(idInOld, type))
+            return invStrBuff.replace(leftRightBracket[0] - 4, leftRightBracket[1] + 1, idInOld).toString();
 
         if (type != null) {
             if (type == NamedType.INT)

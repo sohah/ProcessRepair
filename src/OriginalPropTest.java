@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * This class checks if the first property is either implied
+ * IN VERIFICATION MODE MUST SET THE isInstance FLAG MANNUALLY IN THE SOURCE CODE
  */
 
 public class OriginalPropTest {
@@ -41,102 +42,133 @@ public class OriginalPropTest {
         directory = args[0]; //for example props/Exp1_5M_30min_100Rand/
         benchmark = args[1];
         boolean verification = Boolean.parseBoolean(args[2]);
-        if (benchmark.equals("gpca")) {
-            if (verification) {
-                assert false:"has not been setup yet";
-                execute(directory + "daikonverified/verifiedProp_wbs.lus", benchmark, "p1");
-            } else {
-                execute(directory + "Body/gpca_prop1.lus", benchmark, "p1");
-                execute(directory + "Body/gpca_prop2.lus", benchmark, "p2");
-                execute(directory + "Body/gpca_prop3.lus", benchmark, "p3");
-                execute(directory + "Body/gpca_prop4.lus", benchmark, "p4");
-                execute(directory + "Body/gpca_prop5.lus", benchmark, "p5");
-                execute(directory + "Body/gpca_prop6.lus", benchmark, "p6");
-                execute(directory + "Body/gpca_prop7.lus", benchmark, "p7");
-                execute(directory + "Body/gpca_prop8.lus", benchmark, "p8");
-                execute(directory + "Body/gpca_prop9.lus", benchmark, "p9");
-                execute(directory + "Body/gpca_prop10.lus", benchmark, "p10");
-            }
-        } else if (benchmark.equals("infusion")) {
-            if (verification) {
 
-                //regurlar one-by-one invariants checking happening here
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p1");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p2");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p3");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p4");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p5");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p6");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p7");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p8");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p9");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p10");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p11");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p12");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p13");
-//                execute(directory + "Body/verifiedProp_infusion.lus", benchmark, "p14");
+        if (verification) {
+            Boolean isInstance = true;
+
+            if (benchmark.equals("gpca")) {
+                String fileName = isInstance ? "Body/Instance/alarm152.lus" : "Body/Static/alarm152.lus";
+                String fileNameCombined = isInstance ? "Body/Instance/alarm152_combined.lus" : "Body/Static/alarm152_combined.lus";
+                execute(directory + fileName, benchmark, "p1");
+                execute(directory + fileName, benchmark, "p2");
+                execute(directory + fileName, benchmark, "p3");
+                execute(directory + fileName, benchmark, "p4");
+                execute(directory + fileName, benchmark, "p5");
+                execute(directory + fileName, benchmark, "p6");
+                execute(directory + fileName, benchmark, "p7");
+                execute(directory + fileName, benchmark, "p8");
+                execute(directory + fileName, benchmark, "p9");
+                execute(directory + fileName, benchmark, "p10");
+
+                execute(directory + fileNameCombined, benchmark, "p1");
+                execute(directory + fileNameCombined, benchmark, "p2");
+                execute(directory + fileNameCombined, benchmark, "p3");
+                execute(directory + fileNameCombined, benchmark, "p4");
+                execute(directory + fileNameCombined, benchmark, "p5");
+                execute(directory + fileNameCombined, benchmark, "p6");
+                execute(directory + fileNameCombined, benchmark, "p7");
+                execute(directory + fileNameCombined, benchmark, "p8");
+                execute(directory + fileNameCombined, benchmark, "p9");
+                execute(directory + fileNameCombined, benchmark, "p10");
+            } else if (benchmark.equals("infusion")) {
+                String fileName = isInstance ? "Body/Instance/infusion5.lus" : "Body/Static/infusion5.lus";
+                String fileNameCombined = isInstance ? "Body/Instance/infusion5_combined.lus" : "Body/Static/infusion5_combined.lus";
+                execute(directory + fileName, benchmark, "p1");
+                execute(directory + fileName, benchmark, "p2");
+                execute(directory + fileName, benchmark, "p3");
+                execute(directory + fileName, benchmark, "p4");
+                execute(directory + fileName, benchmark, "p5");
+                execute(directory + fileName, benchmark, "p6");
+                execute(directory + fileName, benchmark, "p7");
+                execute(directory + fileName, benchmark, "p8");
+                execute(directory + fileName, benchmark, "p9");
+                execute(directory + fileName, benchmark, "p10");
+                execute(directory + fileName, benchmark, "p11");
+                execute(directory + fileName, benchmark, "p12");
+                execute(directory + fileName, benchmark, "p13");
+                execute(directory + fileName, benchmark, "p14");
 
                 //passing the combined invariants from daikon that has passed the verification.
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p1");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p2");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p3");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p4");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p5");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p6");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p7");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p8");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p9");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p10");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p11");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p12");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p13");
-                execute(directory + "Body/verifiedProp_infusion_combined.lus", benchmark, "p14");
-            } else {
-                execute(directory + "Body/infusion_prop1.lus", benchmark, "p1");
-                execute(directory + "Body/infusion_prop2.lus", benchmark, "p2");
-                execute(directory + "Body/infusion_prop3.lus", benchmark, "p3");
-                execute(directory + "Body/infusion_prop4.lus", benchmark, "p4");
-                execute(directory + "Body/infusion_prop5.lus", benchmark, "p5");
-                execute(directory + "Body/infusion_prop6.lus", benchmark, "p6");
-                execute(directory + "Body/infusion_prop7.lus", benchmark, "p7");
-                execute(directory + "Body/infusion_prop8.lus", benchmark, "p8");
-                execute(directory + "Body/infusion_prop9.lus", benchmark, "p9");
-                execute(directory + "Body/infusion_prop10.lus", benchmark, "p10");
-                execute(directory + "Body/infusion_prop11.lus", benchmark, "p11");
-                execute(directory + "Body/infusion_prop12.lus", benchmark, "p12");
-                execute(directory + "Body/infusion_prop13.lus", benchmark, "p13");
-                execute(directory + "Body/infusion_prop14.lus", benchmark, "p14");
-            }
+                execute(directory + fileNameCombined, benchmark, "p1");
+                execute(directory + fileNameCombined, benchmark, "p2");
+                execute(directory + fileNameCombined, benchmark, "p3");
+                execute(directory + fileNameCombined, benchmark, "p4");
+                execute(directory + fileNameCombined, benchmark, "p5");
+                execute(directory + fileNameCombined, benchmark, "p6");
+                execute(directory + fileNameCombined, benchmark, "p7");
+                execute(directory + fileNameCombined, benchmark, "p8");
+                execute(directory + fileNameCombined, benchmark, "p9");
+                execute(directory + fileNameCombined, benchmark, "p10");
+                execute(directory + fileNameCombined, benchmark, "p11");
+                execute(directory + fileNameCombined, benchmark, "p12");
+                execute(directory + fileNameCombined, benchmark, "p13");
+                execute(directory + fileNameCombined, benchmark, "p14");
+            } else if (benchmark.equals("targetedInfusion")) {
+                benchmark="infusion";
+                String fileName = isInstance ? "Body/Instance/infusion_targetedp9.lus" : "Body/Static/infusion_targetedp9.lus";
+                execute(directory + fileName, benchmark, "p9");
+            } else if (benchmark.equals("tcas")) {
+                String fileName = isInstance ? "Body/Instance/tcas2.lus" : "Body/Static/tcas2.lus";
+                String fileNameCombined = isInstance ? "Body/Instance/tcas2_combined.lus" : "Body/Static/tcas2_combined.lus";
+                //regurlar one-by-one invariants checking happening here
+                execute(directory + fileName, benchmark, "p1");
+                execute(directory + fileName, benchmark, "p2");
+                execute(directory + fileName, benchmark, "p4");
+
+                //passing the combined invariants from daikon that has passed the verification.
+                execute(directory + fileNameCombined, benchmark, "p1");
+                execute(directory + fileNameCombined, benchmark, "p2");
+                execute(directory + fileNameCombined, benchmark, "p4");
+            } else if (benchmark.equals("wbs")) {
+                String fileName = isInstance ? "Body/Instance/wbs5.lus" : "Body/Static/wbs5.lus";
+                String fileNameCombined = isInstance ? "Body/Instance/wbs5_combined.lus" : "Body/Static/wbs5_combined.lus";
+                // regurlar one-by-one invariants checking happening here
+                execute(directory + fileName, benchmark, "p1");
+                execute(directory + fileName, benchmark, "p3");
+
+                //passing the combined invariants from daikon that has passed the verification.
+                execute(directory + fileNameCombined, benchmark, "p1");
+                execute(directory + fileNameCombined, benchmark, "p3");
+            } else assert false;
+        } else if (benchmark.equals("gpca")) {
+
+            execute(directory + "Body/gpca_prop1.lus", benchmark, "p1");
+            execute(directory + "Body/gpca_prop2.lus", benchmark, "p2");
+            execute(directory + "Body/gpca_prop3.lus", benchmark, "p3");
+            execute(directory + "Body/gpca_prop4.lus", benchmark, "p4");
+            execute(directory + "Body/gpca_prop5.lus", benchmark, "p5");
+            execute(directory + "Body/gpca_prop6.lus", benchmark, "p6");
+            execute(directory + "Body/gpca_prop7.lus", benchmark, "p7");
+            execute(directory + "Body/gpca_prop8.lus", benchmark, "p8");
+            execute(directory + "Body/gpca_prop9.lus", benchmark, "p9");
+            execute(directory + "Body/gpca_prop10.lus", benchmark, "p10");
+        } else if (benchmark.equals("infusion")) {
+
+            execute(directory + "Body/infusion_prop1.lus", benchmark, "p1");
+            execute(directory + "Body/infusion_prop2.lus", benchmark, "p2");
+            execute(directory + "Body/infusion_prop3.lus", benchmark, "p3");
+            execute(directory + "Body/infusion_prop4.lus", benchmark, "p4");
+            execute(directory + "Body/infusion_prop5.lus", benchmark, "p5");
+            execute(directory + "Body/infusion_prop6.lus", benchmark, "p6");
+            execute(directory + "Body/infusion_prop7.lus", benchmark, "p7");
+            execute(directory + "Body/infusion_prop8.lus", benchmark, "p8");
+            execute(directory + "Body/infusion_prop9.lus", benchmark, "p9");
+            execute(directory + "Body/infusion_prop10.lus", benchmark, "p10");
+            execute(directory + "Body/infusion_prop11.lus", benchmark, "p11");
+            execute(directory + "Body/infusion_prop12.lus", benchmark, "p12");
+            execute(directory + "Body/infusion_prop13.lus", benchmark, "p13");
+            execute(directory + "Body/infusion_prop14.lus", benchmark, "p14");
+
         } else if (benchmark.equals("tcas")) {
-            if (verification) {
-                //regurlar one-by-one invariants checking happening here
-                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p1");
-                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p2");
-                execute(directory + "Body/verifiedProp_tcas.lus", benchmark, "p4");
 
-//passing the combined invariants from daikon that has passed the verification.
-//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p1");
-//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p2");
-//                execute(directory + "Body/verifiedProp_tcas_combined.lus", benchmark, "p4");
+            execute(directory + "Body/tcas_prop1.lus", benchmark, "p1");
+            execute(directory + "Body/tcas_prop2.lus", benchmark, "p2");
+            execute(directory + "Body/tcas_prop4.lus", benchmark, "p4");
 
-            } else {
-                execute(directory + "Body/tcas_prop1.lus", benchmark, "p1");
-                execute(directory + "Body/tcas_prop2.lus", benchmark, "p2");
-                execute(directory + "Body/tcas_prop4.lus", benchmark, "p4");
-            }
         } else if (benchmark.equals("wbs")) {
-            if (verification) {
-                //regurlar one-by-one invariants checking happening here
-//                execute(directory + "Body/verifiedProps_wbs.lus", benchmark, "p1");
-//                execute(directory + "Body/verifiedProps_wbs.lus", benchmark, "p3");
 
-//passing the combined invariants from daikon that has passed the verification.
-                execute(directory + "Body/verifiedProp_wbs_combined.lus", benchmark, "p1");
-                execute(directory + "Body/verifiedProp_wbs_combined.lus", benchmark, "p3");
-            } else {
-                execute(directory + "Body/wbs_prop1.lus", benchmark, "p1");
-                execute(directory + "Body/wbs_prop3.lus", benchmark, "p3");
-            }
+            execute(directory + "Body/wbs_prop1.lus", benchmark, "p1");
+            execute(directory + "Body/wbs_prop3.lus", benchmark, "p3");
         } else assert false;
         PropRelationStatManager.writeOrigRelationToFile();
         PropRelationStatManager.writeOtherOrigRelationToFile();
