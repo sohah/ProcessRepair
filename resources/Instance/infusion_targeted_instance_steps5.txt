@@ -1,77 +1,261 @@
 Infusion_Initiate == Patient_Bolus_Request
 Infusion_Inhibit == Reservoir_Empty
-Infusion_Total_Duration == VTBI_Total
-Infusion_Total_Duration == Flow_Rate_Basal
-Infusion_Total_Duration == Flow_Rate_Intermittent_Bolus
-Infusion_Total_Duration == Duration_Intermittent_Bolus
-Infusion_Total_Duration == Interval_Intermittent_Bolus
-Infusion_Total_Duration == Flow_Rate_Patient_Bolus
-Infusion_Total_Duration == Duration_Patient_Bolus
-Infusion_Total_Duration == Lockout_Period_Patient_Bolus
-Infusion_Total_Duration == Max_Number_of_Patient_Bolus
-Infusion_Total_Duration == Flow_Rate_KVO
-Infusion_Total_Duration == Entered_Reservoir_Volume
-Infusion_Total_Duration == Volume_Infused
+Flow_Rate_Basal == Flow_Rate_Intermittent_Bolus
+Flow_Rate_Basal == Duration_Intermittent_Bolus
+Flow_Rate_Basal == Flow_Rate_Patient_Bolus
+Flow_Rate_Basal == Duration_Patient_Bolus
+Flow_Rate_Basal == Lockout_Period_Patient_Bolus
+Flow_Rate_Basal == Entered_Reservoir_Volume
+Flow_Rate_Basal == Volume_Infused
 Infusion_Initiate == true
-Infusion_Total_Duration == 0
+Infusion_Total_Duration == 0 || Infusion_Total_Duration == 2
+VTBI_Total == 0 || VTBI_Total == 1
+Flow_Rate_Basal == 0
+Interval_Intermittent_Bolus == 0 || Interval_Intermittent_Bolus == 1
+Max_Number_of_Patient_Bolus == 0 || Max_Number_of_Patient_Bolus == 1
+Flow_Rate_KVO == 0 || Flow_Rate_KVO == 7
 Configured == 0 || Configured == 1
-Highest_Level_Alarm == 0 || Highest_Level_Alarm == 4
-Infusion_Total_Duration <= Configured
-Infusion_Total_Duration <= Highest_Level_Alarm
-Configured <= Highest_Level_Alarm
-\result.Commanded_Flow_Rate == \result.Actual_Infusion_Duration
-\result.Commanded_Flow_Rate == \old(Infusion_Total_Duration)
-\result.Commanded_Flow_Rate == \old(VTBI_Total)
-\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)
-\result.Commanded_Flow_Rate == \old(Flow_Rate_Intermittent_Bolus)
-\result.Commanded_Flow_Rate == \old(Duration_Intermittent_Bolus)
-\result.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)
-\result.Commanded_Flow_Rate == \old(Flow_Rate_Patient_Bolus)
-\result.Commanded_Flow_Rate == \old(Duration_Patient_Bolus)
-\result.Commanded_Flow_Rate == \old(Lockout_Period_Patient_Bolus)
-\result.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)
+Highest_Level_Alarm == 0 || Highest_Level_Alarm == 3 || Highest_Level_Alarm == 4 || Highest_Level_Alarm == 5
+Infusion_Total_Duration >= VTBI_Total
+Infusion_Total_Duration >= Flow_Rate_Basal
+Infusion_Total_Duration >= Max_Number_of_Patient_Bolus
+VTBI_Total >= Flow_Rate_Basal
+VTBI_Total >= Max_Number_of_Patient_Bolus
+VTBI_Total <= Configured
+Flow_Rate_Basal <= Interval_Intermittent_Bolus
+Flow_Rate_Basal <= Max_Number_of_Patient_Bolus
+Flow_Rate_Basal <= Flow_Rate_KVO
+Flow_Rate_Basal <= Configured
+Flow_Rate_Basal <= Highest_Level_Alarm
+Interval_Intermittent_Bolus <= Configured
+Max_Number_of_Patient_Bolus <= Configured
 \result.Commanded_Flow_Rate == \old(Flow_Rate_KVO)
-\result.Commanded_Flow_Rate == \old(Entered_Reservoir_Volume)
-\result.Commanded_Flow_Rate == \old(Volume_Infused)
+\result.Actual_Infusion_Duration == \old(VTBI_Total)
+(\old(Configured) >= \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\old(Infusion_Total_Duration) >= \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\old(Interval_Intermittent_Bolus) >= \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\old(Max_Number_of_Patient_Bolus) >= \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\result.Actual_Infusion_Duration >= \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate == \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\result.Log_Message_ID > \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 0)
+(\old(Infusion_Total_Duration) == 0 || \old(Infusion_Total_Duration) == 2) || !(\old(Highest_Level_Alarm) == 0)
+(\old(Interval_Intermittent_Bolus) == 0 || \old(Interval_Intermittent_Bolus) == 1) || !(\old(Highest_Level_Alarm) == 0)
+(\old(Max_Number_of_Patient_Bolus) == 0 || \old(Max_Number_of_Patient_Bolus) == 1) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate < \result.Log_Message_ID) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate <= \old(Configured)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate <= \old(Infusion_Total_Duration)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate <= \old(Interval_Intermittent_Bolus)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate <= \old(Max_Number_of_Patient_Bolus)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate <= \result.Actual_Infusion_Duration) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate == 0) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Current_System_Mode >= \old(Highest_Level_Alarm)) || !(\old(Highest_Level_Alarm) == 0)
+(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4) || !(\old(Highest_Level_Alarm) == 0)
+(\old(Infusion_Total_Duration) == 0) || !(\old(Highest_Level_Alarm) == 4)
+(\old(Interval_Intermittent_Bolus) == 0) || !(\old(Highest_Level_Alarm) == 4)
+(\old(Max_Number_of_Patient_Bolus) == 0) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Actual_Infusion_Duration == 0) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == 0) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == \old(Infusion_Total_Duration)) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Commanded_Flow_Rate == \result.Actual_Infusion_Duration) || !(\old(Highest_Level_Alarm) == 4)
+(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 6) || !(\old(Highest_Level_Alarm) == 4)
+(\old(Infusion_Total_Duration) == 0 || \old(Infusion_Total_Duration) == 2) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\old(Interval_Intermittent_Bolus) == 0 || \old(Interval_Intermittent_Bolus) == 1) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\old(Max_Number_of_Patient_Bolus) == 0 || \old(Max_Number_of_Patient_Bolus) == 1) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate == 0 || \result.Commanded_Flow_Rate == 7) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\result.Current_System_Mode >= \old(Highest_Level_Alarm)) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8) || !(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 5)
+(\old(Configured) < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Flow_Rate_Basal) < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Infusion_Total_Duration) < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Interval_Intermittent_Bolus) < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Max_Number_of_Patient_Bolus) < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate != \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Log_Message_ID < \old(Highest_Level_Alarm)) == (\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Infusion_Total_Duration) <= \old(Configured)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Infusion_Total_Duration) == 0) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Interval_Intermittent_Bolus) == 0) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Max_Number_of_Patient_Bolus) == 0) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == 0) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == \old(Flow_Rate_Basal)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == \old(Infusion_Total_Duration)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == \old(Interval_Intermittent_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Actual_Infusion_Duration == \old(Max_Number_of_Patient_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate >= \old(Infusion_Total_Duration)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate >= \old(Interval_Intermittent_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate >= \old(Max_Number_of_Patient_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate >= \result.Actual_Infusion_Duration) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Commanded_Flow_Rate == 0 || \result.Commanded_Flow_Rate == 7) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Log_Message_ID > \old(Infusion_Total_Duration)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Log_Message_ID > \old(Interval_Intermittent_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Log_Message_ID > \old(Max_Number_of_Patient_Bolus)) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\result.Log_Message_ID > \result.Actual_Infusion_Duration) || !(\old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate < \result.Log_Message_ID) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \old(Configured)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \old(Infusion_Total_Duration)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \old(Interval_Intermittent_Bolus)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \old(Max_Number_of_Patient_Bolus)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate <= \result.Actual_Infusion_Duration) == (\result.Commanded_Flow_Rate == 0)
+(\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)) == (\result.Commanded_Flow_Rate == 0)
+(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 8) == (\result.Commanded_Flow_Rate == 0)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Commanded_Flow_Rate == 0)
+(\old(Infusion_Total_Duration) == 0 || \old(Infusion_Total_Duration) == 2) || !(\result.Commanded_Flow_Rate == 0)
+(\old(Interval_Intermittent_Bolus) == 0 || \old(Interval_Intermittent_Bolus) == 1) || !(\result.Commanded_Flow_Rate == 0)
+(\old(Max_Number_of_Patient_Bolus) == 0 || \old(Max_Number_of_Patient_Bolus) == 1) || !(\result.Commanded_Flow_Rate == 0)
+(\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1) || !(\result.Commanded_Flow_Rate == 0)
+(\old(Highest_Level_Alarm) == 3) == (\result.Commanded_Flow_Rate == 7)
+(\result.Current_System_Mode == 7) == (\result.Commanded_Flow_Rate == 7)
+(\old(Configured) == 1) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Infusion_Cancel) == false) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Infusion_Inhibit) == false) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Infusion_Inhibit) == \old(Infusion_Cancel)) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Infusion_Total_Duration) == 0) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Interval_Intermittent_Bolus) == 0) || !(\result.Commanded_Flow_Rate == 7)
+(\old(Max_Number_of_Patient_Bolus) == 0) || !(\result.Commanded_Flow_Rate == 7)
+(\old(System_On) == true) || !(\result.Commanded_Flow_Rate == 7)
+(\result != null) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Actual_Infusion_Duration == 0) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Actual_Infusion_Duration == \old(Flow_Rate_Basal)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Actual_Infusion_Duration == \old(Infusion_Total_Duration)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Actual_Infusion_Duration == \old(Interval_Intermittent_Bolus)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Actual_Infusion_Duration == \old(Max_Number_of_Patient_Bolus)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Commanded_Flow_Rate == \result.Current_System_Mode) || !(\result.Commanded_Flow_Rate == 7)
+(\result.Log_Message_ID == \old(Configured)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.New_Infusion == \old(Infusion_Initiate)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.New_Infusion == \old(System_On)) || !(\result.Commanded_Flow_Rate == 7)
+(\result.New_Infusion == true) || !(\result.Commanded_Flow_Rate == 7)
 (\old(System_On) == false) == (\result.Current_System_Mode == 0)
-(\result.Commanded_Flow_Rate == \result.Current_System_Mode) == (\result.Current_System_Mode == 0)
+(\result.Current_System_Mode < \result.Log_Message_ID) == (\result.Current_System_Mode == 0)
+(\old(Configured) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
 (\old(Configured) == 0) || !(\result.Current_System_Mode == 0)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 4) || !(\result.Current_System_Mode == 0)
 (\old(Infusion_Cancel) == true) || !(\result.Current_System_Mode == 0)
 (\old(Infusion_Inhibit) == true) || !(\result.Current_System_Mode == 0)
 (\old(Infusion_Initiate) == \old(Infusion_Cancel)) || !(\result.Current_System_Mode == 0)
 (\old(Infusion_Initiate) == \old(Infusion_Inhibit)) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Total_Duration) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\old(Infusion_Total_Duration) == 0) || !(\result.Current_System_Mode == 0)
+(\old(Interval_Intermittent_Bolus) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\old(Interval_Intermittent_Bolus) == 0) || !(\result.Current_System_Mode == 0)
+(\old(Max_Number_of_Patient_Bolus) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\old(Max_Number_of_Patient_Bolus) == 0) || !(\result.Current_System_Mode == 0)
+(\result.Actual_Infusion_Duration <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\result.Actual_Infusion_Duration == 0) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate < \result.Log_Message_ID) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == 0) || !(\result.Current_System_Mode == 0)
 (\result.Commanded_Flow_Rate == \old(Configured)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \old(Infusion_Total_Duration)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \result.Actual_Infusion_Duration) || !(\result.Current_System_Mode == 0)
+(\result.Commanded_Flow_Rate == \result.Current_System_Mode) || !(\result.Current_System_Mode == 0)
+(\result.Current_System_Mode <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 0)
+(\result.Log_Message_ID > \old(Configured)) || !(\result.Current_System_Mode == 0)
+(\result.Log_Message_ID > \old(Infusion_Total_Duration)) || !(\result.Current_System_Mode == 0)
+(\result.Log_Message_ID > \old(Interval_Intermittent_Bolus)) || !(\result.Current_System_Mode == 0)
+(\result.Log_Message_ID > \old(Max_Number_of_Patient_Bolus)) || !(\result.Current_System_Mode == 0)
+(\result.Log_Message_ID > \result.Actual_Infusion_Duration) || !(\result.Current_System_Mode == 0)
 (\result.New_Infusion == false) || !(\result.Current_System_Mode == 0)
 (\result.New_Infusion == \old(System_On)) || !(\result.Current_System_Mode == 0)
 (\result.Current_System_Mode == \result.Log_Message_ID) == (\result.Current_System_Mode == 1)
+(\old(Configured) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
 (\old(Configured) == 0) || !(\result.Current_System_Mode == 1)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 4) || !(\result.Current_System_Mode == 1)
 (\old(Infusion_Inhibit) == true) || !(\result.Current_System_Mode == 1)
+(\old(Infusion_Total_Duration) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\old(Infusion_Total_Duration) == 0) || !(\result.Current_System_Mode == 1)
+(\old(Interval_Intermittent_Bolus) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\old(Interval_Intermittent_Bolus) == 0) || !(\result.Current_System_Mode == 1)
+(\old(Max_Number_of_Patient_Bolus) <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\old(Max_Number_of_Patient_Bolus) == 0) || !(\result.Current_System_Mode == 1)
 (\old(System_On) == \old(Infusion_Inhibit)) || !(\result.Current_System_Mode == 1)
 (\old(System_On) == \old(Infusion_Initiate)) || !(\result.Current_System_Mode == 1)
 (\old(System_On) == true) || !(\result.Current_System_Mode == 1)
+(\result.Actual_Infusion_Duration <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\result.Actual_Infusion_Duration == 0) || !(\result.Current_System_Mode == 1)
 (\result.Commanded_Flow_Rate < \result.Current_System_Mode) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate < \result.Log_Message_ID) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == 0) || !(\result.Current_System_Mode == 1)
 (\result.Commanded_Flow_Rate == \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \old(Flow_Rate_Basal)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \old(Infusion_Total_Duration)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \old(Interval_Intermittent_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \old(Max_Number_of_Patient_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Commanded_Flow_Rate == \result.Actual_Infusion_Duration) || !(\result.Current_System_Mode == 1)
 (\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1)
 (\result.Current_System_Mode > \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \old(Flow_Rate_Basal)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \old(Infusion_Total_Duration)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \old(Interval_Intermittent_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \old(Max_Number_of_Patient_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Current_System_Mode > \result.Actual_Infusion_Duration) || !(\result.Current_System_Mode == 1)
 (\result.Log_Message_ID > \old(Configured)) || !(\result.Current_System_Mode == 1)
+(\result.Log_Message_ID > \old(Infusion_Total_Duration)) || !(\result.Current_System_Mode == 1)
+(\result.Log_Message_ID > \old(Interval_Intermittent_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Log_Message_ID > \old(Max_Number_of_Patient_Bolus)) || !(\result.Current_System_Mode == 1)
+(\result.Log_Message_ID > \result.Actual_Infusion_Duration) || !(\result.Current_System_Mode == 1)
 (\result.New_Infusion == false) || !(\result.Current_System_Mode == 1)
-(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
-(\old(Infusion_Inhibit) == \old(Infusion_Cancel)) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
-(\result.New_Infusion == \old(System_On)) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 6)
-(\old(System_On) == true) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\result.Commanded_Flow_Rate < \result.Current_System_Mode) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\result.Current_System_Mode > \old(Configured)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\result.Current_System_Mode >= \result.Log_Message_ID) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\old(System_On) == \old(Infusion_Initiate)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
-(\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 6)
+(\result.Current_System_Mode != \result.Log_Message_ID) == (\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Infusion_Inhibit) == \old(Infusion_Cancel)) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Infusion_Total_Duration) == 0 || \old(Infusion_Total_Duration) == 2) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Interval_Intermittent_Bolus) == 0 || \old(Interval_Intermittent_Bolus) == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Max_Number_of_Patient_Bolus) == 0 || \old(Max_Number_of_Patient_Bolus) == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Commanded_Flow_Rate == 0 || \result.Commanded_Flow_Rate == 7) || !(\result.Current_System_Mode == 0 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(System_On) == true) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \old(Configured)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \old(Flow_Rate_Basal)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \old(Infusion_Total_Duration)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \old(Interval_Intermittent_Bolus)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \old(Max_Number_of_Patient_Bolus)) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode > \result.Actual_Infusion_Duration) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode >= \result.Log_Message_ID) == (\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Configured) == 0 || \old(Configured) == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Highest_Level_Alarm) == 0 || \old(Highest_Level_Alarm) == 3 || \old(Highest_Level_Alarm) == 4 || \old(Highest_Level_Alarm) == 5) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Infusion_Total_Duration) == 0 || \old(Infusion_Total_Duration) == 2) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Interval_Intermittent_Bolus) == 0 || \old(Interval_Intermittent_Bolus) == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(Max_Number_of_Patient_Bolus) == 0 || \old(Max_Number_of_Patient_Bolus) == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\old(System_On) == \old(Infusion_Initiate)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Commanded_Flow_Rate % \result.Current_System_Mode == 0) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Commanded_Flow_Rate == 0 || \result.Commanded_Flow_Rate == 7) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
+(\result.Current_System_Mode != \old(Highest_Level_Alarm)) || !(\result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8)
 \result != null
-\result.Commanded_Flow_Rate == 0
-\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 6
+\result.Commanded_Flow_Rate == 0 || \result.Commanded_Flow_Rate == 7
+\result.Current_System_Mode == 0 || \result.Current_System_Mode == 1 || \result.Current_System_Mode == 2 || \result.Current_System_Mode == 3 || \result.Current_System_Mode == 4 || \result.Current_System_Mode == 6 || \result.Current_System_Mode == 7 || \result.Current_System_Mode == 8
 \result.Log_Message_ID == 1
+\result.Actual_Infusion_Duration == 0 || \result.Actual_Infusion_Duration == 1
 \result.Commanded_Flow_Rate <= \result.Current_System_Mode
-\result.Commanded_Flow_Rate <= \old(Configured)
-\result.Commanded_Flow_Rate <= \old(Highest_Level_Alarm)
+\result.Commanded_Flow_Rate != \result.Log_Message_ID
+\result.Commanded_Flow_Rate >= \old(Flow_Rate_Basal)
+\result.Current_System_Mode >= \result.Actual_Infusion_Duration
+\result.Current_System_Mode >= \old(Infusion_Total_Duration)
+\result.Current_System_Mode >= \old(Flow_Rate_Basal)
+\result.Current_System_Mode >= \old(Interval_Intermittent_Bolus)
+\result.Current_System_Mode >= \old(Max_Number_of_Patient_Bolus)
 \result.Current_System_Mode >= \old(Configured)
+\result.Log_Message_ID >= \result.Actual_Infusion_Duration
+\result.Log_Message_ID != \old(Infusion_Total_Duration)
+\result.Log_Message_ID >= \old(Interval_Intermittent_Bolus)
+\result.Log_Message_ID >= \old(Max_Number_of_Patient_Bolus)
 \result.Log_Message_ID >= \old(Configured)
 \result.Log_Message_ID != \old(Highest_Level_Alarm)
+\result.Actual_Infusion_Duration <= \old(Infusion_Total_Duration)
+\result.Actual_Infusion_Duration >= \old(Flow_Rate_Basal)
+\result.Actual_Infusion_Duration >= \old(Max_Number_of_Patient_Bolus)
+\result.Actual_Infusion_Duration <= \old(Configured)

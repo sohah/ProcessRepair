@@ -106,7 +106,9 @@ public class OriginalPropTest {
             } else if (benchmark.equals("targetedInfusion")) {
                 benchmark="infusion";
                 String fileName = isInstance ? "Body/Instance/infusion_targetedp9.lus" : "Body/Static/infusion_targetedp9.lus";
+                String fileNameCombined = isInstance ? "Body/Instance/infusion5_targetedp9_combined.lus" : "Body/Static/infusion5_targetedp9_combined.lus";
                 execute(directory + fileName, benchmark, "p9");
+                execute(directory + fileNameCombined, benchmark, "p9");
             } else if (benchmark.equals("tcas")) {
                 String fileName = isInstance ? "Body/Instance/tcas2.lus" : "Body/Static/tcas2.lus";
                 String fileNameCombined = isInstance ? "Body/Instance/tcas2_combined.lus" : "Body/Static/tcas2_combined.lus";

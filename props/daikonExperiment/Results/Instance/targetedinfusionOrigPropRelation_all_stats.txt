@@ -1,6 +1,0 @@
-bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
-
-infusion,      p9,      0,      0,      0,      0,      3
-tightProps are:[]
-equivProps are:[]
-inComparable Props are:[p15, p16, p17]

@@ -11,6 +11,11 @@ sample of used commands
 perl makeLustreBody.pl props/tightProp/TCAS_Prop1  tcas > props/Body/tcas_prop1.lus
  ~/jkindNoRand/jkind props/Body/tcas_prop1.lus
 
+
+or
+
+perl makeLustreBody.pl props/daikonExperiment/daikonverified/Instance/verifiedProps_infusion_targeted_combined infusion > props/daikonExperiment/Body/Instance/infusion5_targeted_combined.lus
+
 =cut
 
 
