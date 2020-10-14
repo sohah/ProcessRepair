@@ -1,0 +1,215 @@
+Commanded_Flow_Rate =VTBI_High
+Commanded_Flow_Rate =Flow_Rate_High
+Commanded_Flow_Rate =Flow_Rate_Low
+Commanded_Flow_Rate =Flow_Rate
+Commanded_Flow_Rate =Audio_Enable_Duration
+Commanded_Flow_Rate =Audio_Level
+Commanded_Flow_Rate =Config_Warning_Duration
+Commanded_Flow_Rate =Low_Reservoir
+Commanded_Flow_Rate =Max_Duration_Over_Infusion
+Commanded_Flow_Rate =Max_Duration_Under_Infusion
+Commanded_Flow_Rate =Tolerance_Max
+Commanded_Flow_Rate =Tolerance_Min
+Commanded_Flow_Rate =Reservoir_Volume
+Commanded_Flow_Rate =Volume_Infused
+Notification_Cancel =Flow_Rate_Not_Stable
+Commanded_Flow_Rate =0
+Current_System_Mode >= 0
+Disable_Audio =0 or Disable_Audio =1 or Disable_Audio =2 or Disable_Audio =3
+Notification_Cancel =true
+Max_Paused_Duration =0 or Max_Paused_Duration =1 or Max_Paused_Duration =2
+Max_Idle_Duration =0 or Max_Idle_Duration =1
+In_Therapy =false
+Config_Timer =0 or Config_Timer =1
+Commanded_Flow_Rate <= Current_System_Mode
+Commanded_Flow_Rate <= Disable_Audio
+Commanded_Flow_Rate <= Max_Paused_Duration
+Commanded_Flow_Rate <= Max_Idle_Duration
+Commanded_Flow_Rate <= Config_Timer
+Current_System_Mode >= Max_Paused_Duration
+Current_System_Mode >= Max_Idle_Duration
+Is_Audio_Disabled =Disable_Audio
+Audio_Notification_Command =Log_Message_ID
+Audio_Notification_Command =Commanded_Flow_Rate
+Audio_Notification_Command =VTBI_High
+Audio_Notification_Command =Flow_Rate_High
+Audio_Notification_Command =Flow_Rate_Low
+Audio_Notification_Command =Flow_Rate
+Audio_Notification_Command =Audio_Enable_Duration
+Audio_Notification_Command =Audio_Level
+Audio_Notification_Command =Config_Warning_Duration
+Audio_Notification_Command =Low_Reservoir
+Audio_Notification_Command =Max_Duration_Over_Infusion
+Audio_Notification_Command =Max_Duration_Under_Infusion
+Audio_Notification_Command =Tolerance_Max
+Audio_Notification_Command =Tolerance_Min
+Audio_Notification_Command =Reservoir_Volume
+Audio_Notification_Command =Volume_Infused
+(Current_System_Mode =0 or Current_System_Mode =1 or Current_System_Mode =6 or Current_System_Mode =7 or Current_System_Mode =8) or not(Door_Open =false)
+(Door_Open =In_Therapy) or not(Door_Open =false)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1) or not(Door_Open =false)
+(Highest_Level_Alarm =0 or Highest_Level_Alarm =4) or not(Door_Open =false)
+(Notification_Message =0 or Notification_Message =2 or Notification_Message =3) or not(Door_Open =false)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1 or Max_Paused_Duration =2) or not(Door_Open =true)
+(System_On =Door_Open) or not(Door_Open =true)
+(System_On =Notification_Cancel) or not(Door_Open =true)
+(System_On =true) or not(Door_Open =true)
+(Audio_Notification_Command < Highest_Level_Alarm) or not(Door_Open =true)
+(Highest_Level_Alarm <>Current_System_Mode) or not(Door_Open =true)
+(Highest_Level_Alarm =4) or not(Door_Open =true)
+(Highest_Level_Alarm > Config_Timer) or not(Door_Open =true)
+(Highest_Level_Alarm > Max_Idle_Duration) or not(Door_Open =true)
+(Highest_Level_Alarm > Max_Paused_Duration) or not(Door_Open =true)
+(Is_Audio_Disabled < Highest_Level_Alarm) or not(Door_Open =true)
+(Notification_Message <>Current_System_Mode) or not(Door_Open =true)
+(Notification_Message < Highest_Level_Alarm) or not(Door_Open =true)
+(Notification_Message > Config_Timer) or not(Door_Open =true)
+(Notification_Message > Max_Idle_Duration) or not(Door_Open =true)
+(Notification_Message > Audio_Notification_Command) or not(Door_Open =true)
+(Notification_Message =2 or Notification_Message =3) or not(Door_Open =true)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1) or not(Occlusion =false)
+(Occlusion =In_Therapy) or not(Occlusion =false)
+(Highest_Level_Alarm =0 or Highest_Level_Alarm =4) or not(Occlusion =false)
+(Notification_Message =0 or Notification_Message =2 or Notification_Message =3) or not(Occlusion =false)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1 or Max_Paused_Duration =2) or not(Occlusion =true)
+(System_On =Notification_Cancel) or not(Occlusion =true)
+(System_On =Occlusion) or not(Occlusion =true)
+(System_On =true) or not(Occlusion =true)
+(Audio_Notification_Command < Highest_Level_Alarm) or not(Occlusion =true)
+(Highest_Level_Alarm <>Current_System_Mode) or not(Occlusion =true)
+(Highest_Level_Alarm =4) or not(Occlusion =true)
+(Highest_Level_Alarm > Config_Timer) or not(Occlusion =true)
+(Highest_Level_Alarm > Max_Idle_Duration) or not(Occlusion =true)
+(Highest_Level_Alarm > Max_Paused_Duration) or not(Occlusion =true)
+(Is_Audio_Disabled < Highest_Level_Alarm) or not(Occlusion =true)
+(Notification_Message <>Current_System_Mode) or not(Occlusion =true)
+(Notification_Message < Highest_Level_Alarm) or not(Occlusion =true)
+(Notification_Message > Config_Timer) or not(Occlusion =true)
+(Notification_Message > Max_Idle_Duration) or not(Occlusion =true)
+(Notification_Message > Audio_Notification_Command) or not(Occlusion =true)
+(Notification_Message =2 or Notification_Message =3) or not(Occlusion =true)
+(Is_Audio_Disabled =Audio_Notification_Command) =(Is_Audio_Disabled =0)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1) or not(Is_Audio_Disabled =0)
+(Notification_Cancel =Pump_Too_Hot) or not(Is_Audio_Disabled =0)
+(Pump_Too_Hot =true) or not(Is_Audio_Disabled =0)
+(Watchdog_Interrupted =false) or not(Is_Audio_Disabled =0)
+(Watchdog_Interrupted =In_Therapy) or not(Is_Audio_Disabled =0)
+(Highest_Level_Alarm =0 or Highest_Level_Alarm =4) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled <= Config_Timer) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled <= Current_System_Mode) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled <= Max_Idle_Duration) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled <= Max_Paused_Duration) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled <= Notification_Message) or not(Is_Audio_Disabled =0)
+(Notification_Message =0 or Notification_Message =2 or Notification_Message =3) or not(Is_Audio_Disabled =0)
+(Is_Audio_Disabled > Audio_Notification_Command) =(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1 or Max_Paused_Duration =2) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(System_On =Notification_Cancel) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(System_On =true) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Audio_Notification_Command < Highest_Level_Alarm) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Highest_Level_Alarm <>Current_System_Mode) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Highest_Level_Alarm =4) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Highest_Level_Alarm > Config_Timer) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Highest_Level_Alarm > Max_Idle_Duration) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Highest_Level_Alarm > Max_Paused_Duration) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Is_Audio_Disabled < Highest_Level_Alarm) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Is_Audio_Disabled >= Config_Timer) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Is_Audio_Disabled >= Max_Idle_Duration) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Is_Audio_Disabled >= Max_Paused_Duration) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message <>Current_System_Mode) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message < Highest_Level_Alarm) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message > Config_Timer) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message > Max_Idle_Duration) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message > Audio_Notification_Command) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(Notification_Message =2 or Notification_Message =3) or not(Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3)
+(System_On =false) =(Notification_Message =0)
+(Highest_Level_Alarm =0) =(Notification_Message =0)
+(Is_Audio_Disabled =Highest_Level_Alarm) =(Notification_Message =0)
+(Air_In_Line =false) or not(Notification_Message =0)
+(Air_Pressure =false) or not(Notification_Message =0)
+(Battery_Depleted =true) or not(Notification_Message =0)
+(Battery_Low =true) or not(Notification_Message =0)
+(Battery_Unable_To_Charge =true) or not(Notification_Message =0)
+(CPU_In_Error =true) or not(Notification_Message =0)
+(Config_Timer =0) or not(Notification_Message =0)
+(Current_System_Mode =0) or not(Notification_Message =0)
+(Door_Open =false) or not(Notification_Message =0)
+(Humidity =true) or not(Notification_Message =0)
+(Infusion_Initiate =false) or not(Notification_Message =0)
+(Logging_Failed =false) or not(Notification_Message =0)
+(Max_Idle_Duration =0) or not(Notification_Message =0)
+(Max_Paused_Duration =0) or not(Notification_Message =0)
+(Memory_Corrupted =true) or not(Notification_Message =0)
+(Notification_Cancel =Battery_Depleted) or not(Notification_Message =0)
+(Notification_Cancel =Battery_Low) or not(Notification_Message =0)
+(Notification_Cancel =Battery_Unable_To_Charge) or not(Notification_Message =0)
+(Notification_Cancel =CPU_In_Error) or not(Notification_Message =0)
+(Notification_Cancel =Humidity) or not(Notification_Message =0)
+(Notification_Cancel =Memory_Corrupted) or not(Notification_Message =0)
+(Notification_Cancel =Pump_Too_Hot) or not(Notification_Message =0)
+(Notification_Cancel =RTC_In_Error) or not(Notification_Message =0)
+(Notification_Cancel =Reservoir_Empty) or not(Notification_Message =0)
+(Notification_Cancel =Temp) or not(Notification_Message =0)
+(Occlusion =false) or not(Notification_Message =0)
+(Pump_Overheated =false) or not(Notification_Message =0)
+(Pump_Too_Hot =true) or not(Notification_Message =0)
+(RTC_In_Error =true) or not(Notification_Message =0)
+(Reservoir_Empty =true) or not(Notification_Message =0)
+(Supply_Voltage =false) or not(Notification_Message =0)
+(System_Monitor_Failed =false) or not(Notification_Message =0)
+(System_On =Air_In_Line) or not(Notification_Message =0)
+(System_On =Air_Pressure) or not(Notification_Message =0)
+(System_On =Door_Open) or not(Notification_Message =0)
+(System_On =In_Therapy) or not(Notification_Message =0)
+(System_On =Infusion_Initiate) or not(Notification_Message =0)
+(System_On =Logging_Failed) or not(Notification_Message =0)
+(System_On =Occlusion) or not(Notification_Message =0)
+(System_On =Pump_Overheated) or not(Notification_Message =0)
+(System_On =Supply_Voltage) or not(Notification_Message =0)
+(System_On =System_Monitor_Failed) or not(Notification_Message =0)
+(System_On =Watchdog_Interrupted) or not(Notification_Message =0)
+(Temp =true) or not(Notification_Message =0)
+(Watchdog_Interrupted =false) or not(Notification_Message =0)
+(Is_Audio_Disabled =0) or not(Notification_Message =0)
+(Is_Audio_Disabled =Config_Timer) or not(Notification_Message =0)
+(Is_Audio_Disabled =Current_System_Mode) or not(Notification_Message =0)
+(Is_Audio_Disabled =Max_Idle_Duration) or not(Notification_Message =0)
+(Is_Audio_Disabled =Max_Paused_Duration) or not(Notification_Message =0)
+(Is_Audio_Disabled =Audio_Notification_Command) or not(Notification_Message =0)
+(Is_Audio_Disabled =Notification_Message) or not(Notification_Message =0)
+(System_On =true) =(Notification_Message =2 or Notification_Message =3)
+(Audio_Notification_Command < Highest_Level_Alarm) =(Notification_Message =2 or Notification_Message =3)
+(Highest_Level_Alarm <>Current_System_Mode) =(Notification_Message =2 or Notification_Message =3)
+(Highest_Level_Alarm =4) =(Notification_Message =2 or Notification_Message =3)
+(Highest_Level_Alarm > Config_Timer) =(Notification_Message =2 or Notification_Message =3)
+(Highest_Level_Alarm > Max_Idle_Duration) =(Notification_Message =2 or Notification_Message =3)
+(Highest_Level_Alarm > Max_Paused_Duration) =(Notification_Message =2 or Notification_Message =3)
+(Is_Audio_Disabled < Highest_Level_Alarm) =(Notification_Message =2 or Notification_Message =3)
+(Notification_Message <>Current_System_Mode) =(Notification_Message =2 or Notification_Message =3)
+(Notification_Message < Highest_Level_Alarm) =(Notification_Message =2 or Notification_Message =3)
+(Notification_Message > Config_Timer) =(Notification_Message =2 or Notification_Message =3)
+(Notification_Message > Max_Idle_Duration) =(Notification_Message =2 or Notification_Message =3)
+(Notification_Message > Audio_Notification_Command) =(Notification_Message =2 or Notification_Message =3)
+(Config_Timer =0 or Config_Timer =1) or not(Notification_Message =2 or Notification_Message =3)
+(Max_Idle_Duration =0 or Max_Idle_Duration =1) or not(Notification_Message =2 or Notification_Message =3)
+(Max_Paused_Duration =0 or Max_Paused_Duration =1 or Max_Paused_Duration =2) or not(Notification_Message =2 or Notification_Message =3)
+(System_On =Notification_Cancel) or not(Notification_Message =2 or Notification_Message =3)
+(Is_Audio_Disabled =0 or Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3) or not(Notification_Message =2 or Notification_Message =3)
+Is_Audio_Disabled =0 or Is_Audio_Disabled =1 or Is_Audio_Disabled =2 or Is_Audio_Disabled =3
+Notification_Message =0 or Notification_Message =2 or Notification_Message =3
+Audio_Notification_Command =0
+Highest_Level_Alarm =0 or Highest_Level_Alarm =4
+Is_Audio_Disabled >= Audio_Notification_Command
+Is_Audio_Disabled <= Highest_Level_Alarm
+Notification_Message >= Audio_Notification_Command
+Notification_Message <= Highest_Level_Alarm
+Notification_Message >= Max_Paused_Duration
+Notification_Message >= Max_Idle_Duration
+Notification_Message >= Config_Timer
+Audio_Notification_Command <= Highest_Level_Alarm
+Audio_Notification_Command <= Current_System_Mode
+Audio_Notification_Command <= Max_Paused_Duration
+Audio_Notification_Command <= Max_Idle_Duration
+Audio_Notification_Command <= Config_Timer
+Highest_Level_Alarm >= Max_Paused_Duration
+Highest_Level_Alarm >= Max_Idle_Duration
+Highest_Level_Alarm >= Config_Timer

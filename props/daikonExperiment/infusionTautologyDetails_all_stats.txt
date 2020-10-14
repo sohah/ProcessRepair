@@ -1,4 +1,0 @@
-tautology props for infusion: p9 are: []
-loose props are:[]
-tautology props for infusion: p9 are: []
-loose props are:[]

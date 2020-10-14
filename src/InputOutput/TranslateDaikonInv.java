@@ -790,6 +790,7 @@ public class TranslateDaikonInv {
                 inv = inv.replaceAll("==.", "=");
                 inv = inv.replaceAll("!=.", "<>");
                 inv = inv.replaceAll("!", "not");
+                inv = inv.replaceAll("%", "mod");
                 inv = inv.replaceAll("\\|\\|", "or");
                 inv = inv.replaceAll("\\\\result.", "");
 
