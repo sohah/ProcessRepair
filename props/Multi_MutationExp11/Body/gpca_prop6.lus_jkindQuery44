@@ -1,0 +1,209 @@
+node main(
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  System_On : bool;
+  System_Monitor_Failed : bool;
+  Logging_Failed : bool;
+  Infusion_Initiate : bool;
+  Disable_Audio : int;
+  Notification_Cancel : bool;
+  VTBI_High : int;
+  Flow_Rate_High : int;
+  Flow_Rate_Low : int;
+  Flow_Rate : int;
+  Flow_Rate_Not_Stable : bool;
+  Air_In_Line : bool;
+  Occlusion : bool;
+  Door_Open : bool;
+  Temp : bool;
+  Air_Pressure : bool;
+  Humidity : bool;
+  Battery_Depleted : bool;
+  Battery_Low : bool;
+  Battery_Unable_To_Charge : bool;
+  Supply_Voltage : bool;
+  CPU_In_Error : bool;
+  RTC_In_Error : bool;
+  Watchdog_Interrupted : bool;
+  Memory_Corrupted : bool;
+  Pump_Too_Hot : bool;
+  Pump_Overheated : bool;
+  Audio_Enable_Duration : int;
+  Audio_Level : int;
+  Config_Warning_Duration : int;
+  Low_Reservoir : int;
+  Max_Duration_Over_Infusion : int;
+  Max_Duration_Under_Infusion : int;
+  Max_Paused_Duration : int;
+  Max_Idle_Duration : int;
+  Tolerance_Max : int;
+  Tolerance_Min : int;
+  Reservoir_Empty : bool;
+  Reservoir_Volume : int;
+  Volume_Infused : int;
+  In_Therapy : bool;
+  Config_Timer : int;
+  out_Is_Audio_Disabled : int;
+  out_Notification_Message : int;
+  out_Audio_Notification_Command : int;
+  out_Highest_Level_Alarm : int;
+  out_Log_Message_ID5 : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p2 : bool;
+  p3 : bool;
+  p4 : bool;
+  p5 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  p23 : bool;
+  p24 : bool;
+  p25 : bool;
+  p26 : bool;
+  p27 : bool;
+  p28 : bool;
+  p29 : bool;
+  p30 : bool;
+  p31 : bool;
+  p32 : bool;
+  p33 : bool;
+  p34 : bool;
+  p35 : bool;
+  p36 : bool;
+  p37 : bool;
+  p38 : bool;
+  p39 : bool;
+  p40 : bool;
+  p41 : bool;
+  p42 : bool;
+  p43 : bool;
+  p44 : bool;
+  p45 : bool;
+  matchEquiv : bool;
+  loose : bool;
+  tight : bool;
+  tautology : bool;
+let
+  --%MAIN;
+  p1 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p2 = (((System_On and In_Therapy) and Air_In_Line) => (out_Highest_Level_Alarm >= 3));
+
+  p3 = ((((System_On and In_Therapy) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm >= 3));
+
+  p4 = ((System_On and Occlusion) => (out_Highest_Level_Alarm >= 3));
+
+  p5 = ((System_On and Door_Open) => (out_Highest_Level_Alarm >= 3));
+
+  p6 = (((System_On and (out_Highest_Level_Alarm >= 3)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p7 = ((System_On and (Disable_Audio > 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled = Disable_Audio)));
+
+  p8 = (((System_On and In_Therapy) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm >= 2));
+
+  p9 = (System_On => ((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm <= 4)));
+
+  p10 = (System_On => (out_Is_Audio_Disabled = Disable_Audio));
+
+  p11 = (((System_On and (out_Highest_Level_Alarm > 4)) and (Disable_Audio = 0)) => ((Audio_Level = out_Is_Audio_Disabled) xor (Audio_Level = out_Is_Audio_Disabled)));
+
+  p12 = ((((out_Highest_Level_Alarm >= 5) => (out_Is_Audio_Disabled < 0)) xor ((out_Is_Audio_Disabled < 0) xor false)) xor (((out_Highest_Level_Alarm < out_Audio_Notification_Command) and (out_Highest_Level_Alarm = 2)) xor ((Disable_Audio = out_Is_Audio_Disabled) xor (Disable_Audio = out_Is_Audio_Disabled))));
+
+  p13 = ((((out_Highest_Level_Alarm < 5) or (out_Highest_Level_Alarm <= 0)) => ((out_Highest_Level_Alarm = 0) and System_On)) => ((out_Audio_Notification_Command < Audio_Level) xor (out_Audio_Notification_Command < Audio_Level)));
+
+  p14 = ((not ((not System_On) xor false)) => (not (Audio_Level < out_Audio_Notification_Command)));
+
+  p15 = (((System_On and (out_Highest_Level_Alarm > 0)) xor (System_On xor (out_Highest_Level_Alarm >= 5))) => false);
+
+  p16 = (false => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p17 = ((((out_Highest_Level_Alarm < out_Is_Audio_Disabled) and (out_Highest_Level_Alarm = 0)) => ((not System_On) xor (not System_On))) or (((out_Highest_Level_Alarm = out_Is_Audio_Disabled) xor false) and ((out_Highest_Level_Alarm < 2) xor (Audio_Level < Disable_Audio))));
+
+  p18 = (((System_On => (out_Highest_Level_Alarm >= 1)) => ((out_Highest_Level_Alarm <= 5) => (out_Highest_Level_Alarm = 5))) => ((out_Is_Audio_Disabled < out_Audio_Notification_Command) xor (out_Is_Audio_Disabled < out_Audio_Notification_Command)));
+
+  p19 = ((((out_Highest_Level_Alarm >= 3) and (Disable_Audio >= 2)) => ((Disable_Audio <= 2) and (Disable_Audio < 2))) => true);
+
+  p20 = (((System_On and (out_Highest_Level_Alarm < 1)) and (Disable_Audio = 0)) => (false and (out_Is_Audio_Disabled = 0)));
+
+  p21 = (false => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled > 0)));
+
+  p22 = ((((out_Highest_Level_Alarm < 5) or (out_Highest_Level_Alarm <= 0)) => ((out_Highest_Level_Alarm = 0) and System_On)) => ((out_Audio_Notification_Command < Audio_Level) xor (out_Audio_Notification_Command < Audio_Level)));
+
+  p23 = (((System_On and (out_Highest_Level_Alarm > 4)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled > 255)));
+
+  p24 = ((((out_Highest_Level_Alarm >= 5) xor (not System_On)) xor ((not System_On) or (out_Highest_Level_Alarm <= 0))) => (false and (out_Is_Audio_Disabled = 0)));
+
+  p25 = (((System_On and (out_Highest_Level_Alarm > 4)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled > 255)));
+
+  p26 = (((System_On and (out_Highest_Level_Alarm >= 3)) and (Disable_Audio <= 0)) => ((out_Is_Audio_Disabled = 0) and (out_Audio_Notification_Command = Audio_Level)));
+
+  p27 = (((System_On and (out_Highest_Level_Alarm >= 3)) and (Disable_Audio <= 0)) => ((out_Is_Audio_Disabled = 0) and (out_Audio_Notification_Command = Audio_Level)));
+
+  p28 = (((System_On xor (out_Highest_Level_Alarm <= 4)) xor ((not System_On) or (out_Highest_Level_Alarm <= 0))) => (false and (out_Is_Audio_Disabled = 0)));
+
+  p29 = ((((out_Highest_Level_Alarm < 4) xor (out_Highest_Level_Alarm < 5)) xor (false xor (out_Highest_Level_Alarm <= 3))) xor (((out_Is_Audio_Disabled = 5) xor (Audio_Level = 4)) and (System_On xor System_On)));
+
+  p30 = ((((out_Highest_Level_Alarm < 5) xor false) => ((Disable_Audio < 0) and System_On)) => ((Audio_Level = out_Is_Audio_Disabled) xor (Audio_Level = out_Is_Audio_Disabled)));
+
+  p31 = (((System_On and (out_Highest_Level_Alarm >= 3)) and (Disable_Audio < 1)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled < 1)));
+
+  p32 = (false => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled < 0)));
+
+  p33 = (((System_On and (out_Highest_Level_Alarm < 18)) and (Disable_Audio >= 0)) => ((out_Audio_Notification_Command > 0) => (out_Is_Audio_Disabled = 0)));
+
+  p34 = (((System_On and (out_Highest_Level_Alarm <= 3)) and (Disable_Audio = 0)) or ((Audio_Level >= 0) xor (out_Is_Audio_Disabled < 0)));
+
+  p35 = ((((out_Highest_Level_Alarm > 3) and (out_Highest_Level_Alarm > 2)) and false) => ((out_Audio_Notification_Command <> Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p36 = (((System_On and (out_Highest_Level_Alarm <> 3)) and (Disable_Audio >= 1)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled <> 0)));
+
+  p37 = (((System_On xor (out_Highest_Level_Alarm >= 3)) and (Disable_Audio < 1)) => true);
+
+  p38 = ((false or (Disable_Audio = 0)) => (Audio_Level >= 0));
+
+  p39 = ((((out_Highest_Level_Alarm <= 4) => (out_Highest_Level_Alarm = 6)) xor ((out_Highest_Level_Alarm >= 1) or (not System_On))) or ((Audio_Level = out_Is_Audio_Disabled) xor (Audio_Level = out_Is_Audio_Disabled)));
+
+  p40 = ((((out_Highest_Level_Alarm = 2) and System_On) and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled >= 0)));
+
+  p41 = ((false and (Disable_Audio = 0)) => (false xor (out_Is_Audio_Disabled = 0)));
+
+  p42 = (((System_On and (out_Highest_Level_Alarm > 4)) or false) => ((out_Audio_Notification_Command <= Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p43 = (((System_On or (out_Highest_Level_Alarm >= 3)) and false) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p44 = ((true or (Disable_Audio = 0)) => ((out_Is_Audio_Disabled < 0) => (out_Is_Audio_Disabled >= 32)));
+
+  p45 = ((false and (Disable_Audio >= 0)) => ((out_Audio_Notification_Command = Audio_Level) or false));
+
+  matchEquiv = (p6 = p45);
+
+  loose = (p6 => p45);
+
+  tight = (p45 => p6);
+
+  tautology = (p45 = true);
+
+  --%PROPERTY matchEquiv;
+  --%PROPERTY loose;
+  --%PROPERTY tight;
+  --%PROPERTY tautology;
+
+tel;

@@ -1,0 +1,213 @@
+node main(
+  System_On : bool;
+  Infusion_Initiate : bool;
+  Infusion_Inhibit : bool;
+  Infusion_Cancel : bool;
+  Patient_Bolus_Request : bool;
+  Infusion_Total_Duration : int;
+  VTBI_Total : int;
+  Flow_Rate_Basal : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  Duration_Intermittent_Bolus : int;
+  Interval_Intermittent_Bolus : int;
+  Flow_Rate_Patient_Bolus : int;
+  Duration_Patient_Bolus : int;
+  Lockout_Period_Patient_Bolus : int;
+  Max_Number_of_Patient_Bolus : int;
+  Flow_Rate_KVO : int;
+  Entered_Reservoir_Volume : int;
+  Configured : int;
+  Highest_Level_Alarm : int;
+  Reservoir_Empty : bool;
+  Volume_Infused : int;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  New_Infusion : bool;
+  Log_Message_ID : int;
+  Actual_Infusion_Duration : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p2 : bool;
+  p3 : bool;
+  p4 : bool;
+  p5 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  p23 : bool;
+  p24 : bool;
+  p25 : bool;
+  p26 : bool;
+  p27 : bool;
+  p28 : bool;
+  p29 : bool;
+  p30 : bool;
+  p31 : bool;
+  p32 : bool;
+  p33 : bool;
+  p34 : bool;
+  p35 : bool;
+  p36 : bool;
+  p37 : bool;
+  p38 : bool;
+  p39 : bool;
+  p40 : bool;
+  p41 : bool;
+  p42 : bool;
+  p43 : bool;
+  p44 : bool;
+  p45 : bool;
+  p46 : bool;
+  p47 : bool;
+  p48 : bool;
+  p49 : bool;
+  p50 : bool;
+  p51 : bool;
+  p52 : bool;
+  p53 : bool;
+  p54 : bool;
+  p55 : bool;
+  p56 : bool;
+  p57 : bool;
+  p58 : bool;
+  tight : bool;
+let
+  --%MAIN;
+  p1 = ((((((((Current_System_Mode = 0) or (Current_System_Mode = 1)) or (Current_System_Mode = 2)) or (Current_System_Mode = 3)) or (Current_System_Mode = 4)) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)) or (Current_System_Mode = 8));
+
+  p2 = ((not System_On) => (Current_System_Mode = 0));
+
+  p3 = ((System_On and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate = 0));
+
+  p4 = ((System_On and (Highest_Level_Alarm = 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p5 = ((System_On and (Configured < 1)) => (Commanded_Flow_Rate = 0));
+
+  p6 = ((System_On and (Highest_Level_Alarm = 2)) => (((((Current_System_Mode = 1) or (Current_System_Mode = 2)) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)) or (Current_System_Mode = 8)));
+
+  p7 = ((Current_System_Mode = 0) => (Commanded_Flow_Rate = 0));
+
+  p8 = ((System_On and (Highest_Level_Alarm = 2)) => ((not (Current_System_Mode = 3)) and (not (Current_System_Mode = 4))));
+
+  p9 = ((System_On and (Highest_Level_Alarm = 4)) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));
+
+  p10 = ((System_On and (Current_System_Mode = 2)) => (Commanded_Flow_Rate = Flow_Rate_Basal));
+
+  p11 = ((System_On and (Current_System_Mode = 3)) => (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus));
+
+  p12 = ((System_On and (Current_System_Mode = 4)) => (Commanded_Flow_Rate = Flow_Rate_Patient_Bolus));
+
+  p13 = ((System_On and (Current_System_Mode = 1)) => (Commanded_Flow_Rate = 0));
+
+  p14 = ((System_On and (((Current_System_Mode = 6) or (Current_System_Mode = 7)) or (Current_System_Mode = 8))) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p15 = (false xor (System_On or (Commanded_Flow_Rate <= 0)));
+
+  p16 = (((Commanded_Flow_Rate < 0) xor false) xor ((Commanded_Flow_Rate >= 1) => System_On));
+
+  p17 = (((Commanded_Flow_Rate >= 1) and System_On) xor (false xor (Commanded_Flow_Rate = 0)));
+
+  p18 = (((not System_On) and (Commanded_Flow_Rate = 0)) xor (System_On and (Commanded_Flow_Rate >= 0)));
+
+  p19 = (((Highest_Level_Alarm > 2) or (not System_On)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p20 = (((Highest_Level_Alarm >= 3) or (not System_On)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p21 = ((System_On and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate < 1));
+
+  p22 = ((System_On => (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate < 1));
+
+  p23 = ((System_On and (Highest_Level_Alarm >= 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p24 = (((Commanded_Flow_Rate >= 1) and (not System_On)) xor ((Flow_Rate_KVO < Commanded_Flow_Rate) or (Commanded_Flow_Rate >= 0)));
+
+  p25 = ((System_On and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate < 1));
+
+  p26 = ((System_On => (Highest_Level_Alarm > 2)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p27 = (((Commanded_Flow_Rate >= 1) and System_On) xor (false xor (Commanded_Flow_Rate = 0)));
+
+  p28 = (false xor ((Commanded_Flow_Rate > 0) => System_On));
+
+  p29 = ((not System_On) xor ((Commanded_Flow_Rate = 0) => System_On));
+
+  p30 = (((not System_On) or (Highest_Level_Alarm >= 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p31 = ((System_On and (Highest_Level_Alarm >= 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p32 = (((Commanded_Flow_Rate >= 1) and System_On) xor (false xor (Commanded_Flow_Rate = 0)));
+
+  p33 = (((Commanded_Flow_Rate >= 1) and System_On) xor (false xor (Commanded_Flow_Rate = 0)));
+
+  p34 = (true => (Commanded_Flow_Rate >= 0));
+
+  p35 = (((Highest_Level_Alarm < 3) => (not System_On)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p36 = ((System_On => (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate = 0));
+
+  p37 = ((System_On and (Highest_Level_Alarm >= 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p38 = ((System_On => (Highest_Level_Alarm > 2)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p39 = (true xor ((Commanded_Flow_Rate > 0) and (not System_On)));
+
+  p40 = ((System_On => (Highest_Level_Alarm = 3)) or (Flow_Rate_KVO >= 0));
+
+  p41 = (false => (Commanded_Flow_Rate <> Flow_Rate_KVO));
+
+  p42 = ((System_On and false) => (Commanded_Flow_Rate <> Flow_Rate_KVO));
+
+  p43 = (((Highest_Level_Alarm < 3) and (Highest_Level_Alarm = 3)) => (Commanded_Flow_Rate < Flow_Rate_KVO));
+
+  p44 = (false => (Commanded_Flow_Rate = Flow_Rate_KVO));
+
+  p45 = ((System_On and false) xor (Flow_Rate_KVO >= 0));
+
+  p46 = ((System_On or (Highest_Level_Alarm <> 3)) => (Commanded_Flow_Rate >= 0));
+
+  p47 = ((System_On xor (Highest_Level_Alarm < 4)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+
+  p48 = (false => (Commanded_Flow_Rate < Flow_Rate_KVO));
+
+  p49 = (((Highest_Level_Alarm < 4) and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate < Flow_Rate_KVO));
+
+  p50 = (false => (Commanded_Flow_Rate <> Flow_Rate_KVO));
+
+  p51 = (true and (Commanded_Flow_Rate >= 0));
+
+  p52 = (true and (Flow_Rate_KVO >= 0));
+
+  p53 = ((System_On or false) => (Commanded_Flow_Rate >= 0));
+
+  p54 = ((System_On and (Highest_Level_Alarm = 3)) or (Commanded_Flow_Rate >= 0));
+
+  p55 = (false xor (Flow_Rate_KVO >= 0));
+
+  p56 = (((Highest_Level_Alarm < 4) and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate < Flow_Rate_KVO));
+
+  p57 = ((System_On and false) xor (Flow_Rate_KVO >= 0));
+
+  p58 = (true or (Commanded_Flow_Rate = Flow_Rate_KVO));
+
+  tight = (p18 => p2);
+
+  --%PROPERTY tight;
+
+tel;
