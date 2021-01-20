@@ -1,0 +1,13 @@
+p1 = (((alim_res_s = 640) xor (alim_res_s = 740)) xor ((alim_res_s = 500) xor (alim_res_s = 400)));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s < 2));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s <= Down_Separation_s) => (alim_res_s = 502)) => (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s = 640) xor (alim_res_s = 740)) xor ((alim_res_s = 500) xor (alim_res_s = 400)));
+p1 = (((Up_Separation_s >= alim_res_s) and false) => (result_alt_sep_test_s <> 2));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s < 2));
+p1 = (((alim_res_s = 640) xor (alim_res_s = 740)) xor ((alim_res_s = 500) xor (alim_res_s = 400)));
+p1 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s > 499) xor (alim_res_s = 400)) and ((result_alt_sep_test_s < 0) xor (result_alt_sep_test_s <= 2)));
+p1 = (((alim_res_s = 500) xor (alim_res_s = 400)) xor ((alim_res_s = 640) xor (alim_res_s = 740)));

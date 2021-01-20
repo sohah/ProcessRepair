@@ -1,0 +1,12 @@
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled < Disable_Audio)));
+p1 = (((Disable_Audio < 0) and System_On) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled <> Disable_Audio)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled > Disable_Audio)));
+p1 = ((System_On and (Disable_Audio <= 0)) => (not (Disable_Audio < out_Is_Audio_Disabled)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command < 0) and (out_Is_Audio_Disabled = Disable_Audio)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command < 0) and (out_Is_Audio_Disabled = Disable_Audio)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command < 0) and (out_Is_Audio_Disabled = Disable_Audio)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled > Disable_Audio)));
+p1 = ((System_On and (Disable_Audio > 0)) => ((out_Audio_Notification_Command = 0) xor false));
+p1 = ((System_On and (Disable_Audio > 0)) or true);
+p1 = ((System_On or (Disable_Audio > 0)) => ((Disable_Audio < 1) => (Disable_Audio = out_Is_Audio_Disabled)));
+p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled > Disable_Audio)));

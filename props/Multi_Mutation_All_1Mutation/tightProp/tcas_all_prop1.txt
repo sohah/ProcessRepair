@@ -1,0 +1,18 @@
+p1 = (((Up_Separation_s < alim_res_s) and (alim_res_s = 401)) => false);p1 = (((Up_Separation_s = Down_Separation_s) => (Up_Separation_s = Down_Separation_s)) => (result_alt_sep_test_s <= 2));
+p1 = (((result_alt_sep_test_s > 2) => (alim_res_s < 400)) and ((alim_res_s >= 500) xor (alim_res_s = 400)));
+p1 = (((result_alt_sep_test_s <= 2) and (alim_res_s <= 740)) and ((alim_res_s >= 500) xor (alim_res_s = 400)));
+p1 = (((alim_res_s = 400) xor (alim_res_s >= 500)) and ((alim_res_s <= 740) and (result_alt_sep_test_s <= 2)));
+p1 = (((result_alt_sep_test_s <= 2) and (alim_res_s <= 740)) and ((alim_res_s = 400) xor (alim_res_s >= 408)));
+p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <= 1));
+p1 = (((alim_res_s = 400) xor (alim_res_s >= 500)) and ((alim_res_s <= 740) and (result_alt_sep_test_s <= 2)));
+p1 = (((result_alt_sep_test_s > 2) => (alim_res_s < 400)) and ((alim_res_s >= 500) xor (alim_res_s = 400)));
+p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <= 1));
+p1 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s > 2));
+p1 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s > 2));
+p1 = (((alim_res_s > 399) xor (alim_res_s = 739)) or (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s >= 2));
+p1 = (((alim_res_s > 399) xor (alim_res_s = 739)) or (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s = 400) xor (alim_res_s <= 499)) => (result_alt_sep_test_s > 2));
+p1 = (((alim_res_s <= Up_Separation_s) => (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p1 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s > 2));
+p1 = (((Up_Separation_s < alim_res_s) and (alim_res_s <= 399)) => (result_alt_sep_test_s > 2));

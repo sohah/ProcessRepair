@@ -1,0 +1,3 @@
+p1 = (System_On => ((out_Highest_Level_Alarm < 1) xor (out_Highest_Level_Alarm <= 4)));
+p1 = (System_On => ((out_Highest_Level_Alarm >= 0) xor (out_Highest_Level_Alarm > 4)));
+p1 = (System_On => ((out_Highest_Level_Alarm >= 0) xor (out_Highest_Level_Alarm > 4)));

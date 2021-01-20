@@ -1,0 +1,15 @@
+p1 = ((Current_System_Mode > 8) => (Commanded_Flow_Rate <> 0));
+p1 = ((Current_System_Mode > 8) => (Commanded_Flow_Rate > 0));
+p1 = ((Current_System_Mode > 1) or (Commanded_Flow_Rate = 0));
+p1 = ((Current_System_Mode <> 0) => (Commanded_Flow_Rate <= 255));
+p1 = ((Current_System_Mode > 1) or (Commanded_Flow_Rate = 0));
+p1 = ((Current_System_Mode = 0) or (Commanded_Flow_Rate <= 255));
+p1 = ((Current_System_Mode <> 0) => (Commanded_Flow_Rate <= 255));
+p1 = ((Current_System_Mode >= 0) => (Commanded_Flow_Rate >= 0));
+p1 = ((Current_System_Mode >= 0) => (Commanded_Flow_Rate >= 0));
+p1 = ((Current_System_Mode > 8) => (Commanded_Flow_Rate <> 0));
+p1 = ((Current_System_Mode = 0) or (Commanded_Flow_Rate <= 255));
+p1 = ((Current_System_Mode > 0) => (Commanded_Flow_Rate >= 0));
+p1 = ((Current_System_Mode > 0) => (Commanded_Flow_Rate >= 0));
+p1 = ((Current_System_Mode > 8) => (Commanded_Flow_Rate > 0));
+p1 = ((Current_System_Mode = 0) or (Commanded_Flow_Rate <= 255));

@@ -1,0 +1,7 @@
+p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
+p1 = ((((pedal_r < 0) and (pedal_r = 3)) and (not skid_r)) => (NormalPressure_r > 0));
+p1 = ((((pedal_r < 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r < 2));
+p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
+p1 = ((((pedal_r <= 0) and (pedal_r > 0)) and (not skid_r)) => (NormalPressure_r > 0));
+p1 = (((((pedal_r > -2) and (-2 = (-1))) => (not skid_r)) => (skid_r and ((pedal_r <= 10) and (10 = (-1))))) => (NormalPressure_r < 0));
+p1 = ((((pedal_r > 0) and ((pedal_r < -1) and (-1 = (-1)))) and (not skid_r)) => (NormalPressure_r = 0));

@@ -24,15 +24,3 @@ p1 = (((out_Highest_Level_Alarm <= 0) => (not System_On)) and ((out_Highest_Leve
 p1 = ((((not In_Therapy) => (not In_Therapy)) or (Reservoir_Empty => (not In_Therapy))) => (out_Highest_Level_Alarm < 9));
 p1 = (((out_Highest_Level_Alarm = 0) => System_On) => ((out_Highest_Level_Alarm > 4) xor (out_Highest_Level_Alarm >= 1)));
 p1 = (((out_Highest_Level_Alarm = 0) and System_On) xor ((out_Highest_Level_Alarm >= 0) xor (out_Highest_Level_Alarm > 4)));
-p1 = (((System_On => System_On) => ((not System_On) xor (not System_On))) => (out_Highest_Level_Alarm > 4));
-p1 = ((((not System_On) and (not System_On)) and ((not System_On) and (not System_On))) or (out_Highest_Level_Alarm > 0));
-p1 = (((System_On and In_Therapy) and Reservoir_Empty) or (out_Highest_Level_Alarm <= 4));
-p1 = ((((not System_On) and System_On) and Reservoir_Empty) => (out_Highest_Level_Alarm > 4));
-p1 = ((((not In_Therapy) xor (not In_Therapy)) xor ((not In_Therapy) xor (not In_Therapy))) xor (out_Highest_Level_Alarm < 5));
-p1 = (((System_On and (not In_Therapy)) and ((not In_Therapy) and In_Therapy)) => (out_Highest_Level_Alarm <> 4));
-p1 = (((System_On => In_Therapy) => Reservoir_Empty) => (out_Highest_Level_Alarm >= 0));
-p1 = ((((not In_Therapy) or (not System_On)) or ((not Reservoir_Empty) and (not Reservoir_Empty))) or (out_Highest_Level_Alarm >= 4));
-p1 = (((System_On and In_Therapy) and Reservoir_Empty) or (out_Highest_Level_Alarm < 5));
-p1 = (((System_On and In_Therapy) and (System_On and Reservoir_Empty)) => (out_Highest_Level_Alarm >= 4));
-p1 = ((((not In_Therapy) xor (not In_Therapy)) => Reservoir_Empty) or (out_Highest_Level_Alarm < 4));
-p1 = ((((not In_Therapy) => (not In_Therapy)) or Reservoir_Empty) xor (out_Highest_Level_Alarm > 4));

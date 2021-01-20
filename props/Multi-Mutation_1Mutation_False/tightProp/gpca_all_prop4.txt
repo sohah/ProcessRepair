@@ -1,0 +1,15 @@
+p1 = (((not System_On) xor (not System_On)) => (out_Highest_Level_Alarm = 3));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <> 3));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <= 3));
+p1 = ((System_On => Occlusion) => (out_Highest_Level_Alarm <= 4));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <= 3));
+p1 = (((not System_On) xor (not System_On)) => (out_Highest_Level_Alarm = 3));
+p1 = ((System_On => Occlusion) => (out_Highest_Level_Alarm <= 4));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <> 3));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm < 3));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm < 3));
+p1 = (((not System_On) xor (not System_On)) => (out_Highest_Level_Alarm = 3));
+p1 = ((System_On and Occlusion) or (out_Highest_Level_Alarm < 5));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <= 3));
+p1 = (((not Occlusion) and Occlusion) => (out_Highest_Level_Alarm > 3));
+p1 = ((Occlusion and (not Occlusion)) => (out_Highest_Level_Alarm <= 3));

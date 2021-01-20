@@ -25,6 +25,8 @@ perl makeLustreBody.pl $1/tightProp/infusion_all_prop10.txt  infusion > $1/Body/
 perl makeLustreBody.pl $1/tightProp/infusion_all_prop11.txt  infusion > $1/Body/infusion_prop11.lus
 perl makeLustreBody.pl $1/tightProp/infusion_all_prop12.txt  infusion > $1/Body/infusion_prop12.lus
 perl makeLustreBody.pl $1/tightProp/infusion_all_prop13.txt  infusion > $1/Body/infusion_prop13.lus
+perl makeLustreBody.pl $1/tightProp/infusion_all_prop14.txt  infusion > $1/Body/infusion_prop14.lus
+
 
 
 

@@ -19,18 +19,3 @@ p1 = ((System_On and System_On) => ((Disable_Audio <= out_Is_Audio_Disabled) xor
 p1 = ((false xor (Disable_Audio = out_Is_Audio_Disabled)) or (false xor (not System_On)));
 p1 = ((System_On and (out_Audio_Notification_Command <= Disable_Audio)) => ((out_Audio_Notification_Command = 0) and (Disable_Audio = out_Is_Audio_Disabled)));
 p1 = ((not (not System_On)) => (false xor (Disable_Audio = out_Is_Audio_Disabled)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command <> 0) and (out_Is_Audio_Disabled < Disable_Audio)));
-p1 = (((Disable_Audio < 0) and System_On) => (false and (out_Is_Audio_Disabled > Disable_Audio)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command < 0) and (out_Is_Audio_Disabled < Disable_Audio)));
-p1 = ((System_On and (Disable_Audio > 0)) => ((out_Audio_Notification_Command < 0) => (out_Is_Audio_Disabled > Disable_Audio)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled < Disable_Audio)));
-p1 = ((System_On and (Disable_Audio <= 0)) => ((Disable_Audio = out_Is_Audio_Disabled) and (Disable_Audio = 0)));
-p1 = ((System_On and (Disable_Audio <= 2)) or ((out_Audio_Notification_Command >= 0) or (Disable_Audio = out_Is_Audio_Disabled)));
-p1 = ((System_On and (Disable_Audio = 0)) => ((Disable_Audio = out_Is_Audio_Disabled) and (Disable_Audio = 0)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command > 0) and (out_Is_Audio_Disabled <= Disable_Audio)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command <> 0) and (out_Is_Audio_Disabled > Disable_Audio)));
-p1 = (((Disable_Audio < 0) and System_On) => ((out_Audio_Notification_Command <> 0) and (out_Is_Audio_Disabled = Disable_Audio)));
-p1 = ((System_On or false) => ((out_Audio_Notification_Command >= 0) and (out_Is_Audio_Disabled >= Disable_Audio)));
-p1 = ((System_On and (Disable_Audio < 0)) => ((out_Audio_Notification_Command > 0) and (out_Is_Audio_Disabled < Disable_Audio)));
-p1 = ((System_On and (Disable_Audio >= 0)) => ((Disable_Audio >= 0) and (Disable_Audio = out_Is_Audio_Disabled)));
-p1 = (System_On => ((out_Audio_Notification_Command = 0) or (out_Is_Audio_Disabled <= 0)));
