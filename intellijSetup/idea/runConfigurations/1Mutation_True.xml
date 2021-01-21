@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="1Mutation_True" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+    <toRun type="Application" name="Verification_Alarm_DR_1Mutation_True" />
+    <toRun type="Application" name="Verification_Infusion_DR_1Mutation_True" />
+    <toRun type="Application" name="Verification_TCAS_DR_1Mutation_True" />
+    <toRun type="Application" name="Verification_WBS_DR_1Mutation_True" />
+    <method />
+  </configuration>
+</component>

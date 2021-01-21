@@ -1,0 +1,102 @@
+node main(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p2 : bool;
+  p4 : bool;
+  p5 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  matchEquiv : bool;
+  loose : bool;
+  tight : bool;
+  tautology : bool;
+let
+  --%MAIN;
+  p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+
+  p2 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s >= alim_res_s)) => (result_alt_sep_test_s <> 1));
+
+  p4 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+
+  p5 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s <= alim_res_s)) => (result_alt_sep_test_s <= 2));
+
+  p6 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s > 2));
+
+  p7 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s <= alim_res_s)) => (result_alt_sep_test_s <= 2));
+
+  p8 = (((alim_res_s <= 740) => (alim_res_s < 400)) => (result_alt_sep_test_s > 2));
+
+  p9 = (((Up_Separation_s >= alim_res_s) and (alim_res_s < 400)) => (result_alt_sep_test_s >= 2));
+
+  p10 = (((alim_res_s < 400) and (Down_Separation_s > alim_res_s)) => (result_alt_sep_test_s <> 2));
+
+  p11 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s <> alim_res_s)) => (result_alt_sep_test_s <= 2));
+
+  p12 = (((alim_res_s < 400) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s = 2));
+
+  p13 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s = alim_res_s)) => (result_alt_sep_test_s <> 2));
+
+  p14 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s = alim_res_s)) => (result_alt_sep_test_s >= 0));
+
+  p15 = (((alim_res_s <= 399) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s >= 2));
+
+  p16 = (((Up_Separation_s >= alim_res_s) and (alim_res_s < 400)) => (result_alt_sep_test_s = 2));
+
+  p17 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s > alim_res_s)) => (result_alt_sep_test_s >= 0));
+
+  p18 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s <> alim_res_s)) => (result_alt_sep_test_s <= 2));
+
+  p19 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) or (result_alt_sep_test_s <= 2));
+
+  p20 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s <> alim_res_s)) => (result_alt_sep_test_s <= 2));
+
+  p21 = (((Up_Separation_s >= alim_res_s) and (alim_res_s < 400)) => (result_alt_sep_test_s > 2));
+
+  p22 = (((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) or (result_alt_sep_test_s <= 2));
+
+  matchEquiv = (p4 = p6);
+
+  loose = (p4 => p6);
+
+  tight = (p6 => p4);
+
+  tautology = (p6 = true);
+
+  --%PROPERTY matchEquiv;
+  --%PROPERTY loose;
+  --%PROPERTY tight;
+  --%PROPERTY tautology;
+
+tel;

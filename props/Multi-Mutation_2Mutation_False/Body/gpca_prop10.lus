@@ -61,6 +61,16 @@ p1 : bool;
  p8 : bool;
  p9 : bool;
  p10 : bool;
+ p11 : bool;
+ p12 : bool;
+ p13 : bool;
+ p14 : bool;
+ p15 : bool;
+ p16 : bool;
+ p17 : bool;
+ p18 : bool;
+ p19 : bool;
+ p20 : bool;
 let
     p1 = ((System_On and In_Therapy and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
  p2 = ((System_On and In_Therapy and Air_In_Line) => (out_Highest_Level_Alarm >= 3));
@@ -73,4 +83,14 @@ let
     p9 = ((System_On ) => ((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm <= 4)));
     p10 = ((System_On) => (out_Is_Audio_Disabled = Disable_Audio));
 
+p11= (System_On or (out_Is_Audio_Disabled >= 0));
+p12= (System_On or (out_Is_Audio_Disabled >= 0));
+p13= (System_On or (out_Is_Audio_Disabled >= 0));
+p14= (System_On or (out_Is_Audio_Disabled >= 0));
+p15= (System_On or (out_Is_Audio_Disabled >= 0));
+p16= (System_On or (out_Is_Audio_Disabled >= 0));
+p17= (System_On or (out_Is_Audio_Disabled >= 0));
+p18= (System_On or (out_Is_Audio_Disabled >= 0));
+p19= (System_On or (out_Is_Audio_Disabled >= 0));
+p20= (System_On or (out_Is_Audio_Disabled >= 0));
 tel;

@@ -1,0 +1,124 @@
+node main(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p3 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  p23 : bool;
+  p24 : bool;
+  p25 : bool;
+  p26 : bool;
+  p27 : bool;
+  p28 : bool;
+  p29 : bool;
+  p30 : bool;
+  p31 : bool;
+  p32 : bool;
+  p33 : bool;
+  p34 : bool;
+  matchEquiv : bool;
+  loose : bool;
+  tight : bool;
+  tautology : bool;
+let
+  --%MAIN;
+  p1 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p3 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p6 = (((NormalPressure_r >= 0) xor (NormalPressure_r >= 6)) and (skid_r => (NormalPressure_r = 0)));
+
+  p7 = ((((pedal_r <= 4) and (pedal_r > 0)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p8 = ((skid_r => (NormalPressure_r = 0)) and ((NormalPressure_r >= 0) xor (NormalPressure_r = 4)));
+
+  p9 = ((((pedal_r > 1) xor (pedal_r > 4)) and (not skid_r)) => (NormalPressure_r >= 2));
+
+  p10 = ((((pedal_r >= 1) and (not skid_r)) and (skid_r xor (pedal_r <= 4))) => (NormalPressure_r > 0));
+
+  p11 = ((((pedal_r >= 1) and (pedal_r < 5)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p12 = (((skid_r xor (not skid_r)) or (((pedal_r = (-1)) and ((-1) = (-1))) xor ((pedal_r >= 7) and (7 = (-1))))) => (NormalPressure_r >= 0));
+
+  p13 = ((((pedal_r < 5) and (pedal_r >= 1)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p14 = (((NormalPressure_r < 6) xor (NormalPressure_r <= (-1))) and (skid_r => (NormalPressure_r = 0)));
+
+  p15 = ((((pedal_r > 0) and (pedal_r < 5)) and (not skid_r)) => (NormalPressure_r >= 1));
+
+  p16 = (((((pedal_r >= 6) and (6 = (-1))) => (pedal_r < 5)) and (not skid_r)) => (NormalPressure_r < 6));
+
+  p17 = (((((pedal_r >= 7) and (7 = (-1))) xor ((pedal_r > 30) and (30 = (-1)))) => (skid_r and ((pedal_r > 30) and (30 = (-1))))) => (NormalPressure_r >= 0));
+
+  p18 = (((not skid_r) and (NormalPressure_r = 5)) xor ((NormalPressure_r >= 0) xor (NormalPressure_r >= 4)));
+
+  p19 = (((skid_r or (not skid_r)) xor (((pedal_r >= 6) and (6 = (-1))) or ((pedal_r >= 6) and (6 = (-1))))) => (NormalPressure_r < 6));
+
+  p20 = ((((pedal_r < 2) xor (pedal_r >= 2)) and (not skid_r)) => (NormalPressure_r < 6));
+
+  p21 = (((((pedal_r >= 6) and (6 = (-1))) => ((pedal_r >= 6) and (6 = (-1)))) and (not skid_r)) => (NormalPressure_r < 6));
+
+  p22 = (((((pedal_r >= 7) and (7 = (-1))) and (pedal_r = 1)) => (((pedal_r >= 6) and (6 = (-1))) and (pedal_r = 0))) => (NormalPressure_r >= 0));
+
+  p23 = ((((pedal_r < 5) => (pedal_r <= 0)) and (not skid_r)) => (NormalPressure_r <= 1));
+
+  p24 = ((((pedal_r < 5) and (pedal_r > 0)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p25 = (((NormalPressure_r < 6) xor (NormalPressure_r <= (-1))) and (skid_r => (NormalPressure_r = 0)));
+
+  p26 = ((((pedal_r < 2) xor (pedal_r >= 2)) and (not skid_r)) => (NormalPressure_r < 6));
+
+  p27 = ((((pedal_r > 0) or skid_r) xor ((pedal_r > 4) or skid_r)) => (NormalPressure_r > 0));
+
+  p28 = (((((pedal_r >= 6) and (6 = (-1))) => ((pedal_r < (-2)) and ((-2) = (-1)))) and (not skid_r)) => (NormalPressure_r >= 0));
+
+  p29 = (((skid_r or (not skid_r)) xor (((pedal_r >= 6) and (6 = (-1))) or ((pedal_r >= 6) and (6 = (-1))))) => (NormalPressure_r < 6));
+
+  p30 = ((((pedal_r < 1) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r < 2));
+
+  p31 = (((NormalPressure_r <= 0) or (not skid_r)) and ((NormalPressure_r <= 5) and (NormalPressure_r >= 0)));
+
+  p32 = (((((pedal_r = (-1)) and ((-1) = (-1))) and skid_r) => (((pedal_r < 6) and (6 = (-1))) => ((pedal_r < (-1)) and ((-1) = (-1))))) => (NormalPressure_r < 6));
+
+  p33 = ((((pedal_r < 5) and (pedal_r >= 1)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p34 = ((((pedal_r < 5) and (pedal_r >= 1)) and ((not skid_r) and (not skid_r))) => (NormalPressure_r > 0));
+
+  matchEquiv = (p3 = p23);
+
+  loose = (p3 => p23);
+
+  tight = (p23 => p3);
+
+  tautology = (p23 = true);
+
+  --%PROPERTY matchEquiv;
+  --%PROPERTY loose;
+  --%PROPERTY tight;
+  --%PROPERTY tautology;
+
+tel;

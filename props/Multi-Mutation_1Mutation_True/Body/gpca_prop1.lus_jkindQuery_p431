@@ -1,0 +1,170 @@
+node main(
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  System_On : bool;
+  System_Monitor_Failed : bool;
+  Logging_Failed : bool;
+  Infusion_Initiate : bool;
+  Disable_Audio : int;
+  Notification_Cancel : bool;
+  VTBI_High : int;
+  Flow_Rate_High : int;
+  Flow_Rate_Low : int;
+  Flow_Rate : int;
+  Flow_Rate_Not_Stable : bool;
+  Air_In_Line : bool;
+  Occlusion : bool;
+  Door_Open : bool;
+  Temp : bool;
+  Air_Pressure : bool;
+  Humidity : bool;
+  Battery_Depleted : bool;
+  Battery_Low : bool;
+  Battery_Unable_To_Charge : bool;
+  Supply_Voltage : bool;
+  CPU_In_Error : bool;
+  RTC_In_Error : bool;
+  Watchdog_Interrupted : bool;
+  Memory_Corrupted : bool;
+  Pump_Too_Hot : bool;
+  Pump_Overheated : bool;
+  Audio_Enable_Duration : int;
+  Audio_Level : int;
+  Config_Warning_Duration : int;
+  Low_Reservoir : int;
+  Max_Duration_Over_Infusion : int;
+  Max_Duration_Under_Infusion : int;
+  Max_Paused_Duration : int;
+  Max_Idle_Duration : int;
+  Tolerance_Max : int;
+  Tolerance_Min : int;
+  Reservoir_Empty : bool;
+  Reservoir_Volume : int;
+  Volume_Infused : int;
+  In_Therapy : bool;
+  Config_Timer : int;
+  out_Is_Audio_Disabled : int;
+  out_Notification_Message : int;
+  out_Audio_Notification_Command : int;
+  out_Highest_Level_Alarm : int;
+  out_Log_Message_ID5 : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p2 : bool;
+  p3 : bool;
+  p4 : bool;
+  p5 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  p23 : bool;
+  p24 : bool;
+  p25 : bool;
+  p26 : bool;
+  p27 : bool;
+  p28 : bool;
+  p29 : bool;
+  p30 : bool;
+  p31 : bool;
+  p32 : bool;
+  p33 : bool;
+  p34 : bool;
+  p35 : bool;
+  p36 : bool;
+  tight : bool;
+let
+  --%MAIN;
+  p1 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p2 = (((System_On and In_Therapy) and Air_In_Line) => (out_Highest_Level_Alarm >= 3));
+
+  p3 = ((((System_On and In_Therapy) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) => (out_Highest_Level_Alarm >= 3));
+
+  p4 = ((System_On and Occlusion) => (out_Highest_Level_Alarm >= 3));
+
+  p5 = ((System_On and Door_Open) => (out_Highest_Level_Alarm >= 3));
+
+  p6 = (((System_On and (out_Highest_Level_Alarm >= 3)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));
+
+  p7 = ((System_On and (Disable_Audio > 0)) => ((out_Audio_Notification_Command = 0) and (out_Is_Audio_Disabled = Disable_Audio)));
+
+  p8 = (((System_On and In_Therapy) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm >= 2));
+
+  p9 = (System_On => ((out_Highest_Level_Alarm >= 0) and (out_Highest_Level_Alarm <= 4)));
+
+  p10 = (System_On => (out_Is_Audio_Disabled = Disable_Audio));
+
+  p11 = (((out_Highest_Level_Alarm > 4) xor (out_Highest_Level_Alarm < 0)) xor ((out_Highest_Level_Alarm = 0) => (not System_On)));
+
+  p12 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p13 = (((out_Highest_Level_Alarm <= 4) xor (not System_On)) xor (System_On => (out_Highest_Level_Alarm = 0)));
+
+  p14 = (((out_Highest_Level_Alarm <= 4) xor (not System_On)) xor (System_On => (out_Highest_Level_Alarm = 0)));
+
+  p15 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p16 = (((In_Therapy and System_On) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p17 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p18 = ((System_On => (out_Highest_Level_Alarm >= 1)) and ((out_Highest_Level_Alarm > 4) xor (out_Highest_Level_Alarm >= 0)));
+
+  p19 = (((In_Therapy and System_On) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p20 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p21 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p22 = (((In_Therapy and Reservoir_Empty) and ((not System_On) xor In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p23 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p24 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p25 = (((out_Highest_Level_Alarm > 4) xor (out_Highest_Level_Alarm < 0)) xor ((out_Highest_Level_Alarm = 0) => (not System_On)));
+
+  p26 = (((out_Highest_Level_Alarm <= 4) xor (not System_On)) xor (System_On => (out_Highest_Level_Alarm = 0)));
+
+  p27 = (((not System_On) and (out_Highest_Level_Alarm = 0)) xor ((out_Highest_Level_Alarm <= 0) xor (out_Highest_Level_Alarm <= 4)));
+
+  p28 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p29 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p30 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p31 = (((out_Highest_Level_Alarm <= 4) xor (not System_On)) xor (System_On => (out_Highest_Level_Alarm = 0)));
+
+  p32 = (((not System_On) and (out_Highest_Level_Alarm = 0)) xor ((out_Highest_Level_Alarm <= 0) xor (out_Highest_Level_Alarm <= 4)));
+
+  p33 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  p34 = (((In_Therapy and Reservoir_Empty) and ((not In_Therapy) xor System_On)) => (out_Highest_Level_Alarm = 4));
+
+  p35 = (((System_On and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm = 4));
+
+  p36 = (((Reservoir_Empty and System_On) and ((not In_Therapy) => In_Therapy)) => (out_Highest_Level_Alarm = 4));
+
+  tight = (p32 => p4);
+
+  --%PROPERTY tight;
+
+tel;

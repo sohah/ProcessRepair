@@ -1,0 +1,64 @@
+node main(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p3 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  tight : bool;
+let
+  --%MAIN;
+  p1 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p3 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p6 = ((((pedal_r > 0) and ((pedal_r >= (-2)) and ((-2) = (-1)))) xor (not skid_r)) => ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));
+
+  p7 = ((((pedal_r >= 5) xor (pedal_r < 5)) xor (skid_r xor skid_r)) and ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));
+
+  p8 = ((((pedal_r > 0) and (pedal_r <= 4)) => (not skid_r)) => ((AltPressure_r <> 0) or (NormalPressure_r >= 0)));
+
+  p9 = ((((pedal_r > 0) and (pedal_r < 5)) and (not skid_r)) => ((AltPressure_r = 0) and (NormalPressure_r > 0)));
+
+  p10 = ((((pedal_r = 4) and (pedal_r >= 4)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r = 5)));
+
+  p11 = (((((pedal_r >= 6) and (6 = (-1))) xor ((pedal_r >= (-3)) and ((-3) = (-1)))) and (not skid_r)) xor ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r)));
+
+  p12 = ((((pedal_r < 5) and (pedal_r >= 1)) and ((not skid_r) and (not skid_r))) => ((AltPressure_r > 0) or (NormalPressure_r <> 0)));
+
+  p13 = ((((pedal_r > 0) xor (pedal_r >= 5)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p14 = ((((not skid_r) or (pedal_r < 5)) or ((pedal_r < 4) => (pedal_r >= 1))) => ((AltPressure_r = 0) or (NormalPressure_r < 0)));
+
+  p15 = (((skid_r => skid_r) or (((pedal_r > (-1)) and ((-1) = (-1))) => (pedal_r >= 5))) => ((AltPressure_r <> 0) or (NormalPressure_r <= 5)));
+
+  p16 = ((((pedal_r > 0) and (pedal_r <= 4)) => skid_r) or ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p17 = ((((pedal_r >= 1) xor (pedal_r > 4)) => ((not skid_r) => ((pedal_r > (-3)) and ((-3) = (-1))))) or ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p18 = ((((pedal_r > 0) or (pedal_r < 3)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r < 6)));
+
+  tight = (p12 => p3);
+
+  --%PROPERTY tight;
+
+tel;
