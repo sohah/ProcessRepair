@@ -8,11 +8,7 @@ IMPORTANT: to run this correctly one has to manually populate the tautProp accor
 
 import jkind.api.JKindApi;
 import jkind.api.results.JKindResult;
-import jkind.api.results.PropertyResult;
 import jkind.api.results.Status;
-import jkind.lustre.Equation;
-import jkind.lustre.Program;
-import jkind.lustre.parsing.LustreParseUtil;
 import org.eclipse.core.runtime.NullProgressMonitor;
 
 import java.io.*;
@@ -38,8 +34,14 @@ public class SplitStatsForTaut {
     private static Path tautStatFile;
     private static Path noTautStatFile;
 
+    private static Path tautOtherStatFile; //holds the split enteries where the last property is a taut, but the reason for the termination was not because of TRUE_FOR_MAX_STEPS
+
     //this data structure needs to maintain the insertion order.
     private static LinkedHashMap<String, String> tautMutantsToProp = new LinkedHashMap<>();
+
+    //hashset that holds the enteries for tautology stats that were not because of TRUE_FOR_MAX_STEPS
+    static HashSet<String> tautForOtherReasons = new HashSet<>();
+
     static int timeOut = 600;
 
     public static void filterStatisticsFile() throws IOException {
@@ -98,7 +100,8 @@ public class SplitStatsForTaut {
                             tautMutantsToProp.put(statsEntry[i], currTautProp);
                             break;
                         }
-                }
+                } else if (strLine.contains(currTautProp)) // there is another reason for the failure, then log that seperately
+                    tautForOtherReasons.add(strLine);
             }
 
             //Close the input stream
@@ -110,13 +113,18 @@ public class SplitStatsForTaut {
 
         assert !validTautProp.isEmpty() : "No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find";
 
-        tautStatFile = Paths.get(directory + "/stats/" + benchmark + "_tautStatFile" + ".txt");
-        noTautStatFile = Paths.get(directory + "/stats/" + benchmark + "_noTautStatFile" + ".txt");
+        tautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_tautStatFile" + ".txt");
+        noTautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_noTautStatFile" + ".txt");
+        tautOtherStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_tautOtherStatFile" + ".txt");
+
         Files.write(tautStatFile, new ArrayList<>(), StandardCharsets.UTF_8);
         Files.write(noTautStatFile, new ArrayList<>(), StandardCharsets.UTF_8);
+        Files.write(tautOtherStatFile, new ArrayList<>(), StandardCharsets.UTF_8);
+
 
         ArrayList<String> tautStatEntry = new ArrayList<>();
         ArrayList<String> noTautStatEntry = new ArrayList<>();
+        ArrayList<String> tautStatOtherEntry = new ArrayList<>();
 
         // Open the file
         FileInputStream fstream = new FileInputStream(directory + fileName);
@@ -129,20 +137,29 @@ public class SplitStatsForTaut {
         //Read File Line By Line
         while ((strLine = br.readLine()) != null) {
             if (propIndex >= validTautProp.size()) {
-                noTautStatEntry.add(strLine);
+                if (tautForOtherReasons.contains(strLine))
+                    tautStatOtherEntry.add(strLine);
+                else//we need to write it to non-taut file, while still looking for the prop
+                    noTautStatEntry.add(strLine);
             } else {
                 String currTautProp = validTautProp.get(propIndex);
                 if (strLine.contains(currTautProp)) {//if match then we need to write it to the taut file
                     assert strLine.contains("TRUE_FOR_MAX_STEPS") : "tautology repair mutant must have been selected at that point because they failed due to TRUE_FOR_MAX_STEPS. Assumptions violated. Failing";
                     propIndex++; // we matched that prop, so we need to move on
                     tautStatEntry.add(strLine);
-                } else  //we need to write it to non-taut file, while still looking for the prop
-                    noTautStatEntry.add(strLine);
+                } else { //we check if it is a tautology record where the failure was for other reasons than MAX_FOR_TRUE_STEPS
+                    if (tautForOtherReasons.contains(strLine))
+                        tautStatOtherEntry.add(strLine);
+                    else//we need to write it to non-taut file, while still looking for the prop
+                        noTautStatEntry.add(strLine);
+                }
             }
         }
 
         Files.write(tautStatFile, tautStatEntry, StandardCharsets.UTF_8);
         Files.write(noTautStatFile, noTautStatEntry, StandardCharsets.UTF_8);
+        Files.write(tautOtherStatFile, tautStatOtherEntry, StandardCharsets.UTF_8);
+
 
         //Close the input stream
         fstream.close();
@@ -188,19 +205,6 @@ public class SplitStatsForTaut {
                         }
                     }
                     bodyFstream.close();
-
-                   /* Program pgm = LustreParseUtil.program(new String(Files.readAllBytes(Paths.get(bodyFileName)), "UTF-8"));
-                    List<Equation> equations = pgm.getMainNode().equations;
-
-                    for (int j = 0; j < equations.size(); j++) {
-                        Equation equation = equations.get(j);
-                        String lhsName = equation.lhs.toString().replace("[", "");
-                        lhsName = lhsName.replace("]", "");
-                        if (lhsName.equals(tautPropName)) {
-                            tautProp.add(equation.expr.toString());
-                            break; // we break that loop once we found the property we are looking for and after we populate it to the arraylist that we are going to use for the spliting
-                        }
-                    }*/
                 }
 
                 //Close the input stream
