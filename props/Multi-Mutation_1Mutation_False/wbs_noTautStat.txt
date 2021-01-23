@@ -1,0 +1,9 @@
+wbs	p1	Prop1-ROR-6-0	FALSE	1	TRUE_FOR_MAX_STEPS	3	16.918	16.873	8.641	8.232	10	10	0.864	0.823	p1 = ((((pedal_r <= 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));										
+wbs	p1	Prop1-LOR-4-1	FALSE	0	TRUE_FOR_MAX_STEPS	2	6.731	6.723	3.411	3.312	5	5	0.682	0.662	p1 = ((((pedal_r > 0) xor (pedal_r > 4)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));										
+wbs	p1	Prop1-ROR-7-15	FALSE	0	TRUE_FOR_MAX_STEPS	1	2.718	2.715	1.509	1.206	2	2	0.754	0.603	p1 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r = 0) or (NormalPressure_r <= 0)));										
+wbs	p1	Prop1-ROR-6-2	FALSE	1	TRUE_FOR_MAX_STEPS	3	18.642	18.591	9.347	9.244	11	11	0.849	0.84	p1 = ((((pedal_r = 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)));										
+wbs	p1	Prop1-LOR-6-3	FALSE	1	TRUE_FOR_MAX_STEPS	3	21.375	21.311	10.151	11.16	11	11	0.922	1.014	p1 = ((((pedal_r > 0) and (pedal_r <= 4)) => (not skid_r)) => ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r)));										
+wbs	p1	Prop1-LOR-6-3	FALSE	1	TRUE_FOR_MAX_STEPS	3	20.562	20.506	9.744	10.762	11	11	0.885	0.978	p1 = ((((pedal_r > 0) and (pedal_r <= 4)) => (not skid_r)) => ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r)));										
+wbs	p3	Prop3-ROR-6-1	FALSE	0	TRUE_FOR_MAX_STEPS	2	10.193	10.184	5.055	5.129	5	5	1.011	1.025	p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
+wbs	p3	Prop3-ROR-6--1	FALSE	0	TRUE_FOR_MAX_STEPS	2	7.959	7.951	4.028	3.923	5	5	0.805	0.784	p1 = ((((pedal_r < 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r < 2));
+wbs	p3	Prop3-ROR-6-1	FALSE	0	TRUE_FOR_MAX_STEPS	2	7.551	7.542	3.516	4.026	5	5	0.703	0.805	p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
