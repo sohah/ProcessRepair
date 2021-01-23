@@ -1,0 +1,1 @@
+wbs	p3	Prop3-ROR-1-6-ROR-1-9	FALSE	2	MINIMAL_EXISTS_UKNOWN	1	636.366	635.909	621.835	14.074	19	19	32.728	0.74	p1 = (((((pedal_r <= -3) and (-3 = (-1))) => (pedal_r <= 1)) xor (((pedal_r > 9) and (9 = (-1))) => ((pedal_r = 8) and (8 = (-1))))) => (NormalPressure_r < 0));

@@ -1,0 +1,4 @@
+gpca	p8	Faulty_GPCA_Prop8-ROR-2-3-ROR-2-7	FALSE	1	TRUE_FOR_MAX_STEPS	1	8.691	8.488	2.825	5.663	5	5	0.565	1.132	p1 = (((In_Therapy and (not In_Therapy)) and (Reservoir_Volume <> Low_Reservoir)) => (out_Highest_Level_Alarm = 2));
+gpca	p8	Faulty_GPCA_Prop8-ROR-2-3-ROR-2-6	FALSE	1	TRUE_FOR_MAX_STEPS	1	9.833	9.616	2.92	6.696	5	5	0.584	1.339	p1 = (((In_Therapy and (not In_Therapy)) and (Reservoir_Volume <> Low_Reservoir)) => (out_Highest_Level_Alarm > 2));
+gpca	p8	Faulty_GPCA_Prop8-LOR-2-0-ROR-2-7	FALSE	1	TRUE_FOR_MAX_STEPS	1	9.467	9.192	3.326	5.866	5	5	0.665	1.173	p1 = ((((not In_Therapy) xor (not In_Therapy)) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm = 2));
+gpca	p8	Faulty_GPCA_Prop8-LOR-2--1-ROR-2-6	FALSE	1	TRUE_FOR_MAX_STEPS	1	9.148	8.991	2.717	6.274	5	5	0.543	1.254	p1 = ((((not In_Therapy) and In_Therapy) and (Reservoir_Volume < Low_Reservoir)) => (out_Highest_Level_Alarm > 2));

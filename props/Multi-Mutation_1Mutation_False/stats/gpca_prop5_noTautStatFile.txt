@@ -1,0 +1,13 @@
+gpca	p5	Faulty_GPCA_Prop5-LOR-2-0	FALSE	0	TRUE_FOR_MAX_STEPS	2	8.946	8.852	2.212	6.64	4	4	0.553	1.66	p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm <= 4));
+gpca	p5	Faulty_GPCA_Prop5-LOR-2-0	FALSE	0	TRUE_FOR_MAX_STEPS	2	8.466	8.351	2.31	6.041	4	4	0.577	1.51	p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm <= 4));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1-0	FALSE	1	TRUE_FOR_MAX_STEPS	1	36.008	35.907	2.415	33.492	5	5	0.483	6.698	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm <= 3));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1-0	FALSE	1	TRUE_FOR_MAX_STEPS	1	35.112	35.005	2.514	32.491	5	5	0.502	6.498	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm <= 3));
+gpca	p5	Faulty_GPCA_Prop5-LOR-2-0	FALSE	0	TRUE_FOR_MAX_STEPS	2	9.375	9.247	2.411	6.836	4	4	0.602	1.709	p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm <= 4));
+gpca	p5	Faulty_GPCA_Prop5-LOR-2-3	FALSE	0	TRUE_FOR_MAX_STEPS	2	10.544	10.45	2.111	8.339	4	4	0.527	2.084	p1 = ((System_On and Door_Open) or (out_Highest_Level_Alarm <= 4));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1--1	FALSE	1	TRUE_FOR_MAX_STEPS	1	18.179	18.093	2.615	15.478	5	5	0.523	3.095	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm < 3));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1-0	FALSE	1	TRUE_FOR_MAX_STEPS	1	36.825	36.72	2.715	34.005	5	5	0.543	6.801	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm <= 3));
+gpca	p5	Faulty_GPCA_Prop5-LOR-2-0	FALSE	0	TRUE_FOR_MAX_STEPS	2	10.206	10.064	2.311	7.753	4	4	0.577	1.938	p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm <= 4));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1-0	FALSE	1	TRUE_FOR_MAX_STEPS	1	37.111	37.007	3.015	33.992	5	5	0.603	6.798	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm <= 3));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1--1	FALSE	1	TRUE_FOR_MAX_STEPS	1	17.792	17.683	2.617	15.066	5	5	0.523	3.013	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm < 3));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1--1	FALSE	1	TRUE_FOR_MAX_STEPS	1	17.083	16.993	2.716	14.277	5	5	0.543	2.855	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm < 3));
+gpca	p5	Faulty_GPCA_Prop5-ROR-1-1	FALSE	1	TRUE_FOR_MAX_STEPS	1	10.019	9.871	2.816	7.055	5	5	0.563	1.411	p1 = ((System_On xor System_On) => (out_Highest_Level_Alarm > 3));

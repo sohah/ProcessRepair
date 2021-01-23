@@ -7,7 +7,7 @@ alias runDiscovery='java -Djava.library.path-/home/soha/git/ProcessRepair/lib -c
 shopt -s expand_aliases
 
 
-EXPIREMENTDIR=props/Multi-Mutation_2Mutation_False/
+EXPIREMENTDIR=props/Multi-Mutation_2Mutation_True/
 LUSTREDIR=/media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/
 
 

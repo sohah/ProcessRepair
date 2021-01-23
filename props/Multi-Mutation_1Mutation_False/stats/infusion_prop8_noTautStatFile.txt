@@ -1,0 +1,8 @@
+infusion	p8	Faulty_Prop8-ROR-2-6	FALSE	0	TRUE_FOR_MAX_STEPS	1	22.697	22.473	8.532	13.941	6	6	1.422	2.323	p1 = ((System_On and false) => ((not (Current_System_Mode > 3)) and (not (Current_System_Mode = 4))));
+infusion	p8	Faulty_Prop8-ROR-3-0	FALSE	1	TRUE_FOR_MAX_STEPS	2	17.476	17.337	5.332	12.005	6	6	0.888	2	p1 = ((System_On and (Highest_Level_Alarm <= 2)) => ((Current_System_Mode <= 8) and (Current_System_Mode >= 1)));
+infusion	p8	Faulty_Prop8-LOR-2-3	FALSE	0	TRUE_FOR_MAX_STEPS	2	11.482	11.395	2.914	8.481	4	4	0.728	2.12	p1 = ((System_On and (Highest_Level_Alarm < 2)) or ((not (Current_System_Mode = 3)) and (not (Current_System_Mode = 4))));
+infusion	p8	Faulty_Prop8-ROR-1-12	FALSE	1	TRUE_FOR_MAX_STEPS	2	29.15	28.946	9.066	19.88	10	10	0.906	1.988	p1 = (((not System_On) xor false) => ((not (Current_System_Mode = 3)) and (not (Current_System_Mode >= 4))));
+infusion	p8	Faulty_Prop8-ROR-3-3	FALSE	1	TRUE_FOR_MAX_STEPS	2	25.24	25.048	7.857	17.191	9	9	0.873	1.91	p1 = ((System_On and (Highest_Level_Alarm <> 2)) => ((Current_System_Mode <= 8) xor (Current_System_Mode <= 0)));
+infusion	p8	Faulty_Prop8-LOR-5-7	FALSE	0	TRUE_FOR_MAX_STEPS	1	12.425	12.302	3.915	8.387	4	4	0.978	2.096	p1 = ((System_On and (Highest_Level_Alarm = 2)) => ((not (Current_System_Mode >= 1)) xor (not (Current_System_Mode = 4))));
+infusion	p8	Faulty_Prop8-LOR-4-7	FALSE	0	TRUE_FOR_MAX_STEPS	2	14.338	14.233	4.227	10.006	6	6	0.704	1.667	p1 = ((System_On and (Highest_Level_Alarm = 2)) => ((Current_System_Mode > 8) xor (not (Current_System_Mode = 4))));
+infusion	p8	Faulty_Prop8-ROR-1-10	FALSE	1	TRUE_FOR_MAX_STEPS	1	30.575	30.273	10.57	19.703	13	13	0.813	1.515	p1 = (false => ((not (Current_System_Mode = 3)) and (not (Current_System_Mode <= 4))));

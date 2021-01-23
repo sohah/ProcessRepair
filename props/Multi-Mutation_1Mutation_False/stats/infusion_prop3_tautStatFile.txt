@@ -1,0 +1,2 @@
+infusion	p3	Faulty_Prop3-ROR-1-6	FALSE	1	TRUE_FOR_MAX_STEPS	1	25.765	25.504	9.364	16.14	13	13	0.72	1.241	p1 = (((not System_On) and System_On) => (Commanded_Flow_Rate > 0));
+infusion	p3	Faulty_Prop3-ROR-1-4	FALSE	1	TRUE_FOR_MAX_STEPS	1	28.987	28.702	10.687	18.015	13	13	0.822	1.385	p1 = (((not System_On) and System_On) => (Commanded_Flow_Rate < 0));

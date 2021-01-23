@@ -1,0 +1,1 @@
+gpca	p7	Faulty_GPCA_Prop7-LOR-3-3	FALSE	1	MINIMAL_FORALL_UNKNOWN	1	1109.037	1107.574	23.91	1083.664	25	26	0.956	41.679	p1 = ((System_On and (Disable_Audio > 0)) or true);

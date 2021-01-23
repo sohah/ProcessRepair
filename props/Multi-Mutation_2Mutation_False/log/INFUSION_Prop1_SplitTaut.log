@@ -1,0 +1,11 @@
+running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop1/output/Faulty_Prop1-ROR-7-10-ROR-8-38/minimal/Faulty_Prop1-ROR-7-10-ROR-8-38_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop1/output/Faulty_Prop1-ROR-6-21-ROR-13-37/minimal/Faulty_Prop1-ROR-6-21-ROR-13-37_exists.lus
+Query Result = Unknown
+running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop1/output/Faulty_Prop1-ROR-7-29-ROR-9-37/minimal/Faulty_Prop1-ROR-7-29-ROR-9-37_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop1/output/Faulty_Prop1-LOR-12-3-ROR-12-32/minimal/Faulty_Prop1-LOR-12-3-ROR-12-32_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop1/output/Faulty_Prop1-ROR-5-4-ROR-11-18/minimal/Faulty_Prop1-ROR-5-4-ROR-11-18_exists.lus
+Query Result = Unknown
+No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find

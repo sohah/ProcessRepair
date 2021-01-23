@@ -100,8 +100,10 @@ public class SplitStatsForTaut {
                             tautMutantsToProp.put(statsEntry[i], currTautProp);
                             break;
                         }
-                } else if (strLine.contains(currTautProp)) // there is another reason for the failure, then log that seperately
+                } else if (strLine.contains(currTautProp)) { // there is another reason for the failure, then log that seperately
                     tautForOtherReasons.add(strLine);
+//                    System.out.println(currTautProp + " is taut for another reason than TRUE_FOR_MAX_STEPS");
+                }
             }
 
             //Close the input stream
@@ -111,7 +113,8 @@ public class SplitStatsForTaut {
 
     public static void splitStatFileToTaut() throws IOException {
 
-        assert !validTautProp.isEmpty() : "No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find";
+        if (!validTautProp.isEmpty())
+            System.out.println("No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find");
 
         tautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_tautStatFile" + ".txt");
         noTautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_noTautStatFile" + ".txt");
@@ -186,25 +189,28 @@ public class SplitStatsForTaut {
         while ((strLine = br.readLine()) != null) {
             if (strLine.contains(matchingString)) {
                 String tautPropStr = strLine.substring(matchingString.length() + 1, strLine.length() - 1);
-                String[] tautPropNames = tautPropStr.split(",");
+                if (tautPropStr.length() != 0) { //there is some tautology props to look for
 
-                for (int i = 0; i < tautPropNames.length; i++) {
-                    String tautPropName = tautPropNames[i];
-                    tautPropName = tautPropName.replace(" ", "");
-                    tautPropName = tautPropName.concat("=");
-                    String bodyFileName = getCorrespondingBodyFileName();
-                    //now we open the body file as a lustre file and look for the corresponding property we are looking for.
+                    String[] tautPropNames = tautPropStr.split(",");
 
-                    FileInputStream bodyFstream = new FileInputStream(bodyFileName);
-                    BufferedReader bodybr = new BufferedReader(new InputStreamReader(bodyFstream));
-                    String bodyLine;
-                    while ((bodyLine = bodybr.readLine()) != null) {
-                        if (bodyLine.contains(tautPropName)) {
-                            tautProp.add(bodyLine.substring(tautPropName.length()));
-                            break;
+                    for (int i = 0; i < tautPropNames.length; i++) {
+                        String tautPropName = tautPropNames[i];
+                        tautPropName = tautPropName.replace(" ", "");
+                        tautPropName = tautPropName.concat("=");
+                        String bodyFileName = getCorrespondingBodyFileName();
+                        //now we open the body file as a lustre file and look for the corresponding property we are looking for.
+
+                        FileInputStream bodyFstream = new FileInputStream(bodyFileName);
+                        BufferedReader bodybr = new BufferedReader(new InputStreamReader(bodyFstream));
+                        String bodyLine;
+                        while ((bodyLine = bodybr.readLine()) != null) {
+                            if (bodyLine.contains(tautPropName)) {
+                                tautProp.add(bodyLine.substring(tautPropName.length()));
+                                break;
+                            }
                         }
+                        bodyFstream.close();
                     }
-                    bodyFstream.close();
                 }
 
                 //Close the input stream
