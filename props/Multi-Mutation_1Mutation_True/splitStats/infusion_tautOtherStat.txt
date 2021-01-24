@@ -1,4 +1,0 @@
-infusion	p5	Faulty_Prop5-ROR-2-0	TRUE	0	MINIMAL_MAX_LOOP_REACHED	1	89.893	89.058	31.919	57.139	34	35	0.938	1.632	p1 = ((System_On and false) => (Commanded_Flow_Rate = 0));
-infusion	p5	Faulty_Prop5-ROR-1-3	TRUE	1	MINIMAL_MAX_LOOP_REACHED	1	90.918	89.52	32.874	56.646	34	35	0.966	1.618	p1 = (false => (Commanded_Flow_Rate = 0));
-infusion	p5	Faulty_Prop5-ROR-2-0	TRUE	0	MINIMAL_MAX_LOOP_REACHED	1	82.25	81.48	28.695	52.785	34	35	0.843	1.508	p1 = ((System_On and false) => (Commanded_Flow_Rate = 0));
-infusion	p5	Faulty_Prop5-ROR-2--1	TRUE	0	MINIMAL_MAX_LOOP_REACHED	1	87.617	86.825	31.22	55.605	34	35	0.918	1.588	p1 = ((System_On and false) => (Commanded_Flow_Rate = 0));

@@ -36,13 +36,18 @@ public class SplitStatsForTaut {
 
     private static Path tautOtherStatFile; //holds the split enteries where the last property is a taut, but the reason for the termination was not because of TRUE_FOR_MAX_STEPS
 
-    //this data structure needs to maintain the insertion order.
-    private static LinkedHashMap<String, String> tautMutantsToProp = new LinkedHashMap<>();
+    //this data structure needs to maintain the insertion order.// I have split this map into two list, just in case there was a collision among the names of mutants due to the random selection. With the list DS we will have the right order and will have the duplicate mutant names as well
+    //private static LinkedHashMap<String, String> tautMutantsToProp = new LinkedHashMap<>();
+    private static List<String> tautMutantList = new ArrayList<>();
+    private static List<String> tautPropList = new ArrayList<>();
+
 
     //hashset that holds the enteries for tautology stats that were not because of TRUE_FOR_MAX_STEPS
     static HashSet<String> tautForOtherReasons = new HashSet<>();
 
-    static int timeOut = 600;
+    static int timeOut = 900;
+
+//    static int unknownCount = 0;
 
     public static void filterStatisticsFile() throws IOException {
 
@@ -56,26 +61,31 @@ public class SplitStatsForTaut {
         runUnboundedVerification();
 
         splitStatFileToTaut();
+//        System.out.println(benchmark +" "+ prop +" -- number of unknown taut prop = " + unknownCount);
     }
 
     //run unbounded verification for the last exists query for each mutant in tautMutantToProp map, and populates validTautProp with the valid ones. Those are later used for spliting the stat file
     private static void runUnboundedVerification() {
         // mutantExistsDirectory must be something that has the exiprement like /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/WBS/
 
+/*
         for (Map.Entry<String, String> mutantProp : tautMutantsToProp.entrySet()) {
             String mutantName = mutantProp.getKey();
-
+*/
+        for (int i = 0; i < tautMutantList.size(); i++) {
+            String mutantName = tautMutantList.get(i);
             String propWithFirstLetterCapitablized = prop.substring(0, 1).toUpperCase() + prop.substring(1);
 
             String exitsFileName = mutantExistsDirectory.concat("/" + propWithFirstLetterCapitablized + "/output/" + mutantName + "/minimal/" + mutantName + "_exists.lus");
-
+            exitsFileName = exitsFileName.replaceAll(" ", "");
             JKindResult jkindResutl = callJkind(exitsFileName);
 
             System.out.println("running existsFileName = " + exitsFileName);
             System.out.println("Query Result = " + jkindResutl.getPropertyResult("fail").getStatus().toString());
 
             if (jkindResutl.getPropertyResult("fail").getStatus() == Status.VALID)
-                validTautProp.add(mutantProp.getValue());
+//                validTautProp.add(mutantProp.getValue());
+                validTautProp.add(tautPropList.get(i));
         }
     }
 
@@ -94,10 +104,12 @@ public class SplitStatsForTaut {
                 if (strLine.contains(currTautProp) && strLine.contains("TRUE_FOR_MAX_STEPS")) {//if match then we need to write it to the taut file
 
                     //get the name of the mutant to later run its last exists query in an unbounded mode.
-                    String[] statsEntry = strLine.split("\t");
+                    String[] statsEntry = strLine.split(",");
                     for (int i = 0; i < statsEntry.length; i++)
                         if (statsEntry[i].contains("ROR") || statsEntry[i].contains("LOR")) {
-                            tautMutantsToProp.put(statsEntry[i], currTautProp);
+                            tautMutantList.add(statsEntry[i]);
+                            tautPropList.add(currTautProp);
+//                            tautMutantsToProp.put(statsEntry[i], currTautProp);
                             break;
                         }
                 } else if (strLine.contains(currTautProp)) { // there is another reason for the failure, then log that seperately
@@ -116,9 +128,9 @@ public class SplitStatsForTaut {
         if (!validTautProp.isEmpty())
             System.out.println("No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find");
 
-        tautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_tautStatFile" + ".txt");
-        noTautStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_noTautStatFile" + ".txt");
-        tautOtherStatFile = Paths.get(directory + "/stats/" + benchmark + "_" + prop + "_tautOtherStatFile" + ".txt");
+        tautStatFile = Paths.get(directory + "/splitStats/" + benchmark + "_" + prop + "_tautStatFile" + ".txt");
+        noTautStatFile = Paths.get(directory + "/splitStats/" + benchmark + "_" + prop + "_noTautStatFile" + ".txt");
+        tautOtherStatFile = Paths.get(directory + "/splitStats/" + benchmark + "_" + prop + "_tautOtherStatFile" + ".txt");
 
         Files.write(tautStatFile, new ArrayList<>(), StandardCharsets.UTF_8);
         Files.write(noTautStatFile, new ArrayList<>(), StandardCharsets.UTF_8);
@@ -233,98 +245,98 @@ public class SplitStatsForTaut {
         String matchingString = "tautology props for " + benchmark + ": ";
         if (benchmark.equals("wbs")) {
             if (prop.equals("prop1")) {
-                fileName = "stats/wbs_stat_prop1";
+                fileName = "stats/wbs_prop1_stats.txt";
                 matchingString = matchingString.concat("p1");
             } else {
-                fileName = "stats/wbs_stat_prop3";
+                fileName = "stats/wbs_prop3_stats.txt";
                 matchingString = matchingString.concat("p3");
             }
         } else if (benchmark.equals("tcas")) {
             if (prop.equals("prop1")) {
-                fileName = "stats/tcas_stat_prop1";
+                fileName = "stats/tcas_prop1_stats.txt";
                 matchingString = matchingString.concat("p1");
             } else if (prop.equals("prop2")) {
-                fileName = "stats/tcas_stat_prop2";
+                fileName = "stats/tcas_prop2_stats.txt";
                 matchingString = matchingString.concat("p2");
             } else {
-                fileName = "stats/tcas_stat_prop4";
+                fileName = "stats/tcas_prop4_stats.txt";
                 matchingString = matchingString.concat("p4");
             }
         } else if (benchmark.equals("infusion")) {
             if (prop.equals("prop1")) {
-                fileName = "stats/infusion_stat_prop1";
+                fileName = "stats/infusion_prop1_stats.txt";
                 matchingString = matchingString.concat("p1");
             } else if (prop.equals("prop2")) {
-                fileName = "stats/infusion_stat_prop2";
+                fileName = "stats/infusion_prop2_stats.txt";
                 matchingString = matchingString.concat("p2");
             } else if (prop.equals("prop3")) {
-                fileName = "stats/infusion_stat_prop3";
+                fileName = "stats/infusion_prop3_stats.txt";
                 matchingString = matchingString.concat("p3");
             } else if (prop.equals("prop4")) {
-                fileName = "stats/infusion_stat_prop4";
+                fileName = "stats/infusion_prop4_stats.txt";
                 matchingString = matchingString.concat("p4");
             } else if (prop.equals("prop5")) {
-                fileName = "stats/infusion_stat_prop5";
+                fileName = "stats/infusion_prop5_stats.txt";
                 matchingString = matchingString.concat("p5");
             } else if (prop.equals("prop6")) {
-                fileName = "stats/infusion_stat_prop6";
+                fileName = "stats/infusion_prop6_stats.txt";
                 matchingString = matchingString.concat("p6");
             } else if (prop.equals("prop7")) {
-                fileName = "stats/infusion_stat_prop7";
+                fileName = "stats/infusion_prop7_stats.txt";
                 matchingString = matchingString.concat("p7");
             } else if (prop.equals("prop8")) {
-                fileName = "stats/infusion_stat_prop8";
+                fileName = "stats/infusion_prop8_stats.txt";
                 matchingString = matchingString.concat("p8");
             } else if (prop.equals("prop9")) {
-                fileName = "stats/infusion_stat_prop9";
+                fileName = "stats/infusion_prop9_stats.txt";
                 matchingString = matchingString.concat("p9");
             } else if (prop.equals("prop10")) {
-                fileName = "stats/infusion_stat_prop10";
+                fileName = "stats/infusion_prop10_stats.txt";
                 matchingString = matchingString.concat("p10");
             } else if (prop.equals("prop11")) {
-                fileName = "stats/infusion_stat_prop11";
+                fileName = "stats/infusion_prop11_stats.txt";
                 matchingString = matchingString.concat("p11");
             } else if (prop.equals("prop12")) {
-                fileName = "stats/infusion_stat_prop12";
+                fileName = "stats/infusion_prop12_stats.txt";
                 matchingString = matchingString.concat("p12");
             } else if (prop.equals("prop13")) {
-                fileName = "stats/infusion_stat_prop13";
+                fileName = "stats/infusion_prop13_stats.txt";
                 matchingString = matchingString.concat("p13");
             } else {
-                fileName = "stats/infusion_stat_prop14";
+                fileName = "stats/infusion_prop14_stats.txt";
                 matchingString = matchingString.concat("p14");
             }
         } else { //must be a gpca
             assert benchmark.equals("gpca");
             if (prop.equals("prop1")) {
-                fileName = "stats/gpca_stat_prop1";
+                fileName = "stats/gpca_prop1_stats.txt";
                 matchingString = matchingString.concat("p1");
             } else if (prop.equals("prop2")) {
-                fileName = "stats/gpca_stat_prop2";
+                fileName = "stats/gpca_prop2_stats.txt";
                 matchingString = matchingString.concat("p2");
             } else if (prop.equals("prop3")) {
-                fileName = "stats/gpca_stat_prop3";
+                fileName = "stats/gpca_prop3_stats.txt";
                 matchingString = matchingString.concat("p3");
             } else if (prop.equals("prop4")) {
-                fileName = "stats/gpca_stat_prop4";
+                fileName = "stats/gpca_prop4_stats.txt";
                 matchingString = matchingString.concat("p4");
             } else if (prop.equals("prop5")) {
-                fileName = "stats/gpca_stat_prop5";
+                fileName = "stats/gpca_prop5_stats.txt";
                 matchingString = matchingString.concat("p5");
             } else if (prop.equals("prop6")) {
-                fileName = "stats/gpca_stat_prop6";
+                fileName = "stats/gpca_prop6_stats.txt";
                 matchingString = matchingString.concat("p6");
             } else if (prop.equals("prop7")) {
-                fileName = "stats/gpca_stat_prop7";
+                fileName = "stats/gpca_prop7_stats.txt";
                 matchingString = matchingString.concat("p7");
             } else if (prop.equals("prop8")) {
-                fileName = "stats/gpca_stat_prop8";
+                fileName = "stats/gpca_prop8_stats.txt";
                 matchingString = matchingString.concat("p8");
             } else if (prop.equals("prop9")) {
-                fileName = "stats/gpca_stat_prop9";
+                fileName = "stats/gpca_prop9_stats.txt";
                 matchingString = matchingString.concat("p9");
             } else {
-                fileName = "stats/gpca_stat_prop10";
+                fileName = "stats/gpca_prop10_stats.txt";
                 matchingString = matchingString.concat("p10");
             }
 
