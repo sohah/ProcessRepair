@@ -1,2 +1,0 @@
-gpca	p5	Faulty_GPCA_Prop5-LOR-1--1-ROR-2-3	TRUE	0	MINIMAL_FORALL_UNKNOWN	1	719.512	719.291	5.949	713.342	6	7	0.991	101.906	p1 = (((not Door_Open) xor (not Door_Open)) => false);
-gpca	p5	Faulty_GPCA_Prop5-LOR-1--1-ROR-2-0	TRUE	0	MINIMAL_FORALL_UNKNOWN	1	609.531	609.429	2.512	606.917	4	5	0.628	121.383	p1 = ((Door_Open and (not Door_Open)) => (out_Highest_Level_Alarm = 7));

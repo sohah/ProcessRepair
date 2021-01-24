@@ -1,2 +1,0 @@
-gpca	p1	Faulty_GPCA_Prop1-ROR-2--1	FALSE	1	TRUE_FOR_MAX_STEPS	1	64.688	64.32	11.342	52.978	5	5	2.268	10.595	p1 = (((In_Therapy and (not In_Therapy)) and Reservoir_Empty) => (out_Highest_Level_Alarm < 4));
-gpca	p1	Faulty_GPCA_Prop1-ROR-2-1	FALSE	1	TRUE_FOR_MAX_STEPS	1	46.869	46.65	5.779	40.871	5	5	1.155	8.174	p1 = ((((not In_Therapy) and In_Therapy) and Reservoir_Empty) => (out_Highest_Level_Alarm > 4));

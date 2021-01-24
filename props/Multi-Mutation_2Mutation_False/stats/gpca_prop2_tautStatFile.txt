@@ -1,1 +1,0 @@
-gpca	p2	Faulty_GPCA_Prop2-LOR-2--1-ROR-2-3	FALSE	1	TRUE_FOR_MAX_STEPS	1	373.809	373.686	3.418	370.268	5	5	0.683	74.053	p1 = (((System_On and (not System_On)) and Air_In_Line) => (out_Highest_Level_Alarm <> 3));

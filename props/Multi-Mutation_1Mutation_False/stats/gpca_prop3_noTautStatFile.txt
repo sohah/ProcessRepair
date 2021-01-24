@@ -1,2 +1,0 @@
-gpca	p3	Faulty_GPCA_Prop3-LOR-4-2	FALSE	0	MINIMAL_MAX_LOOP_REACHED	1	376.154	374.9	37.792	337.108	35	36	1.079	9.364	p1 = ((((System_On and In_Therapy) or Reservoir_Empty) and (VTBI_High < 0)) => (out_Highest_Level_Alarm >= 3));
-gpca	p3	Faulty_GPCA_Prop3-LOR-4-1	FALSE	0	MINIMAL_MAX_LOOP_REACHED	1	231.189	229.841	39.205	190.636	34	35	1.153	5.446	p1 = ((((System_On xor In_Therapy) and Reservoir_Empty) and (Volume_Infused < 0)) => (out_Highest_Level_Alarm >= 3));

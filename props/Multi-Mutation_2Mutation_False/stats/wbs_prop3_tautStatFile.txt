@@ -1,1 +1,0 @@
-wbs	p3	Prop3-LOR-4-1-ROR-5--1	FALSE	0	TRUE_FOR_MAX_STEPS	1	12.216	12.195	6.052	6.143	9	9	0.672	0.682	p1 = ((((pedal_r < 0) xor (pedal_r < 0)) and skid_r) => (NormalPressure_r > 0));

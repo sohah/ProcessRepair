@@ -1,3 +1,0 @@
-wbs	p3	Prop3-ROR-6-1	FALSE	0	TRUE_FOR_MAX_STEPS	2	10.193	10.184	5.055	5.129	5	5	1.011	1.025	p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
-wbs	p3	Prop3-ROR-6--1	FALSE	0	TRUE_FOR_MAX_STEPS	2	7.959	7.951	4.028	3.923	5	5	0.805	0.784	p1 = ((((pedal_r < 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r < 2));
-wbs	p3	Prop3-ROR-6-1	FALSE	0	TRUE_FOR_MAX_STEPS	2	7.551	7.542	3.516	4.026	5	5	0.703	0.805	p1 = ((((pedal_r >= 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r >= 0));
