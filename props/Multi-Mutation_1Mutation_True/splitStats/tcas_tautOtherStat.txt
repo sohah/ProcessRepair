@@ -1,0 +1,1 @@
+tcas,     p4,     Prop4-ROR-3-5,     true,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     74.304,     73.704,     37.549,     36.155,     38,     39,     0.988,     0.927,     p1 = (((Up_Separation_s >= alim_res_s) and false) => (result_alt_sep_test_s <> 2));,     

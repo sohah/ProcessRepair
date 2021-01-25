@@ -1,0 +1,1 @@
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-3-3-ROR-3-4,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     28.069,     27.942,     3.718,     24.224,     5,     5,     0.743,     4.844,     p1 = ((((System_On and (not System_On)) and Reservoir_Empty) and (Volume_Infused <> VTBI_High)) => (out_Highest_Level_Alarm < 3));,     

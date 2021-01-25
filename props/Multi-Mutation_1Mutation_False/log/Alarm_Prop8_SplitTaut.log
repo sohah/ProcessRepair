@@ -1,0 +1,17 @@
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-7/minimal/Faulty_GPCA_Prop8-ROR-2-7_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-6/minimal/Faulty_GPCA_Prop8-ROR-2-6_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-2/minimal/Faulty_GPCA_Prop8-ROR-2-2_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-1/minimal/Faulty_GPCA_Prop8-ROR-2-1_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-1/minimal/Faulty_GPCA_Prop8-ROR-2-1_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-4/minimal/Faulty_GPCA_Prop8-ROR-2-4_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-1/minimal/Faulty_GPCA_Prop8-ROR-2-1_exists.lus
+Query Result = Valid
+running existsFileName = /media/soha/DATA/MultiMutationExpr/1Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Alarm/Prop8/output/Faulty_GPCA_Prop8-ROR-2-1/minimal/Faulty_GPCA_Prop8-ROR-2-1_exists.lus
+Query Result = Valid
+No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find
