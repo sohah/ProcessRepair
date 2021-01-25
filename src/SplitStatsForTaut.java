@@ -45,7 +45,7 @@ public class SplitStatsForTaut {
     //hashset that holds the enteries for tautology stats that were not because of TRUE_FOR_MAX_STEPS
     static HashSet<String> tautForOtherReasons = new HashSet<>();
 
-    static int timeOut = 900;
+    static int timeOut = 1;
 
 //    static int unknownCount = 0;
 
@@ -92,35 +92,40 @@ public class SplitStatsForTaut {
     //the output of this method is a pair of the matching mutant name with its prop, this is populated in tautMutantsToProp
     public static void fillTautMutantsToPropMap() throws IOException {
 
-        for (String currTautProp : tautProp) {
-            // Open the file
-            FileInputStream fstream = new FileInputStream(directory + fileName);
-            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+        // Open the file
+        FileInputStream fstream = new FileInputStream(directory + fileName);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
-            String strLine;
+        String strLine;
 
-            //Read File Line By Line -- and get the mutants names along with their properties for those that are tautology and failed because of TRUE_FOR_MAX_STEPS
-            while ((strLine = br.readLine()) != null) {
-                if (strLine.contains(currTautProp) && strLine.contains("TRUE_FOR_MAX_STEPS")) {//if match then we need to write it to the taut file
+        int tautPropIndex = 0;
 
-                    //get the name of the mutant to later run its last exists query in an unbounded mode.
-                    String[] statsEntry = strLine.split(",");
-                    for (int i = 0; i < statsEntry.length; i++)
-                        if (statsEntry[i].contains("ROR") || statsEntry[i].contains("LOR")) {
-                            tautMutantList.add(statsEntry[i]);
-                            tautPropList.add(currTautProp);
+        String currTautProp = tautProp.get(tautPropIndex);
+
+        //Read File Line By Line -- and get the mutants names along with their properties for those that are tautology and failed because of TRUE_FOR_MAX_STEPS
+        while ((strLine = br.readLine()) != null && tautPropIndex < tautProp.size()) {
+            if (strLine.contains(tautProp.get(tautPropIndex)) && strLine.contains("TRUE_FOR_MAX_STEPS")) {//if match then we need to write it to the taut file
+
+                //get the name of the mutant to later run its last exists query in an unbounded mode.
+                String[] statsEntry = strLine.split(",");
+                for (int i = 0; i < statsEntry.length; i++)
+                    if (statsEntry[i].contains("ROR") || statsEntry[i].contains("LOR")) {
+                        tautMutantList.add(statsEntry[i]);
+                        tautPropList.add(tautProp.get(tautPropIndex));
+                        tautPropIndex++;
 //                            tautMutantsToProp.put(statsEntry[i], currTautProp);
-                            break;
-                        }
-                } else if (strLine.contains(currTautProp)) { // there is another reason for the failure, then log that seperately
-                    tautForOtherReasons.add(strLine);
+                        break;
+                    }
+            } else if (strLine.contains(tautProp.get(tautPropIndex))) { // there is another reason for the failure, then log that seperately
+                tautForOtherReasons.add(strLine);
+                tautPropIndex++;
 //                    System.out.println(currTautProp + " is taut for another reason than TRUE_FOR_MAX_STEPS");
-                }
             }
-
-            //Close the input stream
-            fstream.close();
         }
+
+        //Close the input stream
+
+        fstream.close();
     }
 
     public static void splitStatFileToTaut() throws IOException {
