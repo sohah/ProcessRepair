@@ -1,7 +1,5 @@
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1-1-ROR-4-13/minimal/Faulty_Prop8-LOR-1-1-ROR-4-13_exists.lus
 Query Result = Valid
-running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-1-2-ROR-4-13/minimal/Faulty_Prop8-ROR-1-2-ROR-4-13_exists.lus
-Query Result = Valid
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-6-ROR-7-11/minimal/Faulty_Prop8-ROR-2-6-ROR-7-11_exists.lus
 Query Result = Valid
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1-0-ROR-1-10/minimal/Faulty_Prop8-LOR-1-0-ROR-1-10_exists.lus
@@ -11,8 +9,6 @@ Query Result = Valid
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-5-ROR-6-11/minimal/Faulty_Prop8-ROR-2-5-ROR-6-11_exists.lus
 Query Result = Valid
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1-2-LOR-1-5/minimal/Faulty_Prop8-LOR-1-2-LOR-1-5_exists.lus
-Query Result = Valid
-running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1-1-ROR-4-13/minimal/Faulty_Prop8-LOR-1-1-ROR-4-13_exists.lus
 Query Result = Valid
 running existsFileName = /media/soha/DATA/MultiMutationExpr/2Mutation/ranger-discovery/src/DiscoveryExamples/GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-1-2-ROR-4-13/minimal/Faulty_Prop8-ROR-1-2-ROR-4-13_exists.lus
 Query Result = Valid
