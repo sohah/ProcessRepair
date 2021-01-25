@@ -100,6 +100,9 @@ public class SplitStatsForTaut {
 
         int tautPropIndex = 0;
 
+        if (tautProp.size() == 0)
+            return;
+
         String currTautProp = tautProp.get(tautPropIndex);
 
         //Read File Line By Line -- and get the mutants names along with their properties for those that are tautology and failed because of TRUE_FOR_MAX_STEPS
