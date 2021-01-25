@@ -1,2 +1,0 @@
-gpca,     p2,     Faulty_GPCA_Prop2-ROR-2-0,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     133.598,     133.453,     4.521,     128.932,     5,     5,     0.904,     25.786,     p1 = ((((not In_Therapy) xor (not In_Therapy)) and Air_In_Line) => (out_Highest_Level_Alarm <= 3));,     
-gpca,     p2,     Faulty_GPCA_Prop2-ROR-2-0,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     133.304,     133.131,     4.732,     128.399,     5,     5,     0.946,     25.679,     p1 = ((((not In_Therapy) xor (not In_Therapy)) and Air_In_Line) => (out_Highest_Level_Alarm <= 3));,     

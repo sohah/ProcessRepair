@@ -1,1 +1,0 @@
-gpca,     p2,     Faulty_GPCA_Prop2-LOR-1-6,     false,    2,    MINIMAL_FORALL_UNKNOWN,     1,     618.77,     618.601,     4.747,     613.854,     5,     6,     0.949,     102.309,     p1 = ((((not In_Therapy) or In_Therapy) => ((not In_Therapy) => (not In_Therapy))) or (out_Highest_Level_Alarm >= 3));,     

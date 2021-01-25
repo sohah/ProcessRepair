@@ -45,7 +45,7 @@ public class SplitStatsForTaut {
     //hashset that holds the enteries for tautology stats that were not because of TRUE_FOR_MAX_STEPS
     static HashSet<String> tautForOtherReasons = new HashSet<>();
 
-    static int timeOut = 1;
+    static int timeOut = 900;
 
 //    static int unknownCount = 0;
 

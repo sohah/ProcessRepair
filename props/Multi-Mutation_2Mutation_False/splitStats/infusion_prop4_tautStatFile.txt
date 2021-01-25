@@ -1,2 +1,0 @@
-infusion,     p4,     Faulty_Prop4-LOR-1-0-ROR-1-8,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     22.557,     22.377,     7.747,     14.63,     13,     13,     0.595,     1.125,     p1 = (false => (Commanded_Flow_Rate <> Flow_Rate_KVO));,     
-infusion,     p4,     Faulty_Prop4-LOR-1--1-ROR-1-8,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     22.187,     22.0,     7.442,     14.558,     13,     13,     0.572,     1.119,     p1 = (false => (Commanded_Flow_Rate <> Flow_Rate_KVO));,     

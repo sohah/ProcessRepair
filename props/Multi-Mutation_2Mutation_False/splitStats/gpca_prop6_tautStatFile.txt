@@ -1,1 +1,0 @@
-gpca,     p6,     Faulty_GPCA_Prop6-LOR-4--1-ROR-4-8,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     37.554,     37.449,     3.522,     33.927,     6,     6,     0.587,     5.654,     p1 = (((System_On or (out_Highest_Level_Alarm >= 3)) and false) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));,     

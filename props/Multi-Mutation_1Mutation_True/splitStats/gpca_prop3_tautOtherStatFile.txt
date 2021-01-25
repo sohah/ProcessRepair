@@ -1,4 +1,0 @@
-gpca,     p3,     Faulty_GPCA_Prop3-LOR-1-0,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     222.724,     213.89,     69.45,     144.44,     35,     36,     1.984,     4.012,     p1 = (false => (out_Highest_Level_Alarm >= 3));,     
-gpca,     p3,     Faulty_GPCA_Prop3-LOR-1-2,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     155.352,     149.72,     46.624,     103.096,     35,     36,     1.332,     2.863,     p1 = (false => (out_Highest_Level_Alarm >= 3));,     
-gpca,     p3,     Faulty_GPCA_Prop3-LOR-1-1,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     131.869,     126.883,     42.873,     84.01,     35,     36,     1.224,     2.333,     p1 = (false => (out_Highest_Level_Alarm >= 3));,     
-gpca,     p3,     Faulty_GPCA_Prop3-LOR-1-2,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     157.559,     151.697,     46.941,     104.756,     35,     36,     1.341,     2.909,     p1 = (false => (out_Highest_Level_Alarm >= 3));,     

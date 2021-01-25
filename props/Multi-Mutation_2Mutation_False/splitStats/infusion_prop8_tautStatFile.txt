@@ -1,2 +1,0 @@
-infusion,     p8,     Faulty_Prop8-LOR-1-1-ROR-4-13,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     29.937,     29.61,     11.437,     18.173,     13,     13,     0.879,     1.397,     p1 = (false => (false and (not (Current_System_Mode <> 4))));,     
-infusion,     p8,     Faulty_Prop8-ROR-1-2-ROR-4-13,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     28.196,     27.878,     9.872,     18.006,     13,     13,     0.759,     1.385,     p1 = (false => (false and (not (Current_System_Mode <> 4))));,     
