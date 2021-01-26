@@ -1,0 +1,2 @@
+infusion,     p12,     Faulty_Prop12-LOR-2-4-ROR-3-8,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     28.776,     28.362,     13.672,     14.69,     8,     8,     1.709,     1.836,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-2--1-ROR-3-0,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     26.114,     25.756,     11.951,     13.805,     8,     8,     1.493,     1.725,     null,     

@@ -1,0 +1,1 @@
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-4-0,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     604.892,     604.77,     1.206,     603.564,     2,     3,     0.603,     201.188,     null,     

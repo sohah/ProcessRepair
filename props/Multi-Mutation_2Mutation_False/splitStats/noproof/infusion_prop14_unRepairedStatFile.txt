@@ -1,0 +1,2 @@
+infusion,     p14,     Faulty_Prop14-ROR-6-9-ROR-6-18,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     3.978,     3.943,     1.104,     2.839,     2,     2,     0.552,     1.419,     null,     
+infusion,     p14,     Faulty_Prop14-LOR-4-10-ROR-5-1,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     4.78,     4.739,     1.706,     3.033,     2,     2,     0.853,     1.516,     null,     

@@ -1,0 +1,5 @@
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-5-2,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     605.159,     605.055,     1.103,     603.952,     1,     2,     1.103,     301.976,     null,
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-5-0,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     613.536,     613.381,     2.709,     610.672,     2,     3,     1.354,     203.557,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-5-2,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.906,     603.831,     0.904,     602.927,     1,     2,     0.904,     301.463,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-1-10,     false,    2,    OUTERLOOP_MAX_LOOP_REACHED,     0,     52.617,     52.014,     18.968,     33.046,     8,     8,     2.371,     4.13,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-5-5,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     604.783,     604.712,     0.903,     603.809,     1,     2,     0.903,     301.904,     null,     

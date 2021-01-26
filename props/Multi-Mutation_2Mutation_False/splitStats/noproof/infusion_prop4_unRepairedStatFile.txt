@@ -1,0 +1,2 @@
+infusion,     p4,     Faulty_Prop4-LOR-1-0-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     9.49,     9.383,     3.51,     5.873,     4,     4,     0.877,     1.468,     null,     
+infusion,     p4,     Faulty_Prop4-LOR-2-4-ROR-2-3,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     7.954,     7.862,     2.91,     4.952,     4,     4,     0.727,     1.238,     null,     

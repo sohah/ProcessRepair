@@ -1,0 +1,3 @@
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-2-0-LOR-2-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.548,     2.521,     0.702,     1.819,     1,     1,     0.702,     1.819,     null,     
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-3-4-ROR-3-5,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.516,     6.35,     2.314,     4.036,     3,     3,     0.771,     1.345,     null,     
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-2-6-ROR-2-4,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     1.742,     1.712,     0.601,     1.111,     1,     1,     0.601,     1.111,     null,     

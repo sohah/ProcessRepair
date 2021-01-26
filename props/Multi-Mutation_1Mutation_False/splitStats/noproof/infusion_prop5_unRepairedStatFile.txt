@@ -1,0 +1,2 @@
+infusion,     p5,     Faulty_Prop5-LOR-1-4,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     6.609,     6.546,     2.507,     4.039,     3,     3,     0.835,     1.346,     null,     
+infusion,     p5,     Faulty_Prop5-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     5.806,     5.748,     2.009,     3.739,     3,     3,     0.669,     1.246,     null,     

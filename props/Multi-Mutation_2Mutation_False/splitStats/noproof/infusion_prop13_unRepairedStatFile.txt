@@ -1,0 +1,1 @@
+infusion,     p13,     Faulty_Prop13-LOR-1-4-ROR-1-6,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     26.474,     26.287,     11.37,     14.917,     5,     5,     2.274,     2.983,     null,     

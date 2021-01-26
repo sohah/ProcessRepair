@@ -1,0 +1,5 @@
+infusion,     p4,     Faulty_Prop4-ROR-3-2,     false,    0,    ALREADY_MATCHING,     1,     1.231,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+infusion,     p4,     Faulty_Prop4-LOR-2-0,     false,    0,    ALREADY_MATCHING,     1,     1.231,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+infusion,     p4,     Faulty_Prop4-ROR-3-2,     false,    0,    ALREADY_MATCHING,     1,     1.733,     1.706,     0.0,     1.706,     0,     1,     0.0,     1.706,     null,     
+infusion,     p4,     Faulty_Prop4-LOR-1-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     9.81,     9.697,     2.709,     6.988,     2,     2,     1.354,     3.494,     null,     
+infusion,     p4,     Faulty_Prop4-LOR-3-0,     false,    0,    ALREADY_MATCHING,     1,     1.556,     1.449,     0.0,     1.449,     0,     1,     0.0,     1.449,     null,     

@@ -1,0 +1,1 @@
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-1-1,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     44.097,     43.936,     6.46,     37.476,     4,     4,     1.615,     9.369,     null,     

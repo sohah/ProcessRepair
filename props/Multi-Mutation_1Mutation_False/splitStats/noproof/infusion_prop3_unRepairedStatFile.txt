@@ -1,0 +1,7 @@
+infusion,     p3,     Faulty_Prop3-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     10.918,     10.781,     4.517,     6.264,     5,     5,     0.903,     1.252,     null,     
+infusion,     p3,     Faulty_Prop3-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     11.414,     11.297,     4.614,     6.683,     5,     5,     0.922,     1.336,     null,     
+infusion,     p3,     Faulty_Prop3-ROR-3-3,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     22.629,     22.304,     9.652,     12.652,     8,     8,     1.206,     1.581,     null,     
+infusion,     p3,     Faulty_Prop3-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     12.246,     12.104,     5.04,     7.064,     5,     5,     1.008,     1.412,     null,     
+infusion,     p3,     Faulty_Prop3-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     11.661,     11.513,     5.021,     6.492,     5,     5,     1.004,     1.298,     null,     
+infusion,     p3,     Faulty_Prop3-ROR-3-3,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     22.863,     22.497,     9.444,     13.053,     8,     8,     1.18,     1.631,     null,     
+infusion,     p3,     Faulty_Prop3-LOR-2-3,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     7.662,     7.565,     2.807,     4.758,     3,     3,     0.935,     1.586,     null,     

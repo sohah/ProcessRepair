@@ -1,0 +1,1 @@
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-1-0-ROR-1-1,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     86.108,     85.459,     7.556,     77.903,     8,     8,     0.944,     9.737,     null,     

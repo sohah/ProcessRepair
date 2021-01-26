@@ -1,0 +1,1 @@
+tcas,     p1,     Prop1-LOR-1-4,     false,    1,    OUTERLOOP_MAX_LOOP_REACHED,     0,     14.068,     13.97,     9.126,     4.844,     8,     8,     1.14,     0.605,     null,     

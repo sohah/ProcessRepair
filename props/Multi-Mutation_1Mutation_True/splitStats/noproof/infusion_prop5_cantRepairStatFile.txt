@@ -1,0 +1,4 @@
+infusion,     p5,     Faulty_Prop5-ROR-0-7,     true,    2,    ALREADY_MATCHING,     1,     1.02,     1.002,     0.0,     1.002,     0,     1,     0.0,     1.002,     null,     
+infusion,     p5,     Faulty_Prop5-LOR-1-0,     true,    1,    ALREADY_MATCHING,     1,     1.121,     1.102,     0.0,     1.102,     0,     1,     0.0,     1.102,     null,     
+infusion,     p5,     Faulty_Prop5-ROR-3-7,     true,    0,    ALREADY_MATCHING,     1,     1.13,     1.106,     0.0,     1.106,     0,     1,     0.0,     1.106,     null,     
+infusion,     p5,     Faulty_Prop5-ROR-3-5,     true,    0,    ALREADY_MATCHING,     1,     1.226,     1.202,     0.0,     1.202,     0,     1,     0.0,     1.202,     null,     

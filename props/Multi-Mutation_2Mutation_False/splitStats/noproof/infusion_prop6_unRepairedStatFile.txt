@@ -1,0 +1,1 @@
+infusion,     p6,     Faulty_Prop6-LOR-8-16-ROR-8-22,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     2.851,     2.827,     0.602,     2.225,     1,     1,     0.602,     2.225,     null,     

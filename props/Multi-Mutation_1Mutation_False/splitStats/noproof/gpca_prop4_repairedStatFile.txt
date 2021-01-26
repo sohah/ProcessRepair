@@ -1,0 +1,3 @@
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-0,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     70.8,     70.67,     3.446,     67.224,     4,     4,     0.861,     16.806,     p1 = ((System_On => Occlusion) => (out_Highest_Level_Alarm <= 4));,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-0,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     63.252,     63.135,     2.912,     60.223,     4,     4,     0.728,     15.055,     p1 = ((System_On => Occlusion) => (out_Highest_Level_Alarm <= 4));,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-3,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     89.602,     89.455,     3.72,     85.735,     5,     5,     0.744,     17.147,     p1 = ((System_On and Occlusion) or (out_Highest_Level_Alarm < 5));,     

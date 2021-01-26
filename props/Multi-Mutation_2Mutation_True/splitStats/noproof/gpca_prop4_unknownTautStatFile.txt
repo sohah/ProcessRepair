@@ -1,0 +1,2 @@
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1-1-ROR-2-0,     true,    0,    MINIMAL_FORALL_UNKNOWN,     1,     608.638,     608.511,     2.213,     606.298,     3,     4,     0.737,     151.574,     p1 = ((System_On and (not System_On)) => false);,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1--1-LOR-2-0,     true,    0,    MINIMAL_FORALL_UNKNOWN,     1,     653.633,     653.463,     3.423,     650.04,     5,     6,     0.684,     108.34,     p1 = (((not Occlusion) and Occlusion) => false);,     

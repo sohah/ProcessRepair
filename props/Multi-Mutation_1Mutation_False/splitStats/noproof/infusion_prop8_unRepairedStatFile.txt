@@ -1,0 +1,4 @@
+infusion,     p8,     Faulty_Prop8-LOR-1-2,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     6.923,     6.878,     2.518,     4.36,     2,     2,     1.259,     2.18,     null,     
+infusion,     p8,     Faulty_Prop8-LOR-2--1,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     3.471,     3.445,     0.802,     2.643,     1,     1,     0.802,     2.643,     null,     
+infusion,     p8,     Faulty_Prop8-ROR-6-7,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     3.682,     3.655,     0.808,     2.847,     1,     1,     0.808,     2.847,     null,     
+infusion,     p8,     Faulty_Prop8-ROR-6-6,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     3.356,     3.327,     0.702,     2.625,     1,     1,     0.702,     2.625,     null,     

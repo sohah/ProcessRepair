@@ -1,0 +1,8 @@
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-3--1-LOR-4--1,     true,    0,    ALREADY_MATCHING,     1,     1.257,     1.216,     0.0,     1.216,     0,     1,     0.0,     1.216,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-4-1-ROR-5-6,     true,    0,    ALREADY_MATCHING,     1,     1.136,     1.103,     0.0,     1.103,     0,     1,     0.0,     1.103,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-1-1-ROR-5-8,     true,    0,    ALREADY_MATCHING,     1,     1.028,     1.002,     0.0,     1.002,     0,     1,     0.0,     1.002,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-1--1-ROR-5-6,     true,    0,    ALREADY_MATCHING,     1,     1.239,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-4--1-ROR-5-3,     true,    0,    ALREADY_MATCHING,     1,     1.235,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-1--1-LOR-5--1,     true,    0,    ALREADY_MATCHING,     1,     1.236,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-4-3-ROR-5-8,     true,    0,    ALREADY_MATCHING,     1,     1.131,     1.102,     0.0,     1.102,     0,     1,     0.0,     1.102,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-1-0-ROR-5--1,     true,    0,    ALREADY_MATCHING,     1,     1.138,     1.102,     0.0,     1.102,     0,     1,     0.0,     1.102,     null,     

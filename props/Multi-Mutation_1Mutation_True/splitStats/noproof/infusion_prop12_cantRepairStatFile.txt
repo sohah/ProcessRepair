@@ -1,0 +1,3 @@
+infusion,     p12,     Faulty_Prop12-ROR-0-7,     true,    2,    ALREADY_MATCHING,     1,     0.938,     0.906,     0.0,     0.906,     0,     1,     0.0,     0.906,     null,     
+infusion,     p12,     Faulty_Prop12-ROR-3-7,     true,    0,    ALREADY_MATCHING,     1,     1.023,     1.003,     0.0,     1.003,     0,     1,     0.0,     1.003,     null,     
+infusion,     p12,     Faulty_Prop12-ROR-0-5,     true,    2,    ALREADY_MATCHING,     1,     0.923,     0.902,     0.0,     0.902,     0,     1,     0.0,     0.902,     null,     

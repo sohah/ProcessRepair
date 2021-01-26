@@ -1,0 +1,2 @@
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-2-1-LOR-2-3,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.054,     602.938,     0.902,     602.036,     1,     2,     0.902,     301.018,     null,     
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-2-1-ROR-2-1,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     604.651,     604.591,     0.603,     603.988,     1,     2,     0.603,     301.994,     null,     

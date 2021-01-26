@@ -1,0 +1,7 @@
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-1-LOR-2-2,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.85,     2.822,     0.804,     2.018,     1,     1,     0.804,     2.018,     null,
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-2-ROR-2-3,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.059,     4.022,     0.801,     3.221,     1,     1,     0.801,     3.221,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-4-ROR-2-0,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.118,     6.056,     1.909,     4.147,     2,     2,     0.954,     2.073,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2--1-LOR-2-2,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.905,     6.807,     1.721,     5.086,     2,     2,     0.86,     2.543,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-4-ROR-2-0,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.23,     6.16,     2.013,     4.147,     2,     2,     1.006,     2.073,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1-2-ROR-1-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     42.896,     42.859,     1.004,     41.855,     1,     1,     1.004,     41.855,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1-2-ROR-1-1,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.574,     4.534,     1.003,     3.531,     1,     1,     1.003,     3.531,     null,     

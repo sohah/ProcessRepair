@@ -1,0 +1,2 @@
+infusion,     p11,     Faulty_Prop11-LOR-3-4-ROR-3-4,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     10.552,     10.473,     3.914,     6.559,     4,     4,     0.978,     1.639,     null,
+infusion,     p11,     Faulty_Prop11-ROR-3-3-ROR-3-5,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     27.456,     27.1,     12.491,     14.609,     8,     8,     1.561,     1.826,     null,     

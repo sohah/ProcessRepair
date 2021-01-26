@@ -1,0 +1,6 @@
+infusion,     p14,     Faulty_Prop14-ROR-1-2-ROR-1-11,     true,    2,    ALREADY_MATCHING,     1,     1.414,     1.344,     0.0,     1.344,     0,     1,     0.0,     1.344,     null,     
+infusion,     p14,     Faulty_Prop14-ROR-0-1-ROR-0-7,     true,    3,    ALREADY_MATCHING,     1,     1.055,     1.015,     0.0,     1.015,     0,     1,     0.0,     1.015,     null,     
+infusion,     p14,     Faulty_Prop14-LOR-1-1-ROR-1-9,     true,    2,    ALREADY_MATCHING,     1,     1.13,     1.104,     0.0,     1.104,     0,     1,     0.0,     1.104,     null,     
+infusion,     p14,     Faulty_Prop14-LOR-2-2-ROR-2-12,     true,    2,    ALREADY_MATCHING,     1,     0.922,     0.902,     0.0,     0.902,     0,     1,     0.0,     0.902,     null,     
+infusion,     p14,     Faulty_Prop14-LOR-0-4-ROR-0-2,     true,    3,    ALREADY_MATCHING,     1,     1.021,     1.002,     0.0,     1.002,     0,     1,     0.0,     1.002,     null,     
+infusion,     p14,     Faulty_Prop14-ROR-3-1-ROR-6-7,     true,    0,    ALREADY_MATCHING,     1,     0.922,     0.902,     0.0,     0.902,     0,     1,     0.0,     0.902,     null,     

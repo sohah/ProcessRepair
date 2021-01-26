@@ -1,0 +1,1 @@
+infusion,     p14,     Faulty_Prop14-LOR-3-10,     false,    1,    OUTERLOOP_EXISTS_UNKNOWN,     0,     7.233,     7.168,     2.317,     4.851,     2,     2,     1.158,     2.425,     null,     
