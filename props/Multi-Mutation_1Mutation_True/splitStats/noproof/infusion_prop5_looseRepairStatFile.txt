@@ -1,0 +1,1 @@
+infusion,     p5,     Faulty_Prop5-ROR-2-2,     true,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     88.057,     87.25,     31.322,     55.928,     34,     35,     0.921,     1.597,     p1 = ((System_On and (Configured < 0)) => (Commanded_Flow_Rate = 0));,     

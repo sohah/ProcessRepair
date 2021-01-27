@@ -1,0 +1,1 @@
+infusion,     p5,     Faulty_Prop5-ROR-2-1-ROR-2-5,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     8.064,     7.974,     2.71,     5.264,     4,     4,     0.677,     1.316,     p1 = ((System_On and (Configured <= 0)) => (Commanded_Flow_Rate <= 0));,     

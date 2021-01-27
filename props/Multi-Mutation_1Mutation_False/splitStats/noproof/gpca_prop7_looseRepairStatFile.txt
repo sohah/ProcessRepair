@@ -1,0 +1,1 @@
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-5-7,     false,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     71.491,     69.623,     23.878,     45.745,     34,     35,     0.702,     1.307,     p1 = ((System_On and (Disable_Audio > 0)) => ((out_Audio_Notification_Command = 0) xor false));,     

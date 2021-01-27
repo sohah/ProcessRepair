@@ -1,0 +1,1 @@
+infusion,     p3,     Faulty_Prop3-ROR-2-5-ROR-3-4,     true,    0,    TRUE_FOR_MAX_STEPS,     3,     63.735,     63.438,     11.858,     51.58,     16,     16,     0.741,     3.223,     p1 = ((System_On and (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate <= 0));,     

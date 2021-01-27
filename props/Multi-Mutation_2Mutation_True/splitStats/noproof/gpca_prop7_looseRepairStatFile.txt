@@ -1,0 +1,1 @@
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-0-4-ROR-0-0,     true,    2,    MINIMAL_FORALL_UNKNOWN,     2,     648.983,     648.309,     12.007,     636.302,     14,     15,     0.857,     42.42,     p1 = (((out_Audio_Notification_Command >= 2) xor (out_Is_Audio_Disabled < out_Audio_Notification_Command)) => ((not System_On) or (Disable_Audio <= 0)));,     

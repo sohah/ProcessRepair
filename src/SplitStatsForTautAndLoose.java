@@ -188,9 +188,13 @@ public class SplitStatsForTautAndLoose {
 
                 //Close the input stream
                 fstream.close();
-                return;
+                break;
             }
         }
+
+        fstream = new FileInputStream(directory + tautStateFile);
+        br = new BufferedReader(new InputStreamReader(fstream));
+
 
         String looseMatchingString = matchingStrings[1];
         while ((strLine = br.readLine()) != null) { //finding loose props and filling looseProp
@@ -337,7 +341,7 @@ public class SplitStatsForTautAndLoose {
 
         }
         tautMatchingString = tautMatchingString.concat(" are: ");
-        String looseMatchingString = "loose props are:";
+        String looseMatchingString = tautMatchingString.replace("tautology", "loose");
         return new String[]{tautMatchingString, looseMatchingString};
     }
 
