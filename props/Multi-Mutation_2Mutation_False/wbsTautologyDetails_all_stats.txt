@@ -1,4 +1,4 @@
 tautology props for wbs: p1 are: []
-loose props are:[p12]
+loose props for wbs: p1 are: [p12]
 tautology props for wbs: p3 are: [p9, p13]
-loose props are:[p12, p16]
+loose props for wbs: p3 are: [p12, p16]
