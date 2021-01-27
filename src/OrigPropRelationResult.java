@@ -38,6 +38,6 @@ public class OrigPropRelationResult {
     }
 
     public String tautologyToString() {
-        return "tautology props for " + benchmark + ": " + origProp + " are: " + tautProps + "\nloose props are:" + looseProps;
+        return "tautology props for " + benchmark + ": " + origProp + " are: " + tautProps + "loose props for " + benchmark + ": " + origProp + " are: " + looseProps;
     }
 }
