@@ -1,0 +1,15 @@
+p1 = ((((In_Therapy and (not System_On)) => ((not In_Therapy) and (not System_On))) => Air_In_Line) => (out_Highest_Level_Alarm >= 0));     
+p1 = (((((not Air_In_Line) and In_Therapy) => (In_Therapy => In_Therapy)) and ((In_Therapy => (not Air_In_Line)) and (Air_In_Line and In_Therapy))) => (out_Highest_Level_Alarm <= 3));     
+p1 = ((((In_Therapy or Air_In_Line) => ((not In_Therapy) xor (not In_Therapy))) and (((not In_Therapy) => (not In_Therapy)) and ((not In_Therapy) and In_Therapy))) => (out_Highest_Level_Alarm > 3));     
+p1 = ((((System_On => Air_In_Line) and (System_On or In_Therapy)) => ((System_On => Air_In_Line) => ((not In_Therapy) => (not In_Therapy)))) or (out_Highest_Level_Alarm >= 3));     
+p1 = ((((In_Therapy and (not System_On)) => ((not In_Therapy) and (not System_On))) => Air_In_Line) => (out_Highest_Level_Alarm >= 0));     
+p1 = ((((In_Therapy or (not In_Therapy)) xor ((not In_Therapy) => (not In_Therapy))) => ((In_Therapy and (not In_Therapy)) and ((not In_Therapy) and (not In_Therapy)))) or (out_Highest_Level_Alarm >= 3));     
+p1 = (((System_On and In_Therapy) and Air_In_Line) or (out_Highest_Level_Alarm < 5));     
+p1 = ((((System_On and (not System_On)) and ((not System_On) => (not System_On))) and Air_In_Line) => (out_Highest_Level_Alarm < 3));     
+p1 = (((((not In_Therapy) xor (not In_Therapy)) => ((not In_Therapy) xor (not In_Therapy))) or Air_In_Line) => (out_Highest_Level_Alarm < 5));     
+p1 = (((System_On and In_Therapy) => Air_In_Line) => (out_Highest_Level_Alarm <= 4));     
+p1 = (((((not In_Therapy) => (not In_Therapy)) and ((not In_Therapy) and In_Therapy)) => (((not In_Therapy) => (not In_Therapy)) and ((not In_Therapy) and (not In_Therapy)))) or (out_Highest_Level_Alarm >= 3));     
+p1 = (((((not Air_In_Line) xor (not In_Therapy)) and ((not Air_In_Line) xor In_Therapy)) and (((not Air_In_Line) and (not Air_In_Line)) => ((not Air_In_Line) and System_On))) => (out_Highest_Level_Alarm <> 3));     
+p1 = (((((not In_Therapy) => (not In_Therapy)) => ((not In_Therapy) and In_Therapy)) => Air_In_Line) and (out_Highest_Level_Alarm <= 4));     
+p1 = ((((Air_In_Line or In_Therapy) => ((not System_On) and (not Air_In_Line))) and (((not In_Therapy) and System_On) and (System_On and (not System_On)))) => (out_Highest_Level_Alarm <= 3));     
+p1 = (((((not System_On) => (not System_On)) and (Air_In_Line and (not Air_In_Line))) and (((not Air_In_Line) => (not System_On)) and ((not System_On) xor (not Air_In_Line)))) => (out_Highest_Level_Alarm <= 3));     

@@ -1,0 +1,7 @@
+p1 = (System_On => (false => (out_Highest_Level_Alarm <> 4)));     
+p1 = (System_On => ((out_Highest_Level_Alarm <> 0) and (out_Highest_Level_Alarm <= 4)));     
+p1 = (System_On => ((out_Highest_Level_Alarm < 1) => (out_Highest_Level_Alarm >= 4)));     
+p1 = (System_On => ((out_Highest_Level_Alarm <> 0) xor (out_Highest_Level_Alarm > 4)));     
+p1 = (System_On => ((out_Highest_Level_Alarm > 4) => (out_Highest_Level_Alarm > 255)));     
+p1 = (System_On => (false => (out_Highest_Level_Alarm <> 4)));     
+p1 = (System_On or (false xor ((out_Highest_Level_Alarm <= 4) or (out_Highest_Level_Alarm = 0))));     

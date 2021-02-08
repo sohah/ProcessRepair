@@ -1,0 +1,15 @@
+p1 = (((((System_On and In_Therapy) or (In_Therapy and (not In_Therapy))) xor Reservoir_Empty) and false) => (out_Highest_Level_Alarm >= 3));     
+p1 = ((((((not System_On) xor (not Reservoir_Empty)) and ((not System_On) xor Reservoir_Empty)) or (((not Reservoir_Empty) or System_On) or (In_Therapy and (not Reservoir_Empty)))) and (Volume_Infused = VTBI_High)) => (out_Highest_Level_Alarm >= 0));     
+p1 = ((((((not Reservoir_Empty) => (not In_Therapy)) or ((not In_Therapy) => (not In_Therapy))) xor (((not Reservoir_Empty) => (not Reservoir_Empty)) or ((not Reservoir_Empty) => (not Reservoir_Empty)))) or false) => (out_Highest_Level_Alarm >= 3));     
+p1 = ((((((not In_Therapy) => In_Therapy) and ((not In_Therapy) or System_On)) and Reservoir_Empty) and (Volume_Infused < VTBI_High)) => (out_Highest_Level_Alarm >= 3));     
+p1 = ((((System_On => In_Therapy) or Reservoir_Empty) and false) => false);     
+p1 = ((((System_On xor false) and (Reservoir_Empty and System_On)) and ((System_On xor (not In_Therapy)) and (System_On and System_On))) => (out_Highest_Level_Alarm > 3));     
+p1 = ((((Volume_Infused = 1) and (Volume_Infused < 1)) and ((VTBI_High = 1) and (Volume_Infused < 1))) => (out_Highest_Level_Alarm < 3));     
+p1 = (((((Reservoir_Empty and System_On) xor (Reservoir_Empty => Reservoir_Empty)) or (((not Reservoir_Empty) xor (not Reservoir_Empty)) xor (In_Therapy xor Reservoir_Empty))) and (Volume_Infused >= 0)) or (out_Highest_Level_Alarm <> 3));     
+p1 = ((((((not In_Therapy) xor (not In_Therapy)) xor ((not In_Therapy) xor (not In_Therapy))) and Reservoir_Empty) and (Volume_Infused > VTBI_High)) xor (out_Highest_Level_Alarm < 5));     
+p1 = (((((System_On => (not In_Therapy)) xor ((not In_Therapy) xor (not System_On))) xor ((System_On xor (not In_Therapy)) and ((not In_Therapy) or Reservoir_Empty))) and (Volume_Infused < VTBI_High)) => (out_Highest_Level_Alarm >= 3));     
+p1 = (((((not System_On) xor System_On) xor (System_On xor System_On)) or ((System_On and System_On) xor ((VTBI_High >= 8) xor (VTBI_High >= 6)))) and (out_Highest_Level_Alarm < 5));     
+p1 = ((((((not In_Therapy) xor (not In_Therapy)) and (In_Therapy => In_Therapy)) and Reservoir_Empty) and (Volume_Infused < VTBI_High)) xor (out_Highest_Level_Alarm <= 4));     
+p1 = ((((((not In_Therapy) and Reservoir_Empty) or (Reservoir_Empty or Reservoir_Empty)) => (((not In_Therapy) => (not In_Therapy)) => (In_Therapy => Reservoir_Empty))) => (Volume_Infused < 0)) => (out_Highest_Level_Alarm >= 3));     
+p1 = ((((System_On and In_Therapy) or Reservoir_Empty) and false) => (out_Highest_Level_Alarm >= 3));     
+p1 = ((((((not System_On) and System_On) xor (System_On and In_Therapy)) and (((not Reservoir_Empty) xor In_Therapy) or (In_Therapy xor (not Reservoir_Empty)))) and (Volume_Infused >= VTBI_High)) => (out_Highest_Level_Alarm >= 3));     

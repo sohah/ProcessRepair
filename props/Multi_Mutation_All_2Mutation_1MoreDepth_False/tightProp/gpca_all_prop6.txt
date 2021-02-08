@@ -1,0 +1,15 @@
+p1 = (false => ((out_Audio_Notification_Command <= Audio_Level) and (out_Is_Audio_Disabled <= 3)));     
+p1 = (((System_On or false) and false) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled < 0)));     
+p1 = (((System_On => (out_Highest_Level_Alarm < 0)) and false) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled < 0)));     
+p1 = (((System_On and (out_Highest_Level_Alarm <> 3)) and (Disable_Audio < 0)) => ((out_Audio_Notification_Command < Audio_Level) and (out_Is_Audio_Disabled = 0)));     
+p1 = (((System_On and (out_Highest_Level_Alarm >= 3)) or (Disable_Audio = 0)) => (((Audio_Level <= 1) xor false) => ((Audio_Level <= out_Audio_Notification_Command) => (Audio_Level <= 1))));     
+p1 = ((false and (Disable_Audio <> 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled <> 0)));     
+p1 = (((System_On and (out_Highest_Level_Alarm <= 3)) and (Disable_Audio < 0)) or (((Audio_Level < 0) => (Audio_Level >= 3)) or ((out_Audio_Notification_Command > 0) => (out_Audio_Notification_Command >= 31))));     
+p1 = (((((not System_On) xor false) and ((out_Highest_Level_Alarm < 4) and (out_Highest_Level_Alarm > 4))) and (Disable_Audio > 0)) => ((out_Is_Audio_Disabled >= 32) or (out_Is_Audio_Disabled >= 31)));     
+p1 = (((System_On and ((out_Highest_Level_Alarm = 9) or (out_Highest_Level_Alarm < 1))) and (Disable_Audio <> 0)) => ((out_Audio_Notification_Command = Audio_Level) and (out_Is_Audio_Disabled = 0)));     
+p1 = (((System_On and false) => (Disable_Audio = 0)) => ((out_Audio_Notification_Command >= 0) or (out_Is_Audio_Disabled = 0)));     
+p1 = (false => ((out_Audio_Notification_Command <= Audio_Level) and (out_Is_Audio_Disabled = 0)));     
+p1 = (((System_On and (out_Highest_Level_Alarm > 4)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command < Audio_Level) and (out_Is_Audio_Disabled = 0)));     
+p1 = (((System_On and (out_Highest_Level_Alarm <= 255)) and (Disable_Audio <> 0)) => (((out_Audio_Notification_Command < 0) xor (out_Audio_Notification_Command < 1)) and (false xor (out_Audio_Notification_Command < out_Is_Audio_Disabled))));     
+p1 = (((System_On and (out_Highest_Level_Alarm > 4)) and (Disable_Audio = 0)) => ((out_Audio_Notification_Command = Audio_Level) xor false));     
+p1 = ((((not System_On) xor (not System_On)) and (Disable_Audio <= 0)) => ((out_Audio_Notification_Command > Audio_Level) and (out_Is_Audio_Disabled = 0)));     

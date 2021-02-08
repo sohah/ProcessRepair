@@ -1,0 +1,16 @@
+p1 = (((Door_Open => (not System_On)) xor (Door_Open => (not System_On))) => (out_Highest_Level_Alarm < 3));     
+p1 = ((((not Door_Open) xor (not Door_Open)) xor ((not Door_Open) => (not Door_Open))) and (out_Highest_Level_Alarm < 5));     
+p1 = ((((not System_On) => (not System_On)) and ((not Door_Open) and Door_Open)) => (out_Highest_Level_Alarm > 3));     
+p1 = ((System_On and Door_Open) or (out_Highest_Level_Alarm <= 4));     
+p1 = ((((not System_On) => Door_Open) or ((not System_On) => (not System_On))) or (out_Highest_Level_Alarm < 3));     
+p1 = (((Door_Open xor Door_Open) xor (Door_Open xor Door_Open)) or (out_Highest_Level_Alarm < 5));     
+p1 = (((Door_Open and (not Door_Open)) and ((not System_On) or (not System_On))) => (out_Highest_Level_Alarm = 3));     
+p1 = ((System_On and Door_Open) or (out_Highest_Level_Alarm <= 4));     
+p1 = (((System_On or (not Door_Open)) xor (Door_Open and (not System_On))) and (out_Highest_Level_Alarm >= 0));     
+p1 = (((Door_Open xor Door_Open) and ((not Door_Open) => (not Door_Open))) xor (out_Highest_Level_Alarm < 5));     
+p1 = ((System_On or Door_Open) => (out_Highest_Level_Alarm >= 0));     
+p1 = ((((not System_On) => Door_Open) or ((not System_On) => (not System_On))) or (out_Highest_Level_Alarm <= 3));     
+p1 = ((System_On => Door_Open) => (out_Highest_Level_Alarm < 5));     
+p1 = ((((not Door_Open) => (not Door_Open)) xor ((not Door_Open) => (not Door_Open))) => (out_Highest_Level_Alarm > 3));     
+p1 = (((Door_Open xor Door_Open) xor (Door_Open xor Door_Open)) or (out_Highest_Level_Alarm < 5));     
+p1 = ((((not System_On) => (not Door_Open)) xor ((not Door_Open) or System_On)) => (out_Highest_Level_Alarm <> 3));     

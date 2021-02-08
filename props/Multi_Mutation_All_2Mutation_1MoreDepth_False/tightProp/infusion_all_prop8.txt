@@ -1,0 +1,17 @@
+p1 = ((System_On and (Highest_Level_Alarm <> 2)) => (((Current_System_Mode = 5) xor (Current_System_Mode <= 8)) and ((Current_System_Mode > 7) or (Current_System_Mode >= 1))));     
+p1 = ((not (false xor System_On)) => ((not (Current_System_Mode >= 3)) and (Current_System_Mode = 0)));     
+p1 = ((((Highest_Level_Alarm >= 4) xor System_On) xor ((Highest_Level_Alarm = 4) xor (Highest_Level_Alarm <= 4))) => ((not (Current_System_Mode > 3)) and (Current_System_Mode = 0)));     
+p1 = ((System_On and (Highest_Level_Alarm = 2)) or ((false xor (Current_System_Mode <= 5)) xor ((Current_System_Mode >= 5) xor (Current_System_Mode > 8))));     
+p1 = (((false xor System_On) => ((Highest_Level_Alarm >= 2) xor false)) => ((not (Current_System_Mode <= 8)) xor (not (Current_System_Mode = 4))));     
+p1 = (((false xor System_On) => ((Highest_Level_Alarm > 2) and (Highest_Level_Alarm <= 4))) => ((Current_System_Mode >= 8) xor (not (Current_System_Mode = 4))));     
+p1 = ((System_On and false) => ((not (Current_System_Mode <> 3)) and (not (Current_System_Mode > 4))));     
+p1 = ((System_On and false) => ((not (Current_System_Mode = 6)) and (not (Current_System_Mode <> 4))));     
+p1 = ((System_On => false) => ((not (Current_System_Mode = 3)) and (Current_System_Mode <= 0)));     
+p1 = (false => ((not (Current_System_Mode <= 3)) and (Current_System_Mode = 0)));     
+p1 = ((false xor ((not System_On) and (not System_On))) => ((not (Current_System_Mode > 3)) and (not (Current_System_Mode > 0))));     
+p1 = ((System_On and false) => ((not (Current_System_Mode > 3)) and (not (Current_System_Mode = 4))));     
+p1 = (false => ((not (Current_System_Mode <> 3)) and (not false)));     
+p1 = ((System_On and (Highest_Level_Alarm = 2)) => ((not (Current_System_Mode >= 3)) xor (Current_System_Mode = 8)));     
+p1 = (false => ((not (Current_System_Mode = 3)) and (not (Current_System_Mode <= 4))));     
+p1 = ((System_On and (Highest_Level_Alarm = 2)) => ((Current_System_Mode > 8) => (not (Current_System_Mode > 4))));     
+p1 = ((System_On xor (Highest_Level_Alarm <= 3)) => ((not (Current_System_Mode = 3)) and (Current_System_Mode >= 0)));     
