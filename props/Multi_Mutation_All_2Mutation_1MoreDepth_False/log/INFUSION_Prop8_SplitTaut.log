@@ -1,0 +1,16 @@
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-8-ROR-2-11/minimal/Faulty_Prop8-ROR-2-8-ROR-2-11_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-8-ROR-2-11/minimal/Faulty_Prop8-ROR-2-8-ROR-2-11_exists.lus
+Query Result = Valid
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-1-ROR-5-13/minimal/Faulty_Prop8-ROR-2-1-ROR-5-13_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-1-ROR-5-13/minimal/Faulty_Prop8-ROR-2-1-ROR-5-13_exists.lus
+Query Result = Valid
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1--1-ROR-6-5/minimal/Faulty_Prop8-LOR-1--1-ROR-6-5_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-LOR-1--1-ROR-6-5/minimal/Faulty_Prop8-LOR-1--1-ROR-6-5_exists.lus
+Query Result = Unknown
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-3-ROR-2-6/minimal/Faulty_Prop8-ROR-2-3-ROR-2-6_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-2-3-ROR-2-6/minimal/Faulty_Prop8-ROR-2-3-ROR-2-6_exists.lus
+Query Result = Valid
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-1-8-ROR-7-12/minimal/Faulty_Prop8-ROR-1-8-ROR-7-12_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop8/output/Faulty_Prop8-ROR-1-8-ROR-7-12/minimal/Faulty_Prop8-ROR-1-8-ROR-7-12_exists.lus
+Query Result = Unknown
+No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find

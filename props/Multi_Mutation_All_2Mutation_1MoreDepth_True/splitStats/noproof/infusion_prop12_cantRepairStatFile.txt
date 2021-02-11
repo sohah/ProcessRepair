@@ -1,0 +1,1 @@
+infusion,     p12,     Faulty_Prop12-LOR-0--1-LOR-0--1,     true,    3,    ALREADY_MATCHING,     1,     0.851,     0.802,     0.0,     0.802,     0,     1,     0.0,     0.802,     null,     

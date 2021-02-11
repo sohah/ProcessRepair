@@ -1,0 +1,2 @@
+infusion,     p5,     Faulty_Prop5-LOR-2-4-ROR-3-4,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     22.239,     21.899,     9.66,     12.239,     8,     8,     1.207,     1.529,     null,     
+infusion,     p5,     Faulty_Prop5-LOR-2--1-ROR-2-3,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     2.544,     2.522,     0.702,     1.82,     1,     1,     0.702,     1.82,     null,     

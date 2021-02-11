@@ -1,0 +1,3 @@
+tautology props for tcas: p1 are: []loose props for tcas: p1 are: []
+tautology props for tcas: p2 are: []loose props for tcas: p2 are: []
+tautology props for tcas: p4 are: []loose props for tcas: p4 are: []

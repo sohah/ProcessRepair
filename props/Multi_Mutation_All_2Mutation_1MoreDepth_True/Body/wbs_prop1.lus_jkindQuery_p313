@@ -1,0 +1,88 @@
+node main(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int
+) returns (
+
+);
+var
+  p1 : bool;
+  p3 : bool;
+  p6 : bool;
+  p7 : bool;
+  p8 : bool;
+  p9 : bool;
+  p10 : bool;
+  p11 : bool;
+  p12 : bool;
+  p13 : bool;
+  p14 : bool;
+  p15 : bool;
+  p16 : bool;
+  p17 : bool;
+  p18 : bool;
+  p19 : bool;
+  p20 : bool;
+  p21 : bool;
+  p22 : bool;
+  p23 : bool;
+  p24 : bool;
+  p25 : bool;
+  p26 : bool;
+  tight : bool;
+let
+  --%MAIN;
+  p1 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p3 = ((((pedal_r > 0) and (pedal_r <= 4)) and (not skid_r)) => (NormalPressure_r > 0));
+
+  p6 = ((((pedal_r <= 2) and (pedal_r <= 4)) and (not skid_r)) => (((AltPressure_r < NormalPressure_r) or (AltPressure_r = NormalPressure_r)) and ((NormalPressure_r < 4) and (AltPressure_r = 0))));
+
+  p7 = (((((pedal_r >= 4) and ((pedal_r <= (-3)) and ((-3) = (-1)))) => (((pedal_r >= 6) and (6 = (-1))) and (pedal_r < 5))) and (not skid_r)) => ((AltPressure_r = 0) or (NormalPressure_r > 0)));
+
+  p8 = ((((((pedal_r >= (-2)) and ((-2) = (-1))) xor ((pedal_r >= (-2)) and ((-2) = (-1)))) xor (((pedal_r >= (-2)) and ((-2) = (-1))) xor ((pedal_r >= (-2)) and ((-2) = (-1))))) => ((((pedal_r >= 6) and (6 = (-1))) xor skid_r) and (((pedal_r >= 6) and (6 = (-1))) xor (not skid_r)))) => (((NormalPressure_r > (-1)) xor (NormalPressure_r = 4)) and ((AltPressure_r = 0) and (NormalPressure_r < 6))));
+
+  p9 = (((((AltPressure_r < 8) xor (NormalPressure_r = (-2))) and ((AltPressure_r = 0) and (NormalPressure_r < 6))) and (((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r)))) and ((((AltPressure_r = 0) and (AltPressure_r = 0)) or (((pedal_r = (-1)) and ((-1) = (-1))) and (not skid_r))) xor (((AltPressure_r = 0) and (AltPressure_r = 0)) => ((AltPressure_r = 0) xor (AltPressure_r = 0)))));
+
+  p10 = (((((pedal_r < 5) xor ((pedal_r <= (-1)) and ((-1) = (-1)))) or ((pedal_r = 1) => ((pedal_r > (-2)) and ((-2) = (-1))))) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r <= 5)));
+
+  p11 = ((((((pedal_r <= (-3)) and ((-3) = (-1))) => ((pedal_r >= (-2)) and ((-2) = (-1)))) or ((pedal_r > 3) xor skid_r)) and ((((pedal_r > 6) and (6 = (-1))) => ((pedal_r >= 7) and (7 = (-1)))) and (((pedal_r >= (-2)) and ((-2) = (-1))) => ((pedal_r >= 7) and (7 = (-1)))))) => ((AltPressure_r > 0) or (NormalPressure_r < 6)));
+
+  p12 = ((((((pedal_r < (-1)) and ((-1) = (-1))) and ((pedal_r >= (-3)) and ((-3) = (-1)))) xor ((not skid_r) xor ((pedal_r >= 7) and (7 = (-1))))) or (((pedal_r <= 4) xor (pedal_r = 0)) or ((not skid_r) xor (pedal_r >= 0)))) => (((NormalPressure_r < 4) xor (NormalPressure_r = 5)) and ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r))));
+
+  p13 = ((((((pedal_r >= (-3)) and ((-3) = (-1))) xor (pedal_r >= 5)) xor ((pedal_r = 1) xor (pedal_r >= 2))) and (not skid_r)) => ((AltPressure_r > 0) or (NormalPressure_r > 0)));
+
+  p14 = ((((pedal_r > 0) and (pedal_r >= 0)) and (not skid_r)) => ((AltPressure_r = 0) or (NormalPressure_r > 0)));
+
+  p15 = ((((pedal_r > 0) and (pedal_r <= 4)) and skid_r) => (((AltPressure_r = 0) and (NormalPressure_r = 0)) xor ((AltPressure_r <= (-2)) and (AltPressure_r > 0))));
+
+  p16 = ((((skid_r xor ((pedal_r > (-1)) and ((-1) = (-1)))) xor ((not skid_r) xor (not skid_r))) xor (((pedal_r > 0) xor (pedal_r <= 0)) xor ((not skid_r) xor (pedal_r < 0)))) => (((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r)) and ((NormalPressure_r = 4) xor (NormalPressure_r < 6))));
+
+  p17 = ((((((pedal_r = (-3)) and ((-3) = (-1))) xor ((pedal_r <= (-1)) and ((-1) = (-1)))) or ((pedal_r < 5) => ((pedal_r >= (-3)) and ((-3) = (-1))))) or (((pedal_r = 3) => (pedal_r = 5)) xor (((pedal_r <= (-1)) and ((-1) = (-1))) or (pedal_r = 3)))) => (((NormalPressure_r > 3) => (NormalPressure_r = 5)) and ((AltPressure_r = 0) and (NormalPressure_r >= 0))));
+
+  p18 = (((((NormalPressure_r < 6) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0)))) and ((((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0)))));
+
+  p19 = (((((pedal_r >= 3) => (pedal_r = 3)) xor ((pedal_r <= 3) and (pedal_r <= 5))) => ((((pedal_r >= (-2)) and ((-2) = (-1))) xor ((pedal_r >= (-2)) and ((-2) = (-1)))) xor ((pedal_r < 3) or (pedal_r = 1)))) => (((NormalPressure_r <= 5) xor (NormalPressure_r = 4)) and ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r))));
+
+  p20 = ((((skid_r => ((pedal_r <= 7) and (7 = (-1)))) and (((pedal_r >= (-3)) and ((-3) = (-1))) => (pedal_r < 3))) xor ((skid_r => ((pedal_r >= (-3)) and ((-3) = (-1)))) xor (((pedal_r >= 7) and (7 = (-1))) => ((pedal_r >= (-3)) and ((-3) = (-1)))))) => (((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)) and ((NormalPressure_r > 3) => (NormalPressure_r = 5))));
+
+  p21 = ((((pedal_r <= 2) and (pedal_r <= 4)) and (not skid_r)) => (((AltPressure_r < NormalPressure_r) or (AltPressure_r = NormalPressure_r)) and ((NormalPressure_r < 4) and (AltPressure_r = 0))));
+
+  p22 = (((((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r <= NormalPressure_r) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0)))) and ((((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0)))));
+
+  p23 = (((((AltPressure_r <= NormalPressure_r) and (NormalPressure_r < 6)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) and (((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0)))) and ((((AltPressure_r = 0) and (AltPressure_r = 0)) and ((AltPressure_r = 0) and (AltPressure_r = 0))) or (((AltPressure_r = 0) and (AltPressure_r = 0)) or ((AltPressure_r = 0) and (AltPressure_r = 0)))));
+
+  p24 = (((((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r)) xor ((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r))) xor ((((pedal_r > 15) and (15 = (-1))) xor (NormalPressure_r <= 13)) => ((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r)))) => ((((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r)) xor ((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r))) xor (((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r)) xor ((pedal_r = NormalPressure_r) xor (pedal_r = NormalPressure_r)))));
+
+  p25 = (((((not skid_r) and (not skid_r)) => (skid_r and ((pedal_r >= 8) and (8 = (-1))))) or ((((pedal_r <= (-2)) and ((-2) = (-1))) => (AltPressure_r < 0)) or ((pedal_r = NormalPressure_r) xor ((pedal_r >= 6) and (6 = (-1)))))) => ((((NormalPressure_r >= 8) xor (AltPressure_r = 1)) or ((AltPressure_r = 0) => (NormalPressure_r <= (-1)))) => (((AltPressure_r = (-2)) xor (NormalPressure_r = 1)) and (((pedal_r = (-2)) and ((-2) = (-1))) xor ((pedal_r < (-8)) and ((-8) = (-1)))))));
+
+  p26 = ((((((pedal_r < (-1)) and ((-1) = (-1))) and ((pedal_r >= (-3)) and ((-3) = (-1)))) xor ((not skid_r) xor ((pedal_r >= 7) and (7 = (-1))))) or (((pedal_r <= 4) xor (pedal_r = 0)) or ((not skid_r) xor (pedal_r >= 0)))) => (((NormalPressure_r < 4) xor (NormalPressure_r = 5)) and ((AltPressure_r = 0) and (AltPressure_r <= NormalPressure_r))));
+
+  tight = (p17 => p3);
+
+  --%PROPERTY tight;
+
+tel;

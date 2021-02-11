@@ -1,0 +1,1 @@
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-2-1-ROR-2-2,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     42.088,     42.057,     0.51,     41.547,     1,     1,     0.51,     41.547,     null,     

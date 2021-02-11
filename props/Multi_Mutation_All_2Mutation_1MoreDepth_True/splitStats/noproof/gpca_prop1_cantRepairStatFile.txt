@@ -1,0 +1,1 @@
+gpca,     p1,     Faulty_GPCA_Prop1-ROR-2--1-ROR-3-1,     true,    0,    ALREADY_MATCHING,     1,     1.532,     1.504,     0.0,     1.504,     0,     1,     0.0,     1.504,     null,     

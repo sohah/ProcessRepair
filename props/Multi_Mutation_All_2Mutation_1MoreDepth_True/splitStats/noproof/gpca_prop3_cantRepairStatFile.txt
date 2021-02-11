@@ -1,0 +1,4 @@
+gpca,     p3,     Faulty_GPCA_Prop3-ROR-4-2-ROR-5-8,     true,    0,    ALREADY_MATCHING,     1,     1.337,     1.302,     0.0,     1.302,     0,     1,     0.0,     1.302,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-3--1-LOR-5--1,     true,    0,    ALREADY_MATCHING,     1,     1.13,     1.103,     0.0,     1.103,     0,     1,     0.0,     1.103,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-1--1-LOR-5--1,     true,    0,    ALREADY_MATCHING,     1,     1.13,     1.102,     0.0,     1.102,     0,     1,     0.0,     1.102,     null,     
+gpca,     p3,     Faulty_GPCA_Prop3-LOR-0-6-LOR-0-9,     true,    4,    ALREADY_MATCHING,     1,     1.337,     1.302,     0.0,     1.302,     0,     1,     0.0,     1.302,     null,     

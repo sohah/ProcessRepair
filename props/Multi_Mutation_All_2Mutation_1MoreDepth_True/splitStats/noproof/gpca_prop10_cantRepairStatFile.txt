@@ -1,0 +1,2 @@
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-0--1-LOR-0-0,     true,    2,    ALREADY_MATCHING,     1,     1.028,     1.003,     0.0,     1.003,     0,     1,     0.0,     1.003,     null,     
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-1--1-LOR-1-0,     true,    0,    ALREADY_MATCHING,     1,     0.832,     0.802,     0.0,     0.802,     0,     1,     0.0,     0.802,     null,     

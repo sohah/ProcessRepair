@@ -1,0 +1,30 @@
+Computing benchmark:gpca prop: p1
+tautology props are:[p12, p18]
+loose props are:[]
+Computing benchmark:gpca prop: p2
+tautology props are:[p12, p13, p14, p16, p18, p21, p22, p24, p25]
+loose props are:[]
+Computing benchmark:gpca prop: p3
+tautology props are:[p11, p13, p15, p17, p24]
+loose props are:[]
+Computing benchmark:gpca prop: p4
+tautology props are:[p11, p12, p13, p14, p15, p16, p17, p21, p22, p23, p27, p28]
+loose props are:[]
+Computing benchmark:gpca prop: p5
+tautology props are:[p11, p13, p15, p17, p22, p24, p26]
+loose props are:[]
+Computing benchmark:gpca prop: p6
+tautology props are:[p11, p12, p13, p15, p16, p18, p21, p25]
+loose props are:[p24]
+Computing benchmark:gpca prop: p7
+tautology props are:[p14, p20]
+loose props are:[p13, p18]
+Computing benchmark:gpca prop: p8
+tautology props are:[p12, p16, p17, p19, p20, p22, p24, p26]
+loose props are:[]
+Computing benchmark:gpca prop: p9
+tautology props are:[p11, p16]
+loose props are:[p15]
+Computing benchmark:gpca prop: p10
+tautology props are:[]
+loose props are:[]

@@ -1,1 +1,9 @@
-prop file not found, unexpected. aborting
+Computing benchmark:infusion prop: p1
+tautology props are:[]
+loose props are:[p18, p22, p25, p27, p29, p30, p31, p32, p34]
+Computing benchmark:infusion prop: p2
+tautology props are:[]
+loose props are:[]
+Computing benchmark:infusion prop: p4
+tautology props are:[]
+loose props are:[]

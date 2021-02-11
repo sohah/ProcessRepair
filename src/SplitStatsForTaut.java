@@ -384,6 +384,7 @@ public class SplitStatsForTaut {
 
         api.setTimeout(timeOut);
 
+        System.out.println("opening file = " + fileName);
         api.execute(file1, result, new NullProgressMonitor());
 
         return result;

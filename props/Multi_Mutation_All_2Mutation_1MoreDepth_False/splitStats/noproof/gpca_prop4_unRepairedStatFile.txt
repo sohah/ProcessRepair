@@ -1,0 +1,3 @@
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2--1-ROR-2-1,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.703,     603.612,     0.605,     603.007,     1,     2,     0.605,     301.503,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-1-ROR-2-2,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.651,     603.553,     0.802,     602.751,     1,     2,     0.802,     301.375,     null,     
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2--1-ROR-2-3,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.846,     603.765,     0.703,     603.062,     1,     2,     0.703,     301.531,     null,     

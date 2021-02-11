@@ -1,0 +1,2 @@
+infusion,     p8,     Faulty_Prop8-ROR-5-9-ROR-7-12,     true,    0,    ALREADY_MATCHING,     1,     0.927,     0.902,     0.0,     0.902,     0,     1,     0.0,     0.902,     null,     
+infusion,     p8,     Faulty_Prop8-LOR-2-5-ROR-3-13,     true,    2,    ALREADY_MATCHING,     1,     0.928,     0.903,     0.0,     0.903,     0,     1,     0.0,     0.903,     null,     

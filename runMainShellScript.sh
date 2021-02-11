@@ -203,16 +203,17 @@ echo "6.run OriginalPropTest for non-inclusive"
 ./runPropRelations.sh ${PROCESSREPAIRDIR}_False
 
 
+
 echo "7.run SplitStatsForTaut, where unbounded  verification is used inclusive"
-./runSplitStatsForTaut_General.sh ${PROCESSREPAIRDIR}_True ${ORIGEXPERDIR}
+./runSplitStatsForTaut_General.sh ${PROCESSREPAIRDIR}_True/ ${ORIGEXPERDIR}/
 
 echo "8.run SplitStatsForTaut, where unbounded  verification is used non-inclusive"
-./runSplitStatsForTaut_General.sh ${PROCESSREPAIRDIR}_False ${ORIGEXPERDIR}
+./runSplitStatsForTaut_General.sh ${PROCESSREPAIRDIR}_False/ ${ORIGEXPERDIR}/
 
 echo "9.run SplitForTautAndLoose, no verification here - inclusive"
-./runSplitStatsForTautAndLoose_General.sh ${PROCESSREPAIRDIR}_True ${ORIGEXPERDIR}
+./runSplitStatsForTautAndLoose_General.sh ${PROCESSREPAIRDIR}_True/ ${ORIGEXPERDIR}/
 
 echo "10.run SplitForTautAndLoose, no verification here - non-inclusive"
-./runSplitStatsForTautAndLoose_General.sh ${PROCESSREPAIRDIR}_False ${ORIGEXPERDIR}
+./runSplitStatsForTautAndLoose_General.sh ${PROCESSREPAIRDIR}_False/ ${ORIGEXPERDIR}/
 
 echo "DONE!"

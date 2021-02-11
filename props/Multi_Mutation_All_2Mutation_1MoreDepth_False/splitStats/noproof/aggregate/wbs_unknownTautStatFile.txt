@@ -1,0 +1,1 @@
+wbs,     p1,     Prop1-ROR-2-8-ROR-5-13,     false,    0,    TRUE_FOR_MAX_STEPS,     5,     43.837,     43.522,     34.086,     9.436,     16,     16,     2.13,     0.589,     p1 = (((((pedal_r < 5) xor (pedal_r >= 1)) => ((pedal_r = 0) and ((pedal_r >= 7) and (7 = (-1))))) and (not skid_r)) => ((AltPressure_r <> 0) or (NormalPressure_r > 0)));,     

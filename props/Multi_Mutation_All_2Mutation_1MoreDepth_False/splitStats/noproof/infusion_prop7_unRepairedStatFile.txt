@@ -1,0 +1,2 @@
+infusion,     p7,     Faulty_Prop7-ROR-2-2-ROR-2-5,     false,    0,    OUTERLOOP_MAX_LOOP_REACHED,     0,     22.464,     22.124,     9.347,     12.777,     8,     8,     1.168,     1.597,     null,     
+infusion,     p7,     Faulty_Prop7-LOR-1--1-ROR-1--1,     false,    0,    OUTERLOOP_EXISTS_UNKNOWN,     0,     5.721,     5.65,     1.806,     3.844,     3,     3,     0.602,     1.281,     null,     

@@ -1,0 +1,2 @@
+infusion,     p5,     Faulty_Prop5-LOR-1-4-ROR-3-3,     false,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     89.293,     84.855,     34.583,     50.272,     34,     35,     1.017,     1.436,     p1 = (true xor false);,     
+infusion,     p5,     Faulty_Prop5-LOR-1-1-LOR-3-4,     false,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     131.602,     125.034,     59.771,     65.263,     40,     41,     1.494,     1.591,     p1 = ((((Configured = 0) => (Configured <= 3)) xor false) xor false);,     

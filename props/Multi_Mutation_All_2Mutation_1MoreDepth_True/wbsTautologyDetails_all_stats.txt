@@ -1,0 +1,2 @@
+tautology props for wbs: p1 are: []loose props for wbs: p1 are: []
+tautology props for wbs: p3 are: []loose props for wbs: p3 are: []

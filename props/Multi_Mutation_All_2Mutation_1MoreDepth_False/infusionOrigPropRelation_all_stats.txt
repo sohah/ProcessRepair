@@ -1,0 +1,58 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+infusion,      p1,      2,      0,      11,      0,      0
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[]
+infusion,      p2,      0,      1,      1,      0,      8
+tightProps are:[]
+equivProps are:[p22]
+inComparable Props are:[p15, p16, p17, p18, p19, p20, p21, p24]
+infusion,      p3,      0,      0,      0,      0,      0
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[]
+infusion,      p4,      2,      0,      0,      1,      7
+tightProps are:[p16]
+equivProps are:[]
+inComparable Props are:[p17, p18, p19, p20, p21, p22, p24]
+infusion,      p5,      3,      0,      0,      4,      15
+tightProps are:[p15, p22, p29, p31]
+equivProps are:[]
+inComparable Props are:[p17, p18, p19, p20, p21, p23, p24, p25, p26, p30, p32, p33, p34, p35, p36]
+infusion,      p6,      4,      0,      1,      2,      13
+tightProps are:[p15, p25]
+equivProps are:[]
+inComparable Props are:[p16, p17, p19, p20, p21, p22, p24, p26, p28, p29, p32, p33, p34]
+infusion,      p7,      0,      0,      0,      2,      17
+tightProps are:[p18, p28]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p19, p20, p21, p22, p23, p24, p25, p26, p27, p29, p30, p31, p32, p33]
+infusion,      p8,      6,      0,      0,      1,      10
+tightProps are:[p28]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p18, p19, p20, p23, p25, p30, p31]
+infusion,      p9,      2,      0,      2,      0,      18
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16, p19, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p35, p36]
+infusion,      p10,      0,      0,      0,      1,      16
+tightProps are:[p20]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p18, p19, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31]
+infusion,      p11,      0,      0,      0,      0,      25
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39]
+infusion,      p12,      0,      0,      0,      0,      27
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41]
+infusion,      p13,      0,      0,      0,      1,      11
+tightProps are:[p18]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p19, p20, p21, p22, p23, p24, p25, p26]
+infusion,      p14,      0,      0,      0,      1,      11
+tightProps are:[p25]
+equivProps are:[]
+inComparable Props are:[p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p26]

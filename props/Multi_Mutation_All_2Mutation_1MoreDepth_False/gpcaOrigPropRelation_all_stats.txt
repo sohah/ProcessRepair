@@ -1,0 +1,42 @@
+bench,      OriginalPropName,      tautology,      equiv#,      loose#,      tight#,      incomparable#
+
+gpca,      p1,      2,      0,      0,      0,      6
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p11, p13, p14, p15, p16, p17]
+gpca,      p2,      9,      0,      0,      0,      6
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p11, p15, p17, p19, p20, p23]
+gpca,      p3,      5,      0,      0,      2,      8
+tightProps are:[p16, p25]
+equivProps are:[]
+inComparable Props are:[p12, p14, p18, p19, p20, p21, p22, p23]
+gpca,      p4,      12,      0,      0,      0,      8
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p18, p19, p20, p24, p25, p26, p29, p30]
+gpca,      p5,      7,      0,      0,      0,      9
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p12, p14, p16, p18, p19, p20, p21, p23, p25]
+gpca,      p6,      8,      0,      1,      0,      6
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p14, p17, p19, p20, p22, p23]
+gpca,      p7,      2,      0,      2,      1,      13
+tightProps are:[p28]
+equivProps are:[]
+inComparable Props are:[p11, p12, p15, p16, p17, p19, p21, p22, p23, p24, p25, p26, p27]
+gpca,      p8,      8,      0,      0,      0,      8
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p11, p13, p14, p15, p18, p21, p23, p25]
+gpca,      p9,      2,      0,      1,      0,      4
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p12, p13, p14, p17]
+gpca,      p10,      0,      0,      0,      0,      5
+tightProps are:[]
+equivProps are:[]
+inComparable Props are:[p11, p12, p13, p14, p15]

@@ -1,0 +1,8 @@
+infusion,     p12,     Faulty_Prop12-LOR-2-0-ROR-3-5,     false,    0,    ALREADY_MATCHING,     1,     1.227,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-1-4-ROR-1-5,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     16.081,     15.915,     7.521,     8.394,     5,     5,     1.504,     1.678,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-3-0-LOR-3-2,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.147,     2.114,     0.802,     1.312,     1,     1,     0.802,     1.312,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-2-2-ROR-2-4,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.145,     2.114,     0.802,     1.312,     1,     1,     0.802,     1.312,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-2-2-ROR-2-7,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.345,     2.314,     0.801,     1.513,     1,     1,     0.801,     1.513,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-3-0-ROR-3-5,     false,    0,    ALREADY_MATCHING,     1,     1.429,     1.403,     0.0,     1.403,     0,     1,     0.0,     1.403,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-3-1-LOR-3-4,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     8.741,     8.663,     3.509,     5.154,     3,     3,     1.169,     1.718,     null,     
+infusion,     p12,     Faulty_Prop12-LOR-3-4-ROR-3--1,     false,    0,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.95,     7.856,     3.011,     4.845,     3,     3,     1.003,     1.615,     null,     

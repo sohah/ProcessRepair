@@ -1,0 +1,4 @@
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-2-3-LOR-4-3,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     603.71,     603.637,     0.904,     602.733,     1,     2,     0.904,     301.366,     null,     
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-4-2-LOR-4-6,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     611.145,     611.045,     2.108,     608.937,     2,     3,     1.054,     202.979,     null,     
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-4--1-ROR-4-3,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     607.876,     607.79,     1.103,     606.687,     1,     2,     1.103,     303.343,     null,     
+gpca,     p8,     Faulty_GPCA_Prop8-LOR-2--1-ROR-3-5,     false,    0,    OUTERLOOP_FORALL_UKNOWN,     0,     605.236,     605.137,     1.212,     603.925,     1,     2,     1.212,     301.962,     null,     
