@@ -1,4 +1,7 @@
 opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop9/output/Faulty_Prop9-LOR-2-5-LOR-5-8/minimal/Faulty_Prop9-LOR-2-5-LOR-5-8_exists.lus
 running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop9/output/Faulty_Prop9-LOR-2-5-LOR-5-8/minimal/Faulty_Prop9-LOR-2-5-LOR-5-8_exists.lus
 Query Result = Valid
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop9/output/Faulty_Prop9-LOR-2-8-ROR-5-17/minimal/Faulty_Prop9-LOR-2-8-ROR-5-17_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//GPCA_Infusion/Prop9/output/Faulty_Prop9-LOR-2-8-ROR-5-17/minimal/Faulty_Prop9-LOR-2-8-ROR-5-17_exists.lus
+Query Result = Valid
 No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find

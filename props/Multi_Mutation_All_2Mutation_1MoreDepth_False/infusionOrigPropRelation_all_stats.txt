@@ -8,10 +8,10 @@ infusion,      p2,      0,      1,      1,      0,      8
 tightProps are:[]
 equivProps are:[p22]
 inComparable Props are:[p15, p16, p17, p18, p19, p20, p21, p24]
-infusion,      p3,      0,      0,      0,      0,      0
+infusion,      p3,      7,      0,      0,      0,      9
 tightProps are:[]
 equivProps are:[]
-inComparable Props are:[]
+inComparable Props are:[p16, p19, p20, p22, p23, p24, p26, p29, p30]
 infusion,      p4,      2,      0,      0,      1,      7
 tightProps are:[p16]
 equivProps are:[]

@@ -1,3 +1,4 @@
-opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//WBS/Prop1/output/Prop1-ROR-2-8-ROR-5-13/minimal/Prop1-ROR-2-8-ROR-5-13_exists.lus
-running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//WBS/Prop1/output/Prop1-ROR-2-8-ROR-5-13/minimal/Prop1-ROR-2-8-ROR-5-13_exists.lus
-Query Result = Unknown
+opening file = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//WBS/Prop1/output/Prop1-LOR-3-1-ROR-4-15/minimal/Prop1-LOR-3-1-ROR-4-15_exists.lus
+running existsFileName = /media/soha/DATA/MultiMutationExpr/Journal/ranger-discovery/src/DiscoveryExamples//WBS/Prop1/output/Prop1-LOR-3-1-ROR-4-15/minimal/Prop1-LOR-3-1-ROR-4-15_exists.lus
+Query Result = Valid
+No valid taut prop to split on. It might be okay, so check if indeed there are no valid taut prop we could find

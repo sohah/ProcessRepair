@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Property name="tight">
+    <Runtime unit="sec">0.105</Runtime>
+    <Answer source="bmc">falsifiable</Answer>
+    <K>1</K>
+    <Counterexample>
+      <Signal name="Down_Separation_s" type="int">
+        <Value time="0">0</Value>
+      </Signal>
+      <Signal name="Up_Separation_s" type="int">
+        <Value time="0">0</Value>
+      </Signal>
+      <Signal name="alim_res_s" type="int">
+        <Value time="0">400</Value>
+      </Signal>
+      <Signal name="p1" type="bool">
+        <Value time="0">0</Value>
+      </Signal>
+      <Signal name="p31" type="bool">
+        <Value time="0">1</Value>
+      </Signal>
+      <Signal name="result_alt_sep_test_s" type="int">
+        <Value time="0">2</Value>
+      </Signal>
+      <Signal name="tight" type="bool">
+        <Value time="0">0</Value>
+      </Signal>
+    </Counterexample>
+  </Property>
+</Results>

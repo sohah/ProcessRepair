@@ -1,0 +1,16 @@
+p1 = (false => (Commanded_Flow_Rate <> 0));     
+p1 = ((System_On and (Highest_Level_Alarm > 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On and false) => (Commanded_Flow_Rate < 0));     
+p1 = (false => (Commanded_Flow_Rate > 0));     
+p1 = ((System_On and (Highest_Level_Alarm <= 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On and (Highest_Level_Alarm = 4)) or (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On and false) => (Commanded_Flow_Rate <> 0));     
+p1 = ((System_On and System_On) or (Commanded_Flow_Rate = 0));     
+p1 = ((System_On or (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On xor (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On and false) => (Commanded_Flow_Rate < 0));     
+p1 = ((System_On or (Highest_Level_Alarm = 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = (false => (Commanded_Flow_Rate <> 0));     
+p1 = ((System_On and false) => (Commanded_Flow_Rate < 0));     
+p1 = ((System_On and (Highest_Level_Alarm >= 4)) => (Commanded_Flow_Rate >= 0));     
+p1 = ((System_On and System_On) or (Commanded_Flow_Rate = 0));     

@@ -4,7 +4,7 @@ wbs,      p1,      1,      0,      2,      1,      14
 tightProps are:[p11]
 equivProps are:[]
 inComparable Props are:[p7, p8, p9, p10, p12, p13, p14, p15, p16, p17, p18, p21, p22, p23]
-wbs,      p3,      0,      0,      0,      0,      0
+wbs,      p3,      3,      1,      0,      0,      2
 tightProps are:[]
-equivProps are:[]
-inComparable Props are:[]
+equivProps are:[p6]
+inComparable Props are:[p10, p11]

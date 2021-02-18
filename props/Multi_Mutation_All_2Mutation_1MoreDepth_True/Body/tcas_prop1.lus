@@ -10,9 +10,21 @@ var
 p1 : bool;
  p2 : bool;
  p4 : bool;
+ p5 : bool;
+ p6 : bool;
+ p7 : bool;
+ p8 : bool;
+ p9 : bool;
+ p10 : bool;
 let
     p1 = ((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) =>  (result_alt_sep_test_s  <> 2);
     p2 = ((Up_Separation_s < alim_res_s) and (Down_Separation_s >= alim_res_s)) =>  (result_alt_sep_test_s  <> 1);
     p4 = ((Up_Separation_s >= alim_res_s) and (Down_Separation_s < alim_res_s)) =>  (result_alt_sep_test_s  <> 2);
 
+p5= (((alim_res_s < 740) xor (alim_res_s = 500)) => ((alim_res_s = 640) xor (alim_res_s = 400)));
+p6= (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s >= 0));
+p7= (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s >= 0));
+p8= (((Up_Separation_s <= Down_Separation_s) => (Up_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p9= (((Up_Separation_s <= Down_Separation_s) => (Up_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));
+p10= (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s >= 0));
 tel;

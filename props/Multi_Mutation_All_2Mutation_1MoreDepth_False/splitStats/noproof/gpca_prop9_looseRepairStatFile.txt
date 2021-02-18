@@ -1,0 +1,1 @@
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-2-3-ROR-3-6,     false,    0,    TRUE_FOR_MAX_STEPS,     252,     619.317,     613.67,     203.165,     410.505,     255,     255,     0.796,     1.609,     p1 = (System_On => ((out_Highest_Level_Alarm > 4) => (out_Highest_Level_Alarm > 255)));,     
