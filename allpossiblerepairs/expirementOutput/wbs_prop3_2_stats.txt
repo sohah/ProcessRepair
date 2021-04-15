@@ -1,0 +1,16 @@
+wbs,     p3,     Prop3-ROR-3-4-ROR-6-11,     false,    2,    ALREADY_MATCHING,     1,     1.365,     1.317,     0.0,     1.317,     0,     1,     0.0,     1.317,     null
+wbs,     p3,     Prop3-ROR-1-4-ROR-6-11,     true,    2,    ALREADY_MATCHING,     1,     1.258,     1.15,     0.0,     1.15,     0,     1,     0.0,     1.15,     null
+wbs,     p3,     Prop3-ROR-2-4-ROR-6-11,     true,    2,    ALREADY_MATCHING,     1,     1.326,     1.222,     0.0,     1.222,     0,     1,     0.0,     1.222,     null
+wbs,     p3,     Prop3-ROR-4-4-ROR-5-11,     false,    2,    ALREADY_MATCHING,     1,     1.267,     1.18,     0.0,     1.18,     0,     1,     0.0,     1.18,     null
+wbs,     p3,     Prop3-ROR-3-4-ROR-4-11,     false,    2,    ALREADY_MATCHING,     1,     1.385,     1.303,     0.0,     1.303,     0,     1,     0.0,     1.303,     null
+wbs,     p3,     Prop3-ROR-3-4-ROR-3-11,     false,    2,    ALREADY_MATCHING,     1,     1.481,     1.38,     0.0,     1.38,     0,     1,     0.0,     1.38,     null
+wbs,     p3,     Prop3-ROR-2-4-ROR-5-11,     false,    2,    ALREADY_MATCHING,     1,     1.168,     1.091,     0.0,     1.091,     0,     1,     0.0,     1.091,     null
+wbs,     p3,     Prop3-ROR-6-4-ROR-6-11,     false,    2,    ALREADY_MATCHING,     1,     1.28,     1.138,     0.0,     1.138,     0,     1,     0.0,     1.138,     null
+wbs,     p3,     Prop3-ROR-4-4-ROR-4-11,     false,    2,    ALREADY_MATCHING,     1,     1.078,     0.958,     0.0,     0.958,     0,     1,     0.0,     0.958,     null
+wbs,     p3,     Prop3-ROR-3-4-ROR-5-11,     false,    2,    ALREADY_MATCHING,     1,     1.268,     1.163,     0.0,     1.163,     0,     1,     0.0,     1.163,     null
+wbs,     p3,     Prop3-ROR-0-4-ROR-0-11,     true,    2,    ALREADY_MATCHING,     1,     1.038,     0.973,     0.0,     0.973,     0,     1,     0.0,     0.973,     null
+wbs,     p3,     Prop3-ROR-4-4-ROR-6-11,     true,    2,    ALREADY_MATCHING,     1,     0.876,     0.788,     0.0,     0.788,     0,     1,     0.0,     0.788,     null
+wbs,     p3,     Prop3-ROR-2-4-ROR-2-11,     false,    2,    ALREADY_MATCHING,     1,     0.833,     0.76,     0.0,     0.76,     0,     1,     0.0,     0.76,     null
+wbs,     p3,     Prop3-ROR-5-4-ROR-5-11,     false,    2,    ALREADY_MATCHING,     1,     0.833,     0.778,     0.0,     0.778,     0,     1,     0.0,     0.778,     null
+wbs,     p3,     Prop3-ROR-5-4-ROR-6-11,     false,    2,    ALREADY_MATCHING,     1,     0.571,     0.547,     0.0,     0.547,     0,     1,     0.0,     0.547,     null
+wbs,     p3,     Prop3-ROR-1-4-ROR-1-11,     false,    2,    ALREADY_MATCHING,     1,     0.56,     0.488,     0.0,     0.488,     0,     1,     0.0,     0.488,     null

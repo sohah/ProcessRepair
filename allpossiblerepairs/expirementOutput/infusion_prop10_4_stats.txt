@@ -1,0 +1,2 @@
+infusion,     p10,     Faulty_Prop10-LOR-2-2-LOR-3-2,     false,    2,    TRUE_FOR_MAX_STEPS,     3,     16.649,     16.369,     5.063,     11.306,     8,     8,     0.632,     1.413,     p1 = ((System_On and (Current_System_Mode > 1)) or (Commanded_Flow_Rate = 0));
+infusion,     p10,     Faulty_Prop10-LOR-1-2-LOR-3-2,     false,    2,    TRUE_FOR_MAX_STEPS,     4,     31.944,     31.114,     11.093,     20.021,     17,     17,     0.652,     1.177,     p1 = (((Current_System_Mode > 1) and System_On) or (Commanded_Flow_Rate < 1));

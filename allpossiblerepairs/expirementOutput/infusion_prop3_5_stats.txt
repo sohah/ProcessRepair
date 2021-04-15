@@ -1,0 +1,6 @@
+infusion,     p3,     Faulty_Prop3-LOR-2-2-ROR-2-6,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.095,     5.985,     1.953,     4.032,     1,     1,     1.953,     4.032,     null
+infusion,     p3,     Faulty_Prop3-LOR-2-2-ROR-3-6,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.439,     6.337,     2.021,     4.316,     1,     1,     2.021,     4.316,     null
+infusion,     p3,     Faulty_Prop3-LOR-3-2-ROR-3-6,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.252,     6.072,     1.251,     4.821,     1,     1,     1.251,     4.821,     null
+infusion,     p3,     Faulty_Prop3-LOR-1-2-ROR-1-6,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.372,     6.201,     1.536,     4.665,     1,     1,     1.536,     4.665,     null
+infusion,     p3,     Faulty_Prop3-LOR-1-2-ROR-3-6,     false,    2,    TRUE_FOR_MAX_STEPS,     1,     33.95,     33.153,     9.685,     23.468,     14,     14,     0.691,     1.676,     p1 = ((System_On => System_On) and (Commanded_Flow_Rate >= 0));
+infusion,     p3,     Faulty_Prop3-LOR-0-2-ROR-0-6,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     6,     164.319,     159.11,     102.251,     56.859,     49,     50,     2.086,     1.137,     p1 = (((Commanded_Flow_Rate > 0) and (not System_On)) => ((not System_On) and System_On));

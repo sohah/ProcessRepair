@@ -1,0 +1,2 @@
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-1-2-LOR-3-4,     false,    2,    MINIMAL_FORALL_UNKNOWN,     1,     608.827,     608.542,     2.16,     606.382,     3,     4,     0.72,     151.595,     p1 = (true xor false);
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-2-2-LOR-3-4,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     2,     869.24,     865.82,     52.78,     813.04,     38,     39,     1.388,     20.847,     p1 = ((System_On and (Disable_Audio < 0)) xor ((out_Is_Audio_Disabled < out_Audio_Notification_Command) => (out_Is_Audio_Disabled < out_Audio_Notification_Command)));

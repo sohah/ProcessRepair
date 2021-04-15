@@ -1,0 +1,1 @@
+gpca,     p4,     Faulty_GPCA_Prop4-ROR-1--1-ROR-2--1,     true,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     606.239,     605.998,     0.618,     605.38,     1,     2,     0.618,     302.69,     null

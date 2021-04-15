@@ -1,0 +1,4 @@
+infusion,     p2,     Faulty_Prop2-LOR-2-0-ROR-2-3,     false,    1,    ALREADY_MATCHING,     1,     2.413,     2.27,     0.0,     2.27,     0,     1,     0.0,     2.27,     null
+infusion,     p2,     Faulty_Prop2-LOR-0-0-ROR-0-3,     true,    1,    ALREADY_MATCHING,     1,     2.432,     2.303,     0.0,     2.303,     0,     1,     0.0,     2.303,     null
+infusion,     p2,     Faulty_Prop2-LOR-1-0-ROR-2-3,     false,    1,    ALREADY_MATCHING,     1,     2.681,     2.514,     0.0,     2.514,     0,     1,     0.0,     2.514,     null
+infusion,     p2,     Faulty_Prop2-LOR-1-0-ROR-1-3,     false,    1,    ALREADY_MATCHING,     1,     2.805,     2.68,     0.0,     2.68,     0,     1,     0.0,     2.68,     null

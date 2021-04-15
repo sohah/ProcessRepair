@@ -1,0 +1,16 @@
+wbs,     p3,     Prop3-LOR-3-5-ROR-6-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.992,     2.806,     1.511,     1.295,     1,     1,     1.511,     1.295,     null
+wbs,     p3,     Prop3-LOR-4-5-ROR-5-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.987,     2.902,     1.427,     1.475,     1,     1,     1.427,     1.475,     null
+wbs,     p3,     Prop3-LOR-3-5-ROR-3-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.087,     2.982,     1.445,     1.537,     1,     1,     1.445,     1.537,     null
+wbs,     p3,     Prop3-LOR-3-5-ROR-4-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     5.9,     5.754,     3.404,     2.35,     2,     2,     1.702,     1.175,     null
+wbs,     p3,     Prop3-LOR-2-5-ROR-6-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     6.736,     6.61,     3.682,     2.928,     2,     2,     1.841,     1.464,     null
+wbs,     p3,     Prop3-LOR-2-5-ROR-5-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     16.615,     16.417,     10.4,     6.017,     4,     4,     2.6,     1.504,     null
+wbs,     p3,     Prop3-LOR-6-5-ROR-6-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.317,     3.174,     1.552,     1.622,     1,     1,     1.552,     1.622,     null
+wbs,     p3,     Prop3-LOR-3-5-ROR-5-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.49,     3.349,     1.518,     1.831,     1,     1,     1.518,     1.831,     null
+wbs,     p3,     Prop3-LOR-4-5-ROR-4-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.377,     3.274,     1.608,     1.666,     1,     1,     1.608,     1.666,     null
+wbs,     p3,     Prop3-LOR-2-5-ROR-2-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     10.492,     10.31,     6.347,     3.963,     3,     3,     2.115,     1.321,     null
+wbs,     p3,     Prop3-LOR-4-5-ROR-6-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.398,     4.25,     2.347,     1.903,     1,     1,     2.347,     1.903,     null
+wbs,     p3,     Prop3-LOR-5-5-ROR-5-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.124,     2.084,     1.005,     1.079,     1,     1,     1.005,     1.079,     null
+wbs,     p3,     Prop3-LOR-5-5-ROR-6-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     2.078,     1.973,     0.92,     1.053,     1,     1,     0.92,     1.053,     null
+wbs,     p3,     Prop3-LOR-1-5-ROR-1-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.071,     6.996,     4.671,     2.325,     4,     4,     1.167,     0.581,     null
+wbs,     p3,     Prop3-LOR-0-5-ROR-0-2,     true,    2,    TRUE_FOR_MAX_STEPS,     7,     144.257,     142.582,     120.945,     21.637,     35,     35,     3.455,     0.618,     p1 = (((pedal_r < NormalPressure_r) and (NormalPressure_r = 5)) xor ((NormalPressure_r <= 3) xor (NormalPressure_r <= -1)));
+wbs,     p3,     Prop3-LOR-1-5-ROR-6-2,     false,    2,    MINIMAL_EXISTS_UKNOWN,     2,     652.941,     651.533,     630.139,     21.394,     21,     21,     30.006,     1.018,     p1 = ((((not skid_r) => (not skid_r)) and (((pedal_r < 6) and (6 = (-1))) => ((pedal_r >= 6) and (6 = (-1))))) and (NormalPressure_r < 6));

@@ -1,0 +1,522 @@
+node T_node(
+  System_On : bool;
+  Infusion_Initiate : bool;
+  Infusion_Inhibit : bool;
+  Infusion_Cancel : bool;
+  Patient_Bolus_Request : bool;
+  Infusion_Total_Duration : int;
+  VTBI_Total : int;
+  Flow_Rate_Basal : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  Duration_Intermittent_Bolus : int;
+  Interval_Intermittent_Bolus : int;
+  Flow_Rate_Patient_Bolus : int;
+  Duration_Patient_Bolus : int;
+  Lockout_Period_Patient_Bolus : int;
+  Max_Number_of_Patient_Bolus : int;
+  Flow_Rate_KVO : int;
+  Entered_Reservoir_Volume : int;
+  Configured : int;
+  Highest_Level_Alarm : int;
+  Reservoir_Empty : bool;
+  Volume_Infused : int;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  New_Infusion : bool;
+  Log_Message_ID : int;
+  Actual_Infusion_Duration : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = repairNode_41_0(System_On, Commanded_Flow_Rate, Current_System_Mode, Flow_Rate_Intermittent_Bolus, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10);
+
+tel;
+
+node repairNode_41_0(
+  System_On : bool;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  R : bool
+);
+var
+  R_l_l : bool;
+  R_l_r : bool;
+  R_l : bool;
+  R_r_l : bool;
+  R_r_r : bool;
+  R_r : bool;
+let
+  R_l_l = (if (inner_hole_0_0 = 32) then System_On else (if (inner_hole_0_0 = 31) then (not System_On) else (if (inner_hole_0_0 = 30) then ((Commanded_Flow_Rate = const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 29) then ((Commanded_Flow_Rate < const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 28) then ((Commanded_Flow_Rate <= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 27) then ((Commanded_Flow_Rate > const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 26) then ((Commanded_Flow_Rate >= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 25) then (Commanded_Flow_Rate <= Current_System_Mode) else (if (inner_hole_0_0 = 24) then (Commanded_Flow_Rate < Current_System_Mode) else (if (inner_hole_0_0 = 23) then (Commanded_Flow_Rate <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_0_0 = 22) then (Commanded_Flow_Rate < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_0_0 = 21) then ((Current_System_Mode = const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 20) then ((Current_System_Mode < const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 19) then ((Current_System_Mode <= const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 18) then ((Current_System_Mode > const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 17) then ((Current_System_Mode >= const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 16) then (Current_System_Mode <= Commanded_Flow_Rate) else (if (inner_hole_0_0 = 15) then (Current_System_Mode < Commanded_Flow_Rate) else (if (inner_hole_0_0 = 14) then (Current_System_Mode <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_0_0 = 13) then (Current_System_Mode < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_0_0 = 12) then ((Flow_Rate_Intermittent_Bolus = const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 11) then ((Flow_Rate_Intermittent_Bolus < const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 10) then ((Flow_Rate_Intermittent_Bolus <= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 9) then ((Flow_Rate_Intermittent_Bolus > const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 8) then ((Flow_Rate_Intermittent_Bolus >= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 7) then (Flow_Rate_Intermittent_Bolus <= Commanded_Flow_Rate) else (if (inner_hole_0_0 = 6) then (Flow_Rate_Intermittent_Bolus < Commanded_Flow_Rate) else (if (inner_hole_0_0 = 5) then (Flow_Rate_Intermittent_Bolus <= Current_System_Mode) else (if (inner_hole_0_0 = 4) then (Flow_Rate_Intermittent_Bolus < Current_System_Mode) else (if (inner_hole_0_0 = 3) then (Commanded_Flow_Rate = Current_System_Mode) else (if (inner_hole_0_0 = 2) then (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus) else (Current_System_Mode = Flow_Rate_Intermittent_Bolus))))))))))))))))))))))))))))))));
+
+  R_l_r = (if (inner_hole_2_2 = 32) then System_On else (if (inner_hole_2_2 = 31) then (not System_On) else (if (inner_hole_2_2 = 30) then ((Commanded_Flow_Rate = const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 29) then ((Commanded_Flow_Rate < const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 28) then ((Commanded_Flow_Rate <= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 27) then ((Commanded_Flow_Rate > const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 26) then ((Commanded_Flow_Rate >= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 25) then (Commanded_Flow_Rate <= Current_System_Mode) else (if (inner_hole_2_2 = 24) then (Commanded_Flow_Rate < Current_System_Mode) else (if (inner_hole_2_2 = 23) then (Commanded_Flow_Rate <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_2_2 = 22) then (Commanded_Flow_Rate < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_2_2 = 21) then ((Current_System_Mode = const_hole_3_3) and ((const_hole_3_3 <= 8) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 20) then ((Current_System_Mode < const_hole_3_3) and ((const_hole_3_3 <= 8) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 19) then ((Current_System_Mode <= const_hole_3_3) and ((const_hole_3_3 <= 8) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 18) then ((Current_System_Mode > const_hole_3_3) and ((const_hole_3_3 <= 8) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 17) then ((Current_System_Mode >= const_hole_3_3) and ((const_hole_3_3 <= 8) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 16) then (Current_System_Mode <= Commanded_Flow_Rate) else (if (inner_hole_2_2 = 15) then (Current_System_Mode < Commanded_Flow_Rate) else (if (inner_hole_2_2 = 14) then (Current_System_Mode <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_2_2 = 13) then (Current_System_Mode < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_2_2 = 12) then ((Flow_Rate_Intermittent_Bolus = const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 11) then ((Flow_Rate_Intermittent_Bolus < const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 10) then ((Flow_Rate_Intermittent_Bolus <= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 9) then ((Flow_Rate_Intermittent_Bolus > const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 8) then ((Flow_Rate_Intermittent_Bolus >= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 7) then (Flow_Rate_Intermittent_Bolus <= Commanded_Flow_Rate) else (if (inner_hole_2_2 = 6) then (Flow_Rate_Intermittent_Bolus < Commanded_Flow_Rate) else (if (inner_hole_2_2 = 5) then (Flow_Rate_Intermittent_Bolus <= Current_System_Mode) else (if (inner_hole_2_2 = 4) then (Flow_Rate_Intermittent_Bolus < Current_System_Mode) else (if (inner_hole_2_2 = 3) then (Commanded_Flow_Rate = Current_System_Mode) else (if (inner_hole_2_2 = 2) then (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus) else (Current_System_Mode = Flow_Rate_Intermittent_Bolus))))))))))))))))))))))))))))))));
+
+  R_l = (if (inner_hole_4_4 = 1) then (R_l_l and R_l_r) else (if (inner_hole_4_4 = 2) then (R_l_l or R_l_r) else (if (inner_hole_4_4 = 3) then (R_l_l => R_l_r) else (R_l_l xor R_l_r))));
+
+  R_r_l = (if (inner_hole_5_5 = 32) then System_On else (if (inner_hole_5_5 = 31) then (not System_On) else (if (inner_hole_5_5 = 30) then ((Commanded_Flow_Rate = const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 29) then ((Commanded_Flow_Rate < const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 28) then ((Commanded_Flow_Rate <= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 27) then ((Commanded_Flow_Rate > const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 26) then ((Commanded_Flow_Rate >= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 25) then (Commanded_Flow_Rate <= Current_System_Mode) else (if (inner_hole_5_5 = 24) then (Commanded_Flow_Rate < Current_System_Mode) else (if (inner_hole_5_5 = 23) then (Commanded_Flow_Rate <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_5_5 = 22) then (Commanded_Flow_Rate < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_5_5 = 21) then ((Current_System_Mode = const_hole_6_6) and ((const_hole_6_6 <= 8) and (const_hole_6_6 >= 0))) else (if (inner_hole_5_5 = 20) then ((Current_System_Mode < const_hole_6_6) and ((const_hole_6_6 <= 8) and (const_hole_6_6 >= 0))) else (if (inner_hole_5_5 = 19) then ((Current_System_Mode <= const_hole_6_6) and ((const_hole_6_6 <= 8) and (const_hole_6_6 >= 0))) else (if (inner_hole_5_5 = 18) then ((Current_System_Mode > const_hole_6_6) and ((const_hole_6_6 <= 8) and (const_hole_6_6 >= 0))) else (if (inner_hole_5_5 = 17) then ((Current_System_Mode >= const_hole_6_6) and ((const_hole_6_6 <= 8) and (const_hole_6_6 >= 0))) else (if (inner_hole_5_5 = 16) then (Current_System_Mode <= Commanded_Flow_Rate) else (if (inner_hole_5_5 = 15) then (Current_System_Mode < Commanded_Flow_Rate) else (if (inner_hole_5_5 = 14) then (Current_System_Mode <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_5_5 = 13) then (Current_System_Mode < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_5_5 = 12) then ((Flow_Rate_Intermittent_Bolus = const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 11) then ((Flow_Rate_Intermittent_Bolus < const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 10) then ((Flow_Rate_Intermittent_Bolus <= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 9) then ((Flow_Rate_Intermittent_Bolus > const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 8) then ((Flow_Rate_Intermittent_Bolus >= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 7) then (Flow_Rate_Intermittent_Bolus <= Commanded_Flow_Rate) else (if (inner_hole_5_5 = 6) then (Flow_Rate_Intermittent_Bolus < Commanded_Flow_Rate) else (if (inner_hole_5_5 = 5) then (Flow_Rate_Intermittent_Bolus <= Current_System_Mode) else (if (inner_hole_5_5 = 4) then (Flow_Rate_Intermittent_Bolus < Current_System_Mode) else (if (inner_hole_5_5 = 3) then (Commanded_Flow_Rate = Current_System_Mode) else (if (inner_hole_5_5 = 2) then (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus) else (Current_System_Mode = Flow_Rate_Intermittent_Bolus))))))))))))))))))))))))))))))));
+
+  R_r_r = (if (inner_hole_7_7 = 32) then System_On else (if (inner_hole_7_7 = 31) then (not System_On) else (if (inner_hole_7_7 = 30) then ((Commanded_Flow_Rate = const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 29) then ((Commanded_Flow_Rate < const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 28) then ((Commanded_Flow_Rate <= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 27) then ((Commanded_Flow_Rate > const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 26) then ((Commanded_Flow_Rate >= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 25) then (Commanded_Flow_Rate <= Current_System_Mode) else (if (inner_hole_7_7 = 24) then (Commanded_Flow_Rate < Current_System_Mode) else (if (inner_hole_7_7 = 23) then (Commanded_Flow_Rate <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_7_7 = 22) then (Commanded_Flow_Rate < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_7_7 = 21) then ((Current_System_Mode = const_hole_8_8) and ((const_hole_8_8 <= 8) and (const_hole_8_8 >= 0))) else (if (inner_hole_7_7 = 20) then ((Current_System_Mode < const_hole_8_8) and ((const_hole_8_8 <= 8) and (const_hole_8_8 >= 0))) else (if (inner_hole_7_7 = 19) then ((Current_System_Mode <= const_hole_8_8) and ((const_hole_8_8 <= 8) and (const_hole_8_8 >= 0))) else (if (inner_hole_7_7 = 18) then ((Current_System_Mode > const_hole_8_8) and ((const_hole_8_8 <= 8) and (const_hole_8_8 >= 0))) else (if (inner_hole_7_7 = 17) then ((Current_System_Mode >= const_hole_8_8) and ((const_hole_8_8 <= 8) and (const_hole_8_8 >= 0))) else (if (inner_hole_7_7 = 16) then (Current_System_Mode <= Commanded_Flow_Rate) else (if (inner_hole_7_7 = 15) then (Current_System_Mode < Commanded_Flow_Rate) else (if (inner_hole_7_7 = 14) then (Current_System_Mode <= Flow_Rate_Intermittent_Bolus) else (if (inner_hole_7_7 = 13) then (Current_System_Mode < Flow_Rate_Intermittent_Bolus) else (if (inner_hole_7_7 = 12) then ((Flow_Rate_Intermittent_Bolus = const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 11) then ((Flow_Rate_Intermittent_Bolus < const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 10) then ((Flow_Rate_Intermittent_Bolus <= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 9) then ((Flow_Rate_Intermittent_Bolus > const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 8) then ((Flow_Rate_Intermittent_Bolus >= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 7) then (Flow_Rate_Intermittent_Bolus <= Commanded_Flow_Rate) else (if (inner_hole_7_7 = 6) then (Flow_Rate_Intermittent_Bolus < Commanded_Flow_Rate) else (if (inner_hole_7_7 = 5) then (Flow_Rate_Intermittent_Bolus <= Current_System_Mode) else (if (inner_hole_7_7 = 4) then (Flow_Rate_Intermittent_Bolus < Current_System_Mode) else (if (inner_hole_7_7 = 3) then (Commanded_Flow_Rate = Current_System_Mode) else (if (inner_hole_7_7 = 2) then (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus) else (Current_System_Mode = Flow_Rate_Intermittent_Bolus))))))))))))))))))))))))))))))));
+
+  R_r = (if (inner_hole_9_9 = 1) then (R_r_l and R_r_r) else (if (inner_hole_9_9 = 2) then (R_r_l or R_r_r) else (if (inner_hole_9_9 = 3) then (R_r_l => R_r_r) else (R_r_l xor R_r_r))));
+
+  R = (if (inner_hole_10_10 = 1) then (R_l and R_r) else (if (inner_hole_10_10 = 2) then (R_l or R_r) else (if (inner_hole_10_10 = 3) then (R_l => R_r) else (R_l xor R_r))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  System_On : bool;
+  Infusion_Initiate : bool;
+  Infusion_Inhibit : bool;
+  Infusion_Cancel : bool;
+  Patient_Bolus_Request : bool;
+  Infusion_Total_Duration : int;
+  VTBI_Total : int;
+  Flow_Rate_Basal : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  Duration_Intermittent_Bolus : int;
+  Interval_Intermittent_Bolus : int;
+  Flow_Rate_Patient_Bolus : int;
+  Duration_Patient_Bolus : int;
+  Lockout_Period_Patient_Bolus : int;
+  Max_Number_of_Patient_Bolus : int;
+  Flow_Rate_KVO : int;
+  Entered_Reservoir_Volume : int;
+  Configured : int;
+  Highest_Level_Alarm : int;
+  Reservoir_Empty : bool;
+  Volume_Infused : int;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  New_Infusion : bool;
+  Log_Message_ID : int;
+  Actual_Infusion_Duration : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(System_On, Infusion_Initiate, Infusion_Inhibit, Infusion_Cancel, Patient_Bolus_Request, Infusion_Total_Duration, VTBI_Total, Flow_Rate_Basal, Flow_Rate_Intermittent_Bolus, Duration_Intermittent_Bolus, Interval_Intermittent_Bolus, Flow_Rate_Patient_Bolus, Duration_Patient_Bolus, Lockout_Period_Patient_Bolus, Max_Number_of_Patient_Bolus, Flow_Rate_KVO, Entered_Reservoir_Volume, Configured, Highest_Level_Alarm, Reservoir_Empty, Volume_Infused, Commanded_Flow_Rate, Current_System_Mode, New_Infusion, Log_Message_ID, Actual_Infusion_Duration, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node main(
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  System_On0 : bool;
+  Infusion_Initiate0 : bool;
+  Infusion_Inhibit0 : bool;
+  Infusion_Cancel0 : bool;
+  Patient_Bolus_Request0 : bool;
+  Infusion_Total_Duration0 : int;
+  VTBI_Total0 : int;
+  Flow_Rate_Basal0 : int;
+  Flow_Rate_Intermittent_Bolus0 : int;
+  Duration_Intermittent_Bolus0 : int;
+  Interval_Intermittent_Bolus0 : int;
+  Flow_Rate_Patient_Bolus0 : int;
+  Duration_Patient_Bolus0 : int;
+  Lockout_Period_Patient_Bolus0 : int;
+  Max_Number_of_Patient_Bolus0 : int;
+  Flow_Rate_KVO0 : int;
+  Entered_Reservoir_Volume0 : int;
+  Configured0 : int;
+  Highest_Level_Alarm0 : int;
+  Reservoir_Empty0 : bool;
+  Volume_Infused0 : int;
+  out_00 : int;
+  out_10 : int;
+  out_20 : bool;
+  out_30 : int;
+  out_40 : int;
+  System_On1 : bool;
+  Infusion_Initiate1 : bool;
+  Infusion_Inhibit1 : bool;
+  Infusion_Cancel1 : bool;
+  Patient_Bolus_Request1 : bool;
+  Infusion_Total_Duration1 : int;
+  VTBI_Total1 : int;
+  Flow_Rate_Basal1 : int;
+  Flow_Rate_Intermittent_Bolus1 : int;
+  Duration_Intermittent_Bolus1 : int;
+  Interval_Intermittent_Bolus1 : int;
+  Flow_Rate_Patient_Bolus1 : int;
+  Duration_Patient_Bolus1 : int;
+  Lockout_Period_Patient_Bolus1 : int;
+  Max_Number_of_Patient_Bolus1 : int;
+  Flow_Rate_KVO1 : int;
+  Entered_Reservoir_Volume1 : int;
+  Configured1 : int;
+  Highest_Level_Alarm1 : int;
+  Reservoir_Empty1 : bool;
+  Volume_Infused1 : int;
+  out_01 : int;
+  out_11 : int;
+  out_21 : bool;
+  out_31 : int;
+  out_41 : int;
+  System_On2 : bool;
+  Infusion_Initiate2 : bool;
+  Infusion_Inhibit2 : bool;
+  Infusion_Cancel2 : bool;
+  Patient_Bolus_Request2 : bool;
+  Infusion_Total_Duration2 : int;
+  VTBI_Total2 : int;
+  Flow_Rate_Basal2 : int;
+  Flow_Rate_Intermittent_Bolus2 : int;
+  Duration_Intermittent_Bolus2 : int;
+  Interval_Intermittent_Bolus2 : int;
+  Flow_Rate_Patient_Bolus2 : int;
+  Duration_Patient_Bolus2 : int;
+  Lockout_Period_Patient_Bolus2 : int;
+  Max_Number_of_Patient_Bolus2 : int;
+  Flow_Rate_KVO2 : int;
+  Entered_Reservoir_Volume2 : int;
+  Configured2 : int;
+  Highest_Level_Alarm2 : int;
+  Reservoir_Empty2 : bool;
+  Volume_Infused2 : int;
+  out_02 : int;
+  out_12 : int;
+  out_22 : bool;
+  out_32 : int;
+  out_42 : int;
+  System_On3 : bool;
+  Infusion_Initiate3 : bool;
+  Infusion_Inhibit3 : bool;
+  Infusion_Cancel3 : bool;
+  Patient_Bolus_Request3 : bool;
+  Infusion_Total_Duration3 : int;
+  VTBI_Total3 : int;
+  Flow_Rate_Basal3 : int;
+  Flow_Rate_Intermittent_Bolus3 : int;
+  Duration_Intermittent_Bolus3 : int;
+  Interval_Intermittent_Bolus3 : int;
+  Flow_Rate_Patient_Bolus3 : int;
+  Duration_Patient_Bolus3 : int;
+  Lockout_Period_Patient_Bolus3 : int;
+  Max_Number_of_Patient_Bolus3 : int;
+  Flow_Rate_KVO3 : int;
+  Entered_Reservoir_Volume3 : int;
+  Configured3 : int;
+  Highest_Level_Alarm3 : int;
+  Reservoir_Empty3 : bool;
+  Volume_Infused3 : int;
+  out_03 : int;
+  out_13 : int;
+  out_23 : bool;
+  out_33 : int;
+  out_43 : int;
+let
+  --%MAIN;
+  System_On0 = true;
+
+  Infusion_Initiate0 = true;
+
+  Infusion_Inhibit0 = true;
+
+  Infusion_Cancel0 = true;
+
+  Patient_Bolus_Request0 = true;
+
+  Infusion_Total_Duration0 = 2;
+
+  VTBI_Total0 = 1;
+
+  Flow_Rate_Basal0 = 2;
+
+  Flow_Rate_Intermittent_Bolus0 = 0;
+
+  Duration_Intermittent_Bolus0 = 1;
+
+  Interval_Intermittent_Bolus0 = 1;
+
+  Flow_Rate_Patient_Bolus0 = 0;
+
+  Duration_Patient_Bolus0 = 2;
+
+  Lockout_Period_Patient_Bolus0 = 2;
+
+  Max_Number_of_Patient_Bolus0 = 1;
+
+  Flow_Rate_KVO0 = 1;
+
+  Entered_Reservoir_Volume0 = 0;
+
+  Configured0 = 1;
+
+  Highest_Level_Alarm0 = 5;
+
+  Reservoir_Empty0 = true;
+
+  Volume_Infused0 = 0;
+
+  out_00 = 0;
+
+  out_10 = 1;
+
+  out_20 = false;
+
+  out_30 = 1;
+
+  out_40 = 0;
+
+  System_On1 = (true -> (pre true));
+
+  Infusion_Initiate1 = (true -> (pre true));
+
+  Infusion_Inhibit1 = (false -> (pre false));
+
+  Infusion_Cancel1 = (false -> (pre false));
+
+  Patient_Bolus_Request1 = (true -> (pre false));
+
+  Infusion_Total_Duration1 = (2 -> (pre 2));
+
+  VTBI_Total1 = (1 -> (pre 1));
+
+  Flow_Rate_Basal1 = (0 -> (pre 0));
+
+  Flow_Rate_Intermittent_Bolus1 = (1 -> (pre 1));
+
+  Duration_Intermittent_Bolus1 = (2 -> (pre 0));
+
+  Interval_Intermittent_Bolus1 = (0 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus1 = (0 -> (pre 0));
+
+  Duration_Patient_Bolus1 = (2 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus1 = (1 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus1 = (1 -> (pre 1));
+
+  Flow_Rate_KVO1 = (0 -> (pre 0));
+
+  Entered_Reservoir_Volume1 = (0 -> (pre 0));
+
+  Configured1 = (1 -> (pre 2));
+
+  Highest_Level_Alarm1 = (1 -> (pre 3));
+
+  Reservoir_Empty1 = (false -> (pre false));
+
+  Volume_Infused1 = (0 -> (pre 0));
+
+  out_01 = (0 -> (pre 0));
+
+  out_11 = (1 -> (pre 7));
+
+  out_21 = (false -> (pre true));
+
+  out_31 = (1 -> (pre 1));
+
+  out_41 = (0 -> (pre 0));
+
+  System_On2 = (true -> (pre true));
+
+  Infusion_Initiate2 = (true -> (pre true));
+
+  Infusion_Inhibit2 = (false -> (pre false));
+
+  Infusion_Cancel2 = (false -> (pre false));
+
+  Patient_Bolus_Request2 = (false -> (pre false));
+
+  Infusion_Total_Duration2 = (2 -> (pre 2));
+
+  VTBI_Total2 = (1 -> (pre 1));
+
+  Flow_Rate_Basal2 = (1 -> (pre 0));
+
+  Flow_Rate_Intermittent_Bolus2 = (0 -> (pre 0));
+
+  Duration_Intermittent_Bolus2 = (2 -> (pre 0));
+
+  Interval_Intermittent_Bolus2 = (1 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus2 = (1 -> (pre 0));
+
+  Duration_Patient_Bolus2 = (2 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus2 = (1 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus2 = (1 -> (pre 1));
+
+  Flow_Rate_KVO2 = (0 -> (pre 1));
+
+  Entered_Reservoir_Volume2 = (0 -> (pre 0));
+
+  Configured2 = (1 -> (pre 2));
+
+  Highest_Level_Alarm2 = (1 -> (pre 3));
+
+  Reservoir_Empty2 = (true -> (pre false));
+
+  Volume_Infused2 = (0 -> (pre 0));
+
+  out_02 = (0 -> (pre 1));
+
+  out_12 = (1 -> (pre 7));
+
+  out_22 = (false -> (pre true));
+
+  out_32 = (1 -> (pre 1));
+
+  out_42 = (0 -> (pre 0));
+
+  System_On3 = (true -> (pre true));
+
+  Infusion_Initiate3 = (true -> (pre true));
+
+  Infusion_Inhibit3 = (true -> (pre false));
+
+  Infusion_Cancel3 = (true -> (pre false));
+
+  Patient_Bolus_Request3 = (true -> (pre false));
+
+  Infusion_Total_Duration3 = (2 -> (pre 2));
+
+  VTBI_Total3 = (1 -> (pre 1));
+
+  Flow_Rate_Basal3 = (1 -> (pre 1));
+
+  Flow_Rate_Intermittent_Bolus3 = (2 -> (pre 0));
+
+  Duration_Intermittent_Bolus3 = (1 -> (pre 2));
+
+  Interval_Intermittent_Bolus3 = (1 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus3 = (0 -> (pre 1));
+
+  Duration_Patient_Bolus3 = (0 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus3 = (2 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus3 = (1 -> (pre 1));
+
+  Flow_Rate_KVO3 = (1 -> (pre 0));
+
+  Entered_Reservoir_Volume3 = (0 -> (pre 0));
+
+  Configured3 = (1 -> (pre 2));
+
+  Highest_Level_Alarm3 = (4 -> (pre 5));
+
+  Reservoir_Empty3 = (true -> (pre false));
+
+  Volume_Infused3 = (0 -> (pre 0));
+
+  out_03 = (0 -> (pre 0));
+
+  out_13 = (1 -> (pre 8));
+
+  out_23 = (false -> (pre true));
+
+  out_33 = (1 -> (pre 1));
+
+  out_43 = (0 -> (pre 0));
+
+  ok_0 = Check_spec(System_On0, Infusion_Initiate0, Infusion_Inhibit0, Infusion_Cancel0, Patient_Bolus_Request0, Infusion_Total_Duration0, VTBI_Total0, Flow_Rate_Basal0, Flow_Rate_Intermittent_Bolus0, Duration_Intermittent_Bolus0, Interval_Intermittent_Bolus0, Flow_Rate_Patient_Bolus0, Duration_Patient_Bolus0, Lockout_Period_Patient_Bolus0, Max_Number_of_Patient_Bolus0, Flow_Rate_KVO0, Entered_Reservoir_Volume0, Configured0, Highest_Level_Alarm0, Reservoir_Empty0, Volume_Infused0, out_00, out_10, out_20, out_30, out_40, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_1 = Check_spec(System_On1, Infusion_Initiate1, Infusion_Inhibit1, Infusion_Cancel1, Patient_Bolus_Request1, Infusion_Total_Duration1, VTBI_Total1, Flow_Rate_Basal1, Flow_Rate_Intermittent_Bolus1, Duration_Intermittent_Bolus1, Interval_Intermittent_Bolus1, Flow_Rate_Patient_Bolus1, Duration_Patient_Bolus1, Lockout_Period_Patient_Bolus1, Max_Number_of_Patient_Bolus1, Flow_Rate_KVO1, Entered_Reservoir_Volume1, Configured1, Highest_Level_Alarm1, Reservoir_Empty1, Volume_Infused1, out_01, out_11, out_21, out_31, out_41, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 1);
+
+  ok_2 = Check_spec(System_On2, Infusion_Initiate2, Infusion_Inhibit2, Infusion_Cancel2, Patient_Bolus_Request2, Infusion_Total_Duration2, VTBI_Total2, Flow_Rate_Basal2, Flow_Rate_Intermittent_Bolus2, Duration_Intermittent_Bolus2, Interval_Intermittent_Bolus2, Flow_Rate_Patient_Bolus2, Duration_Patient_Bolus2, Lockout_Period_Patient_Bolus2, Max_Number_of_Patient_Bolus2, Flow_Rate_KVO2, Entered_Reservoir_Volume2, Configured2, Highest_Level_Alarm2, Reservoir_Empty2, Volume_Infused2, out_02, out_12, out_22, out_32, out_42, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 1);
+
+  ok_3 = Check_spec(System_On3, Infusion_Initiate3, Infusion_Inhibit3, Infusion_Cancel3, Patient_Bolus_Request3, Infusion_Total_Duration3, VTBI_Total3, Flow_Rate_Basal3, Flow_Rate_Intermittent_Bolus3, Duration_Intermittent_Bolus3, Interval_Intermittent_Bolus3, Flow_Rate_Patient_Bolus3, Duration_Patient_Bolus3, Lockout_Period_Patient_Bolus3, Max_Number_of_Patient_Bolus3, Flow_Rate_KVO3, Entered_Reservoir_Volume3, Configured3, Highest_Level_Alarm3, Reservoir_Empty3, Volume_Infused3, out_03, out_13, out_23, out_33, out_43, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 1);
+
+  fail = (not (((ok_0 and ok_1) and ok_2) and ok_3));
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_2_2 = (pre inner_hole_2_2)));
+
+  assert (true -> (const_hole_3_3 = (pre const_hole_3_3)));
+
+  assert (true -> (inner_hole_4_4 = (pre inner_hole_4_4)));
+
+  assert (true -> (inner_hole_5_5 = (pre inner_hole_5_5)));
+
+  assert (true -> (const_hole_6_6 = (pre const_hole_6_6)));
+
+  assert (true -> (inner_hole_7_7 = (pre inner_hole_7_7)));
+
+  assert (true -> (const_hole_8_8 = (pre const_hole_8_8)));
+
+  assert (true -> (inner_hole_9_9 = (pre inner_hole_9_9)));
+
+  assert (true -> (inner_hole_10_10 = (pre inner_hole_10_10)));
+
+  --%PROPERTY fail;
+
+tel;

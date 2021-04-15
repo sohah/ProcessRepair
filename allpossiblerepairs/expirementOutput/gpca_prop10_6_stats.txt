@@ -1,0 +1,2 @@
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-1-1-ROR-1--1,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     12.328,     12.045,     3.527,     8.518,     4,     4,     0.881,     2.129,     null
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-0-1-ROR-0--1,     true,    1,    TRUE_FOR_MAX_STEPS,     3,     23.796,     23.275,     5.936,     17.339,     10,     10,     0.593,     1.733,     p1 = ((not System_On) or (Disable_Audio = out_Is_Audio_Disabled));

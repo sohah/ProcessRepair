@@ -1,0 +1,9 @@
+tcas,     p4,     Prop4-LOR-2-2-ROR-2-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.259,     3.121,     1.442,     1.679,     1,     1,     1.442,     1.679,     null
+tcas,     p4,     Prop4-LOR-3-2-ROR-4-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.242,     3.145,     1.441,     1.704,     1,     1,     1.441,     1.704,     null
+tcas,     p4,     Prop4-LOR-2-2-ROR-4-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.51,     3.336,     1.641,     1.695,     1,     1,     1.641,     1.695,     null
+tcas,     p4,     Prop4-LOR-3-2-ROR-3-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     3.238,     3.129,     1.233,     1.896,     1,     1,     1.233,     1.896,     null
+tcas,     p4,     Prop4-LOR-1-2-ROR-1-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     5.796,     5.595,     3.153,     2.442,     2,     2,     1.576,     1.221,     null
+tcas,     p4,     Prop4-LOR-2-2-ROR-3-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     5.875,     5.751,     3.144,     2.607,     2,     2,     1.572,     1.303,     null
+tcas,     p4,     Prop4-LOR-4-2-ROR-4-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     1.637,     1.565,     0.815,     0.75,     1,     1,     0.815,     0.75,     null
+tcas,     p4,     Prop4-LOR-1-2-ROR-4-2,     false,    2,    TRUE_FOR_MAX_STEPS,     4,     32.431,     31.903,     17.363,     14.54,     19,     19,     0.913,     0.765,     p1 = (((alim_res_s >= 400) xor (alim_res_s > 740)) and (result_alt_sep_test_s >= 0));
+tcas,     p4,     Prop4-LOR-0-2-ROR-0-2,     true,    2,    MINIMAL_EXISTS_UKNOWN,     4,     1055.352,     1046.657,     1014.523,     32.134,     72,     72,     14.09,     0.446,     p1 = (((alim_res_s = 500) xor (alim_res_s = 400)) xor ((alim_res_s = 740) xor (alim_res_s = 640)));

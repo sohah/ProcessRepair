@@ -1,0 +1,2 @@
+gpca,     p1,     Faulty_GPCA_Prop1-LOR-2-0-LOR-3-0,     true,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     612.591,     612.425,     0.838,     611.587,     1,     2,     0.838,     305.793,     null
+gpca,     p1,     Faulty_GPCA_Prop1-LOR-1-0-LOR-3-0,     true,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     651.757,     651.381,     4.24,     647.141,     4,     5,     1.06,     129.428,     null

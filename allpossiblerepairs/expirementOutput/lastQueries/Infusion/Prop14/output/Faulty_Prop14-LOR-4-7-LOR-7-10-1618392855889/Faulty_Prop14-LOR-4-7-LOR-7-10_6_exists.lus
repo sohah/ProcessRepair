@@ -1,0 +1,712 @@
+node T_node(
+  System_On : bool;
+  Infusion_Initiate : bool;
+  Infusion_Inhibit : bool;
+  Infusion_Cancel : bool;
+  Patient_Bolus_Request : bool;
+  Infusion_Total_Duration : int;
+  VTBI_Total : int;
+  Flow_Rate_Basal : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  Duration_Intermittent_Bolus : int;
+  Interval_Intermittent_Bolus : int;
+  Flow_Rate_Patient_Bolus : int;
+  Duration_Patient_Bolus : int;
+  Lockout_Period_Patient_Bolus : int;
+  Max_Number_of_Patient_Bolus : int;
+  Flow_Rate_KVO : int;
+  Entered_Reservoir_Volume : int;
+  Configured : int;
+  Highest_Level_Alarm : int;
+  Reservoir_Empty : bool;
+  Volume_Infused : int;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  New_Infusion : bool;
+  Log_Message_ID : int;
+  Actual_Infusion_Duration : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = ((System_On and ((repairNode_56_0(Current_System_Mode, inner_hole_0_0, const_hole_1_1) or (Current_System_Mode = 7)) xor (Current_System_Mode = 8))) xor repairNode_14105_0(Commanded_Flow_Rate, Flow_Rate_KVO, inner_hole_0_2, const_hole_1_3));
+
+tel;
+
+node repairNode_56_0(
+  Current_System_Mode : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int
+) returns (
+  R : bool
+);
+let
+  R = (if (inner_hole_0_0 = 5) then ((Current_System_Mode = const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 4) then ((Current_System_Mode < const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 3) then ((Current_System_Mode <= const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 2) then ((Current_System_Mode > const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0))) else ((Current_System_Mode >= const_hole_1_1) and ((const_hole_1_1 <= 8) and (const_hole_1_1 >= 0)))))));
+
+tel;
+
+node repairNode_14105_0(
+  Commanded_Flow_Rate : int;
+  Flow_Rate_KVO : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  R : bool
+);
+let
+  R = (if (inner_hole_0_2 = 15) then ((Commanded_Flow_Rate = const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 255))) else (if (inner_hole_0_2 = 14) then ((Commanded_Flow_Rate < const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 255))) else (if (inner_hole_0_2 = 13) then ((Commanded_Flow_Rate <= const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 255))) else (if (inner_hole_0_2 = 12) then ((Commanded_Flow_Rate > const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 255))) else (if (inner_hole_0_2 = 11) then ((Commanded_Flow_Rate >= const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 255))) else (if (inner_hole_0_2 = 10) then (Commanded_Flow_Rate <= Flow_Rate_KVO) else (if (inner_hole_0_2 = 9) then (Commanded_Flow_Rate < Flow_Rate_KVO) else (if (inner_hole_0_2 = 8) then ((Flow_Rate_KVO = const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 5))) else (if (inner_hole_0_2 = 7) then ((Flow_Rate_KVO < const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 5))) else (if (inner_hole_0_2 = 6) then ((Flow_Rate_KVO <= const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 5))) else (if (inner_hole_0_2 = 5) then ((Flow_Rate_KVO > const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 5))) else (if (inner_hole_0_2 = 4) then ((Flow_Rate_KVO >= const_hole_1_3) and ((const_hole_1_3 >= 0) and (const_hole_1_3 <= 5))) else (if (inner_hole_0_2 = 3) then (Flow_Rate_KVO <= Commanded_Flow_Rate) else (if (inner_hole_0_2 = 2) then (Flow_Rate_KVO < Commanded_Flow_Rate) else (Commanded_Flow_Rate = Flow_Rate_KVO)))))))))))))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  System_On : bool;
+  Infusion_Initiate : bool;
+  Infusion_Inhibit : bool;
+  Infusion_Cancel : bool;
+  Patient_Bolus_Request : bool;
+  Infusion_Total_Duration : int;
+  VTBI_Total : int;
+  Flow_Rate_Basal : int;
+  Flow_Rate_Intermittent_Bolus : int;
+  Duration_Intermittent_Bolus : int;
+  Interval_Intermittent_Bolus : int;
+  Flow_Rate_Patient_Bolus : int;
+  Duration_Patient_Bolus : int;
+  Lockout_Period_Patient_Bolus : int;
+  Max_Number_of_Patient_Bolus : int;
+  Flow_Rate_KVO : int;
+  Entered_Reservoir_Volume : int;
+  Configured : int;
+  Highest_Level_Alarm : int;
+  Reservoir_Empty : bool;
+  Volume_Infused : int;
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  New_Infusion : bool;
+  Log_Message_ID : int;
+  Actual_Infusion_Duration : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(System_On, Infusion_Initiate, Infusion_Inhibit, Infusion_Cancel, Patient_Bolus_Request, Infusion_Total_Duration, VTBI_Total, Flow_Rate_Basal, Flow_Rate_Intermittent_Bolus, Duration_Intermittent_Bolus, Interval_Intermittent_Bolus, Flow_Rate_Patient_Bolus, Duration_Patient_Bolus, Lockout_Period_Patient_Bolus, Max_Number_of_Patient_Bolus, Flow_Rate_KVO, Entered_Reservoir_Volume, Configured, Highest_Level_Alarm, Reservoir_Empty, Volume_Infused, Commanded_Flow_Rate, Current_System_Mode, New_Infusion, Log_Message_ID, Actual_Infusion_Duration, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node main(
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  ok_4 : bool;
+  ok_5 : bool;
+  ok_6 : bool;
+  System_On0 : bool;
+  Infusion_Initiate0 : bool;
+  Infusion_Inhibit0 : bool;
+  Infusion_Cancel0 : bool;
+  Patient_Bolus_Request0 : bool;
+  Infusion_Total_Duration0 : int;
+  VTBI_Total0 : int;
+  Flow_Rate_Basal0 : int;
+  Flow_Rate_Intermittent_Bolus0 : int;
+  Duration_Intermittent_Bolus0 : int;
+  Interval_Intermittent_Bolus0 : int;
+  Flow_Rate_Patient_Bolus0 : int;
+  Duration_Patient_Bolus0 : int;
+  Lockout_Period_Patient_Bolus0 : int;
+  Max_Number_of_Patient_Bolus0 : int;
+  Flow_Rate_KVO0 : int;
+  Entered_Reservoir_Volume0 : int;
+  Configured0 : int;
+  Highest_Level_Alarm0 : int;
+  Reservoir_Empty0 : bool;
+  Volume_Infused0 : int;
+  out_00 : int;
+  out_10 : int;
+  out_20 : bool;
+  out_30 : int;
+  out_40 : int;
+  System_On1 : bool;
+  Infusion_Initiate1 : bool;
+  Infusion_Inhibit1 : bool;
+  Infusion_Cancel1 : bool;
+  Patient_Bolus_Request1 : bool;
+  Infusion_Total_Duration1 : int;
+  VTBI_Total1 : int;
+  Flow_Rate_Basal1 : int;
+  Flow_Rate_Intermittent_Bolus1 : int;
+  Duration_Intermittent_Bolus1 : int;
+  Interval_Intermittent_Bolus1 : int;
+  Flow_Rate_Patient_Bolus1 : int;
+  Duration_Patient_Bolus1 : int;
+  Lockout_Period_Patient_Bolus1 : int;
+  Max_Number_of_Patient_Bolus1 : int;
+  Flow_Rate_KVO1 : int;
+  Entered_Reservoir_Volume1 : int;
+  Configured1 : int;
+  Highest_Level_Alarm1 : int;
+  Reservoir_Empty1 : bool;
+  Volume_Infused1 : int;
+  out_01 : int;
+  out_11 : int;
+  out_21 : bool;
+  out_31 : int;
+  out_41 : int;
+  System_On2 : bool;
+  Infusion_Initiate2 : bool;
+  Infusion_Inhibit2 : bool;
+  Infusion_Cancel2 : bool;
+  Patient_Bolus_Request2 : bool;
+  Infusion_Total_Duration2 : int;
+  VTBI_Total2 : int;
+  Flow_Rate_Basal2 : int;
+  Flow_Rate_Intermittent_Bolus2 : int;
+  Duration_Intermittent_Bolus2 : int;
+  Interval_Intermittent_Bolus2 : int;
+  Flow_Rate_Patient_Bolus2 : int;
+  Duration_Patient_Bolus2 : int;
+  Lockout_Period_Patient_Bolus2 : int;
+  Max_Number_of_Patient_Bolus2 : int;
+  Flow_Rate_KVO2 : int;
+  Entered_Reservoir_Volume2 : int;
+  Configured2 : int;
+  Highest_Level_Alarm2 : int;
+  Reservoir_Empty2 : bool;
+  Volume_Infused2 : int;
+  out_02 : int;
+  out_12 : int;
+  out_22 : bool;
+  out_32 : int;
+  out_42 : int;
+  System_On3 : bool;
+  Infusion_Initiate3 : bool;
+  Infusion_Inhibit3 : bool;
+  Infusion_Cancel3 : bool;
+  Patient_Bolus_Request3 : bool;
+  Infusion_Total_Duration3 : int;
+  VTBI_Total3 : int;
+  Flow_Rate_Basal3 : int;
+  Flow_Rate_Intermittent_Bolus3 : int;
+  Duration_Intermittent_Bolus3 : int;
+  Interval_Intermittent_Bolus3 : int;
+  Flow_Rate_Patient_Bolus3 : int;
+  Duration_Patient_Bolus3 : int;
+  Lockout_Period_Patient_Bolus3 : int;
+  Max_Number_of_Patient_Bolus3 : int;
+  Flow_Rate_KVO3 : int;
+  Entered_Reservoir_Volume3 : int;
+  Configured3 : int;
+  Highest_Level_Alarm3 : int;
+  Reservoir_Empty3 : bool;
+  Volume_Infused3 : int;
+  out_03 : int;
+  out_13 : int;
+  out_23 : bool;
+  out_33 : int;
+  out_43 : int;
+  System_On4 : bool;
+  Infusion_Initiate4 : bool;
+  Infusion_Inhibit4 : bool;
+  Infusion_Cancel4 : bool;
+  Patient_Bolus_Request4 : bool;
+  Infusion_Total_Duration4 : int;
+  VTBI_Total4 : int;
+  Flow_Rate_Basal4 : int;
+  Flow_Rate_Intermittent_Bolus4 : int;
+  Duration_Intermittent_Bolus4 : int;
+  Interval_Intermittent_Bolus4 : int;
+  Flow_Rate_Patient_Bolus4 : int;
+  Duration_Patient_Bolus4 : int;
+  Lockout_Period_Patient_Bolus4 : int;
+  Max_Number_of_Patient_Bolus4 : int;
+  Flow_Rate_KVO4 : int;
+  Entered_Reservoir_Volume4 : int;
+  Configured4 : int;
+  Highest_Level_Alarm4 : int;
+  Reservoir_Empty4 : bool;
+  Volume_Infused4 : int;
+  out_04 : int;
+  out_14 : int;
+  out_24 : bool;
+  out_34 : int;
+  out_44 : int;
+  System_On5 : bool;
+  Infusion_Initiate5 : bool;
+  Infusion_Inhibit5 : bool;
+  Infusion_Cancel5 : bool;
+  Patient_Bolus_Request5 : bool;
+  Infusion_Total_Duration5 : int;
+  VTBI_Total5 : int;
+  Flow_Rate_Basal5 : int;
+  Flow_Rate_Intermittent_Bolus5 : int;
+  Duration_Intermittent_Bolus5 : int;
+  Interval_Intermittent_Bolus5 : int;
+  Flow_Rate_Patient_Bolus5 : int;
+  Duration_Patient_Bolus5 : int;
+  Lockout_Period_Patient_Bolus5 : int;
+  Max_Number_of_Patient_Bolus5 : int;
+  Flow_Rate_KVO5 : int;
+  Entered_Reservoir_Volume5 : int;
+  Configured5 : int;
+  Highest_Level_Alarm5 : int;
+  Reservoir_Empty5 : bool;
+  Volume_Infused5 : int;
+  out_05 : int;
+  out_15 : int;
+  out_25 : bool;
+  out_35 : int;
+  out_45 : int;
+  System_On6 : bool;
+  Infusion_Initiate6 : bool;
+  Infusion_Inhibit6 : bool;
+  Infusion_Cancel6 : bool;
+  Patient_Bolus_Request6 : bool;
+  Infusion_Total_Duration6 : int;
+  VTBI_Total6 : int;
+  Flow_Rate_Basal6 : int;
+  Flow_Rate_Intermittent_Bolus6 : int;
+  Duration_Intermittent_Bolus6 : int;
+  Interval_Intermittent_Bolus6 : int;
+  Flow_Rate_Patient_Bolus6 : int;
+  Duration_Patient_Bolus6 : int;
+  Lockout_Period_Patient_Bolus6 : int;
+  Max_Number_of_Patient_Bolus6 : int;
+  Flow_Rate_KVO6 : int;
+  Entered_Reservoir_Volume6 : int;
+  Configured6 : int;
+  Highest_Level_Alarm6 : int;
+  Reservoir_Empty6 : bool;
+  Volume_Infused6 : int;
+  out_06 : int;
+  out_16 : int;
+  out_26 : bool;
+  out_36 : int;
+  out_46 : int;
+let
+  --%MAIN;
+  System_On0 = (true -> (pre true));
+
+  Infusion_Initiate0 = (true -> (pre true));
+
+  Infusion_Inhibit0 = (false -> (pre false));
+
+  Infusion_Cancel0 = (false -> (pre false));
+
+  Patient_Bolus_Request0 = (true -> (pre true));
+
+  Infusion_Total_Duration0 = (2 -> (pre 2));
+
+  VTBI_Total0 = (1 -> (pre 1));
+
+  Flow_Rate_Basal0 = (0 -> (pre 0));
+
+  Flow_Rate_Intermittent_Bolus0 = (0 -> (pre 0));
+
+  Duration_Intermittent_Bolus0 = (2 -> (pre 2));
+
+  Interval_Intermittent_Bolus0 = (2 -> (pre 2));
+
+  Flow_Rate_Patient_Bolus0 = (0 -> (pre 0));
+
+  Duration_Patient_Bolus0 = (0 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus0 = (2 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus0 = (1 -> (pre 1));
+
+  Flow_Rate_KVO0 = (1 -> (pre 1));
+
+  Entered_Reservoir_Volume0 = (0 -> (pre 0));
+
+  Configured0 = (2 -> (pre 2));
+
+  Highest_Level_Alarm0 = (3 -> (pre 5));
+
+  Reservoir_Empty0 = (false -> (pre false));
+
+  Volume_Infused0 = (0 -> (pre 0));
+
+  out_00 = (0 -> (pre 1));
+
+  out_10 = (1 -> (pre 8));
+
+  out_20 = (false -> (pre true));
+
+  out_30 = (1 -> (pre 1));
+
+  out_40 = (0 -> (pre 0));
+
+  System_On1 = false;
+
+  Infusion_Initiate1 = true;
+
+  Infusion_Inhibit1 = true;
+
+  Infusion_Cancel1 = false;
+
+  Patient_Bolus_Request1 = true;
+
+  Infusion_Total_Duration1 = 2;
+
+  VTBI_Total1 = 0;
+
+  Flow_Rate_Basal1 = 0;
+
+  Flow_Rate_Intermittent_Bolus1 = 1;
+
+  Duration_Intermittent_Bolus1 = 2;
+
+  Interval_Intermittent_Bolus1 = 1;
+
+  Flow_Rate_Patient_Bolus1 = 1;
+
+  Duration_Patient_Bolus1 = 0;
+
+  Lockout_Period_Patient_Bolus1 = 2;
+
+  Max_Number_of_Patient_Bolus1 = 1;
+
+  Flow_Rate_KVO1 = 1;
+
+  Entered_Reservoir_Volume1 = 0;
+
+  Configured1 = 2;
+
+  Highest_Level_Alarm1 = 3;
+
+  Reservoir_Empty1 = false;
+
+  Volume_Infused1 = 0;
+
+  out_01 = 0;
+
+  out_11 = 0;
+
+  out_21 = false;
+
+  out_31 = 0;
+
+  out_41 = 0;
+
+  System_On2 = false;
+
+  Infusion_Initiate2 = false;
+
+  Infusion_Inhibit2 = true;
+
+  Infusion_Cancel2 = false;
+
+  Patient_Bolus_Request2 = true;
+
+  Infusion_Total_Duration2 = 2;
+
+  VTBI_Total2 = 1;
+
+  Flow_Rate_Basal2 = 2;
+
+  Flow_Rate_Intermittent_Bolus2 = 0;
+
+  Duration_Intermittent_Bolus2 = 1;
+
+  Interval_Intermittent_Bolus2 = 1;
+
+  Flow_Rate_Patient_Bolus2 = 1;
+
+  Duration_Patient_Bolus2 = 2;
+
+  Lockout_Period_Patient_Bolus2 = 2;
+
+  Max_Number_of_Patient_Bolus2 = 1;
+
+  Flow_Rate_KVO2 = 0;
+
+  Entered_Reservoir_Volume2 = 0;
+
+  Configured2 = 1;
+
+  Highest_Level_Alarm2 = 3;
+
+  Reservoir_Empty2 = true;
+
+  Volume_Infused2 = 0;
+
+  out_02 = 0;
+
+  out_12 = 0;
+
+  out_22 = false;
+
+  out_32 = 0;
+
+  out_42 = 0;
+
+  System_On3 = false;
+
+  Infusion_Initiate3 = false;
+
+  Infusion_Inhibit3 = true;
+
+  Infusion_Cancel3 = false;
+
+  Patient_Bolus_Request3 = true;
+
+  Infusion_Total_Duration3 = 2;
+
+  VTBI_Total3 = 1;
+
+  Flow_Rate_Basal3 = 0;
+
+  Flow_Rate_Intermittent_Bolus3 = 1;
+
+  Duration_Intermittent_Bolus3 = 2;
+
+  Interval_Intermittent_Bolus3 = 1;
+
+  Flow_Rate_Patient_Bolus3 = 1;
+
+  Duration_Patient_Bolus3 = 0;
+
+  Lockout_Period_Patient_Bolus3 = 1;
+
+  Max_Number_of_Patient_Bolus3 = 0;
+
+  Flow_Rate_KVO3 = 4;
+
+  Entered_Reservoir_Volume3 = 0;
+
+  Configured3 = 1;
+
+  Highest_Level_Alarm3 = 3;
+
+  Reservoir_Empty3 = true;
+
+  Volume_Infused3 = 0;
+
+  out_03 = 0;
+
+  out_13 = 0;
+
+  out_23 = false;
+
+  out_33 = 0;
+
+  out_43 = 0;
+
+  System_On4 = (true -> (pre true));
+
+  Infusion_Initiate4 = (true -> (pre true));
+
+  Infusion_Inhibit4 = (false -> (pre false));
+
+  Infusion_Cancel4 = (false -> (pre false));
+
+  Patient_Bolus_Request4 = (false -> (pre true));
+
+  Infusion_Total_Duration4 = (2 -> (pre 2));
+
+  VTBI_Total4 = (1 -> (pre 1));
+
+  Flow_Rate_Basal4 = (0 -> (pre 2));
+
+  Flow_Rate_Intermittent_Bolus4 = (0 -> (pre 0));
+
+  Duration_Intermittent_Bolus4 = (2 -> (pre 2));
+
+  Interval_Intermittent_Bolus4 = (1 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus4 = (0 -> (pre 0));
+
+  Duration_Patient_Bolus4 = (2 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus4 = (1 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus4 = (0 -> (pre 1));
+
+  Flow_Rate_KVO4 = (0 -> (pre 0));
+
+  Entered_Reservoir_Volume4 = (0 -> (pre 0));
+
+  Configured4 = (1 -> (pre 1));
+
+  Highest_Level_Alarm4 = (2 -> (pre 1));
+
+  Reservoir_Empty4 = (true -> (pre false));
+
+  Volume_Infused4 = (0 -> (pre 0));
+
+  out_04 = (0 -> (pre 2));
+
+  out_14 = (1 -> (pre 2));
+
+  out_24 = (false -> (pre true));
+
+  out_34 = (1 -> (pre 1));
+
+  out_44 = (0 -> (pre 0));
+
+  System_On5 = (true -> (pre true));
+
+  Infusion_Initiate5 = (true -> (pre true));
+
+  Infusion_Inhibit5 = (false -> (pre false));
+
+  Infusion_Cancel5 = (true -> (pre false));
+
+  Patient_Bolus_Request5 = (true -> (pre true));
+
+  Infusion_Total_Duration5 = (2 -> (pre 2));
+
+  VTBI_Total5 = (1 -> (pre 1));
+
+  Flow_Rate_Basal5 = (1 -> (pre 1));
+
+  Flow_Rate_Intermittent_Bolus5 = (0 -> (pre 0));
+
+  Duration_Intermittent_Bolus5 = (2 -> (pre 0));
+
+  Interval_Intermittent_Bolus5 = (2 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus5 = (0 -> (pre 0));
+
+  Duration_Patient_Bolus5 = (2 -> (pre 1));
+
+  Lockout_Period_Patient_Bolus5 = (2 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus5 = (1 -> (pre 1));
+
+  Flow_Rate_KVO5 = (0 -> (pre 0));
+
+  Entered_Reservoir_Volume5 = (0 -> (pre 0));
+
+  Configured5 = (1 -> (pre 1));
+
+  Highest_Level_Alarm5 = (0 -> (pre 4));
+
+  Reservoir_Empty5 = (true -> (pre false));
+
+  Volume_Infused5 = (0 -> (pre 0));
+
+  out_05 = (0 -> (pre 0));
+
+  out_15 = (1 -> (pre 6));
+
+  out_25 = (false -> (pre true));
+
+  out_35 = (1 -> (pre 1));
+
+  out_45 = (0 -> (pre 0));
+
+  System_On6 = (true -> (pre true));
+
+  Infusion_Initiate6 = (true -> (pre true));
+
+  Infusion_Inhibit6 = (false -> (pre false));
+
+  Infusion_Cancel6 = (false -> (pre false));
+
+  Patient_Bolus_Request6 = (false -> (pre false));
+
+  Infusion_Total_Duration6 = (2 -> (pre 2));
+
+  VTBI_Total6 = (1 -> (pre 1));
+
+  Flow_Rate_Basal6 = (0 -> (pre 0));
+
+  Flow_Rate_Intermittent_Bolus6 = (0 -> (pre 0));
+
+  Duration_Intermittent_Bolus6 = (2 -> (pre 0));
+
+  Interval_Intermittent_Bolus6 = (1 -> (pre 1));
+
+  Flow_Rate_Patient_Bolus6 = (0 -> (pre 0));
+
+  Duration_Patient_Bolus6 = (0 -> (pre 2));
+
+  Lockout_Period_Patient_Bolus6 = (2 -> (pre 2));
+
+  Max_Number_of_Patient_Bolus6 = (1 -> (pre 1));
+
+  Flow_Rate_KVO6 = (0 -> (pre 0));
+
+  Entered_Reservoir_Volume6 = (0 -> (pre 0));
+
+  Configured6 = (2 -> (pre 1));
+
+  Highest_Level_Alarm6 = (0 -> (pre 3));
+
+  Reservoir_Empty6 = (false -> (pre false));
+
+  Volume_Infused6 = (0 -> (pre 0));
+
+  out_06 = (0 -> (pre 0));
+
+  out_16 = (1 -> (pre 7));
+
+  out_26 = (false -> (pre true));
+
+  out_36 = (1 -> (pre 1));
+
+  out_46 = (0 -> (pre 0));
+
+  ok_0 = Check_spec(System_On0, Infusion_Initiate0, Infusion_Inhibit0, Infusion_Cancel0, Patient_Bolus_Request0, Infusion_Total_Duration0, VTBI_Total0, Flow_Rate_Basal0, Flow_Rate_Intermittent_Bolus0, Duration_Intermittent_Bolus0, Interval_Intermittent_Bolus0, Flow_Rate_Patient_Bolus0, Duration_Patient_Bolus0, Lockout_Period_Patient_Bolus0, Max_Number_of_Patient_Bolus0, Flow_Rate_KVO0, Entered_Reservoir_Volume0, Configured0, Highest_Level_Alarm0, Reservoir_Empty0, Volume_Infused0, out_00, out_10, out_20, out_30, out_40, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 1);
+
+  ok_1 = Check_spec(System_On1, Infusion_Initiate1, Infusion_Inhibit1, Infusion_Cancel1, Patient_Bolus_Request1, Infusion_Total_Duration1, VTBI_Total1, Flow_Rate_Basal1, Flow_Rate_Intermittent_Bolus1, Duration_Intermittent_Bolus1, Interval_Intermittent_Bolus1, Flow_Rate_Patient_Bolus1, Duration_Patient_Bolus1, Lockout_Period_Patient_Bolus1, Max_Number_of_Patient_Bolus1, Flow_Rate_KVO1, Entered_Reservoir_Volume1, Configured1, Highest_Level_Alarm1, Reservoir_Empty1, Volume_Infused1, out_01, out_11, out_21, out_31, out_41, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_2 = Check_spec(System_On2, Infusion_Initiate2, Infusion_Inhibit2, Infusion_Cancel2, Patient_Bolus_Request2, Infusion_Total_Duration2, VTBI_Total2, Flow_Rate_Basal2, Flow_Rate_Intermittent_Bolus2, Duration_Intermittent_Bolus2, Interval_Intermittent_Bolus2, Flow_Rate_Patient_Bolus2, Duration_Patient_Bolus2, Lockout_Period_Patient_Bolus2, Max_Number_of_Patient_Bolus2, Flow_Rate_KVO2, Entered_Reservoir_Volume2, Configured2, Highest_Level_Alarm2, Reservoir_Empty2, Volume_Infused2, out_02, out_12, out_22, out_32, out_42, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_3 = Check_spec(System_On3, Infusion_Initiate3, Infusion_Inhibit3, Infusion_Cancel3, Patient_Bolus_Request3, Infusion_Total_Duration3, VTBI_Total3, Flow_Rate_Basal3, Flow_Rate_Intermittent_Bolus3, Duration_Intermittent_Bolus3, Interval_Intermittent_Bolus3, Flow_Rate_Patient_Bolus3, Duration_Patient_Bolus3, Lockout_Period_Patient_Bolus3, Max_Number_of_Patient_Bolus3, Flow_Rate_KVO3, Entered_Reservoir_Volume3, Configured3, Highest_Level_Alarm3, Reservoir_Empty3, Volume_Infused3, out_03, out_13, out_23, out_33, out_43, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_4 = Check_spec(System_On4, Infusion_Initiate4, Infusion_Inhibit4, Infusion_Cancel4, Patient_Bolus_Request4, Infusion_Total_Duration4, VTBI_Total4, Flow_Rate_Basal4, Flow_Rate_Intermittent_Bolus4, Duration_Intermittent_Bolus4, Interval_Intermittent_Bolus4, Flow_Rate_Patient_Bolus4, Duration_Patient_Bolus4, Lockout_Period_Patient_Bolus4, Max_Number_of_Patient_Bolus4, Flow_Rate_KVO4, Entered_Reservoir_Volume4, Configured4, Highest_Level_Alarm4, Reservoir_Empty4, Volume_Infused4, out_04, out_14, out_24, out_34, out_44, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 1);
+
+  ok_5 = Check_spec(System_On5, Infusion_Initiate5, Infusion_Inhibit5, Infusion_Cancel5, Patient_Bolus_Request5, Infusion_Total_Duration5, VTBI_Total5, Flow_Rate_Basal5, Flow_Rate_Intermittent_Bolus5, Duration_Intermittent_Bolus5, Interval_Intermittent_Bolus5, Flow_Rate_Patient_Bolus5, Duration_Patient_Bolus5, Lockout_Period_Patient_Bolus5, Max_Number_of_Patient_Bolus5, Flow_Rate_KVO5, Entered_Reservoir_Volume5, Configured5, Highest_Level_Alarm5, Reservoir_Empty5, Volume_Infused5, out_05, out_15, out_25, out_35, out_45, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 1);
+
+  ok_6 = Check_spec(System_On6, Infusion_Initiate6, Infusion_Inhibit6, Infusion_Cancel6, Patient_Bolus_Request6, Infusion_Total_Duration6, VTBI_Total6, Flow_Rate_Basal6, Flow_Rate_Intermittent_Bolus6, Duration_Intermittent_Bolus6, Interval_Intermittent_Bolus6, Flow_Rate_Patient_Bolus6, Duration_Patient_Bolus6, Lockout_Period_Patient_Bolus6, Max_Number_of_Patient_Bolus6, Flow_Rate_KVO6, Entered_Reservoir_Volume6, Configured6, Highest_Level_Alarm6, Reservoir_Empty6, Volume_Infused6, out_06, out_16, out_26, out_36, out_46, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 1);
+
+  fail = (not ((((((ok_0 and ok_1) and ok_2) and ok_3) and ok_4) and ok_5) and ok_6));
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_0_2 = (pre inner_hole_0_2)));
+
+  assert (true -> (const_hole_1_3 = (pre const_hole_1_3)));
+
+  --%PROPERTY fail;
+
+tel;

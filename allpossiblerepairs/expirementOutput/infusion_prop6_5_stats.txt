@@ -1,0 +1,2 @@
+infusion,     p6,     Faulty_Prop6-ROR-10-18-ROR-10-22,     false,    3,    ALREADY_MATCHING,     1,     1.115,     1.06,     0.0,     1.06,     0,     1,     0.0,     1.06,     null
+infusion,     p6,     Faulty_Prop6-ROR-10-18-ROR-11-22,     false,    3,    ALREADY_MATCHING,     1,     1.141,     1.085,     0.0,     1.085,     0,     1,     0.0,     1.085,     null

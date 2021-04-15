@@ -1,0 +1,2 @@
+infusion,     p11,     Faulty_Prop11-LOR-1-0-LOR-3-0,     true,    2,    TRUE_FOR_MAX_STEPS,     4,     46.86,     46.066,     19.512,     26.554,     19,     19,     1.026,     1.397,     p1 = (((Current_System_Mode <= 8) => (Current_System_Mode = 5)) => false);
+infusion,     p11,     Faulty_Prop11-LOR-2-0-LOR-3-0,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     91.242,     88.684,     33.999,     54.685,     38,     39,     0.894,     1.402,     p1 = ((System_On or (Current_System_Mode < 1)) => (Flow_Rate_Intermittent_Bolus >= 0));

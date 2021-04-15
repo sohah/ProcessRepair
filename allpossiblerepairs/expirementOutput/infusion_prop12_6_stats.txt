@@ -1,0 +1,2 @@
+infusion,     p12,     Faulty_Prop12-LOR-2-2-LOR-3-2,     false,    2,    TRUE_FOR_MAX_STEPS,     3,     18.42,     18.092,     6.524,     11.568,     9,     9,     0.724,     1.285,     p1 = ((System_On and (Current_System_Mode > 1)) or (Commanded_Flow_Rate = 0));
+infusion,     p12,     Faulty_Prop12-LOR-1-2-LOR-3-2,     false,    2,    TRUE_FOR_MAX_STEPS,     2,     18.567,     18.17,     5.998,     12.172,     9,     9,     0.666,     1.352,     p1 = (((not System_On) xor (Current_System_Mode >= 1)) or false);

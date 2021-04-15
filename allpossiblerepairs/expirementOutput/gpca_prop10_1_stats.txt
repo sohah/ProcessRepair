@@ -1,0 +1,2 @@
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-0-0-ROR-0-0,     true,    1,    TRUE_FOR_MAX_STEPS,     3,     26.27,     25.892,     6.715,     19.177,     10,     10,     0.671,     1.917,     p1 = ((not System_On) or (Disable_Audio = out_Is_Audio_Disabled));
+gpca,     p10,     Faulty_GPCA_Prop10-LOR-1-0-ROR-1-0,     false,    1,    TRUE_FOR_MAX_STEPS,     1,     32.223,     31.908,     3.435,     28.473,     5,     5,     0.687,     5.694,     p1 = (System_On or (out_Is_Audio_Disabled >= 0));

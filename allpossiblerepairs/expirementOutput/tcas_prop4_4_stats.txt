@@ -1,0 +1,9 @@
+tcas,     p4,     Prop4-LOR-2-1-ROR-4-6,     false,    2,    ALREADY_MATCHING,     1,     1.185,     1.095,     0.0,     1.095,     0,     1,     0.0,     1.095,     null
+tcas,     p4,     Prop4-LOR-2-1-ROR-3-6,     false,    2,    ALREADY_MATCHING,     1,     1.429,     1.318,     0.0,     1.318,     0,     1,     0.0,     1.318,     null
+tcas,     p4,     Prop4-LOR-3-1-ROR-4-6,     false,    2,    ALREADY_MATCHING,     1,     1.547,     1.414,     0.0,     1.414,     0,     1,     0.0,     1.414,     null
+tcas,     p4,     Prop4-LOR-2-1-ROR-2-6,     false,    2,    ALREADY_MATCHING,     1,     1.437,     1.379,     0.0,     1.379,     0,     1,     0.0,     1.379,     null
+tcas,     p4,     Prop4-LOR-3-1-ROR-3-6,     false,    2,    ALREADY_MATCHING,     1,     1.278,     1.141,     0.0,     1.141,     0,     1,     0.0,     1.141,     null
+tcas,     p4,     Prop4-LOR-1-1-ROR-1-6,     true,    2,    ALREADY_MATCHING,     1,     1.381,     1.252,     0.0,     1.252,     0,     1,     0.0,     1.252,     null
+tcas,     p4,     Prop4-LOR-1-1-ROR-4-6,     true,    2,    ALREADY_MATCHING,     1,     1.545,     1.384,     0.0,     1.384,     0,     1,     0.0,     1.384,     null
+tcas,     p4,     Prop4-LOR-4-1-ROR-4-6,     false,    2,    ALREADY_MATCHING,     1,     0.586,     0.551,     0.0,     0.551,     0,     1,     0.0,     0.551,     null
+tcas,     p4,     Prop4-LOR-0-1-ROR-0-6,     true,    2,    ALREADY_MATCHING,     1,     0.695,     0.652,     0.0,     0.652,     0,     1,     0.0,     0.652,     null

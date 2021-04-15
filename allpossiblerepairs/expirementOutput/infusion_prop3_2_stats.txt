@@ -1,0 +1,6 @@
+infusion,     p3,     Faulty_Prop3-LOR-2-1-LOR-3-3,     false,    2,    ALREADY_MATCHING,     1,     52.264,     52.135,     0.0,     52.135,     0,     1,     0.0,     52.135,     null
+infusion,     p3,     Faulty_Prop3-LOR-1-1-LOR-1-3,     false,    2,    ALREADY_MATCHING,     1,     53.056,     52.826,     0.0,     52.826,     0,     1,     0.0,     52.826,     null
+infusion,     p3,     Faulty_Prop3-LOR-2-1-LOR-2-3,     false,    2,    ALREADY_MATCHING,     1,     54.841,     54.747,     0.0,     54.747,     0,     1,     0.0,     54.747,     null
+infusion,     p3,     Faulty_Prop3-LOR-3-1-LOR-3-3,     false,    2,    ALREADY_MATCHING,     1,     54.689,     54.443,     0.0,     54.443,     0,     1,     0.0,     54.443,     null
+infusion,     p3,     Faulty_Prop3-LOR-1-1-LOR-3-3,     false,    2,    ALREADY_MATCHING,     1,     54.952,     54.519,     0.0,     54.519,     0,     1,     0.0,     54.519,     null
+infusion,     p3,     Faulty_Prop3-LOR-0-1-LOR-0-3,     true,    2,    ALREADY_MATCHING,     1,     54.16,     53.778,     0.0,     53.778,     0,     1,     0.0,     53.778,     null

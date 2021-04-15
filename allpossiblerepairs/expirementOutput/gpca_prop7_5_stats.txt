@@ -1,0 +1,6 @@
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-3-0-LOR-3-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     8.326,     8.063,     2.452,     5.611,     1,     1,     2.452,     5.611,     null
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-1-0-LOR-1-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     8.662,     8.433,     2.686,     5.747,     1,     1,     2.686,     5.747,     null
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-2-0-LOR-2-2,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     8.471,     8.221,     2.044,     6.177,     1,     1,     2.044,     6.177,     null
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-0-0-LOR-0-2,     true,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     880.076,     873.516,     238.545,     634.971,     35,     36,     6.815,     17.638,     p1 = (not (not (out_Audio_Notification_Command >= 0)));
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-2-0-LOR-3-2,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     929.727,     925.729,     67.351,     858.378,     35,     36,     1.924,     23.843,     p1 = ((System_On => (Disable_Audio >= 0)) and true);
+gpca,     p7,     Faulty_GPCA_Prop7-LOR-1-0-LOR-3-2,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     2,     1335.344,     1319.476,     215.538,     1103.938,     66,     67,     3.265,     16.476,     p1 = ((System_On => (Disable_Audio >= 0)) and true);

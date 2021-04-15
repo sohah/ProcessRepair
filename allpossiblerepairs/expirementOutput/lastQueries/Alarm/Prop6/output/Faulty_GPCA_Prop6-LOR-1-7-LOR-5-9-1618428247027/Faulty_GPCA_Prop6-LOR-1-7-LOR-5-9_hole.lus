@@ -1,0 +1,892 @@
+node T_node(
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  System_On : bool;
+  System_Monitor_Failed : bool;
+  Logging_Failed : bool;
+  Infusion_Initiate : bool;
+  Disable_Audio : int;
+  Notification_Cancel : bool;
+  VTBI_High : int;
+  Flow_Rate_High : int;
+  Flow_Rate_Low : int;
+  Flow_Rate : int;
+  Flow_Rate_Not_Stable : bool;
+  Air_In_Line : bool;
+  Occlusion : bool;
+  Door_Open : bool;
+  Temp : bool;
+  Air_Pressure : bool;
+  Humidity : bool;
+  Battery_Depleted : bool;
+  Battery_Low : bool;
+  Battery_Unable_To_Charge : bool;
+  Supply_Voltage : bool;
+  CPU_In_Error : bool;
+  RTC_In_Error : bool;
+  Watchdog_Interrupted : bool;
+  Memory_Corrupted : bool;
+  Pump_Too_Hot : bool;
+  Pump_Overheated : bool;
+  Audio_Enable_Duration : int;
+  Audio_Level : int;
+  Config_Warning_Duration : int;
+  Low_Reservoir : int;
+  Max_Duration_Over_Infusion : int;
+  Max_Duration_Under_Infusion : int;
+  Max_Paused_Duration : int;
+  Max_Idle_Duration : int;
+  Tolerance_Max : int;
+  Tolerance_Min : int;
+  Reservoir_Empty : bool;
+  Reservoir_Volume : int;
+  Volume_Infused : int;
+  In_Therapy : bool;
+  Config_Timer : int;
+  out_Is_Audio_Disabled : int;
+  out_Notification_Message : int;
+  out_Audio_Notification_Command : int;
+  out_Highest_Level_Alarm : int;
+  out_Log_Message_ID5 : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int;
+  inner_hole_0_11 : int;
+  const_hole_1_12 : int;
+  inner_hole_2_13 : int;
+  const_hole_3_14 : int;
+  inner_hole_4_15 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = (repairNode_49_0(System_On, out_Highest_Level_Alarm, Disable_Audio, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10) xor repairNode_11067_0(out_Audio_Notification_Command, Audio_Level, out_Is_Audio_Disabled, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15));
+
+tel;
+
+node repairNode_49_0(
+  System_On : bool;
+  out_Highest_Level_Alarm : int;
+  Disable_Audio : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  R : bool
+);
+var
+  R_l_l : bool;
+  R_l_r : bool;
+  R_l : bool;
+  R_r_l : bool;
+  R_r_r : bool;
+  R_r : bool;
+let
+  R_l_l = (if (inner_hole_0_0 = 17) then System_On else (if (inner_hole_0_0 = 16) then (not System_On) else (if (inner_hole_0_0 = 15) then ((out_Highest_Level_Alarm = const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 14) then ((out_Highest_Level_Alarm < const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 13) then ((out_Highest_Level_Alarm <= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 12) then ((out_Highest_Level_Alarm > const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 11) then ((out_Highest_Level_Alarm >= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 255))) else (if (inner_hole_0_0 = 10) then (out_Highest_Level_Alarm <= Disable_Audio) else (if (inner_hole_0_0 = 9) then (out_Highest_Level_Alarm < Disable_Audio) else (if (inner_hole_0_0 = 8) then ((Disable_Audio = const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 2))) else (if (inner_hole_0_0 = 7) then ((Disable_Audio < const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 2))) else (if (inner_hole_0_0 = 6) then ((Disable_Audio <= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 2))) else (if (inner_hole_0_0 = 5) then ((Disable_Audio > const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 2))) else (if (inner_hole_0_0 = 4) then ((Disable_Audio >= const_hole_1_1) and ((const_hole_1_1 >= 0) and (const_hole_1_1 <= 2))) else (if (inner_hole_0_0 = 3) then (Disable_Audio <= out_Highest_Level_Alarm) else (if (inner_hole_0_0 = 2) then (Disable_Audio < out_Highest_Level_Alarm) else (out_Highest_Level_Alarm = Disable_Audio)))))))))))))))));
+
+  R_l_r = (if (inner_hole_2_2 = 17) then System_On else (if (inner_hole_2_2 = 16) then (not System_On) else (if (inner_hole_2_2 = 15) then ((out_Highest_Level_Alarm = const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 14) then ((out_Highest_Level_Alarm < const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 13) then ((out_Highest_Level_Alarm <= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 12) then ((out_Highest_Level_Alarm > const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 11) then ((out_Highest_Level_Alarm >= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 255))) else (if (inner_hole_2_2 = 10) then (out_Highest_Level_Alarm <= Disable_Audio) else (if (inner_hole_2_2 = 9) then (out_Highest_Level_Alarm < Disable_Audio) else (if (inner_hole_2_2 = 8) then ((Disable_Audio = const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 2))) else (if (inner_hole_2_2 = 7) then ((Disable_Audio < const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 2))) else (if (inner_hole_2_2 = 6) then ((Disable_Audio <= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 2))) else (if (inner_hole_2_2 = 5) then ((Disable_Audio > const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 2))) else (if (inner_hole_2_2 = 4) then ((Disable_Audio >= const_hole_3_3) and ((const_hole_3_3 >= 0) and (const_hole_3_3 <= 2))) else (if (inner_hole_2_2 = 3) then (Disable_Audio <= out_Highest_Level_Alarm) else (if (inner_hole_2_2 = 2) then (Disable_Audio < out_Highest_Level_Alarm) else (out_Highest_Level_Alarm = Disable_Audio)))))))))))))))));
+
+  R_l = (if (inner_hole_4_4 = 1) then (R_l_l and R_l_r) else (if (inner_hole_4_4 = 2) then (R_l_l or R_l_r) else (if (inner_hole_4_4 = 3) then (R_l_l => R_l_r) else (R_l_l xor R_l_r))));
+
+  R_r_l = (if (inner_hole_5_5 = 17) then System_On else (if (inner_hole_5_5 = 16) then (not System_On) else (if (inner_hole_5_5 = 15) then ((out_Highest_Level_Alarm = const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 14) then ((out_Highest_Level_Alarm < const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 13) then ((out_Highest_Level_Alarm <= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 12) then ((out_Highest_Level_Alarm > const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 11) then ((out_Highest_Level_Alarm >= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 255))) else (if (inner_hole_5_5 = 10) then (out_Highest_Level_Alarm <= Disable_Audio) else (if (inner_hole_5_5 = 9) then (out_Highest_Level_Alarm < Disable_Audio) else (if (inner_hole_5_5 = 8) then ((Disable_Audio = const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 2))) else (if (inner_hole_5_5 = 7) then ((Disable_Audio < const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 2))) else (if (inner_hole_5_5 = 6) then ((Disable_Audio <= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 2))) else (if (inner_hole_5_5 = 5) then ((Disable_Audio > const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 2))) else (if (inner_hole_5_5 = 4) then ((Disable_Audio >= const_hole_6_6) and ((const_hole_6_6 >= 0) and (const_hole_6_6 <= 2))) else (if (inner_hole_5_5 = 3) then (Disable_Audio <= out_Highest_Level_Alarm) else (if (inner_hole_5_5 = 2) then (Disable_Audio < out_Highest_Level_Alarm) else (out_Highest_Level_Alarm = Disable_Audio)))))))))))))))));
+
+  R_r_r = (if (inner_hole_7_7 = 17) then System_On else (if (inner_hole_7_7 = 16) then (not System_On) else (if (inner_hole_7_7 = 15) then ((out_Highest_Level_Alarm = const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 14) then ((out_Highest_Level_Alarm < const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 13) then ((out_Highest_Level_Alarm <= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 12) then ((out_Highest_Level_Alarm > const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 11) then ((out_Highest_Level_Alarm >= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 255))) else (if (inner_hole_7_7 = 10) then (out_Highest_Level_Alarm <= Disable_Audio) else (if (inner_hole_7_7 = 9) then (out_Highest_Level_Alarm < Disable_Audio) else (if (inner_hole_7_7 = 8) then ((Disable_Audio = const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 2))) else (if (inner_hole_7_7 = 7) then ((Disable_Audio < const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 2))) else (if (inner_hole_7_7 = 6) then ((Disable_Audio <= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 2))) else (if (inner_hole_7_7 = 5) then ((Disable_Audio > const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 2))) else (if (inner_hole_7_7 = 4) then ((Disable_Audio >= const_hole_8_8) and ((const_hole_8_8 >= 0) and (const_hole_8_8 <= 2))) else (if (inner_hole_7_7 = 3) then (Disable_Audio <= out_Highest_Level_Alarm) else (if (inner_hole_7_7 = 2) then (Disable_Audio < out_Highest_Level_Alarm) else (out_Highest_Level_Alarm = Disable_Audio)))))))))))))))));
+
+  R_r = (if (inner_hole_9_9 = 1) then (R_r_l and R_r_r) else (if (inner_hole_9_9 = 2) then (R_r_l or R_r_r) else (if (inner_hole_9_9 = 3) then (R_r_l => R_r_r) else (R_r_l xor R_r_r))));
+
+  R = (if (inner_hole_10_10 = 1) then (R_l and R_r) else (if (inner_hole_10_10 = 2) then (R_l or R_r) else (if (inner_hole_10_10 = 3) then (R_l => R_r) else (R_l xor R_r))));
+
+tel;
+
+node repairNode_11067_0(
+  out_Audio_Notification_Command : int;
+  Audio_Level : int;
+  out_Is_Audio_Disabled : int;
+  inner_hole_0_11 : int;
+  const_hole_1_12 : int;
+  inner_hole_2_13 : int;
+  const_hole_3_14 : int;
+  inner_hole_4_15 : int
+) returns (
+  R : bool
+);
+var
+  R_l : bool;
+  R_r : bool;
+let
+  R_l = (if (inner_hole_0_11 = 30) then ((out_Audio_Notification_Command = const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 29) then ((out_Audio_Notification_Command < const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 28) then ((out_Audio_Notification_Command <= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 27) then ((out_Audio_Notification_Command > const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 26) then ((out_Audio_Notification_Command >= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 25) then (out_Audio_Notification_Command <= Audio_Level) else (if (inner_hole_0_11 = 24) then (out_Audio_Notification_Command < Audio_Level) else (if (inner_hole_0_11 = 23) then (out_Audio_Notification_Command <= out_Is_Audio_Disabled) else (if (inner_hole_0_11 = 22) then (out_Audio_Notification_Command < out_Is_Audio_Disabled) else (if (inner_hole_0_11 = 21) then ((Audio_Level = const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 20) then ((Audio_Level < const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 19) then ((Audio_Level <= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 18) then ((Audio_Level > const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 17) then ((Audio_Level >= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 16) then (Audio_Level <= out_Audio_Notification_Command) else (if (inner_hole_0_11 = 15) then (Audio_Level < out_Audio_Notification_Command) else (if (inner_hole_0_11 = 14) then (Audio_Level <= out_Is_Audio_Disabled) else (if (inner_hole_0_11 = 13) then (Audio_Level < out_Is_Audio_Disabled) else (if (inner_hole_0_11 = 12) then ((out_Is_Audio_Disabled = const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 11) then ((out_Is_Audio_Disabled < const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 10) then ((out_Is_Audio_Disabled <= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 9) then ((out_Is_Audio_Disabled > const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 8) then ((out_Is_Audio_Disabled >= const_hole_1_12) and ((const_hole_1_12 >= 0) and (const_hole_1_12 <= 255))) else (if (inner_hole_0_11 = 7) then (out_Is_Audio_Disabled <= out_Audio_Notification_Command) else (if (inner_hole_0_11 = 6) then (out_Is_Audio_Disabled < out_Audio_Notification_Command) else (if (inner_hole_0_11 = 5) then (out_Is_Audio_Disabled <= Audio_Level) else (if (inner_hole_0_11 = 4) then (out_Is_Audio_Disabled < Audio_Level) else (if (inner_hole_0_11 = 3) then (out_Audio_Notification_Command = Audio_Level) else (if (inner_hole_0_11 = 2) then (out_Audio_Notification_Command = out_Is_Audio_Disabled) else (Audio_Level = out_Is_Audio_Disabled))))))))))))))))))))))))))))));
+
+  R_r = (if (inner_hole_2_13 = 30) then ((out_Audio_Notification_Command = const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 29) then ((out_Audio_Notification_Command < const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 28) then ((out_Audio_Notification_Command <= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 27) then ((out_Audio_Notification_Command > const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 26) then ((out_Audio_Notification_Command >= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 25) then (out_Audio_Notification_Command <= Audio_Level) else (if (inner_hole_2_13 = 24) then (out_Audio_Notification_Command < Audio_Level) else (if (inner_hole_2_13 = 23) then (out_Audio_Notification_Command <= out_Is_Audio_Disabled) else (if (inner_hole_2_13 = 22) then (out_Audio_Notification_Command < out_Is_Audio_Disabled) else (if (inner_hole_2_13 = 21) then ((Audio_Level = const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 20) then ((Audio_Level < const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 19) then ((Audio_Level <= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 18) then ((Audio_Level > const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 17) then ((Audio_Level >= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 16) then (Audio_Level <= out_Audio_Notification_Command) else (if (inner_hole_2_13 = 15) then (Audio_Level < out_Audio_Notification_Command) else (if (inner_hole_2_13 = 14) then (Audio_Level <= out_Is_Audio_Disabled) else (if (inner_hole_2_13 = 13) then (Audio_Level < out_Is_Audio_Disabled) else (if (inner_hole_2_13 = 12) then ((out_Is_Audio_Disabled = const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 11) then ((out_Is_Audio_Disabled < const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 10) then ((out_Is_Audio_Disabled <= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 9) then ((out_Is_Audio_Disabled > const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 8) then ((out_Is_Audio_Disabled >= const_hole_3_14) and ((const_hole_3_14 >= 0) and (const_hole_3_14 <= 255))) else (if (inner_hole_2_13 = 7) then (out_Is_Audio_Disabled <= out_Audio_Notification_Command) else (if (inner_hole_2_13 = 6) then (out_Is_Audio_Disabled < out_Audio_Notification_Command) else (if (inner_hole_2_13 = 5) then (out_Is_Audio_Disabled <= Audio_Level) else (if (inner_hole_2_13 = 4) then (out_Is_Audio_Disabled < Audio_Level) else (if (inner_hole_2_13 = 3) then (out_Audio_Notification_Command = Audio_Level) else (if (inner_hole_2_13 = 2) then (out_Audio_Notification_Command = out_Is_Audio_Disabled) else (Audio_Level = out_Is_Audio_Disabled))))))))))))))))))))))))))))));
+
+  R = (if (inner_hole_4_15 = 1) then (R_l and R_r) else (if (inner_hole_4_15 = 2) then (R_l or R_r) else (if (inner_hole_4_15 = 3) then (R_l => R_r) else (R_l xor R_r))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  Commanded_Flow_Rate : int;
+  Current_System_Mode : int;
+  System_On : bool;
+  System_Monitor_Failed : bool;
+  Logging_Failed : bool;
+  Infusion_Initiate : bool;
+  Disable_Audio : int;
+  Notification_Cancel : bool;
+  VTBI_High : int;
+  Flow_Rate_High : int;
+  Flow_Rate_Low : int;
+  Flow_Rate : int;
+  Flow_Rate_Not_Stable : bool;
+  Air_In_Line : bool;
+  Occlusion : bool;
+  Door_Open : bool;
+  Temp : bool;
+  Air_Pressure : bool;
+  Humidity : bool;
+  Battery_Depleted : bool;
+  Battery_Low : bool;
+  Battery_Unable_To_Charge : bool;
+  Supply_Voltage : bool;
+  CPU_In_Error : bool;
+  RTC_In_Error : bool;
+  Watchdog_Interrupted : bool;
+  Memory_Corrupted : bool;
+  Pump_Too_Hot : bool;
+  Pump_Overheated : bool;
+  Audio_Enable_Duration : int;
+  Audio_Level : int;
+  Config_Warning_Duration : int;
+  Low_Reservoir : int;
+  Max_Duration_Over_Infusion : int;
+  Max_Duration_Under_Infusion : int;
+  Max_Paused_Duration : int;
+  Max_Idle_Duration : int;
+  Tolerance_Max : int;
+  Tolerance_Min : int;
+  Reservoir_Empty : bool;
+  Reservoir_Volume : int;
+  Volume_Infused : int;
+  In_Therapy : bool;
+  Config_Timer : int;
+  out_Is_Audio_Disabled : int;
+  out_Notification_Message : int;
+  out_Audio_Notification_Command : int;
+  out_Highest_Level_Alarm : int;
+  out_Log_Message_ID5 : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int;
+  inner_hole_0_11 : int;
+  const_hole_1_12 : int;
+  inner_hole_2_13 : int;
+  const_hole_3_14 : int;
+  inner_hole_4_15 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(Commanded_Flow_Rate, Current_System_Mode, System_On, System_Monitor_Failed, Logging_Failed, Infusion_Initiate, Disable_Audio, Notification_Cancel, VTBI_High, Flow_Rate_High, Flow_Rate_Low, Flow_Rate, Flow_Rate_Not_Stable, Air_In_Line, Occlusion, Door_Open, Temp, Air_Pressure, Humidity, Battery_Depleted, Battery_Low, Battery_Unable_To_Charge, Supply_Voltage, CPU_In_Error, RTC_In_Error, Watchdog_Interrupted, Memory_Corrupted, Pump_Too_Hot, Pump_Overheated, Audio_Enable_Duration, Audio_Level, Config_Warning_Duration, Low_Reservoir, Max_Duration_Over_Infusion, Max_Duration_Under_Infusion, Max_Paused_Duration, Max_Idle_Duration, Tolerance_Max, Tolerance_Min, Reservoir_Empty, Reservoir_Volume, Volume_Infused, In_Therapy, Config_Timer, out_Is_Audio_Disabled, out_Notification_Message, out_Audio_Notification_Command, out_Highest_Level_Alarm, out_Log_Message_ID5, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node main(
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int;
+  inner_hole_0_11 : int;
+  const_hole_1_12 : int;
+  inner_hole_2_13 : int;
+  const_hole_3_14 : int;
+  inner_hole_4_15 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  Commanded_Flow_Rate0 : int;
+  Current_System_Mode0 : int;
+  System_On0 : bool;
+  System_Monitor_Failed0 : bool;
+  Logging_Failed0 : bool;
+  Infusion_Initiate0 : bool;
+  Disable_Audio0 : int;
+  Notification_Cancel0 : bool;
+  VTBI_High0 : int;
+  Flow_Rate_High0 : int;
+  Flow_Rate_Low0 : int;
+  Flow_Rate0 : int;
+  Flow_Rate_Not_Stable0 : bool;
+  Air_In_Line0 : bool;
+  Occlusion0 : bool;
+  Door_Open0 : bool;
+  Temp0 : bool;
+  Air_Pressure0 : bool;
+  Humidity0 : bool;
+  Battery_Depleted0 : bool;
+  Battery_Low0 : bool;
+  Battery_Unable_To_Charge0 : bool;
+  Supply_Voltage0 : bool;
+  CPU_In_Error0 : bool;
+  RTC_In_Error0 : bool;
+  Watchdog_Interrupted0 : bool;
+  Memory_Corrupted0 : bool;
+  Pump_Too_Hot0 : bool;
+  Pump_Overheated0 : bool;
+  Audio_Enable_Duration0 : int;
+  Audio_Level0 : int;
+  Config_Warning_Duration0 : int;
+  Low_Reservoir0 : int;
+  Max_Duration_Over_Infusion0 : int;
+  Max_Duration_Under_Infusion0 : int;
+  Max_Paused_Duration0 : int;
+  Max_Idle_Duration0 : int;
+  Tolerance_Max0 : int;
+  Tolerance_Min0 : int;
+  Reservoir_Empty0 : bool;
+  Reservoir_Volume0 : int;
+  Volume_Infused0 : int;
+  In_Therapy0 : bool;
+  Config_Timer0 : int;
+  out_00 : int;
+  out_10 : int;
+  out_20 : int;
+  out_30 : int;
+  out_40 : int;
+  Commanded_Flow_Rate1 : int;
+  Current_System_Mode1 : int;
+  System_On1 : bool;
+  System_Monitor_Failed1 : bool;
+  Logging_Failed1 : bool;
+  Infusion_Initiate1 : bool;
+  Disable_Audio1 : int;
+  Notification_Cancel1 : bool;
+  VTBI_High1 : int;
+  Flow_Rate_High1 : int;
+  Flow_Rate_Low1 : int;
+  Flow_Rate1 : int;
+  Flow_Rate_Not_Stable1 : bool;
+  Air_In_Line1 : bool;
+  Occlusion1 : bool;
+  Door_Open1 : bool;
+  Temp1 : bool;
+  Air_Pressure1 : bool;
+  Humidity1 : bool;
+  Battery_Depleted1 : bool;
+  Battery_Low1 : bool;
+  Battery_Unable_To_Charge1 : bool;
+  Supply_Voltage1 : bool;
+  CPU_In_Error1 : bool;
+  RTC_In_Error1 : bool;
+  Watchdog_Interrupted1 : bool;
+  Memory_Corrupted1 : bool;
+  Pump_Too_Hot1 : bool;
+  Pump_Overheated1 : bool;
+  Audio_Enable_Duration1 : int;
+  Audio_Level1 : int;
+  Config_Warning_Duration1 : int;
+  Low_Reservoir1 : int;
+  Max_Duration_Over_Infusion1 : int;
+  Max_Duration_Under_Infusion1 : int;
+  Max_Paused_Duration1 : int;
+  Max_Idle_Duration1 : int;
+  Tolerance_Max1 : int;
+  Tolerance_Min1 : int;
+  Reservoir_Empty1 : bool;
+  Reservoir_Volume1 : int;
+  Volume_Infused1 : int;
+  In_Therapy1 : bool;
+  Config_Timer1 : int;
+  out_01 : int;
+  out_11 : int;
+  out_21 : int;
+  out_31 : int;
+  out_41 : int;
+  Commanded_Flow_Rate2 : int;
+  Current_System_Mode2 : int;
+  System_On2 : bool;
+  System_Monitor_Failed2 : bool;
+  Logging_Failed2 : bool;
+  Infusion_Initiate2 : bool;
+  Disable_Audio2 : int;
+  Notification_Cancel2 : bool;
+  VTBI_High2 : int;
+  Flow_Rate_High2 : int;
+  Flow_Rate_Low2 : int;
+  Flow_Rate2 : int;
+  Flow_Rate_Not_Stable2 : bool;
+  Air_In_Line2 : bool;
+  Occlusion2 : bool;
+  Door_Open2 : bool;
+  Temp2 : bool;
+  Air_Pressure2 : bool;
+  Humidity2 : bool;
+  Battery_Depleted2 : bool;
+  Battery_Low2 : bool;
+  Battery_Unable_To_Charge2 : bool;
+  Supply_Voltage2 : bool;
+  CPU_In_Error2 : bool;
+  RTC_In_Error2 : bool;
+  Watchdog_Interrupted2 : bool;
+  Memory_Corrupted2 : bool;
+  Pump_Too_Hot2 : bool;
+  Pump_Overheated2 : bool;
+  Audio_Enable_Duration2 : int;
+  Audio_Level2 : int;
+  Config_Warning_Duration2 : int;
+  Low_Reservoir2 : int;
+  Max_Duration_Over_Infusion2 : int;
+  Max_Duration_Under_Infusion2 : int;
+  Max_Paused_Duration2 : int;
+  Max_Idle_Duration2 : int;
+  Tolerance_Max2 : int;
+  Tolerance_Min2 : int;
+  Reservoir_Empty2 : bool;
+  Reservoir_Volume2 : int;
+  Volume_Infused2 : int;
+  In_Therapy2 : bool;
+  Config_Timer2 : int;
+  out_02 : int;
+  out_12 : int;
+  out_22 : int;
+  out_32 : int;
+  out_42 : int;
+  Commanded_Flow_Rate3 : int;
+  Current_System_Mode3 : int;
+  System_On3 : bool;
+  System_Monitor_Failed3 : bool;
+  Logging_Failed3 : bool;
+  Infusion_Initiate3 : bool;
+  Disable_Audio3 : int;
+  Notification_Cancel3 : bool;
+  VTBI_High3 : int;
+  Flow_Rate_High3 : int;
+  Flow_Rate_Low3 : int;
+  Flow_Rate3 : int;
+  Flow_Rate_Not_Stable3 : bool;
+  Air_In_Line3 : bool;
+  Occlusion3 : bool;
+  Door_Open3 : bool;
+  Temp3 : bool;
+  Air_Pressure3 : bool;
+  Humidity3 : bool;
+  Battery_Depleted3 : bool;
+  Battery_Low3 : bool;
+  Battery_Unable_To_Charge3 : bool;
+  Supply_Voltage3 : bool;
+  CPU_In_Error3 : bool;
+  RTC_In_Error3 : bool;
+  Watchdog_Interrupted3 : bool;
+  Memory_Corrupted3 : bool;
+  Pump_Too_Hot3 : bool;
+  Pump_Overheated3 : bool;
+  Audio_Enable_Duration3 : int;
+  Audio_Level3 : int;
+  Config_Warning_Duration3 : int;
+  Low_Reservoir3 : int;
+  Max_Duration_Over_Infusion3 : int;
+  Max_Duration_Under_Infusion3 : int;
+  Max_Paused_Duration3 : int;
+  Max_Idle_Duration3 : int;
+  Tolerance_Max3 : int;
+  Tolerance_Min3 : int;
+  Reservoir_Empty3 : bool;
+  Reservoir_Volume3 : int;
+  Volume_Infused3 : int;
+  In_Therapy3 : bool;
+  Config_Timer3 : int;
+  out_03 : int;
+  out_13 : int;
+  out_23 : int;
+  out_33 : int;
+  out_43 : int;
+let
+  --%MAIN;
+  Commanded_Flow_Rate0 = 0;
+
+  Current_System_Mode0 = 1;
+
+  System_On0 = true;
+
+  System_Monitor_Failed0 = true;
+
+  Logging_Failed0 = true;
+
+  Infusion_Initiate0 = true;
+
+  Disable_Audio0 = 1;
+
+  Notification_Cancel0 = true;
+
+  VTBI_High0 = 0;
+
+  Flow_Rate_High0 = 0;
+
+  Flow_Rate_Low0 = 2;
+
+  Flow_Rate0 = 1;
+
+  Flow_Rate_Not_Stable0 = true;
+
+  Air_In_Line0 = false;
+
+  Occlusion0 = true;
+
+  Door_Open0 = false;
+
+  Temp0 = true;
+
+  Air_Pressure0 = true;
+
+  Humidity0 = true;
+
+  Battery_Depleted0 = true;
+
+  Battery_Low0 = false;
+
+  Battery_Unable_To_Charge0 = false;
+
+  Supply_Voltage0 = false;
+
+  CPU_In_Error0 = true;
+
+  RTC_In_Error0 = true;
+
+  Watchdog_Interrupted0 = true;
+
+  Memory_Corrupted0 = true;
+
+  Pump_Too_Hot0 = true;
+
+  Pump_Overheated0 = false;
+
+  Audio_Enable_Duration0 = 0;
+
+  Audio_Level0 = 0;
+
+  Config_Warning_Duration0 = 0;
+
+  Low_Reservoir0 = 0;
+
+  Max_Duration_Over_Infusion0 = 0;
+
+  Max_Duration_Under_Infusion0 = 0;
+
+  Max_Paused_Duration0 = 0;
+
+  Max_Idle_Duration0 = 0;
+
+  Tolerance_Max0 = 0;
+
+  Tolerance_Min0 = 100;
+
+  Reservoir_Empty0 = true;
+
+  Reservoir_Volume0 = 0;
+
+  Volume_Infused0 = 0;
+
+  In_Therapy0 = true;
+
+  Config_Timer0 = 0;
+
+  out_00 = 1;
+
+  out_10 = 1;
+
+  out_20 = 0;
+
+  out_30 = 4;
+
+  out_40 = 0;
+
+  Commanded_Flow_Rate1 = 1;
+
+  Current_System_Mode1 = 1;
+
+  System_On1 = true;
+
+  System_Monitor_Failed1 = false;
+
+  Logging_Failed1 = false;
+
+  Infusion_Initiate1 = true;
+
+  Disable_Audio1 = 1;
+
+  Notification_Cancel1 = true;
+
+  VTBI_High1 = 0;
+
+  Flow_Rate_High1 = 255;
+
+  Flow_Rate_Low1 = 3;
+
+  Flow_Rate1 = 2;
+
+  Flow_Rate_Not_Stable1 = false;
+
+  Air_In_Line1 = false;
+
+  Occlusion1 = false;
+
+  Door_Open1 = false;
+
+  Temp1 = true;
+
+  Air_Pressure1 = true;
+
+  Humidity1 = true;
+
+  Battery_Depleted1 = true;
+
+  Battery_Low1 = false;
+
+  Battery_Unable_To_Charge1 = false;
+
+  Supply_Voltage1 = false;
+
+  CPU_In_Error1 = true;
+
+  RTC_In_Error1 = true;
+
+  Watchdog_Interrupted1 = true;
+
+  Memory_Corrupted1 = true;
+
+  Pump_Too_Hot1 = true;
+
+  Pump_Overheated1 = false;
+
+  Audio_Enable_Duration1 = 0;
+
+  Audio_Level1 = 1;
+
+  Config_Warning_Duration1 = 0;
+
+  Low_Reservoir1 = 1;
+
+  Max_Duration_Over_Infusion1 = 0;
+
+  Max_Duration_Under_Infusion1 = 0;
+
+  Max_Paused_Duration1 = 2;
+
+  Max_Idle_Duration1 = 1;
+
+  Tolerance_Max1 = 199;
+
+  Tolerance_Min1 = 99;
+
+  Reservoir_Empty1 = true;
+
+  Reservoir_Volume1 = 0;
+
+  Volume_Infused1 = 0;
+
+  In_Therapy1 = true;
+
+  Config_Timer1 = 0;
+
+  out_01 = 1;
+
+  out_11 = 1;
+
+  out_21 = 0;
+
+  out_31 = 4;
+
+  out_41 = 0;
+
+  Commanded_Flow_Rate2 = 0;
+
+  Current_System_Mode2 = 8;
+
+  System_On2 = true;
+
+  System_Monitor_Failed2 = false;
+
+  Logging_Failed2 = false;
+
+  Infusion_Initiate2 = true;
+
+  Disable_Audio2 = 31;
+
+  Notification_Cancel2 = true;
+
+  VTBI_High2 = 0;
+
+  Flow_Rate_High2 = 0;
+
+  Flow_Rate_Low2 = 2;
+
+  Flow_Rate2 = 1;
+
+  Flow_Rate_Not_Stable2 = true;
+
+  Air_In_Line2 = true;
+
+  Occlusion2 = true;
+
+  Door_Open2 = true;
+
+  Temp2 = true;
+
+  Air_Pressure2 = true;
+
+  Humidity2 = true;
+
+  Battery_Depleted2 = true;
+
+  Battery_Low2 = false;
+
+  Battery_Unable_To_Charge2 = false;
+
+  Supply_Voltage2 = false;
+
+  CPU_In_Error2 = true;
+
+  RTC_In_Error2 = true;
+
+  Watchdog_Interrupted2 = true;
+
+  Memory_Corrupted2 = true;
+
+  Pump_Too_Hot2 = true;
+
+  Pump_Overheated2 = false;
+
+  Audio_Enable_Duration2 = 0;
+
+  Audio_Level2 = 1;
+
+  Config_Warning_Duration2 = 0;
+
+  Low_Reservoir2 = 1;
+
+  Max_Duration_Over_Infusion2 = 0;
+
+  Max_Duration_Under_Infusion2 = 0;
+
+  Max_Paused_Duration2 = 0;
+
+  Max_Idle_Duration2 = 0;
+
+  Tolerance_Max2 = 255;
+
+  Tolerance_Min2 = 154;
+
+  Reservoir_Empty2 = true;
+
+  Reservoir_Volume2 = 0;
+
+  Volume_Infused2 = 0;
+
+  In_Therapy2 = true;
+
+  Config_Timer2 = 0;
+
+  out_02 = 31;
+
+  out_12 = 1;
+
+  out_22 = 0;
+
+  out_32 = 4;
+
+  out_42 = 0;
+
+  Commanded_Flow_Rate3 = 1;
+
+  Current_System_Mode3 = 1;
+
+  System_On3 = true;
+
+  System_Monitor_Failed3 = true;
+
+  Logging_Failed3 = true;
+
+  Infusion_Initiate3 = true;
+
+  Disable_Audio3 = 0;
+
+  Notification_Cancel3 = true;
+
+  VTBI_High3 = 0;
+
+  Flow_Rate_High3 = 254;
+
+  Flow_Rate_Low3 = 255;
+
+  Flow_Rate3 = 254;
+
+  Flow_Rate_Not_Stable3 = true;
+
+  Air_In_Line3 = true;
+
+  Occlusion3 = false;
+
+  Door_Open3 = false;
+
+  Temp3 = false;
+
+  Air_Pressure3 = false;
+
+  Humidity3 = false;
+
+  Battery_Depleted3 = false;
+
+  Battery_Low3 = true;
+
+  Battery_Unable_To_Charge3 = true;
+
+  Supply_Voltage3 = true;
+
+  CPU_In_Error3 = false;
+
+  RTC_In_Error3 = false;
+
+  Watchdog_Interrupted3 = false;
+
+  Memory_Corrupted3 = false;
+
+  Pump_Too_Hot3 = false;
+
+  Pump_Overheated3 = true;
+
+  Audio_Enable_Duration3 = 0;
+
+  Audio_Level3 = 2;
+
+  Config_Warning_Duration3 = 0;
+
+  Low_Reservoir3 = 1;
+
+  Max_Duration_Over_Infusion3 = 0;
+
+  Max_Duration_Under_Infusion3 = 0;
+
+  Max_Paused_Duration3 = 2;
+
+  Max_Idle_Duration3 = 0;
+
+  Tolerance_Max3 = 100;
+
+  Tolerance_Min3 = 100;
+
+  Reservoir_Empty3 = true;
+
+  Reservoir_Volume3 = 0;
+
+  Volume_Infused3 = 0;
+
+  In_Therapy3 = true;
+
+  Config_Timer3 = 1;
+
+  out_03 = 0;
+
+  out_13 = 1;
+
+  out_23 = 2;
+
+  out_33 = 4;
+
+  out_43 = 0;
+
+  ok_0 = Check_spec(Commanded_Flow_Rate0, Current_System_Mode0, System_On0, System_Monitor_Failed0, Logging_Failed0, Infusion_Initiate0, Disable_Audio0, Notification_Cancel0, VTBI_High0, Flow_Rate_High0, Flow_Rate_Low0, Flow_Rate0, Flow_Rate_Not_Stable0, Air_In_Line0, Occlusion0, Door_Open0, Temp0, Air_Pressure0, Humidity0, Battery_Depleted0, Battery_Low0, Battery_Unable_To_Charge0, Supply_Voltage0, CPU_In_Error0, RTC_In_Error0, Watchdog_Interrupted0, Memory_Corrupted0, Pump_Too_Hot0, Pump_Overheated0, Audio_Enable_Duration0, Audio_Level0, Config_Warning_Duration0, Low_Reservoir0, Max_Duration_Over_Infusion0, Max_Duration_Under_Infusion0, Max_Paused_Duration0, Max_Idle_Duration0, Tolerance_Max0, Tolerance_Min0, Reservoir_Empty0, Reservoir_Volume0, Volume_Infused0, In_Therapy0, Config_Timer0, out_00, out_10, out_20, out_30, out_40, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15, 0);
+
+  ok_1 = Check_spec(Commanded_Flow_Rate1, Current_System_Mode1, System_On1, System_Monitor_Failed1, Logging_Failed1, Infusion_Initiate1, Disable_Audio1, Notification_Cancel1, VTBI_High1, Flow_Rate_High1, Flow_Rate_Low1, Flow_Rate1, Flow_Rate_Not_Stable1, Air_In_Line1, Occlusion1, Door_Open1, Temp1, Air_Pressure1, Humidity1, Battery_Depleted1, Battery_Low1, Battery_Unable_To_Charge1, Supply_Voltage1, CPU_In_Error1, RTC_In_Error1, Watchdog_Interrupted1, Memory_Corrupted1, Pump_Too_Hot1, Pump_Overheated1, Audio_Enable_Duration1, Audio_Level1, Config_Warning_Duration1, Low_Reservoir1, Max_Duration_Over_Infusion1, Max_Duration_Under_Infusion1, Max_Paused_Duration1, Max_Idle_Duration1, Tolerance_Max1, Tolerance_Min1, Reservoir_Empty1, Reservoir_Volume1, Volume_Infused1, In_Therapy1, Config_Timer1, out_01, out_11, out_21, out_31, out_41, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15, 0);
+
+  ok_2 = Check_spec(Commanded_Flow_Rate2, Current_System_Mode2, System_On2, System_Monitor_Failed2, Logging_Failed2, Infusion_Initiate2, Disable_Audio2, Notification_Cancel2, VTBI_High2, Flow_Rate_High2, Flow_Rate_Low2, Flow_Rate2, Flow_Rate_Not_Stable2, Air_In_Line2, Occlusion2, Door_Open2, Temp2, Air_Pressure2, Humidity2, Battery_Depleted2, Battery_Low2, Battery_Unable_To_Charge2, Supply_Voltage2, CPU_In_Error2, RTC_In_Error2, Watchdog_Interrupted2, Memory_Corrupted2, Pump_Too_Hot2, Pump_Overheated2, Audio_Enable_Duration2, Audio_Level2, Config_Warning_Duration2, Low_Reservoir2, Max_Duration_Over_Infusion2, Max_Duration_Under_Infusion2, Max_Paused_Duration2, Max_Idle_Duration2, Tolerance_Max2, Tolerance_Min2, Reservoir_Empty2, Reservoir_Volume2, Volume_Infused2, In_Therapy2, Config_Timer2, out_02, out_12, out_22, out_32, out_42, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15, 0);
+
+  ok_3 = Check_spec(Commanded_Flow_Rate3, Current_System_Mode3, System_On3, System_Monitor_Failed3, Logging_Failed3, Infusion_Initiate3, Disable_Audio3, Notification_Cancel3, VTBI_High3, Flow_Rate_High3, Flow_Rate_Low3, Flow_Rate3, Flow_Rate_Not_Stable3, Air_In_Line3, Occlusion3, Door_Open3, Temp3, Air_Pressure3, Humidity3, Battery_Depleted3, Battery_Low3, Battery_Unable_To_Charge3, Supply_Voltage3, CPU_In_Error3, RTC_In_Error3, Watchdog_Interrupted3, Memory_Corrupted3, Pump_Too_Hot3, Pump_Overheated3, Audio_Enable_Duration3, Audio_Level3, Config_Warning_Duration3, Low_Reservoir3, Max_Duration_Over_Infusion3, Max_Duration_Under_Infusion3, Max_Paused_Duration3, Max_Idle_Duration3, Tolerance_Max3, Tolerance_Min3, Reservoir_Empty3, Reservoir_Volume3, Volume_Infused3, In_Therapy3, Config_Timer3, out_03, out_13, out_23, out_33, out_43, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, inner_hole_0_11, const_hole_1_12, inner_hole_2_13, const_hole_3_14, inner_hole_4_15, 0);
+
+  fail = (not (((ok_0 and ok_1) and ok_2) and ok_3));
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_2_2 = (pre inner_hole_2_2)));
+
+  assert (true -> (const_hole_3_3 = (pre const_hole_3_3)));
+
+  assert (true -> (inner_hole_4_4 = (pre inner_hole_4_4)));
+
+  assert (true -> (inner_hole_5_5 = (pre inner_hole_5_5)));
+
+  assert (true -> (const_hole_6_6 = (pre const_hole_6_6)));
+
+  assert (true -> (inner_hole_7_7 = (pre inner_hole_7_7)));
+
+  assert (true -> (const_hole_8_8 = (pre const_hole_8_8)));
+
+  assert (true -> (inner_hole_9_9 = (pre inner_hole_9_9)));
+
+  assert (true -> (inner_hole_10_10 = (pre inner_hole_10_10)));
+
+  assert (true -> (inner_hole_0_11 = (pre inner_hole_0_11)));
+
+  assert (true -> (const_hole_1_12 = (pre const_hole_1_12)));
+
+  assert (true -> (inner_hole_2_13 = (pre inner_hole_2_13)));
+
+  assert (true -> (const_hole_3_14 = (pre const_hole_3_14)));
+
+  assert (true -> (inner_hole_4_15 = (pre inner_hole_4_15)));
+
+  --%PROPERTY fail;
+
+tel;

@@ -1,0 +1,1 @@
+gpca,     p4,     Faulty_GPCA_Prop4-ROR-1-0-ROR-2--1,     true,    2,    TRUE_FOR_MAX_STEPS,     1,     22.869,     22.374,     3.263,     19.111,     6,     6,     0.543,     3.185,     p1 = ((Occlusion => Occlusion) => (out_Highest_Level_Alarm <= 4));

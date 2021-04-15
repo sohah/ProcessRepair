@@ -1,0 +1,1 @@
+infusion,     p2,     Faulty_Prop2-ROR-1--1-ROR-2-0,     true,    1,    TRUE_FOR_MAX_STEPS,     1,     8.166,     7.856,     2.559,     5.297,     5,     5,     0.511,     1.059,     p1 = (System_On => (Current_System_Mode > 0));

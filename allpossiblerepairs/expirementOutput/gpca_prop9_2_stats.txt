@@ -1,0 +1,2 @@
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-1--1-LOR-1-4,     false,    2,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.066,     6.91,     1.715,     5.195,     2,     2,     0.857,     2.597,     null
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-0--1-LOR-0-4,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     35.449,     34.6,     8.535,     26.065,     12,     12,     0.711,     2.172,     p1 = (((out_Highest_Level_Alarm >= 1) and (out_Highest_Level_Alarm <= 4)) xor ((not System_On) and (out_Highest_Level_Alarm = 0)));

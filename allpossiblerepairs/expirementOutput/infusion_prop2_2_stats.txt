@@ -1,0 +1,4 @@
+infusion,     p2,     Faulty_Prop2-LOR-2--1-ROR-2-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     4.844,     4.678,     1.022,     3.656,     1,     1,     1.022,     3.656,     null
+infusion,     p2,     Faulty_Prop2-LOR-1--1-ROR-1-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.287,     7.09,     2.179,     4.911,     2,     2,     1.089,     2.455,     null
+infusion,     p2,     Faulty_Prop2-LOR-1--1-ROR-2-2,     false,    1,    NO_VALID_SYNTHESIS_FOR_GRAMMAR,     0,     7.646,     7.446,     2.249,     5.197,     2,     2,     1.124,     2.598,     null
+infusion,     p2,     Faulty_Prop2-LOR-0--1-ROR-0-2,     true,    1,    TRUE_FOR_MAX_STEPS,     3,     16.27,     15.899,     5.111,     10.788,     8,     8,     0.638,     1.348,     p1 = ((Current_System_Mode >= 1) xor (not System_On));

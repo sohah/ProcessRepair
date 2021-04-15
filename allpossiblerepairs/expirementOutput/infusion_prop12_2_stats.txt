@@ -1,0 +1,2 @@
+infusion,     p12,     Faulty_Prop12-ROR-2-0-ROR-3--1,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     19.037,     18.786,     6.598,     12.188,     9,     9,     0.733,     1.354,     p1 = ((System_On and (Current_System_Mode > 8)) => false);
+infusion,     p12,     Faulty_Prop12-ROR-1-0-ROR-3--1,     true,    2,    TRUE_FOR_MAX_STEPS,     4,     34.262,     33.359,     12.221,     21.138,     17,     17,     0.718,     1.243,     p1 = (((Current_System_Mode = 5) xor (Current_System_Mode > 8)) => (Flow_Rate_Patient_Bolus < 0));

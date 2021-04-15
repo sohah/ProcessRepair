@@ -1,0 +1,2 @@
+infusion,     p4,     Faulty_Prop4-LOR-1--1-LOR-3-1,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     47.072,     46.142,     19.369,     26.773,     19,     19,     1.019,     1.409,     p1 = ((System_On => (Highest_Level_Alarm >= 3)) => (Commanded_Flow_Rate <= Flow_Rate_KVO));
+infusion,     p4,     Faulty_Prop4-LOR-2--1-LOR-3-1,     false,    2,    MINIMAL_MAX_LOOP_REACHED,     1,     79.131,     77.325,     29.284,     48.041,     34,     35,     0.861,     1.372,     p1 = ((System_On xor false) => (Commanded_Flow_Rate <= 255));

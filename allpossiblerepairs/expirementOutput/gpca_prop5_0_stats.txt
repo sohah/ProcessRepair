@@ -1,0 +1,4 @@
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-1--1-ROR-1-0,     false,    2,    TRUE_FOR_MAX_STEPS,     1,     190.382,     189.846,     7.791,     182.055,     5,     5,     1.558,     36.411,     p1 = (((not Door_Open) xor (not Door_Open)) => (out_Highest_Level_Alarm <= 3));
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-2--1-ROR-2-0,     false,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     606.579,     606.259,     1.466,     604.793,     1,     2,     1.466,     302.396,     null
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-1--1-ROR-2-0,     true,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     606.791,     606.418,     1.167,     605.251,     1,     2,     1.167,     302.625,     null
+gpca,     p5,     Faulty_GPCA_Prop5-LOR-0--1-ROR-0-0,     true,    2,    MINIMAL_FORALL_UNKNOWN,     1,     672.16,     670.727,     16.395,     654.332,     9,     10,     1.821,     65.433,     p1 = (((out_Highest_Level_Alarm <= 4) and System_On) => ((out_Highest_Level_Alarm <= 0) xor System_On));

@@ -1,0 +1,2 @@
+infusion,     p10,     Faulty_Prop10-ROR-2--1-ROR-3-1,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     18.478,     18.215,     6.059,     12.156,     9,     9,     0.673,     1.35,     p1 = ((System_On and (Current_System_Mode > 8)) => false);
+infusion,     p10,     Faulty_Prop10-ROR-1--1-ROR-3-1,     true,    2,    TRUE_FOR_MAX_STEPS,     4,     27.72,     27.101,     8.829,     18.272,     14,     14,     0.63,     1.305,     p1 = (((Current_System_Mode <= 8) => (Current_System_Mode = 5)) => false);

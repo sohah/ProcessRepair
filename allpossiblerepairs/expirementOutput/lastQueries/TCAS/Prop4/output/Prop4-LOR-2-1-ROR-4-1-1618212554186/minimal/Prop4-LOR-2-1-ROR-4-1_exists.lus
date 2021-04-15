@@ -1,0 +1,524 @@
+node T_node(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = ((repairNode_12_0(alim_res_s, Up_Separation_s, inner_hole_0_0, const_hole_1_1) xor (Down_Separation_s < alim_res_s)) => repairNode_1436_0(result_alt_sep_test_s, inner_hole_0_2, const_hole_1_3));
+
+tel;
+
+node repairNode_12_0(
+  alim_res_s : int;
+  Up_Separation_s : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int
+) returns (
+  R : bool
+);
+let
+  R = (if (inner_hole_0_0 = 15) then ((alim_res_s = const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 14) then ((alim_res_s < const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 13) then ((alim_res_s <= const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 12) then ((alim_res_s > const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 11) then ((alim_res_s >= const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 10) then (alim_res_s <= Up_Separation_s) else (if (inner_hole_0_0 = 9) then (alim_res_s < Up_Separation_s) else (if (inner_hole_0_0 = 8) then (Up_Separation_s = const_hole_1_1) else (if (inner_hole_0_0 = 7) then (Up_Separation_s < const_hole_1_1) else (if (inner_hole_0_0 = 6) then (Up_Separation_s <= const_hole_1_1) else (if (inner_hole_0_0 = 5) then (Up_Separation_s > const_hole_1_1) else (if (inner_hole_0_0 = 4) then (Up_Separation_s >= const_hole_1_1) else (if (inner_hole_0_0 = 3) then (Up_Separation_s <= alim_res_s) else (if (inner_hole_0_0 = 2) then (Up_Separation_s < alim_res_s) else (alim_res_s = Up_Separation_s)))))))))))))));
+
+tel;
+
+node repairNode_1436_0(
+  result_alt_sep_test_s : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  R : bool
+);
+let
+  R = (if (inner_hole_0_2 = 5) then ((result_alt_sep_test_s = const_hole_1_3) and ((const_hole_1_3 <= 2) and (const_hole_1_3 >= 0))) else (if (inner_hole_0_2 = 4) then ((result_alt_sep_test_s < const_hole_1_3) and ((const_hole_1_3 <= 2) and (const_hole_1_3 >= 0))) else (if (inner_hole_0_2 = 3) then ((result_alt_sep_test_s <= const_hole_1_3) and ((const_hole_1_3 <= 2) and (const_hole_1_3 >= 0))) else (if (inner_hole_0_2 = 2) then ((result_alt_sep_test_s > const_hole_1_3) and ((const_hole_1_3 <= 2) and (const_hole_1_3 >= 0))) else ((result_alt_sep_test_s >= const_hole_1_3) and ((const_hole_1_3 <= 2) and (const_hole_1_3 >= 0)))))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node main(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_0_2 : int;
+  const_hole_1_3 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  ok_4 : bool;
+  ok_5 : bool;
+  ok_6 : bool;
+  ok_7 : bool;
+  Cur_Vertical_Sep_s0 : int;
+  High_Confidence_flag_s0 : int;
+  Two_of_Three_Reports_Valid_flag_s0 : int;
+  Own_Tracked_Alt_s0 : int;
+  Own_Tracked_Alt_Rate_s0 : int;
+  Other_Tracked_Alt_s0 : int;
+  Alt_Layer_Value_s0 : int;
+  Up_Separation_s0 : int;
+  Down_Separation_s0 : int;
+  Other_RAC_s0 : int;
+  Other_Capability_s0 : int;
+  Climb_Inhibit_s0 : int;
+  out_00 : int;
+  out_10 : int;
+  Cur_Vertical_Sep_s1 : int;
+  High_Confidence_flag_s1 : int;
+  Two_of_Three_Reports_Valid_flag_s1 : int;
+  Own_Tracked_Alt_s1 : int;
+  Own_Tracked_Alt_Rate_s1 : int;
+  Other_Tracked_Alt_s1 : int;
+  Alt_Layer_Value_s1 : int;
+  Up_Separation_s1 : int;
+  Down_Separation_s1 : int;
+  Other_RAC_s1 : int;
+  Other_Capability_s1 : int;
+  Climb_Inhibit_s1 : int;
+  result_alt_sep_test_s1 : int;
+  alim_res_s1 : int;
+  Cur_Vertical_Sep_s2 : int;
+  High_Confidence_flag_s2 : int;
+  Two_of_Three_Reports_Valid_flag_s2 : int;
+  Own_Tracked_Alt_s2 : int;
+  Own_Tracked_Alt_Rate_s2 : int;
+  Other_Tracked_Alt_s2 : int;
+  Alt_Layer_Value_s2 : int;
+  Up_Separation_s2 : int;
+  Down_Separation_s2 : int;
+  Other_RAC_s2 : int;
+  Other_Capability_s2 : int;
+  Climb_Inhibit_s2 : int;
+  result_alt_sep_test_s2 : int;
+  alim_res_s2 : int;
+  Cur_Vertical_Sep_s3 : int;
+  High_Confidence_flag_s3 : int;
+  Two_of_Three_Reports_Valid_flag_s3 : int;
+  Own_Tracked_Alt_s3 : int;
+  Own_Tracked_Alt_Rate_s3 : int;
+  Other_Tracked_Alt_s3 : int;
+  Alt_Layer_Value_s3 : int;
+  Up_Separation_s3 : int;
+  Down_Separation_s3 : int;
+  Other_RAC_s3 : int;
+  Other_Capability_s3 : int;
+  Climb_Inhibit_s3 : int;
+  result_alt_sep_test_s3 : int;
+  alim_res_s3 : int;
+  Cur_Vertical_Sep_s4 : int;
+  High_Confidence_flag_s4 : int;
+  Two_of_Three_Reports_Valid_flag_s4 : int;
+  Own_Tracked_Alt_s4 : int;
+  Own_Tracked_Alt_Rate_s4 : int;
+  Other_Tracked_Alt_s4 : int;
+  Alt_Layer_Value_s4 : int;
+  Up_Separation_s4 : int;
+  Down_Separation_s4 : int;
+  Other_RAC_s4 : int;
+  Other_Capability_s4 : int;
+  Climb_Inhibit_s4 : int;
+  result_alt_sep_test_s4 : int;
+  alim_res_s4 : int;
+  Cur_Vertical_Sep_s5 : int;
+  High_Confidence_flag_s5 : int;
+  Two_of_Three_Reports_Valid_flag_s5 : int;
+  Own_Tracked_Alt_s5 : int;
+  Own_Tracked_Alt_Rate_s5 : int;
+  Other_Tracked_Alt_s5 : int;
+  Alt_Layer_Value_s5 : int;
+  Up_Separation_s5 : int;
+  Down_Separation_s5 : int;
+  Other_RAC_s5 : int;
+  Other_Capability_s5 : int;
+  Climb_Inhibit_s5 : int;
+  out_05 : int;
+  out_15 : int;
+  Cur_Vertical_Sep_s6 : int;
+  High_Confidence_flag_s6 : int;
+  Two_of_Three_Reports_Valid_flag_s6 : int;
+  Own_Tracked_Alt_s6 : int;
+  Own_Tracked_Alt_Rate_s6 : int;
+  Other_Tracked_Alt_s6 : int;
+  Alt_Layer_Value_s6 : int;
+  Up_Separation_s6 : int;
+  Down_Separation_s6 : int;
+  Other_RAC_s6 : int;
+  Other_Capability_s6 : int;
+  Climb_Inhibit_s6 : int;
+  out_06 : int;
+  out_16 : int;
+  Cur_Vertical_Sep_s7 : int;
+  High_Confidence_flag_s7 : int;
+  Two_of_Three_Reports_Valid_flag_s7 : int;
+  Own_Tracked_Alt_s7 : int;
+  Own_Tracked_Alt_Rate_s7 : int;
+  Other_Tracked_Alt_s7 : int;
+  Alt_Layer_Value_s7 : int;
+  Up_Separation_s7 : int;
+  Down_Separation_s7 : int;
+  Other_RAC_s7 : int;
+  Other_Capability_s7 : int;
+  Climb_Inhibit_s7 : int;
+  result_alt_sep_test_s7 : int;
+  alim_res_s7 : int;
+  fixedRout : bool;
+  rPrimeOut : bool;
+let
+  --%MAIN;
+  Cur_Vertical_Sep_s0 = 600;
+
+  High_Confidence_flag_s0 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s0 = 8;
+
+  Own_Tracked_Alt_s0 = 0;
+
+  Own_Tracked_Alt_Rate_s0 = 0;
+
+  Other_Tracked_Alt_s0 = -1;
+
+  Alt_Layer_Value_s0 = 0;
+
+  Up_Separation_s0 = 401;
+
+  Down_Separation_s0 = 401;
+
+  Other_RAC_s0 = 9;
+
+  Other_Capability_s0 = 10;
+
+  Climb_Inhibit_s0 = 0;
+
+  out_00 = 2;
+
+  out_10 = 400;
+
+  Cur_Vertical_Sep_s1 = 599;
+
+  High_Confidence_flag_s1 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s1 = 0;
+
+  Own_Tracked_Alt_s1 = 0;
+
+  Own_Tracked_Alt_Rate_s1 = 0;
+
+  Other_Tracked_Alt_s1 = 0;
+
+  Alt_Layer_Value_s1 = 0;
+
+  Up_Separation_s1 = 400;
+
+  Down_Separation_s1 = 400;
+
+  Other_RAC_s1 = 8;
+
+  Other_Capability_s1 = 1;
+
+  Climb_Inhibit_s1 = 1;
+
+  result_alt_sep_test_s1 = 3;
+
+  alim_res_s1 = 401;
+
+  Cur_Vertical_Sep_s2 = 600;
+
+  High_Confidence_flag_s2 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s2 = 8;
+
+  Own_Tracked_Alt_s2 = 0;
+
+  Own_Tracked_Alt_Rate_s2 = 0;
+
+  Other_Tracked_Alt_s2 = 1;
+
+  Alt_Layer_Value_s2 = 0;
+
+  Up_Separation_s2 = 401;
+
+  Down_Separation_s2 = 400;
+
+  Other_RAC_s2 = 9;
+
+  Other_Capability_s2 = 1;
+
+  Climb_Inhibit_s2 = 0;
+
+  result_alt_sep_test_s2 = 3;
+
+  alim_res_s2 = 0;
+
+  Cur_Vertical_Sep_s3 = 600;
+
+  High_Confidence_flag_s3 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s3 = 8;
+
+  Own_Tracked_Alt_s3 = 0;
+
+  Own_Tracked_Alt_Rate_s3 = 0;
+
+  Other_Tracked_Alt_s3 = 1;
+
+  Alt_Layer_Value_s3 = 0;
+
+  Up_Separation_s3 = 401;
+
+  Down_Separation_s3 = 400;
+
+  Other_RAC_s3 = 9;
+
+  Other_Capability_s3 = 1;
+
+  Climb_Inhibit_s3 = 0;
+
+  result_alt_sep_test_s3 = 3;
+
+  alim_res_s3 = 1;
+
+  Cur_Vertical_Sep_s4 = 600;
+
+  High_Confidence_flag_s4 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s4 = 8;
+
+  Own_Tracked_Alt_s4 = 0;
+
+  Own_Tracked_Alt_Rate_s4 = 0;
+
+  Other_Tracked_Alt_s4 = 1;
+
+  Alt_Layer_Value_s4 = 0;
+
+  Up_Separation_s4 = 401;
+
+  Down_Separation_s4 = 400;
+
+  Other_RAC_s4 = 9;
+
+  Other_Capability_s4 = 1;
+
+  Climb_Inhibit_s4 = 0;
+
+  result_alt_sep_test_s4 = 3;
+
+  alim_res_s4 = 399;
+
+  Cur_Vertical_Sep_s5 = 599;
+
+  High_Confidence_flag_s5 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s5 = 8;
+
+  Own_Tracked_Alt_s5 = 0;
+
+  Own_Tracked_Alt_Rate_s5 = 0;
+
+  Other_Tracked_Alt_s5 = 1;
+
+  Alt_Layer_Value_s5 = 0;
+
+  Up_Separation_s5 = 8665;
+
+  Down_Separation_s5 = 399;
+
+  Other_RAC_s5 = 9;
+
+  Other_Capability_s5 = 1;
+
+  Climb_Inhibit_s5 = 1;
+
+  out_05 = 0;
+
+  out_15 = 400;
+
+  Cur_Vertical_Sep_s6 = 599;
+
+  High_Confidence_flag_s6 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s6 = 0;
+
+  Own_Tracked_Alt_s6 = 0;
+
+  Own_Tracked_Alt_Rate_s6 = 0;
+
+  Other_Tracked_Alt_s6 = 1;
+
+  Alt_Layer_Value_s6 = 0;
+
+  Up_Separation_s6 = -5105;
+
+  Down_Separation_s6 = -5455;
+
+  Other_RAC_s6 = 8;
+
+  Other_Capability_s6 = 9;
+
+  Climb_Inhibit_s6 = 1;
+
+  out_06 = 1;
+
+  out_16 = 400;
+
+  Cur_Vertical_Sep_s7 = 599;
+
+  High_Confidence_flag_s7 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s7 = 0;
+
+  Own_Tracked_Alt_s7 = 0;
+
+  Own_Tracked_Alt_Rate_s7 = 0;
+
+  Other_Tracked_Alt_s7 = 0;
+
+  Alt_Layer_Value_s7 = 0;
+
+  Up_Separation_s7 = 0;
+
+  Down_Separation_s7 = 400;
+
+  Other_RAC_s7 = 7;
+
+  Other_Capability_s7 = 1;
+
+  Climb_Inhibit_s7 = 0;
+
+  result_alt_sep_test_s7 = 2;
+
+  alim_res_s7 = 401;
+
+  ok_0 = Check_spec(Cur_Vertical_Sep_s0, High_Confidence_flag_s0, Two_of_Three_Reports_Valid_flag_s0, Own_Tracked_Alt_s0, Own_Tracked_Alt_Rate_s0, Other_Tracked_Alt_s0, Alt_Layer_Value_s0, Up_Separation_s0, Down_Separation_s0, Other_RAC_s0, Other_Capability_s0, Climb_Inhibit_s0, out_00, out_10, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_1 = Check_spec(Cur_Vertical_Sep_s1, High_Confidence_flag_s1, Two_of_Three_Reports_Valid_flag_s1, Own_Tracked_Alt_s1, Own_Tracked_Alt_Rate_s1, Other_Tracked_Alt_s1, Alt_Layer_Value_s1, Up_Separation_s1, Down_Separation_s1, Other_RAC_s1, Other_Capability_s1, Climb_Inhibit_s1, result_alt_sep_test_s1, alim_res_s1, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_2 = Check_spec(Cur_Vertical_Sep_s2, High_Confidence_flag_s2, Two_of_Three_Reports_Valid_flag_s2, Own_Tracked_Alt_s2, Own_Tracked_Alt_Rate_s2, Other_Tracked_Alt_s2, Alt_Layer_Value_s2, Up_Separation_s2, Down_Separation_s2, Other_RAC_s2, Other_Capability_s2, Climb_Inhibit_s2, result_alt_sep_test_s2, alim_res_s2, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_3 = Check_spec(Cur_Vertical_Sep_s3, High_Confidence_flag_s3, Two_of_Three_Reports_Valid_flag_s3, Own_Tracked_Alt_s3, Own_Tracked_Alt_Rate_s3, Other_Tracked_Alt_s3, Alt_Layer_Value_s3, Up_Separation_s3, Down_Separation_s3, Other_RAC_s3, Other_Capability_s3, Climb_Inhibit_s3, result_alt_sep_test_s3, alim_res_s3, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_4 = Check_spec(Cur_Vertical_Sep_s4, High_Confidence_flag_s4, Two_of_Three_Reports_Valid_flag_s4, Own_Tracked_Alt_s4, Own_Tracked_Alt_Rate_s4, Other_Tracked_Alt_s4, Alt_Layer_Value_s4, Up_Separation_s4, Down_Separation_s4, Other_RAC_s4, Other_Capability_s4, Climb_Inhibit_s4, result_alt_sep_test_s4, alim_res_s4, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_5 = Check_spec(Cur_Vertical_Sep_s5, High_Confidence_flag_s5, Two_of_Three_Reports_Valid_flag_s5, Own_Tracked_Alt_s5, Own_Tracked_Alt_Rate_s5, Other_Tracked_Alt_s5, Alt_Layer_Value_s5, Up_Separation_s5, Down_Separation_s5, Other_RAC_s5, Other_Capability_s5, Climb_Inhibit_s5, out_05, out_15, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_6 = Check_spec(Cur_Vertical_Sep_s6, High_Confidence_flag_s6, Two_of_Three_Reports_Valid_flag_s6, Own_Tracked_Alt_s6, Own_Tracked_Alt_Rate_s6, Other_Tracked_Alt_s6, Alt_Layer_Value_s6, Up_Separation_s6, Down_Separation_s6, Other_RAC_s6, Other_Capability_s6, Climb_Inhibit_s6, out_06, out_16, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  ok_7 = Check_spec(Cur_Vertical_Sep_s7, High_Confidence_flag_s7, Two_of_Three_Reports_Valid_flag_s7, Own_Tracked_Alt_s7, Own_Tracked_Alt_Rate_s7, Other_Tracked_Alt_s7, Alt_Layer_Value_s7, Up_Separation_s7, Down_Separation_s7, Other_RAC_s7, Other_Capability_s7, Climb_Inhibit_s7, result_alt_sep_test_s7, alim_res_s7, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3, 0);
+
+  fail = (not ((not ok_7) and (ok_6 and (ok_5 and ((not ok_4) and ((not ok_3) and ((not ok_2) and ((not ok_1) and (ok_0 and (fixedRout and (not rPrimeOut)))))))))));
+
+  fixedRout = Fixed_T(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s);
+
+  rPrimeOut = T_node(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s, inner_hole_0_0, const_hole_1_1, inner_hole_0_2, const_hole_1_3);
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_0_2 = (pre inner_hole_0_2)));
+
+  assert (true -> (const_hole_1_3 = (pre const_hole_1_3)));
+
+  --%PROPERTY fail;
+
+tel;
+
+node Fixed_T(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = (((alim_res_s < 400) xor (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s < 2));
+
+tel;

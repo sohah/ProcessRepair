@@ -1,0 +1,2 @@
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-1-1-ROR-1-0,     false,    2,    OUTERLOOP_EXISTS_UNKNOWN,     0,     6.554,     6.46,     0.831,     5.629,     1,     1,     0.831,     5.629,     null
+gpca,     p9,     Faulty_GPCA_Prop9-LOR-0-1-ROR-0-0,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     73.567,     72.47,     13.565,     58.905,     14,     14,     0.968,     4.207,     p1 = ((System_On => (out_Highest_Level_Alarm < 1)) xor (System_On xor (out_Highest_Level_Alarm >= 5)));

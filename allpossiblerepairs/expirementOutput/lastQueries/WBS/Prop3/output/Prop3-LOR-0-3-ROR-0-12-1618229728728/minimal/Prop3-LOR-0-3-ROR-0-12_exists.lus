@@ -1,0 +1,688 @@
+node T_node(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = repairNode_28_0(skid_r, pedal_r, NormalPressure_r, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10);
+
+tel;
+
+node repairNode_28_0(
+  skid_r : bool;
+  pedal_r : int;
+  NormalPressure_r : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  R : bool
+);
+var
+  R_l_l : bool;
+  R_l_r : bool;
+  R_l : bool;
+  R_r_l : bool;
+  R_r_r : bool;
+  R_r : bool;
+let
+  R_l_l = (if (inner_hole_0_0 = 17) then skid_r else (if (inner_hole_0_0 = 16) then (not skid_r) else (if (inner_hole_0_0 = 15) then ((pedal_r = const_hole_1_1) and ((const_hole_1_1 = 0) or ((const_hole_1_1 = 1) or ((const_hole_1_1 = 2) or ((const_hole_1_1 = 3) or ((const_hole_1_1 = 4) or ((const_hole_1_1 = (-1)) or (const_hole_1_1 = 5)))))))) else (if (inner_hole_0_0 = 14) then ((pedal_r < const_hole_1_1) and ((const_hole_1_1 = 0) or ((const_hole_1_1 = 1) or ((const_hole_1_1 = 2) or ((const_hole_1_1 = 3) or ((const_hole_1_1 = 4) or ((const_hole_1_1 = (-1)) or (const_hole_1_1 = 5)))))))) else (if (inner_hole_0_0 = 13) then ((pedal_r <= const_hole_1_1) and ((const_hole_1_1 = 0) or ((const_hole_1_1 = 1) or ((const_hole_1_1 = 2) or ((const_hole_1_1 = 3) or ((const_hole_1_1 = 4) or ((const_hole_1_1 = (-1)) or (const_hole_1_1 = 5)))))))) else (if (inner_hole_0_0 = 12) then ((pedal_r > const_hole_1_1) and ((const_hole_1_1 = 0) or ((const_hole_1_1 = 1) or ((const_hole_1_1 = 2) or ((const_hole_1_1 = 3) or ((const_hole_1_1 = 4) or ((const_hole_1_1 = (-1)) or (const_hole_1_1 = 5)))))))) else (if (inner_hole_0_0 = 11) then ((pedal_r >= const_hole_1_1) and ((const_hole_1_1 = 0) or ((const_hole_1_1 = 1) or ((const_hole_1_1 = 2) or ((const_hole_1_1 = 3) or ((const_hole_1_1 = 4) or ((const_hole_1_1 = (-1)) or (const_hole_1_1 = 5)))))))) else (if (inner_hole_0_0 = 10) then (pedal_r <= NormalPressure_r) else (if (inner_hole_0_0 = 9) then (pedal_r < NormalPressure_r) else (if (inner_hole_0_0 = 8) then (NormalPressure_r = const_hole_1_1) else (if (inner_hole_0_0 = 7) then (NormalPressure_r < const_hole_1_1) else (if (inner_hole_0_0 = 6) then (NormalPressure_r <= const_hole_1_1) else (if (inner_hole_0_0 = 5) then (NormalPressure_r > const_hole_1_1) else (if (inner_hole_0_0 = 4) then (NormalPressure_r >= const_hole_1_1) else (if (inner_hole_0_0 = 3) then (NormalPressure_r <= pedal_r) else (if (inner_hole_0_0 = 2) then (NormalPressure_r < pedal_r) else (pedal_r = NormalPressure_r)))))))))))))))));
+
+  R_l_r = (if (inner_hole_2_2 = 17) then skid_r else (if (inner_hole_2_2 = 16) then (not skid_r) else (if (inner_hole_2_2 = 15) then ((pedal_r = const_hole_3_3) and ((const_hole_3_3 = 0) or ((const_hole_3_3 = 1) or ((const_hole_3_3 = 2) or ((const_hole_3_3 = 3) or ((const_hole_3_3 = 4) or ((const_hole_3_3 = (-1)) or (const_hole_3_3 = 5)))))))) else (if (inner_hole_2_2 = 14) then ((pedal_r < const_hole_3_3) and ((const_hole_3_3 = 0) or ((const_hole_3_3 = 1) or ((const_hole_3_3 = 2) or ((const_hole_3_3 = 3) or ((const_hole_3_3 = 4) or ((const_hole_3_3 = (-1)) or (const_hole_3_3 = 5)))))))) else (if (inner_hole_2_2 = 13) then ((pedal_r <= const_hole_3_3) and ((const_hole_3_3 = 0) or ((const_hole_3_3 = 1) or ((const_hole_3_3 = 2) or ((const_hole_3_3 = 3) or ((const_hole_3_3 = 4) or ((const_hole_3_3 = (-1)) or (const_hole_3_3 = 5)))))))) else (if (inner_hole_2_2 = 12) then ((pedal_r > const_hole_3_3) and ((const_hole_3_3 = 0) or ((const_hole_3_3 = 1) or ((const_hole_3_3 = 2) or ((const_hole_3_3 = 3) or ((const_hole_3_3 = 4) or ((const_hole_3_3 = (-1)) or (const_hole_3_3 = 5)))))))) else (if (inner_hole_2_2 = 11) then ((pedal_r >= const_hole_3_3) and ((const_hole_3_3 = 0) or ((const_hole_3_3 = 1) or ((const_hole_3_3 = 2) or ((const_hole_3_3 = 3) or ((const_hole_3_3 = 4) or ((const_hole_3_3 = (-1)) or (const_hole_3_3 = 5)))))))) else (if (inner_hole_2_2 = 10) then (pedal_r <= NormalPressure_r) else (if (inner_hole_2_2 = 9) then (pedal_r < NormalPressure_r) else (if (inner_hole_2_2 = 8) then (NormalPressure_r = const_hole_3_3) else (if (inner_hole_2_2 = 7) then (NormalPressure_r < const_hole_3_3) else (if (inner_hole_2_2 = 6) then (NormalPressure_r <= const_hole_3_3) else (if (inner_hole_2_2 = 5) then (NormalPressure_r > const_hole_3_3) else (if (inner_hole_2_2 = 4) then (NormalPressure_r >= const_hole_3_3) else (if (inner_hole_2_2 = 3) then (NormalPressure_r <= pedal_r) else (if (inner_hole_2_2 = 2) then (NormalPressure_r < pedal_r) else (pedal_r = NormalPressure_r)))))))))))))))));
+
+  R_l = (if (inner_hole_4_4 = 1) then (R_l_l and R_l_r) else (if (inner_hole_4_4 = 2) then (R_l_l or R_l_r) else (if (inner_hole_4_4 = 3) then (R_l_l => R_l_r) else (R_l_l xor R_l_r))));
+
+  R_r_l = (if (inner_hole_5_5 = 17) then skid_r else (if (inner_hole_5_5 = 16) then (not skid_r) else (if (inner_hole_5_5 = 15) then ((pedal_r = const_hole_6_6) and ((const_hole_6_6 = 0) or ((const_hole_6_6 = 1) or ((const_hole_6_6 = 2) or ((const_hole_6_6 = 3) or ((const_hole_6_6 = 4) or ((const_hole_6_6 = (-1)) or (const_hole_6_6 = 5)))))))) else (if (inner_hole_5_5 = 14) then ((pedal_r < const_hole_6_6) and ((const_hole_6_6 = 0) or ((const_hole_6_6 = 1) or ((const_hole_6_6 = 2) or ((const_hole_6_6 = 3) or ((const_hole_6_6 = 4) or ((const_hole_6_6 = (-1)) or (const_hole_6_6 = 5)))))))) else (if (inner_hole_5_5 = 13) then ((pedal_r <= const_hole_6_6) and ((const_hole_6_6 = 0) or ((const_hole_6_6 = 1) or ((const_hole_6_6 = 2) or ((const_hole_6_6 = 3) or ((const_hole_6_6 = 4) or ((const_hole_6_6 = (-1)) or (const_hole_6_6 = 5)))))))) else (if (inner_hole_5_5 = 12) then ((pedal_r > const_hole_6_6) and ((const_hole_6_6 = 0) or ((const_hole_6_6 = 1) or ((const_hole_6_6 = 2) or ((const_hole_6_6 = 3) or ((const_hole_6_6 = 4) or ((const_hole_6_6 = (-1)) or (const_hole_6_6 = 5)))))))) else (if (inner_hole_5_5 = 11) then ((pedal_r >= const_hole_6_6) and ((const_hole_6_6 = 0) or ((const_hole_6_6 = 1) or ((const_hole_6_6 = 2) or ((const_hole_6_6 = 3) or ((const_hole_6_6 = 4) or ((const_hole_6_6 = (-1)) or (const_hole_6_6 = 5)))))))) else (if (inner_hole_5_5 = 10) then (pedal_r <= NormalPressure_r) else (if (inner_hole_5_5 = 9) then (pedal_r < NormalPressure_r) else (if (inner_hole_5_5 = 8) then (NormalPressure_r = const_hole_6_6) else (if (inner_hole_5_5 = 7) then (NormalPressure_r < const_hole_6_6) else (if (inner_hole_5_5 = 6) then (NormalPressure_r <= const_hole_6_6) else (if (inner_hole_5_5 = 5) then (NormalPressure_r > const_hole_6_6) else (if (inner_hole_5_5 = 4) then (NormalPressure_r >= const_hole_6_6) else (if (inner_hole_5_5 = 3) then (NormalPressure_r <= pedal_r) else (if (inner_hole_5_5 = 2) then (NormalPressure_r < pedal_r) else (pedal_r = NormalPressure_r)))))))))))))))));
+
+  R_r_r = (if (inner_hole_7_7 = 17) then skid_r else (if (inner_hole_7_7 = 16) then (not skid_r) else (if (inner_hole_7_7 = 15) then ((pedal_r = const_hole_8_8) and ((const_hole_8_8 = 0) or ((const_hole_8_8 = 1) or ((const_hole_8_8 = 2) or ((const_hole_8_8 = 3) or ((const_hole_8_8 = 4) or ((const_hole_8_8 = (-1)) or (const_hole_8_8 = 5)))))))) else (if (inner_hole_7_7 = 14) then ((pedal_r < const_hole_8_8) and ((const_hole_8_8 = 0) or ((const_hole_8_8 = 1) or ((const_hole_8_8 = 2) or ((const_hole_8_8 = 3) or ((const_hole_8_8 = 4) or ((const_hole_8_8 = (-1)) or (const_hole_8_8 = 5)))))))) else (if (inner_hole_7_7 = 13) then ((pedal_r <= const_hole_8_8) and ((const_hole_8_8 = 0) or ((const_hole_8_8 = 1) or ((const_hole_8_8 = 2) or ((const_hole_8_8 = 3) or ((const_hole_8_8 = 4) or ((const_hole_8_8 = (-1)) or (const_hole_8_8 = 5)))))))) else (if (inner_hole_7_7 = 12) then ((pedal_r > const_hole_8_8) and ((const_hole_8_8 = 0) or ((const_hole_8_8 = 1) or ((const_hole_8_8 = 2) or ((const_hole_8_8 = 3) or ((const_hole_8_8 = 4) or ((const_hole_8_8 = (-1)) or (const_hole_8_8 = 5)))))))) else (if (inner_hole_7_7 = 11) then ((pedal_r >= const_hole_8_8) and ((const_hole_8_8 = 0) or ((const_hole_8_8 = 1) or ((const_hole_8_8 = 2) or ((const_hole_8_8 = 3) or ((const_hole_8_8 = 4) or ((const_hole_8_8 = (-1)) or (const_hole_8_8 = 5)))))))) else (if (inner_hole_7_7 = 10) then (pedal_r <= NormalPressure_r) else (if (inner_hole_7_7 = 9) then (pedal_r < NormalPressure_r) else (if (inner_hole_7_7 = 8) then (NormalPressure_r = const_hole_8_8) else (if (inner_hole_7_7 = 7) then (NormalPressure_r < const_hole_8_8) else (if (inner_hole_7_7 = 6) then (NormalPressure_r <= const_hole_8_8) else (if (inner_hole_7_7 = 5) then (NormalPressure_r > const_hole_8_8) else (if (inner_hole_7_7 = 4) then (NormalPressure_r >= const_hole_8_8) else (if (inner_hole_7_7 = 3) then (NormalPressure_r <= pedal_r) else (if (inner_hole_7_7 = 2) then (NormalPressure_r < pedal_r) else (pedal_r = NormalPressure_r)))))))))))))))));
+
+  R_r = (if (inner_hole_9_9 = 1) then (R_r_l and R_r_r) else (if (inner_hole_9_9 = 2) then (R_r_l or R_r_r) else (if (inner_hole_9_9 = 3) then (R_r_l => R_r_r) else (R_r_l xor R_r_r))));
+
+  R = (if (inner_hole_10_10 = 1) then (R_l and R_r) else (if (inner_hole_10_10 = 2) then (R_l or R_r) else (if (inner_hole_10_10 = 3) then (R_l => R_r) else (R_l xor R_r))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(pedal_r, autoBreak_r, skid_r, NormalPressure_r, AltPressure_r, Sys_Mode, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node main(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  inner_hole_5_5 : int;
+  const_hole_6_6 : int;
+  inner_hole_7_7 : int;
+  const_hole_8_8 : int;
+  inner_hole_9_9 : int;
+  inner_hole_10_10 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  ok_4 : bool;
+  ok_5 : bool;
+  ok_6 : bool;
+  ok_7 : bool;
+  ok_8 : bool;
+  ok_9 : bool;
+  ok_10 : bool;
+  ok_11 : bool;
+  ok_12 : bool;
+  ok_13 : bool;
+  ok_14 : bool;
+  ok_15 : bool;
+  ok_16 : bool;
+  ok_17 : bool;
+  ok_18 : bool;
+  ok_19 : bool;
+  ok_20 : bool;
+  ok_21 : bool;
+  ok_22 : bool;
+  ok_23 : bool;
+  pedal_r0 : int;
+  autoBreak_r0 : bool;
+  skid_r0 : bool;
+  out_00 : int;
+  out_10 : int;
+  out_20 : int;
+  pedal_r1 : int;
+  autoBreak_r1 : bool;
+  skid_r1 : bool;
+  out_01 : int;
+  out_11 : int;
+  out_21 : int;
+  pedal_r2 : int;
+  autoBreak_r2 : bool;
+  skid_r2 : bool;
+  out_02 : int;
+  out_12 : int;
+  out_22 : int;
+  pedal_r3 : int;
+  autoBreak_r3 : bool;
+  skid_r3 : bool;
+  out_03 : int;
+  out_13 : int;
+  out_23 : int;
+  pedal_r4 : int;
+  autoBreak_r4 : bool;
+  skid_r4 : bool;
+  out_04 : int;
+  out_14 : int;
+  out_24 : int;
+  pedal_r5 : int;
+  autoBreak_r5 : bool;
+  skid_r5 : bool;
+  out_05 : int;
+  out_15 : int;
+  out_25 : int;
+  pedal_r6 : int;
+  autoBreak_r6 : bool;
+  skid_r6 : bool;
+  out_06 : int;
+  out_16 : int;
+  out_26 : int;
+  pedal_r7 : int;
+  autoBreak_r7 : bool;
+  skid_r7 : bool;
+  out_07 : int;
+  out_17 : int;
+  out_27 : int;
+  pedal_r8 : int;
+  autoBreak_r8 : bool;
+  skid_r8 : bool;
+  out_08 : int;
+  out_18 : int;
+  out_28 : int;
+  pedal_r9 : int;
+  autoBreak_r9 : bool;
+  skid_r9 : bool;
+  out_09 : int;
+  out_19 : int;
+  out_29 : int;
+  pedal_r10 : int;
+  autoBreak_r10 : bool;
+  skid_r10 : bool;
+  out_010 : int;
+  out_110 : int;
+  out_210 : int;
+  pedal_r11 : int;
+  autoBreak_r11 : bool;
+  skid_r11 : bool;
+  out_011 : int;
+  out_111 : int;
+  out_211 : int;
+  pedal_r12 : int;
+  autoBreak_r12 : bool;
+  skid_r12 : bool;
+  NormalPressure_r12 : int;
+  AltPressure_r12 : int;
+  Sys_Mode12 : int;
+  pedal_r13 : int;
+  autoBreak_r13 : bool;
+  skid_r13 : bool;
+  NormalPressure_r13 : int;
+  AltPressure_r13 : int;
+  Sys_Mode13 : int;
+  pedal_r14 : int;
+  autoBreak_r14 : bool;
+  skid_r14 : bool;
+  NormalPressure_r14 : int;
+  AltPressure_r14 : int;
+  Sys_Mode14 : int;
+  pedal_r15 : int;
+  autoBreak_r15 : bool;
+  skid_r15 : bool;
+  NormalPressure_r15 : int;
+  AltPressure_r15 : int;
+  Sys_Mode15 : int;
+  pedal_r16 : int;
+  autoBreak_r16 : bool;
+  skid_r16 : bool;
+  NormalPressure_r16 : int;
+  AltPressure_r16 : int;
+  Sys_Mode16 : int;
+  pedal_r17 : int;
+  autoBreak_r17 : bool;
+  skid_r17 : bool;
+  NormalPressure_r17 : int;
+  AltPressure_r17 : int;
+  Sys_Mode17 : int;
+  pedal_r18 : int;
+  autoBreak_r18 : bool;
+  skid_r18 : bool;
+  NormalPressure_r18 : int;
+  AltPressure_r18 : int;
+  Sys_Mode18 : int;
+  pedal_r19 : int;
+  autoBreak_r19 : bool;
+  skid_r19 : bool;
+  NormalPressure_r19 : int;
+  AltPressure_r19 : int;
+  Sys_Mode19 : int;
+  pedal_r20 : int;
+  autoBreak_r20 : bool;
+  skid_r20 : bool;
+  NormalPressure_r20 : int;
+  AltPressure_r20 : int;
+  Sys_Mode20 : int;
+  pedal_r21 : int;
+  autoBreak_r21 : bool;
+  skid_r21 : bool;
+  NormalPressure_r21 : int;
+  AltPressure_r21 : int;
+  Sys_Mode21 : int;
+  pedal_r22 : int;
+  autoBreak_r22 : bool;
+  skid_r22 : bool;
+  NormalPressure_r22 : int;
+  AltPressure_r22 : int;
+  Sys_Mode22 : int;
+  pedal_r23 : int;
+  autoBreak_r23 : bool;
+  skid_r23 : bool;
+  NormalPressure_r23 : int;
+  AltPressure_r23 : int;
+  Sys_Mode23 : int;
+  fixedRout : bool;
+  rPrimeOut : bool;
+let
+  --%MAIN;
+  pedal_r0 = 3;
+
+  autoBreak_r0 = false;
+
+  skid_r0 = false;
+
+  out_00 = 3;
+
+  out_10 = 0;
+
+  out_20 = 0;
+
+  pedal_r1 = 2;
+
+  autoBreak_r1 = false;
+
+  skid_r1 = true;
+
+  out_01 = 0;
+
+  out_11 = 0;
+
+  out_21 = 0;
+
+  pedal_r2 = 5;
+
+  autoBreak_r2 = true;
+
+  skid_r2 = false;
+
+  out_02 = 1;
+
+  out_12 = 0;
+
+  out_22 = 0;
+
+  pedal_r3 = 1;
+
+  autoBreak_r3 = true;
+
+  skid_r3 = false;
+
+  out_03 = 2;
+
+  out_13 = 0;
+
+  out_23 = 0;
+
+  pedal_r4 = 5;
+
+  autoBreak_r4 = true;
+
+  skid_r4 = true;
+
+  out_04 = 0;
+
+  out_14 = 0;
+
+  out_24 = 0;
+
+  pedal_r5 = 0;
+
+  autoBreak_r5 = true;
+
+  skid_r5 = false;
+
+  out_05 = 1;
+
+  out_15 = 0;
+
+  out_25 = 0;
+
+  pedal_r6 = 0;
+
+  autoBreak_r6 = false;
+
+  skid_r6 = false;
+
+  out_06 = 0;
+
+  out_16 = 0;
+
+  out_26 = 0;
+
+  pedal_r7 = 3;
+
+  autoBreak_r7 = true;
+
+  skid_r7 = false;
+
+  out_07 = 5;
+
+  out_17 = 0;
+
+  out_27 = 0;
+
+  pedal_r8 = 6;
+
+  autoBreak_r8 = false;
+
+  skid_r8 = false;
+
+  out_08 = 0;
+
+  out_18 = 0;
+
+  out_28 = 0;
+
+  pedal_r9 = -1;
+
+  autoBreak_r9 = true;
+
+  skid_r9 = false;
+
+  out_09 = 1;
+
+  out_19 = 0;
+
+  out_29 = 0;
+
+  pedal_r10 = 0;
+
+  autoBreak_r10 = true;
+
+  skid_r10 = true;
+
+  out_010 = 0;
+
+  out_110 = 0;
+
+  out_210 = 0;
+
+  pedal_r11 = -2;
+
+  autoBreak_r11 = true;
+
+  skid_r11 = false;
+
+  out_011 = 1;
+
+  out_111 = 0;
+
+  out_211 = 0;
+
+  pedal_r12 = 3;
+
+  autoBreak_r12 = true;
+
+  skid_r12 = true;
+
+  NormalPressure_r12 = 1;
+
+  AltPressure_r12 = 32;
+
+  Sys_Mode12 = 33;
+
+  pedal_r13 = 5;
+
+  autoBreak_r13 = true;
+
+  skid_r13 = true;
+
+  NormalPressure_r13 = 1;
+
+  AltPressure_r13 = 31;
+
+  Sys_Mode13 = 32;
+
+  pedal_r14 = 31;
+
+  autoBreak_r14 = false;
+
+  skid_r14 = false;
+
+  NormalPressure_r14 = -4;
+
+  AltPressure_r14 = 32;
+
+  Sys_Mode14 = 33;
+
+  pedal_r15 = 3;
+
+  autoBreak_r15 = true;
+
+  skid_r15 = false;
+
+  NormalPressure_r15 = -5;
+
+  AltPressure_r15 = 31;
+
+  Sys_Mode15 = 32;
+
+  pedal_r16 = 1;
+
+  autoBreak_r16 = false;
+
+  skid_r16 = true;
+
+  NormalPressure_r16 = 2;
+
+  AltPressure_r16 = 31;
+
+  Sys_Mode16 = 32;
+
+  pedal_r17 = 0;
+
+  autoBreak_r17 = true;
+
+  skid_r17 = false;
+
+  NormalPressure_r17 = -3;
+
+  AltPressure_r17 = 30;
+
+  Sys_Mode17 = 31;
+
+  pedal_r18 = 4;
+
+  autoBreak_r18 = true;
+
+  skid_r18 = false;
+
+  NormalPressure_r18 = -1;
+
+  AltPressure_r18 = 32;
+
+  Sys_Mode18 = 33;
+
+  pedal_r19 = 0;
+
+  autoBreak_r19 = true;
+
+  skid_r19 = false;
+
+  NormalPressure_r19 = -2;
+
+  AltPressure_r19 = 31;
+
+  Sys_Mode19 = 32;
+
+  pedal_r20 = 3;
+
+  autoBreak_r20 = true;
+
+  skid_r20 = true;
+
+  NormalPressure_r20 = -1;
+
+  AltPressure_r20 = 31;
+
+  Sys_Mode20 = 32;
+
+  pedal_r21 = 31;
+
+  autoBreak_r21 = false;
+
+  skid_r21 = false;
+
+  NormalPressure_r21 = -1;
+
+  AltPressure_r21 = 32;
+
+  Sys_Mode21 = 33;
+
+  pedal_r22 = 3;
+
+  autoBreak_r22 = false;
+
+  skid_r22 = false;
+
+  NormalPressure_r22 = 7;
+
+  AltPressure_r22 = 32;
+
+  Sys_Mode22 = 33;
+
+  pedal_r23 = 32;
+
+  autoBreak_r23 = true;
+
+  skid_r23 = true;
+
+  NormalPressure_r23 = 7;
+
+  AltPressure_r23 = 33;
+
+  Sys_Mode23 = 34;
+
+  ok_0 = Check_spec(pedal_r0, autoBreak_r0, skid_r0, out_00, out_10, out_20, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_1 = Check_spec(pedal_r1, autoBreak_r1, skid_r1, out_01, out_11, out_21, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_2 = Check_spec(pedal_r2, autoBreak_r2, skid_r2, out_02, out_12, out_22, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_3 = Check_spec(pedal_r3, autoBreak_r3, skid_r3, out_03, out_13, out_23, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_4 = Check_spec(pedal_r4, autoBreak_r4, skid_r4, out_04, out_14, out_24, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_5 = Check_spec(pedal_r5, autoBreak_r5, skid_r5, out_05, out_15, out_25, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_6 = Check_spec(pedal_r6, autoBreak_r6, skid_r6, out_06, out_16, out_26, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_7 = Check_spec(pedal_r7, autoBreak_r7, skid_r7, out_07, out_17, out_27, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_8 = Check_spec(pedal_r8, autoBreak_r8, skid_r8, out_08, out_18, out_28, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_9 = Check_spec(pedal_r9, autoBreak_r9, skid_r9, out_09, out_19, out_29, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_10 = Check_spec(pedal_r10, autoBreak_r10, skid_r10, out_010, out_110, out_210, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_11 = Check_spec(pedal_r11, autoBreak_r11, skid_r11, out_011, out_111, out_211, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_12 = Check_spec(pedal_r12, autoBreak_r12, skid_r12, NormalPressure_r12, AltPressure_r12, Sys_Mode12, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_13 = Check_spec(pedal_r13, autoBreak_r13, skid_r13, NormalPressure_r13, AltPressure_r13, Sys_Mode13, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_14 = Check_spec(pedal_r14, autoBreak_r14, skid_r14, NormalPressure_r14, AltPressure_r14, Sys_Mode14, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_15 = Check_spec(pedal_r15, autoBreak_r15, skid_r15, NormalPressure_r15, AltPressure_r15, Sys_Mode15, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_16 = Check_spec(pedal_r16, autoBreak_r16, skid_r16, NormalPressure_r16, AltPressure_r16, Sys_Mode16, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_17 = Check_spec(pedal_r17, autoBreak_r17, skid_r17, NormalPressure_r17, AltPressure_r17, Sys_Mode17, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_18 = Check_spec(pedal_r18, autoBreak_r18, skid_r18, NormalPressure_r18, AltPressure_r18, Sys_Mode18, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_19 = Check_spec(pedal_r19, autoBreak_r19, skid_r19, NormalPressure_r19, AltPressure_r19, Sys_Mode19, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_20 = Check_spec(pedal_r20, autoBreak_r20, skid_r20, NormalPressure_r20, AltPressure_r20, Sys_Mode20, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_21 = Check_spec(pedal_r21, autoBreak_r21, skid_r21, NormalPressure_r21, AltPressure_r21, Sys_Mode21, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_22 = Check_spec(pedal_r22, autoBreak_r22, skid_r22, NormalPressure_r22, AltPressure_r22, Sys_Mode22, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  ok_23 = Check_spec(pedal_r23, autoBreak_r23, skid_r23, NormalPressure_r23, AltPressure_r23, Sys_Mode23, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10, 0);
+
+  fail = (not ((not ok_23) and ((not ok_22) and ((not ok_21) and ((not ok_20) and ((not ok_19) and ((not ok_18) and ((not ok_17) and ((not ok_16) and ((not ok_15) and ((not ok_14) and ((not ok_13) and ((not ok_12) and (ok_11 and (ok_10 and (ok_9 and (ok_8 and (ok_7 and (ok_6 and (ok_5 and (ok_4 and (ok_3 and (ok_2 and (ok_1 and (ok_0 and (fixedRout and (not rPrimeOut)))))))))))))))))))))))))));
+
+  fixedRout = Fixed_T(pedal_r, autoBreak_r, skid_r, NormalPressure_r, AltPressure_r, Sys_Mode);
+
+  rPrimeOut = T_node(pedal_r, autoBreak_r, skid_r, NormalPressure_r, AltPressure_r, Sys_Mode, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, inner_hole_5_5, const_hole_6_6, inner_hole_7_7, const_hole_8_8, inner_hole_9_9, inner_hole_10_10);
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_2_2 = (pre inner_hole_2_2)));
+
+  assert (true -> (const_hole_3_3 = (pre const_hole_3_3)));
+
+  assert (true -> (inner_hole_4_4 = (pre inner_hole_4_4)));
+
+  assert (true -> (inner_hole_5_5 = (pre inner_hole_5_5)));
+
+  assert (true -> (const_hole_6_6 = (pre const_hole_6_6)));
+
+  assert (true -> (inner_hole_7_7 = (pre inner_hole_7_7)));
+
+  assert (true -> (const_hole_8_8 = (pre const_hole_8_8)));
+
+  assert (true -> (inner_hole_9_9 = (pre inner_hole_9_9)));
+
+  assert (true -> (inner_hole_10_10 = (pre inner_hole_10_10)));
+
+  --%PROPERTY fail;
+
+tel;
+
+node Fixed_T(
+  pedal_r : int;
+  autoBreak_r : bool;
+  skid_r : bool;
+  NormalPressure_r : int;
+  AltPressure_r : int;
+  Sys_Mode : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = (((NormalPressure_r = 0) or (not skid_r)) and ((NormalPressure_r <= -1) xor (NormalPressure_r <= 5)));
+
+tel;

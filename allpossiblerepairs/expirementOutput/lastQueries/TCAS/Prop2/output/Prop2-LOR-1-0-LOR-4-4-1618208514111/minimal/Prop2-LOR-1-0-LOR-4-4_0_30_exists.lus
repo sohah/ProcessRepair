@@ -1,0 +1,1765 @@
+node T_node(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_5 : int;
+  const_hole_1_6 : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = (repairNode_6_0(alim_res_s, Up_Separation_s, Down_Separation_s, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4) xor repairNode_778_0(result_alt_sep_test_s, inner_hole_0_5, const_hole_1_6));
+
+tel;
+
+node repairNode_6_0(
+  alim_res_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int
+) returns (
+  R : bool
+);
+var
+  R_l : bool;
+  R_r : bool;
+let
+  R_l = (if (inner_hole_0_0 = 30) then ((alim_res_s = const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 29) then ((alim_res_s < const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 28) then ((alim_res_s <= const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 27) then ((alim_res_s > const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 26) then ((alim_res_s >= const_hole_1_1) and ((const_hole_1_1 <= 740) and (const_hole_1_1 >= 0))) else (if (inner_hole_0_0 = 25) then (alim_res_s <= Up_Separation_s) else (if (inner_hole_0_0 = 24) then (alim_res_s < Up_Separation_s) else (if (inner_hole_0_0 = 23) then (alim_res_s <= Down_Separation_s) else (if (inner_hole_0_0 = 22) then (alim_res_s < Down_Separation_s) else (if (inner_hole_0_0 = 21) then (Up_Separation_s = const_hole_1_1) else (if (inner_hole_0_0 = 20) then (Up_Separation_s < const_hole_1_1) else (if (inner_hole_0_0 = 19) then (Up_Separation_s <= const_hole_1_1) else (if (inner_hole_0_0 = 18) then (Up_Separation_s > const_hole_1_1) else (if (inner_hole_0_0 = 17) then (Up_Separation_s >= const_hole_1_1) else (if (inner_hole_0_0 = 16) then (Up_Separation_s <= alim_res_s) else (if (inner_hole_0_0 = 15) then (Up_Separation_s < alim_res_s) else (if (inner_hole_0_0 = 14) then (Up_Separation_s <= Down_Separation_s) else (if (inner_hole_0_0 = 13) then (Up_Separation_s < Down_Separation_s) else (if (inner_hole_0_0 = 12) then (Down_Separation_s = const_hole_1_1) else (if (inner_hole_0_0 = 11) then (Down_Separation_s < const_hole_1_1) else (if (inner_hole_0_0 = 10) then (Down_Separation_s <= const_hole_1_1) else (if (inner_hole_0_0 = 9) then (Down_Separation_s > const_hole_1_1) else (if (inner_hole_0_0 = 8) then (Down_Separation_s >= const_hole_1_1) else (if (inner_hole_0_0 = 7) then (Down_Separation_s <= alim_res_s) else (if (inner_hole_0_0 = 6) then (Down_Separation_s < alim_res_s) else (if (inner_hole_0_0 = 5) then (Down_Separation_s <= Up_Separation_s) else (if (inner_hole_0_0 = 4) then (Down_Separation_s < Up_Separation_s) else (if (inner_hole_0_0 = 3) then (alim_res_s = Up_Separation_s) else (if (inner_hole_0_0 = 2) then (alim_res_s = Down_Separation_s) else (Up_Separation_s = Down_Separation_s))))))))))))))))))))))))))))));
+
+  R_r = (if (inner_hole_2_2 = 30) then ((alim_res_s = const_hole_3_3) and ((const_hole_3_3 <= 740) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 29) then ((alim_res_s < const_hole_3_3) and ((const_hole_3_3 <= 740) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 28) then ((alim_res_s <= const_hole_3_3) and ((const_hole_3_3 <= 740) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 27) then ((alim_res_s > const_hole_3_3) and ((const_hole_3_3 <= 740) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 26) then ((alim_res_s >= const_hole_3_3) and ((const_hole_3_3 <= 740) and (const_hole_3_3 >= 0))) else (if (inner_hole_2_2 = 25) then (alim_res_s <= Up_Separation_s) else (if (inner_hole_2_2 = 24) then (alim_res_s < Up_Separation_s) else (if (inner_hole_2_2 = 23) then (alim_res_s <= Down_Separation_s) else (if (inner_hole_2_2 = 22) then (alim_res_s < Down_Separation_s) else (if (inner_hole_2_2 = 21) then (Up_Separation_s = const_hole_3_3) else (if (inner_hole_2_2 = 20) then (Up_Separation_s < const_hole_3_3) else (if (inner_hole_2_2 = 19) then (Up_Separation_s <= const_hole_3_3) else (if (inner_hole_2_2 = 18) then (Up_Separation_s > const_hole_3_3) else (if (inner_hole_2_2 = 17) then (Up_Separation_s >= const_hole_3_3) else (if (inner_hole_2_2 = 16) then (Up_Separation_s <= alim_res_s) else (if (inner_hole_2_2 = 15) then (Up_Separation_s < alim_res_s) else (if (inner_hole_2_2 = 14) then (Up_Separation_s <= Down_Separation_s) else (if (inner_hole_2_2 = 13) then (Up_Separation_s < Down_Separation_s) else (if (inner_hole_2_2 = 12) then (Down_Separation_s = const_hole_3_3) else (if (inner_hole_2_2 = 11) then (Down_Separation_s < const_hole_3_3) else (if (inner_hole_2_2 = 10) then (Down_Separation_s <= const_hole_3_3) else (if (inner_hole_2_2 = 9) then (Down_Separation_s > const_hole_3_3) else (if (inner_hole_2_2 = 8) then (Down_Separation_s >= const_hole_3_3) else (if (inner_hole_2_2 = 7) then (Down_Separation_s <= alim_res_s) else (if (inner_hole_2_2 = 6) then (Down_Separation_s < alim_res_s) else (if (inner_hole_2_2 = 5) then (Down_Separation_s <= Up_Separation_s) else (if (inner_hole_2_2 = 4) then (Down_Separation_s < Up_Separation_s) else (if (inner_hole_2_2 = 3) then (alim_res_s = Up_Separation_s) else (if (inner_hole_2_2 = 2) then (alim_res_s = Down_Separation_s) else (Up_Separation_s = Down_Separation_s))))))))))))))))))))))))))))));
+
+  R = (if (inner_hole_4_4 = 1) then (R_l and R_r) else (if (inner_hole_4_4 = 2) then (R_l or R_r) else (if (inner_hole_4_4 = 3) then (R_l => R_r) else (R_l xor R_r))));
+
+tel;
+
+node repairNode_778_0(
+  result_alt_sep_test_s : int;
+  inner_hole_0_5 : int;
+  const_hole_1_6 : int
+) returns (
+  R : bool
+);
+let
+  R = (if (inner_hole_0_5 = 5) then ((result_alt_sep_test_s = const_hole_1_6) and ((const_hole_1_6 <= 2) and (const_hole_1_6 >= 0))) else (if (inner_hole_0_5 = 4) then ((result_alt_sep_test_s < const_hole_1_6) and ((const_hole_1_6 <= 2) and (const_hole_1_6 >= 0))) else (if (inner_hole_0_5 = 3) then ((result_alt_sep_test_s <= const_hole_1_6) and ((const_hole_1_6 <= 2) and (const_hole_1_6 >= 0))) else (if (inner_hole_0_5 = 2) then ((result_alt_sep_test_s > const_hole_1_6) and ((const_hole_1_6 <= 2) and (const_hole_1_6 >= 0))) else ((result_alt_sep_test_s >= const_hole_1_6) and ((const_hole_1_6 <= 2) and (const_hole_1_6 >= 0)))))));
+
+tel;
+
+node H_discovery(
+  in : bool
+) returns (
+  out : bool
+);
+let
+  out = (in -> (in and (pre out)));
+
+tel;
+
+node Check_spec(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_5 : int;
+  const_hole_1_6 : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int;
+  k : int
+) returns (
+  p1 : bool
+);
+var
+  step : int;
+  stepOK : bool;
+let
+  step = (0 -> (1 + (pre step)));
+
+  stepOK = (if (step <= k) then T_node(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4) else true);
+
+  p1 = ((step >= k) and H_discovery(stepOK));
+
+tel;
+
+node Fixed_T(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int
+) returns (
+  p1 : bool
+);
+let
+  p1 = (((alim_res_s > 398) xor false) xor (result_alt_sep_test_s > 2));
+
+tel;
+
+node main(
+  Cur_Vertical_Sep_s : int;
+  High_Confidence_flag_s : int;
+  Two_of_Three_Reports_Valid_flag_s : int;
+  Own_Tracked_Alt_s : int;
+  Own_Tracked_Alt_Rate_s : int;
+  Other_Tracked_Alt_s : int;
+  Alt_Layer_Value_s : int;
+  Up_Separation_s : int;
+  Down_Separation_s : int;
+  Other_RAC_s : int;
+  Other_Capability_s : int;
+  Climb_Inhibit_s : int;
+  result_alt_sep_test_s : int;
+  alim_res_s : int;
+  inner_hole_0_5 : int;
+  const_hole_1_6 : int;
+  inner_hole_0_0 : int;
+  const_hole_1_1 : int;
+  inner_hole_2_2 : int;
+  const_hole_3_3 : int;
+  inner_hole_4_4 : int
+) returns (
+  fail : bool
+);
+var
+  ok_0 : bool;
+  ok_1 : bool;
+  ok_2 : bool;
+  ok_3 : bool;
+  ok_4 : bool;
+  ok_5 : bool;
+  ok_6 : bool;
+  ok_7 : bool;
+  ok_8 : bool;
+  ok_9 : bool;
+  ok_10 : bool;
+  ok_11 : bool;
+  ok_12 : bool;
+  ok_13 : bool;
+  ok_14 : bool;
+  ok_15 : bool;
+  ok_16 : bool;
+  ok_17 : bool;
+  ok_18 : bool;
+  ok_19 : bool;
+  ok_20 : bool;
+  ok_21 : bool;
+  ok_22 : bool;
+  ok_23 : bool;
+  ok_24 : bool;
+  ok_25 : bool;
+  ok_26 : bool;
+  ok_27 : bool;
+  ok_28 : bool;
+  ok_29 : bool;
+  ok_30 : bool;
+  ok_31 : bool;
+  ok_32 : bool;
+  ok_33 : bool;
+  ok_34 : bool;
+  Cur_Vertical_Sep_s0 : int;
+  High_Confidence_flag_s0 : int;
+  Two_of_Three_Reports_Valid_flag_s0 : int;
+  Own_Tracked_Alt_s0 : int;
+  Own_Tracked_Alt_Rate_s0 : int;
+  Other_Tracked_Alt_s0 : int;
+  Alt_Layer_Value_s0 : int;
+  Up_Separation_s0 : int;
+  Down_Separation_s0 : int;
+  Other_RAC_s0 : int;
+  Other_Capability_s0 : int;
+  Climb_Inhibit_s0 : int;
+  out_00 : int;
+  out_10 : int;
+  Cur_Vertical_Sep_s1 : int;
+  High_Confidence_flag_s1 : int;
+  Two_of_Three_Reports_Valid_flag_s1 : int;
+  Own_Tracked_Alt_s1 : int;
+  Own_Tracked_Alt_Rate_s1 : int;
+  Other_Tracked_Alt_s1 : int;
+  Alt_Layer_Value_s1 : int;
+  Up_Separation_s1 : int;
+  Down_Separation_s1 : int;
+  Other_RAC_s1 : int;
+  Other_Capability_s1 : int;
+  Climb_Inhibit_s1 : int;
+  out_01 : int;
+  out_11 : int;
+  Cur_Vertical_Sep_s2 : int;
+  High_Confidence_flag_s2 : int;
+  Two_of_Three_Reports_Valid_flag_s2 : int;
+  Own_Tracked_Alt_s2 : int;
+  Own_Tracked_Alt_Rate_s2 : int;
+  Other_Tracked_Alt_s2 : int;
+  Alt_Layer_Value_s2 : int;
+  Up_Separation_s2 : int;
+  Down_Separation_s2 : int;
+  Other_RAC_s2 : int;
+  Other_Capability_s2 : int;
+  Climb_Inhibit_s2 : int;
+  out_02 : int;
+  out_12 : int;
+  Cur_Vertical_Sep_s3 : int;
+  High_Confidence_flag_s3 : int;
+  Two_of_Three_Reports_Valid_flag_s3 : int;
+  Own_Tracked_Alt_s3 : int;
+  Own_Tracked_Alt_Rate_s3 : int;
+  Other_Tracked_Alt_s3 : int;
+  Alt_Layer_Value_s3 : int;
+  Up_Separation_s3 : int;
+  Down_Separation_s3 : int;
+  Other_RAC_s3 : int;
+  Other_Capability_s3 : int;
+  Climb_Inhibit_s3 : int;
+  out_03 : int;
+  out_13 : int;
+  Cur_Vertical_Sep_s4 : int;
+  High_Confidence_flag_s4 : int;
+  Two_of_Three_Reports_Valid_flag_s4 : int;
+  Own_Tracked_Alt_s4 : int;
+  Own_Tracked_Alt_Rate_s4 : int;
+  Other_Tracked_Alt_s4 : int;
+  Alt_Layer_Value_s4 : int;
+  Up_Separation_s4 : int;
+  Down_Separation_s4 : int;
+  Other_RAC_s4 : int;
+  Other_Capability_s4 : int;
+  Climb_Inhibit_s4 : int;
+  out_04 : int;
+  out_14 : int;
+  Cur_Vertical_Sep_s5 : int;
+  High_Confidence_flag_s5 : int;
+  Two_of_Three_Reports_Valid_flag_s5 : int;
+  Own_Tracked_Alt_s5 : int;
+  Own_Tracked_Alt_Rate_s5 : int;
+  Other_Tracked_Alt_s5 : int;
+  Alt_Layer_Value_s5 : int;
+  Up_Separation_s5 : int;
+  Down_Separation_s5 : int;
+  Other_RAC_s5 : int;
+  Other_Capability_s5 : int;
+  Climb_Inhibit_s5 : int;
+  out_05 : int;
+  out_15 : int;
+  Cur_Vertical_Sep_s6 : int;
+  High_Confidence_flag_s6 : int;
+  Two_of_Three_Reports_Valid_flag_s6 : int;
+  Own_Tracked_Alt_s6 : int;
+  Own_Tracked_Alt_Rate_s6 : int;
+  Other_Tracked_Alt_s6 : int;
+  Alt_Layer_Value_s6 : int;
+  Up_Separation_s6 : int;
+  Down_Separation_s6 : int;
+  Other_RAC_s6 : int;
+  Other_Capability_s6 : int;
+  Climb_Inhibit_s6 : int;
+  result_alt_sep_test_s6 : int;
+  alim_res_s6 : int;
+  Cur_Vertical_Sep_s7 : int;
+  High_Confidence_flag_s7 : int;
+  Two_of_Three_Reports_Valid_flag_s7 : int;
+  Own_Tracked_Alt_s7 : int;
+  Own_Tracked_Alt_Rate_s7 : int;
+  Other_Tracked_Alt_s7 : int;
+  Alt_Layer_Value_s7 : int;
+  Up_Separation_s7 : int;
+  Down_Separation_s7 : int;
+  Other_RAC_s7 : int;
+  Other_Capability_s7 : int;
+  Climb_Inhibit_s7 : int;
+  result_alt_sep_test_s7 : int;
+  alim_res_s7 : int;
+  Cur_Vertical_Sep_s8 : int;
+  High_Confidence_flag_s8 : int;
+  Two_of_Three_Reports_Valid_flag_s8 : int;
+  Own_Tracked_Alt_s8 : int;
+  Own_Tracked_Alt_Rate_s8 : int;
+  Other_Tracked_Alt_s8 : int;
+  Alt_Layer_Value_s8 : int;
+  Up_Separation_s8 : int;
+  Down_Separation_s8 : int;
+  Other_RAC_s8 : int;
+  Other_Capability_s8 : int;
+  Climb_Inhibit_s8 : int;
+  result_alt_sep_test_s8 : int;
+  alim_res_s8 : int;
+  Cur_Vertical_Sep_s9 : int;
+  High_Confidence_flag_s9 : int;
+  Two_of_Three_Reports_Valid_flag_s9 : int;
+  Own_Tracked_Alt_s9 : int;
+  Own_Tracked_Alt_Rate_s9 : int;
+  Other_Tracked_Alt_s9 : int;
+  Alt_Layer_Value_s9 : int;
+  Up_Separation_s9 : int;
+  Down_Separation_s9 : int;
+  Other_RAC_s9 : int;
+  Other_Capability_s9 : int;
+  Climb_Inhibit_s9 : int;
+  result_alt_sep_test_s9 : int;
+  alim_res_s9 : int;
+  Cur_Vertical_Sep_s10 : int;
+  High_Confidence_flag_s10 : int;
+  Two_of_Three_Reports_Valid_flag_s10 : int;
+  Own_Tracked_Alt_s10 : int;
+  Own_Tracked_Alt_Rate_s10 : int;
+  Other_Tracked_Alt_s10 : int;
+  Alt_Layer_Value_s10 : int;
+  Up_Separation_s10 : int;
+  Down_Separation_s10 : int;
+  Other_RAC_s10 : int;
+  Other_Capability_s10 : int;
+  Climb_Inhibit_s10 : int;
+  result_alt_sep_test_s10 : int;
+  alim_res_s10 : int;
+  Cur_Vertical_Sep_s11 : int;
+  High_Confidence_flag_s11 : int;
+  Two_of_Three_Reports_Valid_flag_s11 : int;
+  Own_Tracked_Alt_s11 : int;
+  Own_Tracked_Alt_Rate_s11 : int;
+  Other_Tracked_Alt_s11 : int;
+  Alt_Layer_Value_s11 : int;
+  Up_Separation_s11 : int;
+  Down_Separation_s11 : int;
+  Other_RAC_s11 : int;
+  Other_Capability_s11 : int;
+  Climb_Inhibit_s11 : int;
+  result_alt_sep_test_s11 : int;
+  alim_res_s11 : int;
+  Cur_Vertical_Sep_s12 : int;
+  High_Confidence_flag_s12 : int;
+  Two_of_Three_Reports_Valid_flag_s12 : int;
+  Own_Tracked_Alt_s12 : int;
+  Own_Tracked_Alt_Rate_s12 : int;
+  Other_Tracked_Alt_s12 : int;
+  Alt_Layer_Value_s12 : int;
+  Up_Separation_s12 : int;
+  Down_Separation_s12 : int;
+  Other_RAC_s12 : int;
+  Other_Capability_s12 : int;
+  Climb_Inhibit_s12 : int;
+  result_alt_sep_test_s12 : int;
+  alim_res_s12 : int;
+  Cur_Vertical_Sep_s13 : int;
+  High_Confidence_flag_s13 : int;
+  Two_of_Three_Reports_Valid_flag_s13 : int;
+  Own_Tracked_Alt_s13 : int;
+  Own_Tracked_Alt_Rate_s13 : int;
+  Other_Tracked_Alt_s13 : int;
+  Alt_Layer_Value_s13 : int;
+  Up_Separation_s13 : int;
+  Down_Separation_s13 : int;
+  Other_RAC_s13 : int;
+  Other_Capability_s13 : int;
+  Climb_Inhibit_s13 : int;
+  result_alt_sep_test_s13 : int;
+  alim_res_s13 : int;
+  Cur_Vertical_Sep_s14 : int;
+  High_Confidence_flag_s14 : int;
+  Two_of_Three_Reports_Valid_flag_s14 : int;
+  Own_Tracked_Alt_s14 : int;
+  Own_Tracked_Alt_Rate_s14 : int;
+  Other_Tracked_Alt_s14 : int;
+  Alt_Layer_Value_s14 : int;
+  Up_Separation_s14 : int;
+  Down_Separation_s14 : int;
+  Other_RAC_s14 : int;
+  Other_Capability_s14 : int;
+  Climb_Inhibit_s14 : int;
+  result_alt_sep_test_s14 : int;
+  alim_res_s14 : int;
+  Cur_Vertical_Sep_s15 : int;
+  High_Confidence_flag_s15 : int;
+  Two_of_Three_Reports_Valid_flag_s15 : int;
+  Own_Tracked_Alt_s15 : int;
+  Own_Tracked_Alt_Rate_s15 : int;
+  Other_Tracked_Alt_s15 : int;
+  Alt_Layer_Value_s15 : int;
+  Up_Separation_s15 : int;
+  Down_Separation_s15 : int;
+  Other_RAC_s15 : int;
+  Other_Capability_s15 : int;
+  Climb_Inhibit_s15 : int;
+  result_alt_sep_test_s15 : int;
+  alim_res_s15 : int;
+  Cur_Vertical_Sep_s16 : int;
+  High_Confidence_flag_s16 : int;
+  Two_of_Three_Reports_Valid_flag_s16 : int;
+  Own_Tracked_Alt_s16 : int;
+  Own_Tracked_Alt_Rate_s16 : int;
+  Other_Tracked_Alt_s16 : int;
+  Alt_Layer_Value_s16 : int;
+  Up_Separation_s16 : int;
+  Down_Separation_s16 : int;
+  Other_RAC_s16 : int;
+  Other_Capability_s16 : int;
+  Climb_Inhibit_s16 : int;
+  result_alt_sep_test_s16 : int;
+  alim_res_s16 : int;
+  Cur_Vertical_Sep_s17 : int;
+  High_Confidence_flag_s17 : int;
+  Two_of_Three_Reports_Valid_flag_s17 : int;
+  Own_Tracked_Alt_s17 : int;
+  Own_Tracked_Alt_Rate_s17 : int;
+  Other_Tracked_Alt_s17 : int;
+  Alt_Layer_Value_s17 : int;
+  Up_Separation_s17 : int;
+  Down_Separation_s17 : int;
+  Other_RAC_s17 : int;
+  Other_Capability_s17 : int;
+  Climb_Inhibit_s17 : int;
+  result_alt_sep_test_s17 : int;
+  alim_res_s17 : int;
+  Cur_Vertical_Sep_s18 : int;
+  High_Confidence_flag_s18 : int;
+  Two_of_Three_Reports_Valid_flag_s18 : int;
+  Own_Tracked_Alt_s18 : int;
+  Own_Tracked_Alt_Rate_s18 : int;
+  Other_Tracked_Alt_s18 : int;
+  Alt_Layer_Value_s18 : int;
+  Up_Separation_s18 : int;
+  Down_Separation_s18 : int;
+  Other_RAC_s18 : int;
+  Other_Capability_s18 : int;
+  Climb_Inhibit_s18 : int;
+  result_alt_sep_test_s18 : int;
+  alim_res_s18 : int;
+  Cur_Vertical_Sep_s19 : int;
+  High_Confidence_flag_s19 : int;
+  Two_of_Three_Reports_Valid_flag_s19 : int;
+  Own_Tracked_Alt_s19 : int;
+  Own_Tracked_Alt_Rate_s19 : int;
+  Other_Tracked_Alt_s19 : int;
+  Alt_Layer_Value_s19 : int;
+  Up_Separation_s19 : int;
+  Down_Separation_s19 : int;
+  Other_RAC_s19 : int;
+  Other_Capability_s19 : int;
+  Climb_Inhibit_s19 : int;
+  result_alt_sep_test_s19 : int;
+  alim_res_s19 : int;
+  Cur_Vertical_Sep_s20 : int;
+  High_Confidence_flag_s20 : int;
+  Two_of_Three_Reports_Valid_flag_s20 : int;
+  Own_Tracked_Alt_s20 : int;
+  Own_Tracked_Alt_Rate_s20 : int;
+  Other_Tracked_Alt_s20 : int;
+  Alt_Layer_Value_s20 : int;
+  Up_Separation_s20 : int;
+  Down_Separation_s20 : int;
+  Other_RAC_s20 : int;
+  Other_Capability_s20 : int;
+  Climb_Inhibit_s20 : int;
+  result_alt_sep_test_s20 : int;
+  alim_res_s20 : int;
+  Cur_Vertical_Sep_s21 : int;
+  High_Confidence_flag_s21 : int;
+  Two_of_Three_Reports_Valid_flag_s21 : int;
+  Own_Tracked_Alt_s21 : int;
+  Own_Tracked_Alt_Rate_s21 : int;
+  Other_Tracked_Alt_s21 : int;
+  Alt_Layer_Value_s21 : int;
+  Up_Separation_s21 : int;
+  Down_Separation_s21 : int;
+  Other_RAC_s21 : int;
+  Other_Capability_s21 : int;
+  Climb_Inhibit_s21 : int;
+  result_alt_sep_test_s21 : int;
+  alim_res_s21 : int;
+  Cur_Vertical_Sep_s22 : int;
+  High_Confidence_flag_s22 : int;
+  Two_of_Three_Reports_Valid_flag_s22 : int;
+  Own_Tracked_Alt_s22 : int;
+  Own_Tracked_Alt_Rate_s22 : int;
+  Other_Tracked_Alt_s22 : int;
+  Alt_Layer_Value_s22 : int;
+  Up_Separation_s22 : int;
+  Down_Separation_s22 : int;
+  Other_RAC_s22 : int;
+  Other_Capability_s22 : int;
+  Climb_Inhibit_s22 : int;
+  result_alt_sep_test_s22 : int;
+  alim_res_s22 : int;
+  Cur_Vertical_Sep_s23 : int;
+  High_Confidence_flag_s23 : int;
+  Two_of_Three_Reports_Valid_flag_s23 : int;
+  Own_Tracked_Alt_s23 : int;
+  Own_Tracked_Alt_Rate_s23 : int;
+  Other_Tracked_Alt_s23 : int;
+  Alt_Layer_Value_s23 : int;
+  Up_Separation_s23 : int;
+  Down_Separation_s23 : int;
+  Other_RAC_s23 : int;
+  Other_Capability_s23 : int;
+  Climb_Inhibit_s23 : int;
+  out_023 : int;
+  out_123 : int;
+  Cur_Vertical_Sep_s24 : int;
+  High_Confidence_flag_s24 : int;
+  Two_of_Three_Reports_Valid_flag_s24 : int;
+  Own_Tracked_Alt_s24 : int;
+  Own_Tracked_Alt_Rate_s24 : int;
+  Other_Tracked_Alt_s24 : int;
+  Alt_Layer_Value_s24 : int;
+  Up_Separation_s24 : int;
+  Down_Separation_s24 : int;
+  Other_RAC_s24 : int;
+  Other_Capability_s24 : int;
+  Climb_Inhibit_s24 : int;
+  result_alt_sep_test_s24 : int;
+  alim_res_s24 : int;
+  Cur_Vertical_Sep_s25 : int;
+  High_Confidence_flag_s25 : int;
+  Two_of_Three_Reports_Valid_flag_s25 : int;
+  Own_Tracked_Alt_s25 : int;
+  Own_Tracked_Alt_Rate_s25 : int;
+  Other_Tracked_Alt_s25 : int;
+  Alt_Layer_Value_s25 : int;
+  Up_Separation_s25 : int;
+  Down_Separation_s25 : int;
+  Other_RAC_s25 : int;
+  Other_Capability_s25 : int;
+  Climb_Inhibit_s25 : int;
+  result_alt_sep_test_s25 : int;
+  alim_res_s25 : int;
+  Cur_Vertical_Sep_s26 : int;
+  High_Confidence_flag_s26 : int;
+  Two_of_Three_Reports_Valid_flag_s26 : int;
+  Own_Tracked_Alt_s26 : int;
+  Own_Tracked_Alt_Rate_s26 : int;
+  Other_Tracked_Alt_s26 : int;
+  Alt_Layer_Value_s26 : int;
+  Up_Separation_s26 : int;
+  Down_Separation_s26 : int;
+  Other_RAC_s26 : int;
+  Other_Capability_s26 : int;
+  Climb_Inhibit_s26 : int;
+  result_alt_sep_test_s26 : int;
+  alim_res_s26 : int;
+  Cur_Vertical_Sep_s27 : int;
+  High_Confidence_flag_s27 : int;
+  Two_of_Three_Reports_Valid_flag_s27 : int;
+  Own_Tracked_Alt_s27 : int;
+  Own_Tracked_Alt_Rate_s27 : int;
+  Other_Tracked_Alt_s27 : int;
+  Alt_Layer_Value_s27 : int;
+  Up_Separation_s27 : int;
+  Down_Separation_s27 : int;
+  Other_RAC_s27 : int;
+  Other_Capability_s27 : int;
+  Climb_Inhibit_s27 : int;
+  result_alt_sep_test_s27 : int;
+  alim_res_s27 : int;
+  Cur_Vertical_Sep_s28 : int;
+  High_Confidence_flag_s28 : int;
+  Two_of_Three_Reports_Valid_flag_s28 : int;
+  Own_Tracked_Alt_s28 : int;
+  Own_Tracked_Alt_Rate_s28 : int;
+  Other_Tracked_Alt_s28 : int;
+  Alt_Layer_Value_s28 : int;
+  Up_Separation_s28 : int;
+  Down_Separation_s28 : int;
+  Other_RAC_s28 : int;
+  Other_Capability_s28 : int;
+  Climb_Inhibit_s28 : int;
+  result_alt_sep_test_s28 : int;
+  alim_res_s28 : int;
+  Cur_Vertical_Sep_s29 : int;
+  High_Confidence_flag_s29 : int;
+  Two_of_Three_Reports_Valid_flag_s29 : int;
+  Own_Tracked_Alt_s29 : int;
+  Own_Tracked_Alt_Rate_s29 : int;
+  Other_Tracked_Alt_s29 : int;
+  Alt_Layer_Value_s29 : int;
+  Up_Separation_s29 : int;
+  Down_Separation_s29 : int;
+  Other_RAC_s29 : int;
+  Other_Capability_s29 : int;
+  Climb_Inhibit_s29 : int;
+  result_alt_sep_test_s29 : int;
+  alim_res_s29 : int;
+  Cur_Vertical_Sep_s30 : int;
+  High_Confidence_flag_s30 : int;
+  Two_of_Three_Reports_Valid_flag_s30 : int;
+  Own_Tracked_Alt_s30 : int;
+  Own_Tracked_Alt_Rate_s30 : int;
+  Other_Tracked_Alt_s30 : int;
+  Alt_Layer_Value_s30 : int;
+  Up_Separation_s30 : int;
+  Down_Separation_s30 : int;
+  Other_RAC_s30 : int;
+  Other_Capability_s30 : int;
+  Climb_Inhibit_s30 : int;
+  out_030 : int;
+  out_130 : int;
+  Cur_Vertical_Sep_s31 : int;
+  High_Confidence_flag_s31 : int;
+  Two_of_Three_Reports_Valid_flag_s31 : int;
+  Own_Tracked_Alt_s31 : int;
+  Own_Tracked_Alt_Rate_s31 : int;
+  Other_Tracked_Alt_s31 : int;
+  Alt_Layer_Value_s31 : int;
+  Up_Separation_s31 : int;
+  Down_Separation_s31 : int;
+  Other_RAC_s31 : int;
+  Other_Capability_s31 : int;
+  Climb_Inhibit_s31 : int;
+  result_alt_sep_test_s31 : int;
+  alim_res_s31 : int;
+  Cur_Vertical_Sep_s32 : int;
+  High_Confidence_flag_s32 : int;
+  Two_of_Three_Reports_Valid_flag_s32 : int;
+  Own_Tracked_Alt_s32 : int;
+  Own_Tracked_Alt_Rate_s32 : int;
+  Other_Tracked_Alt_s32 : int;
+  Alt_Layer_Value_s32 : int;
+  Up_Separation_s32 : int;
+  Down_Separation_s32 : int;
+  Other_RAC_s32 : int;
+  Other_Capability_s32 : int;
+  Climb_Inhibit_s32 : int;
+  result_alt_sep_test_s32 : int;
+  alim_res_s32 : int;
+  Cur_Vertical_Sep_s33 : int;
+  High_Confidence_flag_s33 : int;
+  Two_of_Three_Reports_Valid_flag_s33 : int;
+  Own_Tracked_Alt_s33 : int;
+  Own_Tracked_Alt_Rate_s33 : int;
+  Other_Tracked_Alt_s33 : int;
+  Alt_Layer_Value_s33 : int;
+  Up_Separation_s33 : int;
+  Down_Separation_s33 : int;
+  Other_RAC_s33 : int;
+  Other_Capability_s33 : int;
+  Climb_Inhibit_s33 : int;
+  out_033 : int;
+  out_133 : int;
+  Cur_Vertical_Sep_s34 : int;
+  High_Confidence_flag_s34 : int;
+  Two_of_Three_Reports_Valid_flag_s34 : int;
+  Own_Tracked_Alt_s34 : int;
+  Own_Tracked_Alt_Rate_s34 : int;
+  Other_Tracked_Alt_s34 : int;
+  Alt_Layer_Value_s34 : int;
+  Up_Separation_s34 : int;
+  Down_Separation_s34 : int;
+  Other_RAC_s34 : int;
+  Other_Capability_s34 : int;
+  Climb_Inhibit_s34 : int;
+  result_alt_sep_test_s34 : int;
+  alim_res_s34 : int;
+  fixedRout : bool;
+  rPrimeOut : bool;
+let
+  --%MAIN;
+  Cur_Vertical_Sep_s0 = 599;
+
+  High_Confidence_flag_s0 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s0 = 7;
+
+  Own_Tracked_Alt_s0 = -1;
+
+  Own_Tracked_Alt_Rate_s0 = 0;
+
+  Other_Tracked_Alt_s0 = 0;
+
+  Alt_Layer_Value_s0 = 0;
+
+  Up_Separation_s0 = 400;
+
+  Down_Separation_s0 = 399;
+
+  Other_RAC_s0 = 8;
+
+  Other_Capability_s0 = 1;
+
+  Climb_Inhibit_s0 = 0;
+
+  out_00 = 0;
+
+  out_10 = 400;
+
+  Cur_Vertical_Sep_s1 = 599;
+
+  High_Confidence_flag_s1 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s1 = 8;
+
+  Own_Tracked_Alt_s1 = 1;
+
+  Own_Tracked_Alt_Rate_s1 = 0;
+
+  Other_Tracked_Alt_s1 = 0;
+
+  Alt_Layer_Value_s1 = 1;
+
+  Up_Separation_s1 = 8865;
+
+  Down_Separation_s1 = 8965;
+
+  Other_RAC_s1 = 9;
+
+  Other_Capability_s1 = 10;
+
+  Climb_Inhibit_s1 = 1;
+
+  out_01 = 2;
+
+  out_11 = 500;
+
+  Cur_Vertical_Sep_s2 = 599;
+
+  High_Confidence_flag_s2 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s2 = 8;
+
+  Own_Tracked_Alt_s2 = -1;
+
+  Own_Tracked_Alt_Rate_s2 = 0;
+
+  Other_Tracked_Alt_s2 = 0;
+
+  Alt_Layer_Value_s2 = 0;
+
+  Up_Separation_s2 = 400;
+
+  Down_Separation_s2 = 399;
+
+  Other_RAC_s2 = 9;
+
+  Other_Capability_s2 = 10;
+
+  Climb_Inhibit_s2 = 0;
+
+  out_02 = 1;
+
+  out_12 = 400;
+
+  Cur_Vertical_Sep_s3 = 599;
+
+  High_Confidence_flag_s3 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s3 = 0;
+
+  Own_Tracked_Alt_s3 = 0;
+
+  Own_Tracked_Alt_Rate_s3 = 601;
+
+  Other_Tracked_Alt_s3 = -1;
+
+  Alt_Layer_Value_s3 = 2;
+
+  Up_Separation_s3 = 9005;
+
+  Down_Separation_s3 = 9105;
+
+  Other_RAC_s3 = 8;
+
+  Other_Capability_s3 = 9;
+
+  Climb_Inhibit_s3 = 1;
+
+  out_03 = 0;
+
+  out_13 = 640;
+
+  Cur_Vertical_Sep_s4 = 599;
+
+  High_Confidence_flag_s4 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s4 = 0;
+
+  Own_Tracked_Alt_s4 = -1;
+
+  Own_Tracked_Alt_Rate_s4 = 601;
+
+  Other_Tracked_Alt_s4 = 0;
+
+  Alt_Layer_Value_s4 = 8;
+
+  Up_Separation_s4 = 740;
+
+  Down_Separation_s4 = 739;
+
+  Other_RAC_s4 = 9;
+
+  Other_Capability_s4 = 10;
+
+  Climb_Inhibit_s4 = 0;
+
+  out_04 = 0;
+
+  out_14 = 740;
+
+  Cur_Vertical_Sep_s5 = 599;
+
+  High_Confidence_flag_s5 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s5 = 0;
+
+  Own_Tracked_Alt_s5 = 0;
+
+  Own_Tracked_Alt_Rate_s5 = 601;
+
+  Other_Tracked_Alt_s5 = 0;
+
+  Alt_Layer_Value_s5 = 0;
+
+  Up_Separation_s5 = 399;
+
+  Down_Separation_s5 = 399;
+
+  Other_RAC_s5 = 9;
+
+  Other_Capability_s5 = 1;
+
+  Climb_Inhibit_s5 = 1;
+
+  out_05 = 0;
+
+  out_15 = 400;
+
+  Cur_Vertical_Sep_s6 = 600;
+
+  High_Confidence_flag_s6 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s6 = 0;
+
+  Own_Tracked_Alt_s6 = 0;
+
+  Own_Tracked_Alt_Rate_s6 = 0;
+
+  Other_Tracked_Alt_s6 = 1;
+
+  Alt_Layer_Value_s6 = 0;
+
+  Up_Separation_s6 = 401;
+
+  Down_Separation_s6 = 400;
+
+  Other_RAC_s6 = 8;
+
+  Other_Capability_s6 = 1;
+
+  Climb_Inhibit_s6 = 0;
+
+  result_alt_sep_test_s6 = 3;
+
+  alim_res_s6 = 399;
+
+  Cur_Vertical_Sep_s7 = 600;
+
+  High_Confidence_flag_s7 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s7 = 0;
+
+  Own_Tracked_Alt_s7 = 0;
+
+  Own_Tracked_Alt_Rate_s7 = 0;
+
+  Other_Tracked_Alt_s7 = 1;
+
+  Alt_Layer_Value_s7 = 0;
+
+  Up_Separation_s7 = 401;
+
+  Down_Separation_s7 = 400;
+
+  Other_RAC_s7 = 8;
+
+  Other_Capability_s7 = 1;
+
+  Climb_Inhibit_s7 = 0;
+
+  result_alt_sep_test_s7 = 3;
+
+  alim_res_s7 = 401;
+
+  Cur_Vertical_Sep_s8 = 600;
+
+  High_Confidence_flag_s8 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s8 = 0;
+
+  Own_Tracked_Alt_s8 = 0;
+
+  Own_Tracked_Alt_Rate_s8 = 0;
+
+  Other_Tracked_Alt_s8 = 1;
+
+  Alt_Layer_Value_s8 = 0;
+
+  Up_Separation_s8 = 402;
+
+  Down_Separation_s8 = 400;
+
+  Other_RAC_s8 = 8;
+
+  Other_Capability_s8 = 1;
+
+  Climb_Inhibit_s8 = 0;
+
+  result_alt_sep_test_s8 = 3;
+
+  alim_res_s8 = 399;
+
+  Cur_Vertical_Sep_s9 = 599;
+
+  High_Confidence_flag_s9 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s9 = 0;
+
+  Own_Tracked_Alt_s9 = 0;
+
+  Own_Tracked_Alt_Rate_s9 = 601;
+
+  Other_Tracked_Alt_s9 = -1;
+
+  Alt_Layer_Value_s9 = 0;
+
+  Up_Separation_s9 = 2682;
+
+  Down_Separation_s9 = 2782;
+
+  Other_RAC_s9 = 8;
+
+  Other_Capability_s9 = 1;
+
+  Climb_Inhibit_s9 = 1;
+
+  result_alt_sep_test_s9 = 2;
+
+  alim_res_s9 = 398;
+
+  Cur_Vertical_Sep_s10 = 599;
+
+  High_Confidence_flag_s10 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s10 = 0;
+
+  Own_Tracked_Alt_s10 = 0;
+
+  Own_Tracked_Alt_Rate_s10 = 601;
+
+  Other_Tracked_Alt_s10 = -1;
+
+  Alt_Layer_Value_s10 = 0;
+
+  Up_Separation_s10 = 8765;
+
+  Down_Separation_s10 = 14147;
+
+  Other_RAC_s10 = 8;
+
+  Other_Capability_s10 = 1;
+
+  Climb_Inhibit_s10 = 1;
+
+  result_alt_sep_test_s10 = 2;
+
+  alim_res_s10 = 397;
+
+  Cur_Vertical_Sep_s11 = 600;
+
+  High_Confidence_flag_s11 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s11 = 0;
+
+  Own_Tracked_Alt_s11 = 0;
+
+  Own_Tracked_Alt_Rate_s11 = 0;
+
+  Other_Tracked_Alt_s11 = 1;
+
+  Alt_Layer_Value_s11 = 0;
+
+  Up_Separation_s11 = 401;
+
+  Down_Separation_s11 = 400;
+
+  Other_RAC_s11 = 8;
+
+  Other_Capability_s11 = 1;
+
+  Climb_Inhibit_s11 = 0;
+
+  result_alt_sep_test_s11 = 3;
+
+  alim_res_s11 = 500;
+
+  Cur_Vertical_Sep_s12 = 600;
+
+  High_Confidence_flag_s12 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s12 = 0;
+
+  Own_Tracked_Alt_s12 = 0;
+
+  Own_Tracked_Alt_Rate_s12 = 0;
+
+  Other_Tracked_Alt_s12 = 1;
+
+  Alt_Layer_Value_s12 = 0;
+
+  Up_Separation_s12 = 8866;
+
+  Down_Separation_s12 = 400;
+
+  Other_RAC_s12 = 7;
+
+  Other_Capability_s12 = 1;
+
+  Climb_Inhibit_s12 = 0;
+
+  result_alt_sep_test_s12 = 0;
+
+  alim_res_s12 = 0;
+
+  Cur_Vertical_Sep_s13 = 599;
+
+  High_Confidence_flag_s13 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s13 = 0;
+
+  Own_Tracked_Alt_s13 = 0;
+
+  Own_Tracked_Alt_Rate_s13 = 601;
+
+  Other_Tracked_Alt_s13 = -1;
+
+  Alt_Layer_Value_s13 = 0;
+
+  Up_Separation_s13 = 9006;
+
+  Down_Separation_s13 = 9006;
+
+  Other_RAC_s13 = 9;
+
+  Other_Capability_s13 = 1;
+
+  Climb_Inhibit_s13 = 0;
+
+  result_alt_sep_test_s13 = 3;
+
+  alim_res_s13 = 399;
+
+  Cur_Vertical_Sep_s14 = 599;
+
+  High_Confidence_flag_s14 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s14 = 0;
+
+  Own_Tracked_Alt_s14 = 0;
+
+  Own_Tracked_Alt_Rate_s14 = 601;
+
+  Other_Tracked_Alt_s14 = -1;
+
+  Alt_Layer_Value_s14 = 0;
+
+  Up_Separation_s14 = 8866;
+
+  Down_Separation_s14 = 8966;
+
+  Other_RAC_s14 = 8;
+
+  Other_Capability_s14 = 1;
+
+  Climb_Inhibit_s14 = 1;
+
+  result_alt_sep_test_s14 = 2;
+
+  alim_res_s14 = 396;
+
+  Cur_Vertical_Sep_s15 = 599;
+
+  High_Confidence_flag_s15 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s15 = 9;
+
+  Own_Tracked_Alt_s15 = 0;
+
+  Own_Tracked_Alt_Rate_s15 = 601;
+
+  Other_Tracked_Alt_s15 = 0;
+
+  Alt_Layer_Value_s15 = 0;
+
+  Up_Separation_s15 = 401;
+
+  Down_Separation_s15 = 400;
+
+  Other_RAC_s15 = 0;
+
+  Other_Capability_s15 = 1;
+
+  Climb_Inhibit_s15 = 0;
+
+  result_alt_sep_test_s15 = 3;
+
+  alim_res_s15 = 639;
+
+  Cur_Vertical_Sep_s16 = 599;
+
+  High_Confidence_flag_s16 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s16 = 0;
+
+  Own_Tracked_Alt_s16 = 0;
+
+  Own_Tracked_Alt_Rate_s16 = 601;
+
+  Other_Tracked_Alt_s16 = -1;
+
+  Alt_Layer_Value_s16 = 0;
+
+  Up_Separation_s16 = 500;
+
+  Down_Separation_s16 = 500;
+
+  Other_RAC_s16 = 8;
+
+  Other_Capability_s16 = 1;
+
+  Climb_Inhibit_s16 = 0;
+
+  result_alt_sep_test_s16 = 0;
+
+  alim_res_s16 = 398;
+
+  Cur_Vertical_Sep_s17 = 599;
+
+  High_Confidence_flag_s17 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s17 = 0;
+
+  Own_Tracked_Alt_s17 = 0;
+
+  Own_Tracked_Alt_Rate_s17 = 601;
+
+  Other_Tracked_Alt_s17 = -1;
+
+  Alt_Layer_Value_s17 = 0;
+
+  Up_Separation_s17 = 6320;
+
+  Down_Separation_s17 = 6420;
+
+  Other_RAC_s17 = 9;
+
+  Other_Capability_s17 = 1;
+
+  Climb_Inhibit_s17 = 1;
+
+  result_alt_sep_test_s17 = 3;
+
+  alim_res_s17 = 741;
+
+  Cur_Vertical_Sep_s18 = 599;
+
+  High_Confidence_flag_s18 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s18 = 0;
+
+  Own_Tracked_Alt_s18 = 0;
+
+  Own_Tracked_Alt_Rate_s18 = 601;
+
+  Other_Tracked_Alt_s18 = -1;
+
+  Alt_Layer_Value_s18 = 0;
+
+  Up_Separation_s18 = 1542;
+
+  Down_Separation_s18 = 21636;
+
+  Other_RAC_s18 = 9;
+
+  Other_Capability_s18 = 1;
+
+  Climb_Inhibit_s18 = 1;
+
+  result_alt_sep_test_s18 = 3;
+
+  alim_res_s18 = 21636;
+
+  Cur_Vertical_Sep_s19 = 599;
+
+  High_Confidence_flag_s19 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s19 = 0;
+
+  Own_Tracked_Alt_s19 = 0;
+
+  Own_Tracked_Alt_Rate_s19 = 601;
+
+  Other_Tracked_Alt_s19 = -1;
+
+  Alt_Layer_Value_s19 = 0;
+
+  Up_Separation_s19 = 384;
+
+  Down_Separation_s19 = 440;
+
+  Other_RAC_s19 = 8;
+
+  Other_Capability_s19 = 1;
+
+  Climb_Inhibit_s19 = 1;
+
+  result_alt_sep_test_s19 = 2;
+
+  alim_res_s19 = 398;
+
+  Cur_Vertical_Sep_s20 = 599;
+
+  High_Confidence_flag_s20 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s20 = 0;
+
+  Own_Tracked_Alt_s20 = 0;
+
+  Own_Tracked_Alt_Rate_s20 = 601;
+
+  Other_Tracked_Alt_s20 = -1;
+
+  Alt_Layer_Value_s20 = 0;
+
+  Up_Separation_s20 = 13172;
+
+  Down_Separation_s20 = 21637;
+
+  Other_RAC_s20 = 8;
+
+  Other_Capability_s20 = 1;
+
+  Climb_Inhibit_s20 = 1;
+
+  result_alt_sep_test_s20 = 2;
+
+  alim_res_s20 = 398;
+
+  Cur_Vertical_Sep_s21 = 599;
+
+  High_Confidence_flag_s21 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s21 = 0;
+
+  Own_Tracked_Alt_s21 = 0;
+
+  Own_Tracked_Alt_Rate_s21 = 601;
+
+  Other_Tracked_Alt_s21 = -1;
+
+  Alt_Layer_Value_s21 = 0;
+
+  Up_Separation_s21 = 11202;
+
+  Down_Separation_s21 = 30003;
+
+  Other_RAC_s21 = 9;
+
+  Other_Capability_s21 = 1;
+
+  Climb_Inhibit_s21 = 1;
+
+  result_alt_sep_test_s21 = 3;
+
+  alim_res_s21 = 399;
+
+  Cur_Vertical_Sep_s22 = 599;
+
+  High_Confidence_flag_s22 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s22 = 9;
+
+  Own_Tracked_Alt_s22 = 0;
+
+  Own_Tracked_Alt_Rate_s22 = 601;
+
+  Other_Tracked_Alt_s22 = 0;
+
+  Alt_Layer_Value_s22 = 0;
+
+  Up_Separation_s22 = 401;
+
+  Down_Separation_s22 = 400;
+
+  Other_RAC_s22 = 0;
+
+  Other_Capability_s22 = 1;
+
+  Climb_Inhibit_s22 = 0;
+
+  result_alt_sep_test_s22 = 3;
+
+  alim_res_s22 = 641;
+
+  Cur_Vertical_Sep_s23 = 599;
+
+  High_Confidence_flag_s23 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s23 = 0;
+
+  Own_Tracked_Alt_s23 = 0;
+
+  Own_Tracked_Alt_Rate_s23 = 601;
+
+  Other_Tracked_Alt_s23 = -1;
+
+  Alt_Layer_Value_s23 = 0;
+
+  Up_Separation_s23 = -1;
+
+  Down_Separation_s23 = 399;
+
+  Other_RAC_s23 = 8;
+
+  Other_Capability_s23 = 1;
+
+  Climb_Inhibit_s23 = 1;
+
+  out_023 = 0;
+
+  out_123 = 400;
+
+  Cur_Vertical_Sep_s24 = 599;
+
+  High_Confidence_flag_s24 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s24 = 0;
+
+  Own_Tracked_Alt_s24 = 0;
+
+  Own_Tracked_Alt_Rate_s24 = 601;
+
+  Other_Tracked_Alt_s24 = -1;
+
+  Alt_Layer_Value_s24 = 0;
+
+  Up_Separation_s24 = 500;
+
+  Down_Separation_s24 = 8965;
+
+  Other_RAC_s24 = 8;
+
+  Other_Capability_s24 = 1;
+
+  Climb_Inhibit_s24 = 1;
+
+  result_alt_sep_test_s24 = 0;
+
+  alim_res_s24 = 398;
+
+  Cur_Vertical_Sep_s25 = 599;
+
+  High_Confidence_flag_s25 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s25 = 9;
+
+  Own_Tracked_Alt_s25 = 0;
+
+  Own_Tracked_Alt_Rate_s25 = 601;
+
+  Other_Tracked_Alt_s25 = 0;
+
+  Alt_Layer_Value_s25 = 0;
+
+  Up_Separation_s25 = 401;
+
+  Down_Separation_s25 = 400;
+
+  Other_RAC_s25 = 0;
+
+  Other_Capability_s25 = 1;
+
+  Climb_Inhibit_s25 = 0;
+
+  result_alt_sep_test_s25 = 3;
+
+  alim_res_s25 = 403;
+
+  Cur_Vertical_Sep_s26 = 599;
+
+  High_Confidence_flag_s26 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s26 = 0;
+
+  Own_Tracked_Alt_s26 = 0;
+
+  Own_Tracked_Alt_Rate_s26 = 600;
+
+  Other_Tracked_Alt_s26 = -1;
+
+  Alt_Layer_Value_s26 = 0;
+
+  Up_Separation_s26 = -1984;
+
+  Down_Separation_s26 = -1884;
+
+  Other_RAC_s26 = 7;
+
+  Other_Capability_s26 = 1;
+
+  Climb_Inhibit_s26 = 1;
+
+  result_alt_sep_test_s26 = 2;
+
+  alim_res_s26 = 398;
+
+  Cur_Vertical_Sep_s27 = 599;
+
+  High_Confidence_flag_s27 = 0;
+
+  Two_of_Three_Reports_Valid_flag_s27 = 0;
+
+  Own_Tracked_Alt_s27 = 0;
+
+  Own_Tracked_Alt_Rate_s27 = 600;
+
+  Other_Tracked_Alt_s27 = -1;
+
+  Alt_Layer_Value_s27 = 0;
+
+  Up_Separation_s27 = -1984;
+
+  Down_Separation_s27 = -1884;
+
+  Other_RAC_s27 = 7;
+
+  Other_Capability_s27 = 1;
+
+  Climb_Inhibit_s27 = 1;
+
+  result_alt_sep_test_s27 = 2;
+
+  alim_res_s27 = -1884;
+
+  Cur_Vertical_Sep_s28 = 599;
+
+  High_Confidence_flag_s28 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s28 = 0;
+
+  Own_Tracked_Alt_s28 = 0;
+
+  Own_Tracked_Alt_Rate_s28 = 601;
+
+  Other_Tracked_Alt_s28 = -1;
+
+  Alt_Layer_Value_s28 = 0;
+
+  Up_Separation_s28 = 1542;
+
+  Down_Separation_s28 = 14680;
+
+  Other_RAC_s28 = 9;
+
+  Other_Capability_s28 = 1;
+
+  Climb_Inhibit_s28 = 1;
+
+  result_alt_sep_test_s28 = 3;
+
+  alim_res_s28 = 642;
+
+  Cur_Vertical_Sep_s29 = 599;
+
+  High_Confidence_flag_s29 = 7;
+
+  Two_of_Three_Reports_Valid_flag_s29 = 0;
+
+  Own_Tracked_Alt_s29 = 0;
+
+  Own_Tracked_Alt_Rate_s29 = 601;
+
+  Other_Tracked_Alt_s29 = -1;
+
+  Alt_Layer_Value_s29 = 0;
+
+  Up_Separation_s29 = 504;
+
+  Down_Separation_s29 = 741;
+
+  Other_RAC_s29 = 8;
+
+  Other_Capability_s29 = 1;
+
+  Climb_Inhibit_s29 = 1;
+
+  result_alt_sep_test_s29 = 2;
+
+  alim_res_s29 = 398;
+
+  Cur_Vertical_Sep_s30 = 599;
+
+  High_Confidence_flag_s30 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s30 = 9;
+
+  Own_Tracked_Alt_s30 = 0;
+
+  Own_Tracked_Alt_Rate_s30 = 601;
+
+  Other_Tracked_Alt_s30 = -1;
+
+  Alt_Layer_Value_s30 = 0;
+
+  Up_Separation_s30 = 908;
+
+  Down_Separation_s30 = 398;
+
+  Other_RAC_s30 = 0;
+
+  Other_Capability_s30 = 1;
+
+  Climb_Inhibit_s30 = 1;
+
+  out_030 = 0;
+
+  out_130 = 400;
+
+  Cur_Vertical_Sep_s31 = 599;
+
+  High_Confidence_flag_s31 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s31 = 0;
+
+  Own_Tracked_Alt_s31 = 0;
+
+  Own_Tracked_Alt_Rate_s31 = 601;
+
+  Other_Tracked_Alt_s31 = -1;
+
+  Alt_Layer_Value_s31 = 0;
+
+  Up_Separation_s31 = 1542;
+
+  Down_Separation_s31 = 14680;
+
+  Other_RAC_s31 = 9;
+
+  Other_Capability_s31 = 1;
+
+  Climb_Inhibit_s31 = 1;
+
+  result_alt_sep_test_s31 = 3;
+
+  alim_res_s31 = 643;
+
+  Cur_Vertical_Sep_s32 = 599;
+
+  High_Confidence_flag_s32 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s32 = 0;
+
+  Own_Tracked_Alt_s32 = 0;
+
+  Own_Tracked_Alt_Rate_s32 = 601;
+
+  Other_Tracked_Alt_s32 = -1;
+
+  Alt_Layer_Value_s32 = 0;
+
+  Up_Separation_s32 = 11202;
+
+  Down_Separation_s32 = 38369;
+
+  Other_RAC_s32 = 9;
+
+  Other_Capability_s32 = 1;
+
+  Climb_Inhibit_s32 = 1;
+
+  result_alt_sep_test_s32 = 3;
+
+  alim_res_s32 = 399;
+
+  Cur_Vertical_Sep_s33 = 599;
+
+  High_Confidence_flag_s33 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s33 = 0;
+
+  Own_Tracked_Alt_s33 = 0;
+
+  Own_Tracked_Alt_Rate_s33 = 601;
+
+  Other_Tracked_Alt_s33 = -1;
+
+  Alt_Layer_Value_s33 = 0;
+
+  Up_Separation_s33 = -2;
+
+  Down_Separation_s33 = 399;
+
+  Other_RAC_s33 = 9;
+
+  Other_Capability_s33 = 1;
+
+  Climb_Inhibit_s33 = 1;
+
+  out_033 = 0;
+
+  out_133 = 400;
+
+  Cur_Vertical_Sep_s34 = 599;
+
+  High_Confidence_flag_s34 = 8;
+
+  Two_of_Three_Reports_Valid_flag_s34 = 0;
+
+  Own_Tracked_Alt_s34 = 0;
+
+  Own_Tracked_Alt_Rate_s34 = 601;
+
+  Other_Tracked_Alt_s34 = -1;
+
+  Alt_Layer_Value_s34 = 0;
+
+  Up_Separation_s34 = -2385;
+
+  Down_Separation_s34 = -3;
+
+  Other_RAC_s34 = 9;
+
+  Other_Capability_s34 = 1;
+
+  Climb_Inhibit_s34 = 1;
+
+  result_alt_sep_test_s34 = 3;
+
+  alim_res_s34 = 399;
+
+  ok_0 = Check_spec(Cur_Vertical_Sep_s0, High_Confidence_flag_s0, Two_of_Three_Reports_Valid_flag_s0, Own_Tracked_Alt_s0, Own_Tracked_Alt_Rate_s0, Other_Tracked_Alt_s0, Alt_Layer_Value_s0, Up_Separation_s0, Down_Separation_s0, Other_RAC_s0, Other_Capability_s0, Climb_Inhibit_s0, out_00, out_10, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_1 = Check_spec(Cur_Vertical_Sep_s1, High_Confidence_flag_s1, Two_of_Three_Reports_Valid_flag_s1, Own_Tracked_Alt_s1, Own_Tracked_Alt_Rate_s1, Other_Tracked_Alt_s1, Alt_Layer_Value_s1, Up_Separation_s1, Down_Separation_s1, Other_RAC_s1, Other_Capability_s1, Climb_Inhibit_s1, out_01, out_11, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_2 = Check_spec(Cur_Vertical_Sep_s2, High_Confidence_flag_s2, Two_of_Three_Reports_Valid_flag_s2, Own_Tracked_Alt_s2, Own_Tracked_Alt_Rate_s2, Other_Tracked_Alt_s2, Alt_Layer_Value_s2, Up_Separation_s2, Down_Separation_s2, Other_RAC_s2, Other_Capability_s2, Climb_Inhibit_s2, out_02, out_12, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_3 = Check_spec(Cur_Vertical_Sep_s3, High_Confidence_flag_s3, Two_of_Three_Reports_Valid_flag_s3, Own_Tracked_Alt_s3, Own_Tracked_Alt_Rate_s3, Other_Tracked_Alt_s3, Alt_Layer_Value_s3, Up_Separation_s3, Down_Separation_s3, Other_RAC_s3, Other_Capability_s3, Climb_Inhibit_s3, out_03, out_13, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_4 = Check_spec(Cur_Vertical_Sep_s4, High_Confidence_flag_s4, Two_of_Three_Reports_Valid_flag_s4, Own_Tracked_Alt_s4, Own_Tracked_Alt_Rate_s4, Other_Tracked_Alt_s4, Alt_Layer_Value_s4, Up_Separation_s4, Down_Separation_s4, Other_RAC_s4, Other_Capability_s4, Climb_Inhibit_s4, out_04, out_14, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_5 = Check_spec(Cur_Vertical_Sep_s5, High_Confidence_flag_s5, Two_of_Three_Reports_Valid_flag_s5, Own_Tracked_Alt_s5, Own_Tracked_Alt_Rate_s5, Other_Tracked_Alt_s5, Alt_Layer_Value_s5, Up_Separation_s5, Down_Separation_s5, Other_RAC_s5, Other_Capability_s5, Climb_Inhibit_s5, out_05, out_15, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_6 = Check_spec(Cur_Vertical_Sep_s6, High_Confidence_flag_s6, Two_of_Three_Reports_Valid_flag_s6, Own_Tracked_Alt_s6, Own_Tracked_Alt_Rate_s6, Other_Tracked_Alt_s6, Alt_Layer_Value_s6, Up_Separation_s6, Down_Separation_s6, Other_RAC_s6, Other_Capability_s6, Climb_Inhibit_s6, result_alt_sep_test_s6, alim_res_s6, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_7 = Check_spec(Cur_Vertical_Sep_s7, High_Confidence_flag_s7, Two_of_Three_Reports_Valid_flag_s7, Own_Tracked_Alt_s7, Own_Tracked_Alt_Rate_s7, Other_Tracked_Alt_s7, Alt_Layer_Value_s7, Up_Separation_s7, Down_Separation_s7, Other_RAC_s7, Other_Capability_s7, Climb_Inhibit_s7, result_alt_sep_test_s7, alim_res_s7, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_8 = Check_spec(Cur_Vertical_Sep_s8, High_Confidence_flag_s8, Two_of_Three_Reports_Valid_flag_s8, Own_Tracked_Alt_s8, Own_Tracked_Alt_Rate_s8, Other_Tracked_Alt_s8, Alt_Layer_Value_s8, Up_Separation_s8, Down_Separation_s8, Other_RAC_s8, Other_Capability_s8, Climb_Inhibit_s8, result_alt_sep_test_s8, alim_res_s8, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_9 = Check_spec(Cur_Vertical_Sep_s9, High_Confidence_flag_s9, Two_of_Three_Reports_Valid_flag_s9, Own_Tracked_Alt_s9, Own_Tracked_Alt_Rate_s9, Other_Tracked_Alt_s9, Alt_Layer_Value_s9, Up_Separation_s9, Down_Separation_s9, Other_RAC_s9, Other_Capability_s9, Climb_Inhibit_s9, result_alt_sep_test_s9, alim_res_s9, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_10 = Check_spec(Cur_Vertical_Sep_s10, High_Confidence_flag_s10, Two_of_Three_Reports_Valid_flag_s10, Own_Tracked_Alt_s10, Own_Tracked_Alt_Rate_s10, Other_Tracked_Alt_s10, Alt_Layer_Value_s10, Up_Separation_s10, Down_Separation_s10, Other_RAC_s10, Other_Capability_s10, Climb_Inhibit_s10, result_alt_sep_test_s10, alim_res_s10, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_11 = Check_spec(Cur_Vertical_Sep_s11, High_Confidence_flag_s11, Two_of_Three_Reports_Valid_flag_s11, Own_Tracked_Alt_s11, Own_Tracked_Alt_Rate_s11, Other_Tracked_Alt_s11, Alt_Layer_Value_s11, Up_Separation_s11, Down_Separation_s11, Other_RAC_s11, Other_Capability_s11, Climb_Inhibit_s11, result_alt_sep_test_s11, alim_res_s11, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_12 = Check_spec(Cur_Vertical_Sep_s12, High_Confidence_flag_s12, Two_of_Three_Reports_Valid_flag_s12, Own_Tracked_Alt_s12, Own_Tracked_Alt_Rate_s12, Other_Tracked_Alt_s12, Alt_Layer_Value_s12, Up_Separation_s12, Down_Separation_s12, Other_RAC_s12, Other_Capability_s12, Climb_Inhibit_s12, result_alt_sep_test_s12, alim_res_s12, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_13 = Check_spec(Cur_Vertical_Sep_s13, High_Confidence_flag_s13, Two_of_Three_Reports_Valid_flag_s13, Own_Tracked_Alt_s13, Own_Tracked_Alt_Rate_s13, Other_Tracked_Alt_s13, Alt_Layer_Value_s13, Up_Separation_s13, Down_Separation_s13, Other_RAC_s13, Other_Capability_s13, Climb_Inhibit_s13, result_alt_sep_test_s13, alim_res_s13, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_14 = Check_spec(Cur_Vertical_Sep_s14, High_Confidence_flag_s14, Two_of_Three_Reports_Valid_flag_s14, Own_Tracked_Alt_s14, Own_Tracked_Alt_Rate_s14, Other_Tracked_Alt_s14, Alt_Layer_Value_s14, Up_Separation_s14, Down_Separation_s14, Other_RAC_s14, Other_Capability_s14, Climb_Inhibit_s14, result_alt_sep_test_s14, alim_res_s14, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_15 = Check_spec(Cur_Vertical_Sep_s15, High_Confidence_flag_s15, Two_of_Three_Reports_Valid_flag_s15, Own_Tracked_Alt_s15, Own_Tracked_Alt_Rate_s15, Other_Tracked_Alt_s15, Alt_Layer_Value_s15, Up_Separation_s15, Down_Separation_s15, Other_RAC_s15, Other_Capability_s15, Climb_Inhibit_s15, result_alt_sep_test_s15, alim_res_s15, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_16 = Check_spec(Cur_Vertical_Sep_s16, High_Confidence_flag_s16, Two_of_Three_Reports_Valid_flag_s16, Own_Tracked_Alt_s16, Own_Tracked_Alt_Rate_s16, Other_Tracked_Alt_s16, Alt_Layer_Value_s16, Up_Separation_s16, Down_Separation_s16, Other_RAC_s16, Other_Capability_s16, Climb_Inhibit_s16, result_alt_sep_test_s16, alim_res_s16, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_17 = Check_spec(Cur_Vertical_Sep_s17, High_Confidence_flag_s17, Two_of_Three_Reports_Valid_flag_s17, Own_Tracked_Alt_s17, Own_Tracked_Alt_Rate_s17, Other_Tracked_Alt_s17, Alt_Layer_Value_s17, Up_Separation_s17, Down_Separation_s17, Other_RAC_s17, Other_Capability_s17, Climb_Inhibit_s17, result_alt_sep_test_s17, alim_res_s17, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_18 = Check_spec(Cur_Vertical_Sep_s18, High_Confidence_flag_s18, Two_of_Three_Reports_Valid_flag_s18, Own_Tracked_Alt_s18, Own_Tracked_Alt_Rate_s18, Other_Tracked_Alt_s18, Alt_Layer_Value_s18, Up_Separation_s18, Down_Separation_s18, Other_RAC_s18, Other_Capability_s18, Climb_Inhibit_s18, result_alt_sep_test_s18, alim_res_s18, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_19 = Check_spec(Cur_Vertical_Sep_s19, High_Confidence_flag_s19, Two_of_Three_Reports_Valid_flag_s19, Own_Tracked_Alt_s19, Own_Tracked_Alt_Rate_s19, Other_Tracked_Alt_s19, Alt_Layer_Value_s19, Up_Separation_s19, Down_Separation_s19, Other_RAC_s19, Other_Capability_s19, Climb_Inhibit_s19, result_alt_sep_test_s19, alim_res_s19, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_20 = Check_spec(Cur_Vertical_Sep_s20, High_Confidence_flag_s20, Two_of_Three_Reports_Valid_flag_s20, Own_Tracked_Alt_s20, Own_Tracked_Alt_Rate_s20, Other_Tracked_Alt_s20, Alt_Layer_Value_s20, Up_Separation_s20, Down_Separation_s20, Other_RAC_s20, Other_Capability_s20, Climb_Inhibit_s20, result_alt_sep_test_s20, alim_res_s20, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_21 = Check_spec(Cur_Vertical_Sep_s21, High_Confidence_flag_s21, Two_of_Three_Reports_Valid_flag_s21, Own_Tracked_Alt_s21, Own_Tracked_Alt_Rate_s21, Other_Tracked_Alt_s21, Alt_Layer_Value_s21, Up_Separation_s21, Down_Separation_s21, Other_RAC_s21, Other_Capability_s21, Climb_Inhibit_s21, result_alt_sep_test_s21, alim_res_s21, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_22 = Check_spec(Cur_Vertical_Sep_s22, High_Confidence_flag_s22, Two_of_Three_Reports_Valid_flag_s22, Own_Tracked_Alt_s22, Own_Tracked_Alt_Rate_s22, Other_Tracked_Alt_s22, Alt_Layer_Value_s22, Up_Separation_s22, Down_Separation_s22, Other_RAC_s22, Other_Capability_s22, Climb_Inhibit_s22, result_alt_sep_test_s22, alim_res_s22, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_23 = Check_spec(Cur_Vertical_Sep_s23, High_Confidence_flag_s23, Two_of_Three_Reports_Valid_flag_s23, Own_Tracked_Alt_s23, Own_Tracked_Alt_Rate_s23, Other_Tracked_Alt_s23, Alt_Layer_Value_s23, Up_Separation_s23, Down_Separation_s23, Other_RAC_s23, Other_Capability_s23, Climb_Inhibit_s23, out_023, out_123, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_24 = Check_spec(Cur_Vertical_Sep_s24, High_Confidence_flag_s24, Two_of_Three_Reports_Valid_flag_s24, Own_Tracked_Alt_s24, Own_Tracked_Alt_Rate_s24, Other_Tracked_Alt_s24, Alt_Layer_Value_s24, Up_Separation_s24, Down_Separation_s24, Other_RAC_s24, Other_Capability_s24, Climb_Inhibit_s24, result_alt_sep_test_s24, alim_res_s24, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_25 = Check_spec(Cur_Vertical_Sep_s25, High_Confidence_flag_s25, Two_of_Three_Reports_Valid_flag_s25, Own_Tracked_Alt_s25, Own_Tracked_Alt_Rate_s25, Other_Tracked_Alt_s25, Alt_Layer_Value_s25, Up_Separation_s25, Down_Separation_s25, Other_RAC_s25, Other_Capability_s25, Climb_Inhibit_s25, result_alt_sep_test_s25, alim_res_s25, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_26 = Check_spec(Cur_Vertical_Sep_s26, High_Confidence_flag_s26, Two_of_Three_Reports_Valid_flag_s26, Own_Tracked_Alt_s26, Own_Tracked_Alt_Rate_s26, Other_Tracked_Alt_s26, Alt_Layer_Value_s26, Up_Separation_s26, Down_Separation_s26, Other_RAC_s26, Other_Capability_s26, Climb_Inhibit_s26, result_alt_sep_test_s26, alim_res_s26, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_27 = Check_spec(Cur_Vertical_Sep_s27, High_Confidence_flag_s27, Two_of_Three_Reports_Valid_flag_s27, Own_Tracked_Alt_s27, Own_Tracked_Alt_Rate_s27, Other_Tracked_Alt_s27, Alt_Layer_Value_s27, Up_Separation_s27, Down_Separation_s27, Other_RAC_s27, Other_Capability_s27, Climb_Inhibit_s27, result_alt_sep_test_s27, alim_res_s27, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_28 = Check_spec(Cur_Vertical_Sep_s28, High_Confidence_flag_s28, Two_of_Three_Reports_Valid_flag_s28, Own_Tracked_Alt_s28, Own_Tracked_Alt_Rate_s28, Other_Tracked_Alt_s28, Alt_Layer_Value_s28, Up_Separation_s28, Down_Separation_s28, Other_RAC_s28, Other_Capability_s28, Climb_Inhibit_s28, result_alt_sep_test_s28, alim_res_s28, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_29 = Check_spec(Cur_Vertical_Sep_s29, High_Confidence_flag_s29, Two_of_Three_Reports_Valid_flag_s29, Own_Tracked_Alt_s29, Own_Tracked_Alt_Rate_s29, Other_Tracked_Alt_s29, Alt_Layer_Value_s29, Up_Separation_s29, Down_Separation_s29, Other_RAC_s29, Other_Capability_s29, Climb_Inhibit_s29, result_alt_sep_test_s29, alim_res_s29, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_30 = Check_spec(Cur_Vertical_Sep_s30, High_Confidence_flag_s30, Two_of_Three_Reports_Valid_flag_s30, Own_Tracked_Alt_s30, Own_Tracked_Alt_Rate_s30, Other_Tracked_Alt_s30, Alt_Layer_Value_s30, Up_Separation_s30, Down_Separation_s30, Other_RAC_s30, Other_Capability_s30, Climb_Inhibit_s30, out_030, out_130, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_31 = Check_spec(Cur_Vertical_Sep_s31, High_Confidence_flag_s31, Two_of_Three_Reports_Valid_flag_s31, Own_Tracked_Alt_s31, Own_Tracked_Alt_Rate_s31, Other_Tracked_Alt_s31, Alt_Layer_Value_s31, Up_Separation_s31, Down_Separation_s31, Other_RAC_s31, Other_Capability_s31, Climb_Inhibit_s31, result_alt_sep_test_s31, alim_res_s31, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_32 = Check_spec(Cur_Vertical_Sep_s32, High_Confidence_flag_s32, Two_of_Three_Reports_Valid_flag_s32, Own_Tracked_Alt_s32, Own_Tracked_Alt_Rate_s32, Other_Tracked_Alt_s32, Alt_Layer_Value_s32, Up_Separation_s32, Down_Separation_s32, Other_RAC_s32, Other_Capability_s32, Climb_Inhibit_s32, result_alt_sep_test_s32, alim_res_s32, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_33 = Check_spec(Cur_Vertical_Sep_s33, High_Confidence_flag_s33, Two_of_Three_Reports_Valid_flag_s33, Own_Tracked_Alt_s33, Own_Tracked_Alt_Rate_s33, Other_Tracked_Alt_s33, Alt_Layer_Value_s33, Up_Separation_s33, Down_Separation_s33, Other_RAC_s33, Other_Capability_s33, Climb_Inhibit_s33, out_033, out_133, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  ok_34 = Check_spec(Cur_Vertical_Sep_s34, High_Confidence_flag_s34, Two_of_Three_Reports_Valid_flag_s34, Own_Tracked_Alt_s34, Own_Tracked_Alt_Rate_s34, Other_Tracked_Alt_s34, Alt_Layer_Value_s34, Up_Separation_s34, Down_Separation_s34, Other_RAC_s34, Other_Capability_s34, Climb_Inhibit_s34, result_alt_sep_test_s34, alim_res_s34, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4, 0);
+
+  fail = (not ((not ok_34) and (ok_33 and ((not ok_32) and ((not ok_31) and (ok_30 and ((not ok_29) and ((not ok_28) and ((not ok_27) and ((not ok_26) and ((not ok_25) and ((not ok_24) and (ok_23 and ((not ok_22) and ((not ok_21) and ((not ok_20) and ((not ok_19) and ((not ok_18) and ((not ok_17) and ((not ok_16) and ((not ok_15) and ((not ok_14) and ((not ok_13) and ((not ok_12) and ((not ok_11) and ((not ok_10) and ((not ok_9) and ((not ok_8) and ((not ok_7) and ((not ok_6) and (ok_5 and (((((ok_0 and ok_1) and ok_2) and ok_3) and ok_4) and (fixedRout and (not rPrimeOut))))))))))))))))))))))))))))))))));
+
+  fixedRout = Fixed_T(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s);
+
+  rPrimeOut = T_node(Cur_Vertical_Sep_s, High_Confidence_flag_s, Two_of_Three_Reports_Valid_flag_s, Own_Tracked_Alt_s, Own_Tracked_Alt_Rate_s, Other_Tracked_Alt_s, Alt_Layer_Value_s, Up_Separation_s, Down_Separation_s, Other_RAC_s, Other_Capability_s, Climb_Inhibit_s, result_alt_sep_test_s, alim_res_s, inner_hole_0_5, const_hole_1_6, inner_hole_0_0, const_hole_1_1, inner_hole_2_2, const_hole_3_3, inner_hole_4_4);
+
+  assert (true -> (inner_hole_0_5 = (pre inner_hole_0_5)));
+
+  assert (true -> (const_hole_1_6 = (pre const_hole_1_6)));
+
+  assert (true -> (inner_hole_0_0 = (pre inner_hole_0_0)));
+
+  assert (true -> (const_hole_1_1 = (pre const_hole_1_1)));
+
+  assert (true -> (inner_hole_2_2 = (pre inner_hole_2_2)));
+
+  assert (true -> (const_hole_3_3 = (pre const_hole_3_3)));
+
+  assert (true -> (inner_hole_4_4 = (pre inner_hole_4_4)));
+
+  --%PROPERTY fail;
+
+tel;

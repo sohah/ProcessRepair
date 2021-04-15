@@ -1,0 +1,4 @@
+tcas,     p4,     Prop4-ROR-1--1-ROR-4-2,     true,    2,    ALREADY_MATCHING,     1,     1.246,     1.203,     0.0,     1.203,     0,     1,     0.0,     1.203,     null
+tcas,     p4,     Prop4-ROR-3--1-ROR-4-2,     false,    2,    ALREADY_MATCHING,     1,     1.173,     1.073,     0.0,     1.073,     0,     1,     0.0,     1.073,     null
+tcas,     p4,     Prop4-ROR-2--1-ROR-4-2,     true,    2,    ALREADY_MATCHING,     1,     1.201,     1.108,     0.0,     1.108,     0,     1,     0.0,     1.108,     null
+tcas,     p4,     Prop4-ROR-2--1-ROR-3-2,     true,    2,    ALREADY_MATCHING,     1,     1.195,     1.094,     0.0,     1.094,     0,     1,     0.0,     1.094,     null

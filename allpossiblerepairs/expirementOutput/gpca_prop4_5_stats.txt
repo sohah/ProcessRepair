@@ -1,0 +1,4 @@
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1-1-ROR-1--1,     false,    2,    TRUE_FOR_MAX_STEPS,     1,     88.809,     88.17,     10.961,     77.209,     5,     5,     2.192,     15.441,     p1 = ((System_On and (not System_On)) => (out_Highest_Level_Alarm < 3));
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-0-1-ROR-0--1,     true,    2,    TRUE_FOR_MAX_STEPS,     3,     164.126,     161.128,     50.573,     110.555,     19,     19,     2.661,     5.818,     p1 = ((System_On => (out_Highest_Level_Alarm = 0)) xor ((not System_On) xor (out_Highest_Level_Alarm <= 4)));
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-2-1-ROR-2--1,     false,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     609.221,     608.946,     1.169,     607.777,     1,     2,     1.169,     303.888,     null
+gpca,     p4,     Faulty_GPCA_Prop4-LOR-1-1-ROR-2--1,     true,    2,    OUTERLOOP_FORALL_UKNOWN,     0,     609.303,     608.978,     1.152,     607.826,     1,     2,     1.152,     303.913,     null
