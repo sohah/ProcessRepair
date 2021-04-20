@@ -1,0 +1,1 @@
+infusion,     p11,     Faulty_Prop11-ROR-3-8,     true,    0,    TRUE_FOR_MAX_STEPS,     2,     16.633,     16.509,     6.029,     10.48,     7,     7,     0.861,     1.497,     p1 = ((System_On and (Current_System_Mode = 3)) => (Commanded_Flow_Rate = Flow_Rate_Intermittent_Bolus));,     

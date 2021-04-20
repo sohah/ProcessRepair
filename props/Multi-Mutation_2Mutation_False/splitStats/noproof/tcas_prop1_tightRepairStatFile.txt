@@ -1,0 +1,2 @@
+tcas,     p1,     Prop1-LOR-4--1-ROR-4-13,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     8.421,     8.407,     3.952,     4.455,     5,     5,     0.79,     0.891,     p1 = (((Up_Separation_s < alim_res_s) or (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s < 2));,     
+tcas,     p1,     Prop1-LOR-2-1-ROR-2-1,     false,    0,    MINIMAL_MAX_LOOP_REACHED,     1,     66.292,     65.944,     34.485,     31.459,     35,     36,     0.985,     0.873,     p1 = ((false xor (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <> 2));,     

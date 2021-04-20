@@ -1,0 +1,4 @@
+infusion,     p2,     Faulty_Prop2-LOR-2-1-ROR-2--1,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     8.069,     7.976,     2.513,     5.463,     4,     4,     0.628,     1.365,     p1 = ((not System_On) xor (Current_System_Mode >= 1));,     
+infusion,     p2,     Faulty_Prop2-LOR-2-1-ROR-2-2,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     7.961,     7.887,     2.214,     5.673,     4,     4,     0.553,     1.418,     p1 = ((not System_On) xor (Current_System_Mode > 0));,     
+infusion,     p2,     Faulty_Prop2-LOR-1-1-ROR-2-0,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     9.039,     8.932,     3.255,     5.677,     4,     4,     0.813,     1.419,     p1 = (System_On xor (Current_System_Mode < 1));,     
+infusion,     p2,     Faulty_Prop2-LOR-2-1-ROR-2-2,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     7.942,     7.862,     2.21,     5.652,     4,     4,     0.552,     1.413,     p1 = ((not System_On) xor (Current_System_Mode > 0));,     

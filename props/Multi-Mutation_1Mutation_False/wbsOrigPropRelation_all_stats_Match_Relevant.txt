@@ -1,0 +1,6 @@
+tight props for wbs: p1 are: []
+equiv props for wbs: p1 are: [p9]
+relevant props for wbs: p1 are: [p6, p10, p14, p16, p17]
+tight props for wbs: p3 are: []
+equiv props for wbs: p3 are: []
+relevant props for wbs: p3 are: [p6, p8, p9]

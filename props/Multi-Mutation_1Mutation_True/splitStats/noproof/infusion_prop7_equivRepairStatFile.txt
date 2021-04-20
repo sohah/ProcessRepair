@@ -1,0 +1,3 @@
+infusion,     p7,     Faulty_Prop7-ROR-2-4,     true,    0,    TRUE_FOR_MAX_STEPS,     2,     7.565,     7.483,     2.734,     4.749,     3,     3,     0.911,     1.583,     p1 = ((Current_System_Mode = 0) => (Commanded_Flow_Rate = 0));,     
+infusion,     p7,     Faulty_Prop7-ROR-2-6,     true,    0,    TRUE_FOR_MAX_STEPS,     2,     8.306,     8.208,     2.74,     5.468,     3,     3,     0.913,     1.822,     p1 = ((Current_System_Mode = 0) => (Commanded_Flow_Rate = 0));,     
+infusion,     p7,     Faulty_Prop7-ROR-2-4,     true,    0,    TRUE_FOR_MAX_STEPS,     2,     6.687,     6.608,     2.027,     4.581,     3,     3,     0.675,     1.527,     p1 = ((Current_System_Mode = 0) => (Commanded_Flow_Rate = 0));,     

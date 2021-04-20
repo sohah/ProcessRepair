@@ -1,0 +1,6 @@
+tight props for wbs: p1 are: [p14, p16, p25, p28]
+equiv props for wbs: p1 are: [p7, p8, p10, p11, p17, p18, p19, p20, p21, p24, p26, p27]
+relevant props for wbs: p1 are: [p6, p9, p12, p13, p15, p22, p23]
+tight props for wbs: p3 are: []
+equiv props for wbs: p3 are: [p6, p7, p9, p14, p15, p19, p22, p23, p24, p26, p27, p29, p32, p33]
+relevant props for wbs: p3 are: [p8, p10, p11, p12, p13, p16, p17, p18, p20, p21, p25, p28, p30, p31, p34, p35]

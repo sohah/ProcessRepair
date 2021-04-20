@@ -1,0 +1,1 @@
+tcas,     p2,     Prop2-LOR-2--1,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     8.361,     8.342,     4.321,     4.021,     8,     8,     0.54,     0.502,     p1 = (((alim_res_s = 401) or (Down_Separation_s >= alim_res_s)) => (result_alt_sep_test_s <> 1));,     

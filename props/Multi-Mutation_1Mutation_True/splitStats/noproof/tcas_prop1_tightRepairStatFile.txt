@@ -1,0 +1,2 @@
+tcas,     p1,     Prop1-ROR-4-11,     true,    0,    TRUE_FOR_MAX_STEPS,     1,     5.352,     5.338,     2.52,     2.818,     4,     4,     0.63,     0.704,     p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <= 1));,     
+tcas,     p1,     Prop1-ROR-4-12,     true,    0,    TRUE_FOR_MAX_STEPS,     1,     5.432,     5.422,     2.511,     2.911,     4,     4,     0.627,     0.727,     p1 = (((Up_Separation_s < alim_res_s) and (Down_Separation_s < alim_res_s)) => (result_alt_sep_test_s <= 1));,     

@@ -1,0 +1,2 @@
+gpca,     p1,     Faulty_GPCA_Prop1-LOR-3-6,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     17.746,     17.54,     4.82,     12.72,     5,     5,     0.964,     2.544,     p1 = (((System_On and In_Therapy) and Reservoir_Empty) or (out_Highest_Level_Alarm < 5));,     
+gpca,     p1,     Faulty_GPCA_Prop1-LOR-3-6,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     18.03,     17.828,     5.33,     12.498,     5,     5,     1.066,     2.499,     p1 = (((System_On and In_Therapy) and Reservoir_Empty) or (out_Highest_Level_Alarm < 5));,     

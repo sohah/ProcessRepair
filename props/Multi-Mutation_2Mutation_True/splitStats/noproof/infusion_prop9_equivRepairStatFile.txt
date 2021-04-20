@@ -1,0 +1,1 @@
+infusion,     p9,     Faulty_Prop9-LOR-1-0-ROR-1-0,     true,    1,    TRUE_FOR_MAX_STEPS,     2,     36.307,     36.088,     7.977,     28.111,     13,     13,     0.613,     2.162,     p1 = ((System_On and (Highest_Level_Alarm = 4)) => (((Current_System_Mode = 1) or (Current_System_Mode = 6)) or (Current_System_Mode = 7)));,     

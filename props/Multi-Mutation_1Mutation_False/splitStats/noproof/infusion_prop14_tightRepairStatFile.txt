@@ -1,0 +1,1 @@
+infusion,     p14,     Faulty_Prop14-LOR-2-9,     false,    2,    TRUE_FOR_MAX_STEPS,     4,     34.674,     34.357,     12.978,     21.379,     9,     9,     1.442,     2.375,     p1 = ((System_On and (((Current_System_Mode = 3) xor (Current_System_Mode = 2)) xor ((Current_System_Mode = 4) xor false))) or (Commanded_Flow_Rate <= Flow_Rate_KVO));,     

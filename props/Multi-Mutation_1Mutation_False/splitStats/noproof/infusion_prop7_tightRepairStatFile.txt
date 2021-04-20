@@ -1,0 +1,2 @@
+infusion,     p7,     Faulty_Prop7-LOR-1-0,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     10.584,     10.488,     3.825,     6.663,     4,     4,     0.956,     1.665,     p1 = ((Current_System_Mode > 1) or (Commanded_Flow_Rate = 0));,     
+infusion,     p7,     Faulty_Prop7-LOR-1-0,     false,    0,    TRUE_FOR_MAX_STEPS,     1,     12.344,     12.237,     4.244,     7.993,     4,     4,     1.061,     1.998,     p1 = ((Current_System_Mode > 1) or (Commanded_Flow_Rate = 0));,     

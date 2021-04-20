@@ -1,0 +1,1 @@
+infusion,     p8,     Faulty_Prop8-LOR-2-3,     false,    0,    TRUE_FOR_MAX_STEPS,     2,     11.482,     11.395,     2.914,     8.481,     4,     4,     0.728,     2.12,     p1 = ((System_On and (Highest_Level_Alarm < 2)) or ((not (Current_System_Mode = 3)) and (not (Current_System_Mode = 4))));,     
